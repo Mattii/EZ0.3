@@ -9,7 +9,6 @@ const app = createApp({
     return {
       compayName: "Enza Zaden",
       katalog: {},
-      cennik: [],
       stock: [],
     };
   },
@@ -26,6 +25,10 @@ const app = createApp({
           );
           console.log(stock);
           this.stock = stock;
+          // console.log(JSON.stringify(stock.map(ele => {
+          //   ele.name = ele.name.toLowerCase()
+          //   return ele;
+          // })));
         });
       };
 
@@ -41,11 +44,11 @@ const app = createApp({
     ).then((res) => res.json());
     this.katalog = katalog;
 
-    ('https://nuxtestapp-default-rtdb.europe-west1.firebasedatabase.app/cennik.json?orderBy="name"&startAt="fairly"&endAt="fairly\uf8ff"');
-    const cennik = await fetch(
-      "https://nuxtestapp-default-rtdb.europe-west1.firebasedatabase.app/cennik.json"
-    ).then((res) => res.json());
-    this.cennik = cennik;
+    // ('https://nuxtestapp-default-rtdb.europe-west1.firebasedatabase.app/cennik.json?orderBy="name"&startAt="fairly"&endAt="fairly\uf8ff"');
+    // const cennik = await fetch(
+    //   "https://nuxtestapp-default-rtdb.europe-west1.firebasedatabase.app/cennik.json"
+    // ).then((res) => res.json());
+    // this.cennik = cennik;
   },
 });
 

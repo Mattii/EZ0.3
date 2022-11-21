@@ -1,6 +1,6 @@
 const vareityCard = {
   template: `   
-                      <v-card :color="item.color" class="mx-auto" max-width="324" min-width="300">
+                      <v-card :color="item.color" class="mx-auto" max-width="324" min-width="300" theme="dark">
                         <v-img
                           src="./assets/salata.jpg"
                           height="180px"
@@ -27,23 +27,26 @@ const vareityCard = {
                             <v-divider></v-divider>
       
                             <v-card-text>
-
-                              <ul v-if="Object.keys(prices).length">
-                                <li v-for="(price, index) in prices" :key="index">
-                                  {{ price }}
-                                </li>
-                              </ul>
-                              <span v-else>brak ceny w cenniku</span>
+                            <v-list :bg-color="item.color" v-if="Object.keys(prices).length" lines="one">
+                              <v-list-item
+                                v-for="(price, index) in prices"
+                                :key="item.title"
+                                :title="getPrice(price)"
+                                :subtitle="price.packing"
+                              ></v-list-item>
+                            </v-list>
+                            <span v-else>brak ceny w cenniku</span>
 
                               <ul v-if="availableStock.length">
                                 <li
                                   v-for="(batch, index) in availableStock"
                                   :key="index"
                                 >
-                                  {{ batch }}
+                                
+                                  {{ batch['Stock-WARSZAWA'] }} {{ batch['Unit code'] }} - {{batch['Packaging']}} &#128522;
                                 </li>
                               </ul>
-                              <p v-else>brak na stanie</p>
+                              <p v-else>brak na stanie &#128542;</p>
                               
                             </v-card-text>
                           </div>
@@ -64,14 +67,20 @@ const vareityCard = {
   computed: {
     availableStock() {
       return this.$attrs.stock.filter(
-        (element) => this.item.name.toUpperCase() == element["Product name"]
+        (element) =>
+          this.item.name.toLowerCase() == element["Product name"].toLowerCase()
       );
     },
+  },
+  methods:{
+    getPrice(price) {
+      return  `${ price.price }zł (${ price.price + price.price * 0.08 }zł)`;
+    }
   },
   mounted: async function () {
     try {
       const prices = await fetch(
-        `https://nuxtestapp-default-rtdb.europe-west1.firebasedatabase.app/cennik.json?orderBy="name"&startAt="${this.item.name.toUpperCase()}"&endAt="${this.item.name.toUpperCase()}\uf8ff"`
+        `https://nuxtestapp-default-rtdb.europe-west1.firebasedatabase.app/cennik.json?orderBy="name"&startAt="${this.item.name.toLowerCase()}"&endAt="${this.item.name.toLowerCase()}\uf8ff"`
       ).then((res) => res.json());
       this.prices = prices;
     } catch (error) {
