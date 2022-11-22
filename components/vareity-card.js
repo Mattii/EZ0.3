@@ -7,7 +7,7 @@ const vareityCard = {
                           class="white--text align-end"
                           cover
                         >
-                          <v-card-title class="text-h py-2">
+                          <v-card-title class="text-h6 py-2">
                             {{ item.name }}
                           </v-card-title>
                         </v-img>
@@ -23,11 +23,11 @@ const vareityCard = {
                         </v-card-actions>
       
                         <v-expand-transition>
-                          <div v-show="show">
+                          <div v-show="show" class="pb-3">
                             <v-divider></v-divider>
-      
-                            <v-card-text>
+
                             <v-list :bg-color="item.color" v-if="Object.keys(prices).length" lines="one">
+                            <v-list-subheader>Ceny</v-list-subheader>
                               <v-list-item
                                 v-for="(price, index) in prices"
                                 :key="item.title"
@@ -35,20 +35,20 @@ const vareityCard = {
                                 :subtitle="price.packing"
                               ></v-list-item>
                             </v-list>
-                            <span v-else>brak ceny w cenniku</span>
+                            <v-card-text v-else>brak ceny</v-card-text>
 
-                              <ul v-if="availableStock.length">
-                                <li
-                                  v-for="(batch, index) in availableStock"
-                                  :key="index"
-                                >
-                                
-                                  {{ batch['Stock-WARSZAWA'] }} {{ batch['Unit code'] }} - {{batch['Packaging']}} &#128522;
-                                </li>
-                              </ul>
-                              <p v-else>brak na stanie &#128542;</p>
-                              
-                            </v-card-text>
+                            <v-list :bg-color="item.color" v-if="$attrs.stock.length" lines="one">
+                            <v-list-subheader>Dostępność</v-list-subheader>
+                              <v-list-item
+                                v-if="availableStock.length"
+                                v-for="(batch, index) in availableStock"
+                                :key="index"
+                                :title="batch['Stock-WARSZAWA'] + ' ' + batch['Unit code']"
+                                :subtitle="batch['Packaging']"
+                              ></v-list-item>
+                              <v-list-item v-else>brak na stanie</v-list-item>
+                            </v-list>
+                            
                           </div>
                         </v-expand-transition>
                       </v-card>`,
