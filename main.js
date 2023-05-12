@@ -9,18 +9,11 @@ const app = createApp({
     return {
       compayName: "Enza Zaden",
       katalog: {},
-      rawStock: [],
+      stock: [],
     };
   },
   computed:{
-    stock(){
-      return this.rawStock.map(ele => {
-        return Object.assign({}, ...Object.keys(ele).map(key => {
-          let newKey = key.replace(/\n/g, " ").replace(/\s+/g, "_");
-          return {[newKey]: ele[key]}
-        }))
-      })
-    }
+
   },
   methods: {
     readJsonFile(rawFile) {
@@ -28,12 +21,17 @@ const app = createApp({
 
       fileReader.onload = (event) => {
         let data = event.target.result;
-        let workbook = XLSX.read(data, { type: "binary" });
+        let workbook = XLSX.read(data, { type: "binary", cellDates:true });
         workbook.SheetNames.forEach((sheet) => {
           let stock = XLSX.utils.sheet_to_row_object_array(
-            workbook.Sheets[sheet]
+            workbook.Sheets[sheet], { dateNF:'yyyy-mm'}
           );
-          this.rawStock = stock;
+          this.stock = stock.map(ele => {
+            return Object.assign({}, ...Object.keys(ele).map(key => {
+              let newKey = key.replace(/\n/g, " ").replace(/\s+/g, "_");
+              return {[newKey]: ele[key]}
+            }))
+          });
           // console.log(JSON.stringify(stock.map(ele => {
           //   ele.name = ele.name.toLowerCase()
           //   return ele;
