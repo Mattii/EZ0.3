@@ -26,16 +26,18 @@ const vareityCard = {
                           <div v-show="show" class="pb-3">
                             <v-divider></v-divider>
 
-                            <v-list :bg-color="item.color" v-if="Object.keys(prices).length" lines="one">
+                            <v-list :bg-color="item.color" lines="one">
                             <v-list-subheader>Ceny</v-list-subheader>
                               <v-list-item
+                                v-if="Object.keys(prices).length"
                                 v-for="(price, index) in prices"
                                 :key="item.title"
                                 :title="getPrice(price)"
                                 :subtitle="price.packing"
                               ></v-list-item>
+                              <v-list-item v-else>brak ceny</v-list-item>
                             </v-list>
-                            <v-card-text v-else>brak ceny</v-card-text>
+                            
 
                             <v-list :bg-color="item.color" v-if="$attrs.stock.length" lines="one">
                             <v-list-subheader>Dostępność</v-list-subheader>
@@ -43,7 +45,7 @@ const vareityCard = {
                                 v-if="availableStock.length"
                                 v-for="(batch, index) in availableStock"
                                 :key="index"
-                                :title="batch['Stock-WARSZAWA'] + ' ' + batch['Unit code']"
+                                :title="batch['Stock_WARSZAWA'] + ' ' + batch['Unit_code']"
                                 :subtitle="batch['Packaging']"
                               ></v-list-item>
                               <v-list-item v-else>brak na stanie</v-list-item>
@@ -68,7 +70,7 @@ const vareityCard = {
     availableStock() {
       return this.$attrs.stock.filter(
         (element) =>
-          this.item.name.toLowerCase() == element["Product name"].toLowerCase()
+          this.item.name.toUpperCase() == element["Product_name"]
       );
     },
   },

@@ -9,8 +9,18 @@ const app = createApp({
     return {
       compayName: "Enza Zaden",
       katalog: {},
-      stock: [],
+      rawStock: [],
     };
+  },
+  computed:{
+    stock(){
+      return this.rawStock.map(ele => {
+        return Object.assign({}, ...Object.keys(ele).map(key => {
+          let newKey = key.replace(/\n/g, " ").replace(/\s+/g, "_");
+          return {[newKey]: ele[key]}
+        }))
+      })
+    }
   },
   methods: {
     readJsonFile(rawFile) {
@@ -23,8 +33,7 @@ const app = createApp({
           let stock = XLSX.utils.sheet_to_row_object_array(
             workbook.Sheets[sheet]
           );
-          console.log(stock);
-          this.stock = stock;
+          this.rawStock = stock;
           // console.log(JSON.stringify(stock.map(ele => {
           //   ele.name = ele.name.toLowerCase()
           //   return ele;
@@ -39,10 +48,15 @@ const app = createApp({
     },
   },
   mounted: async function () {
-    const katalog = await fetch(
-      "https://nuxtestapp-default-rtdb.europe-west1.firebasedatabase.app/katalog/.json"
-    ).then((res) => res.json());
-    this.katalog = katalog;
+    try {
+      const katalog = await fetch(
+        "https://nuxtestapp-default-rtdb.europe-west1.firebasedatabase.app/katalog/.json"
+      ).then((res) => res.json());
+      this.katalog = katalog;
+    } catch (error) {
+      console.log(error);
+    }
+
 
     // ('https://nuxtestapp-default-rtdb.europe-west1.firebasedatabase.app/cennik.json?orderBy="name"&startAt="fairly"&endAt="fairly\uf8ff"');
     // const cennik = await fetch(
