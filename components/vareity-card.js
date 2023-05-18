@@ -1,3 +1,4 @@
+import { ref, computed, onMounted } from "vue";
 const vareityCard = {
   template: `   
                       <v-card :color="item.color" class="mx-auto" max-width="324" min-width="300" theme="dark">
@@ -67,37 +68,41 @@ const vareityCard = {
     stock: {
       type: Array,
       required: false,
-      default: []
+      default: [],
     },
   },
-  data() {
-    return {
-      prices: [],
-      show: false,
-    };
-  },
-  computed: {
-    availableStock() {
-      return this.stock.filter(
-        (element) =>
-          this.item.name.toUpperCase() == element["Product_name"]
+  setup(props) {
+    const prices = ref([]);
+    const show = ref(false);
+
+    const availableStock = computed(() => {
+      return props.stock.filter(
+        (element) => props.item.name.toUpperCase() == element["Product_name"]
       );
-    },
-  },
-  methods:{
-    getPrice(price) {
-      return  `${ price.price }zł (${ price.price + price.price * 0.08 }zł)`;
-    }
-  },
-  mounted: async function () {
-    try {
-      const prices = await fetch(
-        `https://nuxtestapp-default-rtdb.europe-west1.firebasedatabase.app/cennik.json?orderBy="name"&startAt="${this.item.name.toLowerCase()}"&endAt="${this.item.name.toLowerCase()}\uf8ff"`
-      ).then((res) => res.json());
-      this.prices = prices;
-    } catch (error) {
-      console.log("error");
-    }
+    });
+
+    const getPrice = (price) => {
+      return `${price.price}zł (${price.price + price.price * 0.08}zł)`;
+    };
+
+    onMounted(async () => {
+      try {
+        const freshPrices = await fetch(
+          `https://nuxtestapp-default-rtdb.europe-west1.firebasedatabase.app/cennik.json?orderBy="name"&startAt="${props.item.name.toLowerCase()}"&endAt="${props.item.name.toLowerCase()}\uf8ff"`
+        ).then((res) => res.json());
+        prices.value = freshPrices;
+      } catch (error) {
+        console.log("error");
+      }
+    });
+
+    return {
+      prices,
+      show,
+      getPrice,
+      availableStock,
+      onMounted,
+    };
   },
 };
 export default vareityCard;

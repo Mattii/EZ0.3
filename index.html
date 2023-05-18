@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-      href="https://cdn.jsdelivr.net/npm/vuetify@3.0.0/dist/vuetify.min.css"
+      href="https://cdn.jsdelivr.net/npm/vuetify@3.2.5/dist/vuetify.min.css"
       rel="stylesheet"
     />
     <link
@@ -31,23 +31,13 @@
       <v-app>
         <v-app-bar
           color="green"
-          hide-on-scroll
-          scroll-target="#scrolling-techniques-4"
+          scroll-behavior="hide"
+          scroll-threshold="120"
           app
         >
           <v-toolbar-title>{{ compayName }}</v-toolbar-title>
 
           <v-spacer></v-spacer>
-          <v-file-input
-            hide-input
-            label="Pobierze stock"
-            truncate-length="15"
-            type="file"
-            @change="readJsonFile"
-            @click:clear="clearFiled"
-            id="file"
-            accept=".xls,.xlsx"
-          ></v-file-input>
           <v-btn icon>
             <v-icon>mdi-magnify</v-icon>
           </v-btn>
@@ -58,19 +48,35 @@
         </v-app-bar>
 
         <v-main>
-          <div
-            id="scrolling-techniques-4"
-            
-            class="d-flex flex-wrap justify-space-around"
-          >
-            <div v-for="(item, index) in katalog" :key="index" class="pa-4">
+          <v-container fluid>
+            <v-row>
+              <v-col>
+                <v-file-input
+                  hide-input
+                  variant="underlined"
+                  label="Pobierze stock"
+                  truncate-length="15"
+                  type="file"
+                  @change="readJsonFile"
+                  @click:clear="clearFiled"
+                  id="file"
+                  accept=".xls,.xlsx"
+                ></v-file-input>
+              </v-col>
+            </v-row>
+            <div
+              id="scrolling-techniques-4"
+              class="d-flex flex-wrap justify-space-around"
+            >
+              <div v-for="(item, index) in katalog" :key="index" class="pa-4">
                 <vareity-card
                   v-if="item"
                   :item="item"
                   :stock="stock"
                 ></vareity-card>
+              </div>
             </div>
-          </div>
+          </v-container>
         </v-main>
         <v-bottom-navigation color="teal" grow app class="d-flex d-sm-none">
           <v-btn>
@@ -102,7 +108,7 @@
     {
       "imports": {
         "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js",
-        "vuetify": "https://cdn.jsdelivr.net/npm/vuetify@3.2.2/dist/vuetify.esm.js"
+        "vuetify": "https://cdn.jsdelivr.net/npm/vuetify@3.2.5/dist/vuetify.esm.js"
       }
     }
   </script>
