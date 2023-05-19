@@ -3,9 +3,10 @@ const vareityCard = {
   template: `   
                       <v-card :color="item.color" class="mx-auto" max-width="324" min-width="300" theme="dark">
                         <v-img
-                          src="./assets/salata.jpg"
+                          :src="{ src: item.imgs[0], lazySrc: './assets/salata.jpg', aspect: '16/9' }"
                           height="180px"
                           class="white--text align-end"
+                          gradient="20deg, rgba(25,32,72,.7), rgba(25,32,72,.3), rgba(255,255,255,0), rgba(255,255,255,0)"
                           cover
                         >
                           <v-card-title class="pb-0">
