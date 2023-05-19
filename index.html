@@ -8,8 +8,10 @@
       href="https://cdn.jsdelivr.net/npm/vuetify@3.2.5/dist/vuetify.min.css"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900"
+      href="https://fonts.googleapis.com/css2?family=Crete+Round&display=swap"
       rel="stylesheet"
     />
     <link
@@ -50,6 +52,30 @@
         <v-main>
           <v-container fluid>
             <v-row>
+              <v-col cols="12">
+                <v-sheet
+                  rounded
+                  color="#608634"
+                  width="100%"
+                  class="pt-3"
+                  gradient=""
+                >
+                  <v-img
+                    width="100%"
+                    src="https://res.cloudinary.com/ddkef5waq/image/upload/v1684482332/enzapp/hero_kmw5p3.jpg"
+                  >
+                  </v-img>
+                  <v-col class="px-6 crete-round">
+                    <h2 class="text-h5 mb-3 crete-round">Twój Katalog</h2>
+                    <p class="mb-5">najlepsze nasiona na wyciągnięcie ręki</p>
+                    <v-btn class="mb-3" block color="#FEFB08" dark
+                      >Eksploruj</v-btn
+                    >
+                  </v-col>
+                </v-sheet>
+              </v-col>
+            </v-row>
+            <v-row>
               <v-col>
                 <v-file-input
                   hide-input
@@ -64,18 +90,21 @@
                 ></v-file-input>
               </v-col>
             </v-row>
-            <div
-              id="scrolling-techniques-4"
-              class="d-flex flex-wrap justify-space-around"
-            >
-              <div v-for="(item, index) in katalog" :key="index" class="pa-4">
-                <vareity-card
-                  v-if="item"
-                  :item="item"
-                  :stock="stock"
-                ></vareity-card>
-              </div>
-            </div>
+            <v-row>
+              <v-col>
+                  <div
+                    v-for="(item, index) in katalog"
+                    :key="index"
+                    class="py-4"
+                  >
+                    <vareity-card
+                      v-if="item"
+                      :item="item"
+                      :stock="stock"
+                    ></vareity-card>
+                  </div>
+              </v-col>
+            </v-row>
           </v-container>
         </v-main>
         <v-bottom-navigation color="teal" grow app class="d-flex d-sm-none">
@@ -114,4 +143,9 @@
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.3/xlsx.full.min.js"></script>
   <script src="main.js" type="module"></script>
+  <style>
+    .crete-round {
+      font-family: "Crete Round", sans-serif !important;
+    }
+  </style>
 </html>
