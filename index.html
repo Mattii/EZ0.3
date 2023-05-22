@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-      href="https://cdn.jsdelivr.net/npm/vuetify@3.2.5/dist/vuetify.min.css"
+      href="https://cdn.jsdelivr.net/npm/vuetify@3.3.0/dist/vuetify.min.css"
       rel="stylesheet"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -43,16 +43,17 @@
           <v-btn icon>
             <v-icon>mdi-magnify</v-icon>
           </v-btn>
-
+          <router-link to="/about">Go to About</router-link>
           <v-btn icon>
             <v-icon>mdi-dots-vertical</v-icon>
           </v-btn>
         </v-app-bar>
 
         <v-main>
+          <router-view></router-view>
           <v-container fluid>
-            <v-row>
-              <v-col cols="12">
+            <v-row justify="center">
+              <v-col xs="12" sm="11" md="10">
                 <v-sheet
                   rounded
                   color="#608634"
@@ -75,8 +76,8 @@
                 </v-sheet>
               </v-col>
             </v-row>
-            <v-row>
-              <v-col>
+            <v-row justify="center">
+              <v-col xs="12" md="10">
                 <v-file-input
                   hide-input
                   variant="underlined"
@@ -90,8 +91,8 @@
                 ></v-file-input>
               </v-col>
             </v-row>
-            <v-row>
-              <v-col>
+            <v-row justify="center">
+              <v-col  xs="12" md="10" lg="9" class="d-flex flex-wrap justify-space-evenly">
                   <div
                     v-for="(item, index) in katalog"
                     :key="index"
@@ -137,7 +138,9 @@
     {
       "imports": {
         "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js",
-        "vuetify": "https://cdn.jsdelivr.net/npm/vuetify@3.2.5/dist/vuetify.esm.js"
+        "vuetify": "https://cdn.jsdelivr.net/npm/vuetify@3.3.0/dist/vuetify.esm.js",
+        "vue-router": "https://unpkg.com/vue-router@4.2.1/dist/vue-router.esm-browser.js",
+        "@vue/devtools-api": "https://unpkg.com/@vue/devtools-api@6.4.5/lib/esm/index.js"
       }
     }
   </script>

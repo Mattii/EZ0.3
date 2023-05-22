@@ -1,8 +1,18 @@
 import { createApp, ref, reactive, onMounted } from "vue";
 import { createVuetify } from "vuetify";
+import { createRouter, createWebHistory } from 'vue-router';
 import vareityCard from "./components/vareity-card.js";
 
 const vuetify = createVuetify();
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes: [
+    // Twoje trasy
+    { path: '/about', component: { template: '<div>About</div>' } }
+  ]
+});
+
 
 const app = createApp({
   setup() {
@@ -69,5 +79,6 @@ const app = createApp({
 });
 
 app.component("vareity-card", vareityCard);
+app.use(router);
 app.use(vuetify);
 app.mount("#app");
