@@ -7,7 +7,7 @@ const vuetify = createVuetify();
 
 const app = createApp({
   setup() {
-    const compayName = ref("Enza Zaden");
+    const compayName = ref("ENZApp");
 
     return {
       compayName,

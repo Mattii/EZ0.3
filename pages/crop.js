@@ -1,28 +1,26 @@
 import { ref, reactive, onMounted } from "vue";
+import { useRoute } from "vue-router";
 
-const home = {
+const crop = {
   template: `          
   <v-container fluid>
     <v-row justify="center">
       <v-col xs="12" sm="11" md="10">
         <v-sheet
           rounded
-          color="#608634"
+          color="#3682bc"
           width="100%"
           class="pt-3"
           gradient=""
         >
           <v-img
             width="100%"
-            src="https://res.cloudinary.com/ddkef5waq/image/upload/v1684482332/enzapp/hero_kmw5p3.jpg"
+            src="https://res.cloudinary.com/ddkef5waq/image/upload/v1684477105/enzapp/salata_gwjbqh.jpg"
           >
           </v-img>
           <v-col class="px-6 crete-round">
-            <h2 class="text-h5 mb-3 crete-round">Twój Katalog</h2>
+            <h2 class="text-h5 mb-3 crete-round">Twoje słaty{{ route.params.id }}</h2>
             <p class="mb-5">najlepsze nasiona na wyciągnięcie ręki</p>
-            <v-btn class="mb-3" block color="#FEFB08" dark
-              >Eksploruj</v-btn
-            >
           </v-col>
         </v-sheet>
       </v-col>
@@ -45,7 +43,7 @@ const home = {
     <v-row justify="center">
       <v-col  xs="12" md="10" lg="9" class="d-flex flex-wrap justify-space-evenly">
           <div
-            v-for="(item, index) in katalog"
+            v-for="(item, index) in crop"
             :key="index"
             class="py-4"
           >
@@ -59,7 +57,8 @@ const home = {
     </v-row>
   </v-container>`,
   setup() {
-    const katalog = ref({});
+    const route = useRoute();
+    const crop = ref({});
     const stock = ref([]);
 
     function readJsonFile(rawFile) {
@@ -96,27 +95,17 @@ const home = {
     onMounted(async () => {
       try {
         const newKatalog = await fetch(
-          "https://nuxtestapp-default-rtdb.europe-west1.firebasedatabase.app/katalog/.json"
+          `https://nuxtestapp-default-rtdb.europe-west1.firebasedatabase.app/katalog.json?orderBy="crop"&startAt="${route.params.id}"&endAt="${route.params.id}\uf8ff"`
         ).then((res) => res.json());
-        katalog.value = newKatalog;
+        crop.value = newKatalog;
       } catch (error) {
         console.log(error);
       }
-
-      // fetch(
-      //  'https://nuxtestapp-default-rtdb.europe-west1.firebasedatabase.app/katalog.json?orderBy="crop"&startAt="LT"&endAt="LT\uf8ff"'
-      //).then((res) => res.json()).then(data => console.log(data));
-
-
-      // ('https://nuxtestapp-default-rtdb.europe-west1.firebasedatabase.app/cennik.json?orderBy="name"&startAt="fairly"&endAt="fairly\uf8ff"');
-      // const cennik = await fetch(
-      //   "https://nuxtestapp-default-rtdb.europe-west1.firebasedatabase.app/cennik.json"
-      // ).then((res) => res.json());
-      // this.cennik = cennik;
     });
 
     return {
-      katalog,
+      route,
+      crop,
       stock,
       readJsonFile,
       clearFiled,
@@ -125,4 +114,4 @@ const home = {
   },
 };
 
-export default home;
+export default crop;
