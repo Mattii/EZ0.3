@@ -9,21 +9,26 @@ const home = {
           rounded
           color="#608634"
           width="100%"
-          class="pt-3"
-          gradient=""
+          class="pt-3 d-flex flex-wrap"
         >
+        <v-row no-gutters justify="space-around">
+          <v-col cols="12" sm="7">
           <v-img
             width="100%"
             src="https://res.cloudinary.com/ddkef5waq/image/upload/v1684482332/enzapp/hero_kmw5p3.jpg"
           >
           </v-img>
-          <v-col class="px-6 crete-round">
+          </v-col>
+          <v-col cols="12" sm="5" md="4" order-sm="first" align-self="center">
+          <div class="px-6 py-3 crete-round">
             <h2 class="text-h5 mb-3 crete-round">Twój Katalog</h2>
             <p class="mb-5">najlepsze nasiona na wyciągnięcie ręki</p>
             <v-btn class="mb-3" block color="#FEFB08" dark
               >Eksploruj</v-btn
             >
+          </div>
           </v-col>
+        </v-row>
         </v-sheet>
       </v-col>
     </v-row>
@@ -106,7 +111,6 @@ const home = {
       // fetch(
       //  'https://nuxtestapp-default-rtdb.europe-west1.firebasedatabase.app/katalog.json?orderBy="crop"&startAt="LT"&endAt="LT\uf8ff"'
       //).then((res) => res.json()).then(data => console.log(data));
-
 
       // ('https://nuxtestapp-default-rtdb.europe-west1.firebasedatabase.app/cennik.json?orderBy="name"&startAt="fairly"&endAt="fairly\uf8ff"');
       // const cennik = await fetch(
