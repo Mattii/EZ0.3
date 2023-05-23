@@ -10,7 +10,7 @@ const crop = {
           rounded
           color="#3682bc"
           width="100%"
-          class="pt-3"
+          class="pt-3 v-theme--dark"
           gradient=""
         >
           <v-img
@@ -19,8 +19,8 @@ const crop = {
           >
           </v-img>
           <v-col class="px-6 crete-round">
-            <h2 class="text-h5 mb-3 crete-round">Twoje słaty{{ route.params.id }}</h2>
-            <p class="mb-5">najlepsze nasiona na wyciągnięcie ręki</p>
+            <h2 class="text-h5 mb-3 crete-round">Słaty</h2>
+            <p class="mb-5 text-body-2">najlepszy wybór do hydroponiki i gruntu </p>
           </v-col>
         </v-sheet>
       </v-col>
@@ -97,6 +97,7 @@ const crop = {
         const newKatalog = await fetch(
           `https://nuxtestapp-default-rtdb.europe-west1.firebasedatabase.app/katalog.json?orderBy="crop"&startAt="${route.params.id}"&endAt="${route.params.id}\uf8ff"`
         ).then((res) => res.json());
+        console.log(newKatalog)
         crop.value = newKatalog;
       } catch (error) {
         console.log(error);

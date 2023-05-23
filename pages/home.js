@@ -9,7 +9,7 @@ const home = {
           rounded
           color="#608634"
           width="100%"
-          class="pt-3 d-flex flex-wrap"
+          class="pt-3 v-theme--dark"
         >
         <v-row no-gutters justify="space-around">
           <v-col cols="12" sm="7">
@@ -22,8 +22,8 @@ const home = {
           <v-col cols="12" sm="5" md="4" order-sm="first" align-self="center">
           <div class="px-6 py-3 crete-round">
             <h2 class="text-h5 mb-3 crete-round">Twój Katalog</h2>
-            <p class="mb-5">najlepsze nasiona na wyciągnięcie ręki</p>
-            <v-btn class="mb-3" block color="#FEFB08" dark
+            <p class="mb-5 text-body-2">najlepsze nasiona na wyciągnięcie ręki</p>
+            <v-btn class="mb-3 text-caption crete-round" block color="#FEFB08" dark
               >Eksploruj</v-btn
             >
           </div>
