@@ -6,23 +6,13 @@ const crop = {
   <v-container fluid>
     <v-row justify="center">
       <v-col xs="12" sm="11" md="10">
-        <v-sheet
-          rounded
+        <hero-element
+          src="https://res.cloudinary.com/ddkef5waq/image/upload/v1684477105/enzapp/salata_gwjbqh.jpg"
           color="#3682bc"
-          width="100%"
-          class="pt-3 v-theme--dark"
-          gradient=""
+          title="Słaty"
+          subtitle="najlepszy wybór do hydroponiki i gruntu"
         >
-          <v-img
-            width="100%"
-            src="https://res.cloudinary.com/ddkef5waq/image/upload/v1684477105/enzapp/salata_gwjbqh.jpg"
-          >
-          </v-img>
-          <v-col class="px-6 crete-round">
-            <h2 class="text-h5 mb-3 crete-round">Słaty</h2>
-            <p class="mb-5 text-body-2">najlepszy wybór do hydroponiki i gruntu </p>
-          </v-col>
-        </v-sheet>
+        </hero-element>
       </v-col>
     </v-row>
     <v-row justify="center">
@@ -97,7 +87,6 @@ const crop = {
         const newKatalog = await fetch(
           `https://nuxtestapp-default-rtdb.europe-west1.firebasedatabase.app/katalog.json?orderBy="crop"&startAt="${route.params.id}"&endAt="${route.params.id}\uf8ff"`
         ).then((res) => res.json());
-        console.log(newKatalog)
         crop.value = newKatalog;
       } catch (error) {
         console.log(error);
