@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-      href="https://cdn.jsdelivr.net/npm/vuetify@3.3.0/dist/vuetify.min.css"
+      href="https://cdn.jsdelivr.net/npm/vuetify@3.3.2/dist/vuetify.min.css"
       rel="stylesheet"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -30,7 +30,7 @@
       {
         "imports": {
           "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js",
-          "vuetify": "https://cdn.jsdelivr.net/npm/vuetify@3.3.0/dist/vuetify.esm.js",
+          "vuetify": "https://cdn.jsdelivr.net/npm/vuetify@3.3.2/dist/vuetify.esm.js",
           "vue-router": "https://unpkg.com/vue-router@4.2.1/dist/vue-router.esm-browser.js",
           "@vue/devtools-api": "https://unpkg.com/@vue/devtools-api@6.4.5/lib/esm/index.js"
         }
@@ -47,7 +47,7 @@
           scroll-threshold="30"
           app
         >
-          <v-toolbar-title class="crete-round"
+          <v-toolbar-title class="ff-crete-round"
             >{{ compayName }}</v-toolbar-title
           >
 
@@ -82,7 +82,7 @@
 
           <div class="px-4 py-2 text-center w-100">
             {{ new Date().getFullYear() }} —
-            <span class="crete-round">{{ compayName }}</span>
+            <span class="ff-crete-round">{{ compayName }}</span>
           </div>
         </v-footer>
         <v-bottom-navigation color="teal" grow app class="d-flex d-sm-none">
@@ -114,7 +114,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.3/xlsx.full.min.js"></script>
   <script src="/main.js" type="module"></script>
   <style>
-    .crete-round {
+    .ff-crete-round {
       font-family: "Crete Round", sans-serif !important;
     }
   </style>

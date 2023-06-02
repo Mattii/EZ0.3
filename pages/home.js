@@ -8,7 +8,7 @@ const home = {
         <hero-element
         
         >
-          <v-btn class="mb-3 text-caption crete-round" block color="#FEFB08" dark
+          <v-btn class="mb-3 text-caption ff-crete-round" block color="#FEFB08" dark
           >Eksploruj</v-btn>
         </hero-element>
       </v-col>
@@ -32,7 +32,7 @@ const home = {
               height="200px"
               cover
             >
-                <v-card-title class="crete-round">{{crop.title}}</v-card-title>
+                <v-card-title class="ff-crete-round">{{crop.title}}</v-card-title>
             </v-img>
             </v-card>
           </router-link>
@@ -57,10 +57,24 @@ const home = {
         subtitle: "najlepszy wybór do hydroponiki i gruntu",
       },
       {
+        crop: "CC",
+        src: null,
+        color: "#1E700D",
+        title: "Ogórki",
+        subtitle: "najlepszy wybór do hydroponiki i gruntu",
+      },
+      {
         crop: "SP",
         src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1684477638/enzapp/3.Pepper_yellow_preview_lbjt3r.jpg",
         color: "#CC0000",
         title: "Papryki",
+        subtitle: "najlepszy wybór do hydroponiki i gruntu",
+      },
+      {
+        crop: "RA",
+        src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1684477638/enzapp/1.Radish_red_preview_cnfpuz.jpg",
+        color: "#DF076E",
+        title: "Rzodkiewki",
         subtitle: "najlepszy wybór do hydroponiki i gruntu",
       },
     ]);
