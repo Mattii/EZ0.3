@@ -47,7 +47,9 @@
           scroll-threshold="30"
           app
         >
-          <v-toolbar-title>{{ compayName }}</v-toolbar-title>
+          <v-toolbar-title class="crete-round"
+            >{{ compayName }}</v-toolbar-title
+          >
 
           <v-spacer></v-spacer>
           <v-btn icon>
@@ -58,10 +60,31 @@
           </v-btn>
         </v-app-bar>
 
-        <v-main>
+        <v-main app>
           <router-view></router-view>
         </v-main>
+        <v-footer color="green" class="d-flex flex-column">
+          <div class="d-flex flex-wrap w-100 align-center px-4">
+            <p class="me-auto">
+              Połącz się z nami w sieciach społecznościowych!
+            </p>
+            <div>
+              <v-btn
+                v-for="icon in icons"
+                :key="icon"
+                class="mx-3"
+                :icon="icon"
+                variant="plain"
+                size="small"
+              ></v-btn>
+            </div>
+          </div>
 
+          <div class="px-4 py-2 text-center w-100">
+            {{ new Date().getFullYear() }} —
+            <span class="crete-round">{{ compayName }}</span>
+          </div>
+        </v-footer>
         <v-bottom-navigation color="teal" grow app class="d-flex d-sm-none">
           <v-btn>
             <span>Recents</span>

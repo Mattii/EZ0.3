@@ -9,15 +9,23 @@ const vuetify = createVuetify();
 const app = createApp({
   setup() {
     const compayName = ref("ENZApp");
+    const icons = ref([
+      'mdi-facebook',
+      'mdi-twitter',
+      'mdi-linkedin',
+      'mdi-instagram',
+    ])
+
 
     return {
       compayName,
+      icons
     };
   }
 });
 
-app.component("vareity-card", vareityCard);
-app.component("hero-element", heroElement);
 app.use(router);
 app.use(vuetify);
+app.component("vareity-card", vareityCard);
+app.component("hero-element", heroElement);
 app.mount("#app");
