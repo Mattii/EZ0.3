@@ -1,7 +1,7 @@
 import { ref, computed, onMounted } from "vue";
 const vareityCard = {
   template: `   
-                      <v-card :color="item.color" class="mx-auto"  min-width="280" theme="dark">
+                      <v-card :color="item.color" class="mx-auto"  min-width="260" theme="dark">
                         <v-img
                           :src="{ src: item.imgs[0], lazySrc: '../assets/salata.jpg', aspect: '16/9' }"
                           height="180px"
@@ -13,7 +13,7 @@ const vareityCard = {
                             {{ item.name }}
                           </v-card-title>
                           <v-card-subtitle class="pb-2">
-                            {{ item.type }}
+                            {{ item.segment }}
                           </v-card-subtitle>
                         </v-img>
       
