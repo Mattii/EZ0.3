@@ -8,7 +8,7 @@ const home = {
         <hero-element
         
         >
-          <v-btn class="mb-3 text-caption ff-crete-round" block color="#FEFB08" dark
+          <v-btn class="mb-3 text-caption ff-crete-round" block color="#FEFB08"
           >Eksploruj</v-btn>
         </hero-element>
       </v-col>
@@ -19,11 +19,11 @@ const home = {
             v-for="(crop, index) in crops"
             key="index"
             class="my-3 "
-            :to="{name: 'crop', params: {id: crop.crop}}">
+            :to="{name: 'crop', params: {crop: crop.crop}}">
             <v-card
               :color="crop.color"
               class="v-theme--dark"
-              min-width="280"
+              min-width="260"
             >
             <v-img
               :src="crop.src"

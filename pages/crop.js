@@ -85,7 +85,7 @@ const crop = {
     onMounted(async () => {
       try {
         const newKatalog = await fetch(
-          `https://nuxtestapp-default-rtdb.europe-west1.firebasedatabase.app/katalog.json?orderBy="crop"&startAt="${route.params.id}"&endAt="${route.params.id}\uf8ff"`
+          `https://nuxtestapp-default-rtdb.europe-west1.firebasedatabase.app/katalog.json?orderBy="crop"&startAt="${route.params.crop}"&endAt="${route.params.crop}\uf8ff"`
         ).then((res) => res.json());
         crop.value = newKatalog;
       } catch (error) {

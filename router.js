@@ -8,7 +8,7 @@ const router = createRouter({
   routes: [
     // Twoje trasy
     { path: "/", component: Home, name: "home"},
-    { path: "/crop/:id", component: Crop, name:"crop" },
+    { path: "/katalog/:crop", component: Crop, name:"crop" },
   ],
 });
 
