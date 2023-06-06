@@ -775,7 +775,7 @@
     "dzoura":{
         "active": true,
         "new": true,
-        "name": "dzoura",
+        "name": "Dzoura",
          "imgs":["rzodkiewki/dzoura.jpg"],
         "guardian": "Jacek Malinowski",
         "hybrid": true,
@@ -803,7 +803,7 @@
     "sarita":{
         "active": true,
         "new": true,
-        "name": "sarita",
+        "name": "Sarita",
          "imgs":["rzodkiewki/sarita.jpg"],
         "guardian": "Jacek Malinowski",
         "hybrid": true,

@@ -80,15 +80,15 @@ const home = {
     ]);
 
     onMounted(async () => {
-      try {
-        const newKatalog = await fetch(
-          "https://nuxtestapp-default-rtdb.europe-west1.firebasedatabase.app/katalog/.json"
-        ).then((res) => res.json());
-        //console.log(Object.values(newKatalog).filter(e => e.imgs[0] == "https://res.cloudinary.com/ddkef5waq/image/upload/v1684477105/enzapp/salata_gwjbqh.jpg").map(e => e.name));
-        katalog.value = newKatalog;
-      } catch (error) {
-        console.log(error);
-      }
+      // try {
+      //   const newKatalog = await fetch(
+      //     "https://nuxtestapp-default-rtdb.europe-west1.firebasedatabase.app/katalog/.json"
+      //   ).then((res) => res.json());
+      //   //console.log(Object.values(newKatalog).filter(e => e.imgs[0] == "https://res.cloudinary.com/ddkef5waq/image/upload/v1684477105/enzapp/salata_gwjbqh.jpg").map(e => e.name));
+      //   katalog.value = newKatalog;
+      // } catch (error) {
+      //   console.log(error);
+      // }
 
       // fetch(
       //  'https://nuxtestapp-default-rtdb.europe-west1.firebasedatabase.app/katalog.json?orderBy="crop"&startAt="LT"&endAt="LT\uf8ff"'

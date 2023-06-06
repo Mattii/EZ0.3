@@ -3,7 +3,6 @@
  // TODO: Add SDKs for Firebase products that you want to use
  // https://firebase.google.com/docs/web/setup#available-libraries
  // Your web app's Firebase configuration
- console.log(process.env.RENDER_ENV);
  const firebaseConfig = {
    apiKey: "AIzaSyBm1j6wFnkSl9zMr8L3V7n3dFTDv-vvF-A",
    authDomain: "nuxtestapp.firebaseapp.com",

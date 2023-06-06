@@ -1,4 +1,8 @@
 import { ref, computed, onMounted } from "vue";
+import { getDatabase, query, orderByValue, orderByKey, orderByChild, onValue, startAt, endAt } from  "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
+import {ref as fref } from  "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
+import app from "../modules/firebase.js"
+
 const vareityCard = {
   template: `   
                       <v-card :color="item.color" class="mx-auto"  min-width="260" theme="dark">
@@ -36,7 +40,7 @@ const vareityCard = {
                             <v-list :bg-color="item.color" lines="one">
                             <v-list-subheader>Ceny</v-list-subheader>
                               <v-list-item
-                                v-if="Object.keys(prices).length"
+                                v-if="prices"
                                 v-for="(price, index) in prices"
                                 :key="item.title"
                                 :title="getPrice(price)"
@@ -87,14 +91,23 @@ const vareityCard = {
     };
 
     onMounted(async () => {
-      try {
-        const freshPrices = await fetch(
-          `https://nuxtestapp-default-rtdb.europe-west1.firebasedatabase.app/cennik.json?orderBy="name"&startAt="${props.item.name.toLowerCase()}"&endAt="${props.item.name.toLowerCase()}\uf8ff"`
-        ).then((res) => res.json());
-        prices.value = freshPrices;
-      } catch (error) {
-        console.log("error");
-      }
+      const db = getDatabase(app);
+
+      const cropPrices = query(fref(db, 'cennik'), orderByChild('name'), startAt(props.item.name.toLowerCase()), endAt(props.item.name.toLowerCase() + "\uf8ff"));
+      onValue(cropPrices, (snapshot) => {
+
+        prices.value = snapshot.val();
+         console.log(prices.value);
+       });
+
+      // try {
+      //   const freshPrices = await fetch(
+      //     `https://nuxtestapp-default-rtdb.europe-west1.firebasedatabase.app/cennik.json?orderBy="name"&startAt="${props.item.name.toLowerCase()}"&endAt="${props.item.name.toLowerCase()}\uf8ff"`
+      //   ).then((res) => res.json());
+      //   prices.value = freshPrices;
+      // } catch (error) {
+      //   console.log("error");
+      // }
     });
 
     return {
