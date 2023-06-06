@@ -1,5 +1,8 @@
 import { ref, reactive, onMounted } from "vue";
 import { useRoute } from "vue-router";
+import { getDatabase, query, orderByValue, orderByKey, orderByChild, onValue, startAt, endAt } from  "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
+import {ref as fref } from  "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
+import app from "../modules/firebase.js"
 
 const crop = {
   template: `          
@@ -79,14 +82,14 @@ const crop = {
     }
 
     onMounted(async () => {
-      try {
-        const newKatalog = await fetch(
-          `https://nuxtestapp-default-rtdb.europe-west1.firebasedatabase.app/katalog.json`
-        ).then((res) => res.json());
-        crop.value = newKatalog;
-      } catch (error) {
-        console.log(error);
-      }
+      const db = getDatabase(app);
+
+      const katalog = fref(db, 'katalog');
+      const mostViewedPosts = query(fref(db, 'katalog'), orderByChild('crop'), startAt("TO"), endAt("TO"));
+      onValue(katalog, (snapshot) => {
+         crop.value = snapshot.val();
+         console.log(snapshot.val());
+       });
     });
 
     return {
