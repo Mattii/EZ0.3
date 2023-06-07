@@ -77,7 +77,7 @@ const vareityCard = {
     },
   },
   setup(props) {
-    const prices = ref([]);
+    const prices = ref({});
     const show = ref(false);
 
     const availableStock = computed(() => {
@@ -91,13 +91,14 @@ const vareityCard = {
     };
 
     onMounted(async () => {
+      //podczas pobierania przez SDK żle pobiera pozycje 0 i 1 jeżeli zbiór dnych jest tablicą
       const db = getDatabase(app);
 
       const cropPrices = query(fref(db, 'cennik'), orderByChild('name'), startAt(props.item.name.toLowerCase()), endAt(props.item.name.toLowerCase() + "\uf8ff"));
       onValue(cropPrices, (snapshot) => {
 
         prices.value = snapshot.val();
-         console.log(prices.value);
+         console.log(snapshot.val());
        });
 
       // try {

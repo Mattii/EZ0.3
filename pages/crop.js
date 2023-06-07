@@ -1,8 +1,17 @@
 import { ref, reactive, onMounted } from "vue";
 import { useRoute } from "vue-router";
-import { getDatabase, query, orderByValue, orderByKey, orderByChild, onValue, startAt, endAt } from  "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
-import {ref as fref } from  "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
-import app from "../modules/firebase.js"
+import {
+  getDatabase,
+  query,
+  orderByValue,
+  orderByKey,
+  orderByChild,
+  onValue,
+  startAt,
+  endAt,
+} from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
+import { ref as fref } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
+import app from "../modules/firebase.js";
 
 const crop = {
   template: `          
@@ -37,10 +46,10 @@ const crop = {
       <v-col  xs="12" md="10" lg="9" class="d-flex flex-wrap justify-space-evenly">
           <div
             v-for="(item, index) in crop"
-            :key="index"
             class="py-4"
           >
             <vareity-card
+              :key="index"
               v-if="item"
               :item="item"
               :stock="stock"
@@ -88,11 +97,16 @@ const crop = {
     onMounted(async () => {
       const db = getDatabase(app);
 
-      const crops = query(fref(db, 'katalog'), orderByChild('crop'), startAt(route.params.crop), endAt(route.params.crop + "\uf8ff"));
+      const crops = query(
+        fref(db, "katalog"),
+        orderByChild("crop"),
+        startAt(route.params.crop),
+        endAt(route.params.crop + "\uf8ff")
+      );
       onValue(crops, (snapshot) => {
-         crop.value = snapshot.val();
-         console.log(snapshot.val());
-       });
+        crop.value = snapshot.val();
+        console.log(snapshot.val());
+      });
       // try {
       //   const newKatalog = await fetch(
       //     `https://nuxtestapp-default-rtdb.europe-west1.firebasedatabase.app/katalog.json?orderBy="crop"&startAt="${route.params.crop}"&endAt="${route.params.crop}\uf8ff"`
