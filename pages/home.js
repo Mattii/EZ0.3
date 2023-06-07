@@ -19,7 +19,7 @@ const home = {
             v-for="(crop, index) in crops"
             key="index"
             class="my-3 "
-            :to="{name: 'crop', params: {crop: crop.crop}}">
+            :to="{name: 'crop', params: {crop: crop.crop}, query: crop}">
             <v-card
               :color="crop.color"
               class="v-theme--dark"
@@ -66,14 +66,14 @@ const home = {
       {
         crop: "SP",
         src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1684477638/enzapp/3.Pepper_yellow_preview_lbjt3r.jpg",
-        color: "#CC0000",
+        color: "#c18200",
         title: "Papryki",
         subtitle: "najlepszy wybór do hydroponiki i gruntu",
       },
       {
         crop: "RA",
         src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1684477638/enzapp/1.Radish_red_preview_cnfpuz.jpg",
-        color: "#DF076E",
+        color: "#900A2F",
         title: "Rzodkiewki",
         subtitle: "najlepszy wybór do hydroponiki i gruntu",
       },

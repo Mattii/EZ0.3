@@ -19,10 +19,10 @@ const crop = {
     <v-row justify="center">
       <v-col xs="12" sm="11" md="10">
         <hero-element
-          src="https://res.cloudinary.com/ddkef5waq/image/upload/v1684477105/enzapp/salata_gwjbqh.jpg"
-          color="#3682bc"
-          title="Słaty"
-          subtitle="najlepszy wybór do hydroponiki i gruntu"
+          :src="route.query.src"
+          :color="route.query.color"
+          :title="route.query.title"
+          :subtitle="route.query.subtitle"
         >
         </hero-element>
       </v-col>
@@ -45,7 +45,7 @@ const crop = {
     <v-row justify="center">
       <v-col  xs="12" md="10" lg="9" class="d-flex flex-wrap justify-space-evenly">
           <div
-            v-for="(item, index) in crop"
+            v-for="(item, index) in crops"
             class="py-4"
           >
             <vareity-card
@@ -60,9 +60,9 @@ const crop = {
   </v-container>`,
   setup() {
     const route = useRoute();
-    const crop = ref({});
+    const crops = ref({});
     const stock = ref([]);
-
+    console.log(route.query);
     function readJsonFile(rawFile) {
       let fileReader = new FileReader();
 
@@ -97,14 +97,14 @@ const crop = {
     onMounted(async () => {
       const db = getDatabase(app);
 
-      const crops = query(
+      const dbCrops = query(
         fref(db, "katalog"),
         orderByChild("crop"),
         startAt(route.params.crop),
         endAt(route.params.crop + "\uf8ff")
       );
-      onValue(crops, (snapshot) => {
-        crop.value = snapshot.val();
+      onValue(dbCrops, (snapshot) => {
+        crops.value = snapshot.val();
         console.log(snapshot.val());
       });
       // try {
@@ -119,7 +119,7 @@ const crop = {
 
     return {
       route,
-      crop,
+      crops,
       stock,
       readJsonFile,
       clearFiled,

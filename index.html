@@ -65,7 +65,11 @@
         </v-app-bar>
 
         <v-main app>
-          <router-view></router-view>
+          <router-view v-slot="{ Component }">
+            <transition name="fade">
+              <component :is="Component" />
+            </transition>
+          </router-view>
         </v-main>
         <v-footer color="green" class="d-flex flex-column">
           <div class="d-flex flex-wrap w-100 align-center px-4">
