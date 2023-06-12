@@ -23,6 +23,7 @@ const crop = {
           :color="route.query.color"
           :title="route.query.title"
           :subtitle="route.query.subtitle"
+          :lazySrc="route.query.lazySrc"
         >
         </hero-element>
       </v-col>
@@ -43,7 +44,7 @@ const crop = {
       </v-col>
     </v-row>
     <v-row justify="center">
-      <v-col  xs="12" md="10" lg="9" class="d-flex flex-wrap justify-space-evenly">
+      <v-col  xs="12" md="10" lg="8" class="d-flex flex-wrap justify-space-evenly">
           <div
             v-for="(item, index) in crops"
             class="py-4"

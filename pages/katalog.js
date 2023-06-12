@@ -30,7 +30,7 @@ const crop = {
       </v-col>
     </v-row>
     <v-row justify="center">
-      <v-col  xs="12" md="10" lg="9" class="d-flex flex-wrap justify-space-evenly">
+      <v-col  xs="12" md="10" lg="8" class="d-flex flex-wrap justify-space-evenly">
           <div
             v-for="(item, index) in crop"
             :key="index"

@@ -45,13 +45,15 @@ const home = {
       {
         crop: "LT",
         src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1684477105/enzapp/salata_gwjbqh.jpg",
+        lazySrc:"../assets/salata.jpg",
         color: "#3682bc",
         title: "Słaty",
         subtitle: "najlepszy wybór do hydroponiki i gruntu",
       },
       {
         crop: "TO",
-        src: null,
+        src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1686559569/enzapp/pomidory_lk7zmk.png",
+        lazySrc:"../assets/pomidory.jpg",
         color: "#E80A0A",
         title: "Pomidory",
         subtitle: "najlepszy wybór do hydroponiki i gruntu",
@@ -59,6 +61,7 @@ const home = {
       {
         crop: "CC",
         src: null,
+        lazySrc:"../assets/ogorki.jpg",
         color: "#1E700D",
         title: "Ogórki",
         subtitle: "najlepszy wybór do hydroponiki i gruntu",
@@ -66,6 +69,7 @@ const home = {
       {
         crop: "SP",
         src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1684477638/enzapp/3.Pepper_yellow_preview_lbjt3r.jpg",
+        lazySrc:"../assets/paryki.jpg",
         color: "#c18200",
         title: "Papryki",
         subtitle: "najlepszy wybór do hydroponiki i gruntu",
@@ -73,6 +77,7 @@ const home = {
       {
         crop: "RA",
         src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1684477638/enzapp/1.Radish_red_preview_cnfpuz.jpg",
+        lazySrc:"../assets/rzodkiewki.jpg",
         color: "#900A2F",
         title: "Rzodkiewki",
         subtitle: "najlepszy wybór do hydroponiki i gruntu",
