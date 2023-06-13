@@ -56,8 +56,8 @@
             <v-responsive shrink>
               <v-img>
                 <svg width="42" height="42" viewBox="0 0 125 126" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M42.5 92L64.3052 69.8314C68.9653 65.0936 69.3654 57.4053 63.831 53.7264C57.6209 49.5984 50.1132 47 42.5 47C21.7893 47 5 63.7893 5 84.5C5 105.211 21.7893 122 42.5 122C52.6071 122 62.2563 118.501 69 112L115.03 65.9704C116.323 64.6767 117.285 63.0632 117.818 61.3129V61.3129C119.361 56.2414 117.1 50.7192 112.404 48.2594V48.2594C110.825 47.4321 109.069 47 107.286 47H79.5" stroke="black" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M34.895 84.5L56.7735 62C52.7336 59.4674 47.4649 58 42.3536 58C27.7989 58 16 69.8645 16 84.5C16 99.1355 27.7989 111 42.3536 111C48.4054 111 55.0511 108.949 59.5 105.5L107.5 58H80.1436" stroke="black" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path class="path" d="M42.5 92L64.3052 69.8314C68.9653 65.0936 69.3654 57.4053 63.831 53.7264C57.6209 49.5984 50.1132 47 42.5 47C21.7893 47 5 63.7893 5 84.5C5 105.211 21.7893 122 42.5 122C52.6071 122 62.2563 118.501 69 112L115.03 65.9704C116.323 64.6767 117.285 63.0632 117.818 61.3129V61.3129C119.361 56.2414 117.1 50.7192 112.404 48.2594V48.2594C110.825 47.4321 109.069 47 107.286 47H79.5" stroke="black" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path class="path" d="M34.895 84.5L56.7735 62C52.7336 59.4674 47.4649 58 42.3536 58C27.7989 58 16 69.8645 16 84.5C16 99.1355 27.7989 111 42.3536 111C48.4054 111 55.0511 108.949 59.5 105.5L107.5 58H80.1436" stroke="black" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
                   <circle cx="90.5" cy="110.5" r="4.5" fill="black"/>
                   <circle cx="79.5" cy="121.5" r="4.5" fill="black"/>
                   <circle cx="90.5" cy="121.5" r="4.5" fill="black"/>
@@ -189,5 +189,19 @@
     .ff-crete-round {
       font-family: "Crete Round", sans-serif !important;
     }
+    .path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 10s linear alternate infinite;
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: -1000;
+  }
+}
   </style>
 </html>
