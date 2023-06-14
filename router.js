@@ -10,7 +10,7 @@ const router = createRouter({
     // Twoje trasy
     { path: "/", component: Home, name: "home"},
     { path: "/katalog", component: Katalog, name:"katalog" },
-    { path: "/katalog/:crop", component: Crop, name:"crop" },
+    { path: "/katalog/:crop", component: Crop, name:"crop", props: true },
   ],
 });
 

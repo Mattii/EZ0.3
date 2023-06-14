@@ -59,11 +59,17 @@ const crop = {
       </v-col>
     </v-row>
   </v-container>`,
-  setup() {
+  props: {
+    crop: {
+      type: String,
+      required: true,
+    },
+  },
+  setup(props) {
     const route = useRoute();
     const crops = ref({});
     const stock = ref([]);
-    console.log(route.query);
+    console.log("route props:", props.crop);
     function readJsonFile(rawFile) {
       let fileReader = new FileReader();
 
