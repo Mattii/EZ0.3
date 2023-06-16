@@ -4,6 +4,7 @@ import vareityCard from "./components/vareity-card.js";
 import heroElement from "./components/hero-element.js";
 import router from "./router.js";
 
+
 const vuetify = createVuetify();
 
 const app = createApp({

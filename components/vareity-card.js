@@ -13,12 +13,14 @@ const vareityCard = {
                           gradient="20deg, rgba(25,32,72,.7), rgba(25,32,72,.3), rgba(255,255,255,0), rgba(255,255,255,0)"
                           cover
                         >
+                        <v-card-item>
                           <v-card-title class="pb-0">
                             {{ item.name }}
                           </v-card-title>
                           <v-card-subtitle class="pb-2">
                             {{ item.segment }}
                           </v-card-subtitle>
+                          </v-card-item>
                         </v-img>
       
                         <v-card-actions>
@@ -106,7 +108,6 @@ const vareityCard = {
       onValue(cropPrices, (snapshot) => {
 
         prices.value = snapshot.val();
-         console.log(snapshot.val());
        });
 
       // try {
