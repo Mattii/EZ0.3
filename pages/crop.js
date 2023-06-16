@@ -54,6 +54,8 @@ const crop = {
               v-if="item"
               :item="item"
               :stock="stock"
+              :color="route.query.color"
+              :altImg="route.query.src"
             ></vareity-card>
           </div>
       </v-col>

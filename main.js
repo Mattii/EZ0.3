@@ -10,18 +10,26 @@ const app = createApp({
   setup() {
     const compayName = ref("ENZApp");
     const icons = ref([
-      'mdi-facebook',
-      'mdi-twitter',
-      'mdi-linkedin',
-      'mdi-instagram',
-    ])
-
+      "mdi-facebook",
+      "mdi-twitter",
+      "mdi-linkedin",
+      "mdi-instagram",
+    ]);
+    // fetch("/katalog-export.json")
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     for (let d in data) {
+    //       data[d].family = data[d].crop
+    //     }
+    //     return data;
+    //   })
+    //   .then((changed) => JSON.stringify(changed));
 
     return {
       compayName,
-      icons
+      icons,
     };
-  }
+  },
 });
 
 app.use(router);

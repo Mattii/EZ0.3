@@ -5,9 +5,9 @@ import app from "../modules/firebase.js"
 
 const vareityCard = {
   template: `   
-                      <v-card :color="item.color" class="mx-auto"  min-width="260" theme="dark">
+                      <v-card :color="color || item.color" class="mx-auto"  min-width="260" theme="dark">
                         <v-img
-                          :src="{ src: item.imgs[0], lazySrc: '../assets/salata.jpg', aspect: '16/9' }"
+                          :src="{ src: item.imgs[0], lazySrc: altImg || '../assets/salata.jpg', aspect: '4/3' }"
                           height="180px"
                           class="white--text align-end"
                           gradient="20deg, rgba(25,32,72,.7), rgba(25,32,72,.3), rgba(255,255,255,0), rgba(255,255,255,0)"
@@ -37,7 +37,7 @@ const vareityCard = {
                           <div v-show="show" class="pb-3">
                             <v-divider></v-divider>
 
-                            <v-list :bg-color="item.color" lines="one">
+                            <v-list :bg-color="color || item.color" lines="one">
                             <v-list-subheader>Ceny</v-list-subheader>
                               <v-list-item
                                 v-if="prices"
@@ -50,7 +50,7 @@ const vareityCard = {
                             </v-list>
                             
 
-                            <v-list :bg-color="item.color" v-if="stock.length" lines="one">
+                            <v-list :bg-color="color || item.color" v-if="stock.length" lines="one">
                             <v-list-subheader>Dostępność</v-list-subheader>
                               <v-list-item
                                 v-if="availableStock.length"
@@ -74,6 +74,14 @@ const vareityCard = {
       type: Array,
       required: false,
       default: [],
+    },
+    color: {
+      type: String,
+      required: false,
+    },
+    altImg: {
+      type: String,
+      required: false,
     },
   },
   setup(props) {
