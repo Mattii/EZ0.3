@@ -16,8 +16,8 @@ const heroElement = {
           </v-img>
           </v-col>
           <v-col cols="12" sm="5" md="4" order-sm="first" align-self="center">
-          <div class="px-6 py-3 ff-crete-round">
-            <h2 class="text-h5 text-md-h3 text-lg-h2 mb-3 ff-crete-round">{{title}}</h2>
+          <div class="px-6 py-3 ff-nunito">
+            <h2 class="text-h5 text-md-h3 text-lg-h2 mb-3 ff-nunito">{{title}}</h2>
             <p class="mb-5 text-body-2">{{subtitle}}</p>
             <slot></slot>
           </div>

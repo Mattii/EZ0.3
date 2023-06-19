@@ -8,7 +8,7 @@ const home = {
         <hero-element
         
         >
-          <v-btn class="mb-3 text-caption ff-crete-round" block color="#FEFB08"
+          <v-btn class="mb-3 text-caption ff-nunito" block color="#FEFB08"
           >Eksploruj</v-btn>
         </hero-element>
       </v-col>
@@ -33,7 +33,7 @@ const home = {
               cover
             >
             <v-card-item>
-                <v-card-title class="ff-crete-round">{{crop.title}}</v-card-title>
+                <v-card-title class="ff-nunito">{{crop.title}}</v-card-title>
                 </v-card-item>
             </v-img>
             </v-card>
