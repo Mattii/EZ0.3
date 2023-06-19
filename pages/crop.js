@@ -77,14 +77,16 @@ const crop = {
 
       fileReader.onload = (event) => {
         let data = event.target.result;
+
         if (window.Worker) {
           // …
           const myWorker = new Worker("/workers/xlsx.js");
           console.log("worker works");
           console.log("Message posted to worker");
+          myWorker.postMessage(data);
           myWorker.onmessage = (e) => {
             stock.value = e.data
-            console.log("Message received from worker" + e.data);
+            console.log("Message received from worker");
           };
 
         } else {
@@ -126,7 +128,6 @@ const crop = {
       );
       onValue(dbCrops, (snapshot) => {
         crops.value = snapshot.val();
-        console.log(snapshot.val());
       });
       // try {
       //   const newKatalog = await fetch(

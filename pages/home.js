@@ -62,8 +62,8 @@ const home = {
       },
       {
         crop: "CC",
-        src: null,
-        lazySrc: "../assets/ogorki.jpg",
+        src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1687157206/enzapp/ogorki_banwj2.png",
+        lazySrc: "../assets/ogorki.png",
         color: "#1E700D",
         title: "Ogórki",
         subtitle: "najlepszy wybór do hydroponiki i gruntu",

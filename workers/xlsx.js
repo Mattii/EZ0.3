@@ -1,6 +1,7 @@
 importScripts("https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.3/xlsx.full.min.js")
 let stock;
 onmessage = (e) => {
+    console.log("worker receive message");
     let data = e.data;
     let workbook = XLSX.read(data, { type: "binary", cellDates: true });
     workbook.SheetNames.forEach((sheet) => {
