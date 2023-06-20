@@ -5,7 +5,7 @@ const heroElement = {
           rounded
           :color="color"
           width="100%"
-          class="pt-3 v-theme--dark"
+          class="py-3 v-theme--dark"
         >
         <v-row no-gutters justify="space-around">
           <v-col cols="12" sm="7">
@@ -17,8 +17,8 @@ const heroElement = {
           </v-col>
           <v-col cols="12" sm="5" md="4" order-sm="first" align-self="center">
           <div class="px-6 py-3 ff-nunito">
-            <h2 class="text-h5 text-md-h3 text-lg-h2 mb-3 ff-nunito">{{title}}</h2>
-            <p class="mb-5 text-body-2">{{subtitle}}</p>
+            <h2 class="text-h5 text-md-h4 text-lg-h2 mb-3 ff-crete-round">{{title}}</h2>
+            <p class="mb-3 text-body-2 ff-nunito">{{subtitle}}</p>
             <slot></slot>
           </div>
           </v-col>

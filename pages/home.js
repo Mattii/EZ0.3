@@ -23,7 +23,6 @@ const home = {
             <v-card
               :color="crop.color"
               class="v-theme--dark"
-              min-width="260"
             >
             <v-img
               :src="crop.src"

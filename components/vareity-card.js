@@ -14,10 +14,10 @@ const vareityCard = {
                           cover
                         >
                         <v-card-item>
-                          <v-card-title class="pb-0">
+                          <v-card-title class="pb-0 ff-nunito">
                             {{ item.name }}
                           </v-card-title>
-                          <v-card-subtitle class="pb-2">
+                          <v-card-subtitle class="pb-2 ff-nunito">
                             {{ item.segment }}
                           </v-card-subtitle>
                           </v-card-item>
