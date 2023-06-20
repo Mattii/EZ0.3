@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "./pages/home.js";
-import Crop from "./pages/crop.js";
+import Family from "./pages/family.js";
 import Katalog from "./pages/katalog.js";
 
 
@@ -10,7 +10,7 @@ const router = createRouter({
     // Twoje trasy
     { path: "/", component: Home, name: "home"},
     { path: "/katalog", component: Katalog, name:"katalog" },
-    { path: "/katalog/:crop", component: Crop, name:"crop", props: true },
+    { path: "/katalog/:family", component: Family, name:"family", props: true },
   ],
 });
 

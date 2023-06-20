@@ -19,7 +19,7 @@ const home = {
             v-for="(crop, index) in crops"
             key="index"
             class="my-3 "
-            :to="{name: 'crop', params: {crop: crop.crop}, query: crop}">
+            :to="{name: 'family', params: {family: crop.crop}, query: crop}">
             <v-card
               :color="crop.color"
               class="v-theme--dark"
