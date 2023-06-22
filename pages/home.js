@@ -25,7 +25,7 @@ const home = {
               class="v-theme--dark"
             >
             <v-img
-              :src="crop.src"
+              :src="{ src: crop.src, lazySrc: crop.lazySrc || '../assets/salata.jpg', aspect: '4/3' }"
               class="align-end"
               gradient="20deg, rgba(25,32,72,.7), rgba(25,32,72,.3), rgba(255,255,255,0), rgba(255,255,255,0)"
               height="200px"
@@ -49,6 +49,14 @@ const home = {
         lazySrc: "../assets/salata.jpg",
         color: "#3682bc",
         title: "Słaty",
+        subtitle: "najlepszy wybór do hydroponiki i gruntu",
+      },
+      {
+        crop: "ED",
+        src: null,
+        lazySrc: "../assets/salata.jpg",
+        color: "#2A9716",
+        title: "Endive",
         subtitle: "najlepszy wybór do hydroponiki i gruntu",
       },
       {
@@ -78,9 +86,33 @@ const home = {
       {
         crop: "RA",
         src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1684477638/enzapp/1.Radish_red_preview_cnfpuz.jpg",
-        lazySrc: "../assets/rzodkiewki.jpg",
+        lazySrc: "../assets/rzodkiewki.png",
         color: "#900A2F",
         title: "Rzodkiewki",
+        subtitle: "najlepszy wybór do hydroponiki i gruntu",
+      },
+      {
+        crop: "B_CF",
+        src: null,
+        lazySrc: "../assets/rzodkiewki.png",
+        color: "#39741C",
+        title: "Kalafiory",
+        subtitle: "najlepszy wybór do hydroponiki i gruntu",
+      },
+      {
+        crop: "B_",
+        src: null,
+        lazySrc: "../assets/rzodkiewki.png",
+        color: "#5D9F70",
+        title: "Kapusty",
+        subtitle: "najlepszy wybór do hydroponiki i gruntu",
+      },
+      {
+        crop: "B_KR",
+        src: null,
+        lazySrc: "../assets/rzodkiewki.png",
+        color: "#3C9900",
+        title: "Kalarepy",
         subtitle: "najlepszy wybór do hydroponiki i gruntu",
       },
     ]);
