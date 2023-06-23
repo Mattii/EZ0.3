@@ -53,8 +53,8 @@ const home = {
       },
       {
         crop: "ED",
-        src: null,
-        lazySrc: "../assets/salata.jpg",
+        src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1687517959/enzapp/endive_dq5nsd.png",
+        lazySrc: "../assets/endive.png",
         color: "#2A9716",
         title: "Endive",
         subtitle: "najlepszy wybór do hydroponiki i gruntu",
