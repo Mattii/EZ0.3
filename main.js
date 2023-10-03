@@ -3,6 +3,7 @@ import { createVuetify } from "vuetify";
 import vareityCard from "./components/vareity-card.js";
 import heroElement from "./components/hero-element.js";
 import router from "./router.js";
+import stockInput from "./components/stock-input.js";
 
 
 const vuetify = createVuetify();
@@ -37,4 +38,5 @@ app.use(router);
 app.use(vuetify);
 app.component("vareity-card", vareityCard);
 app.component("hero-element", heroElement);
+app.component("stock-input", stockInput);
 app.mount("#app");
