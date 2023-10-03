@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from "./pages/home.js";
 import Family from "./pages/family.js";
 import Katalog from "./pages/katalog.js";
+import Tablica from "./pages/tablica.js";
 
 
 const router = createRouter({
@@ -10,6 +11,7 @@ const router = createRouter({
     // Twoje trasy
     { path: "/", component: Home, name: "home"},
     { path: "/katalog", component: Katalog, name:"katalog" },
+    { path: "/tablica", component: Tablica, name:"tablica" },
     { path: "/katalog/:family", component: Family, name:"family", props: true },
   ],
 });

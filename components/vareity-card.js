@@ -97,7 +97,7 @@ const vareityCard = {
     });
 
     const getPrice = (price) => {
-      return `${price.price}zł (${price.price + price.price * 0.08}zł)`;
+      return `${price.price}zł (${Number.parseFloat(price.price + price.price * 0.08).toFixed(2)}zł)`;
     };
 
     onMounted(async () => {
