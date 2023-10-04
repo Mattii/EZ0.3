@@ -24,7 +24,7 @@ const crop = {
           :title="route.query.title"
           :subtitle="route.query.subtitle"
           :lazySrc="route.query.lazySrc"
-        >
+        />
         <v-row>
           <v-col>
             <v-btn icon variant="text">
