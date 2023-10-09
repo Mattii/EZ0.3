@@ -9,7 +9,7 @@ const crop = {
   <v-container fluid>
     <v-row justify="center">
       <v-col xs="12" sm="11" md="10">
-        <stock-input></stock-input>
+        <stock-input @stock-ready="(data) => stock = data"></stock-input>
       </v-col>
     </v-row>
     <v-row justify="center">
@@ -18,7 +18,9 @@ const crop = {
     </v-row>
     <v-row justify="center">
       <v-col  xs="12" md="10" lg="8" class="d-flex flex-wrap justify-space-evenly">
-
+        <ul>
+          <li v-for="batch in stock">{{batch.Batch_number}}</li>
+        </ul>
       </v-col>
     </v-row>
   </v-container>`,

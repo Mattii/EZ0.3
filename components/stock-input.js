@@ -1,4 +1,4 @@
-import { ref, computed, onMounted } from "vue";
+import { ref, computed, onMounted, watch } from "vue";
 const stocImput = {
   template: `
     <v-file-input
@@ -13,8 +13,8 @@ const stocImput = {
     accept=".xls,.xlsx"
   ></v-file-input>
     `,
-  setup() {
-    const stock = ref([]);
+  emits:['stockReady'],
+  setup(props, context) {
 
     function readJsonFile(rawFile) {
       let fileReader = new FileReader();
@@ -29,7 +29,7 @@ const stocImput = {
           console.log("Message posted to worker");
           myWorker.postMessage(data);
           myWorker.onmessage = (e) => {
-            stock.value = e.data;
+            stockRaportEmiter(e.data)
             console.log("Message received from worker");
           };
         } else {
@@ -40,7 +40,7 @@ const stocImput = {
               { dateNF: "yyyy-mm" }
             );
 
-            stock.value = rawStock.map((ele) => {
+            stockRaportEmiter(rawStock.map((ele) => {
               return Object.assign(
                 {},
                 ...Object.keys(ele).map((key) => {
@@ -48,12 +48,16 @@ const stocImput = {
                   return { [newKey]: ele[key] };
                 })
               );
-            });
+            }))
           });
         }
+        
       };
-
       fileReader.readAsBinaryString(rawFile.target.files[0]);
+    }
+
+    function stockRaportEmiter(stock) {
+      context.emit('stockReady', stock);
     }
 
     function clearFiled() {
@@ -61,7 +65,6 @@ const stocImput = {
     }
 
     return {
-      stock,
       readJsonFile,
       clearFiled,
     };
