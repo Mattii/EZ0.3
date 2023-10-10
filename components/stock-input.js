@@ -2,16 +2,26 @@ import { ref, computed, onMounted, watch } from "vue";
 const stocImput = {
   template: `
     <v-file-input
-    hide-input
-    variant="underlined"
-    label="Pobierze stock"
+    prepend-icon=""
+    variant="solo"
+    label="Wyszukaj raport"
     truncate-length="15"
+    density="compact"
     type="file"
     @change="readJsonFile"
     @click:clear="clearFiled"
     id="file"
     accept=".xls,.xlsx"
-  ></v-file-input>
+    bg-color="#9b91f9"
+    rounded="pill"
+  >
+  <template v-slot:prepend>
+      <v-btn
+        color="#64d273"
+        icon="mdi-file-excel"
+      ></v-btn>
+    </template>
+  </v-file-input>
     `,
   emits:['stockReady'],
   setup(props, context) {
@@ -21,7 +31,7 @@ const stocImput = {
 
       fileReader.onload = (event) => {
         let data = event.target.result;
-
+        console.log(event.target.result);
         if (window.Worker) {
           // …
           const myWorker = new Worker("/workers/xlsx.js");

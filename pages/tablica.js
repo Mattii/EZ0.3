@@ -19,7 +19,7 @@ const crop = {
     <v-row justify="center">
       <v-col  xs="12" md="10" lg="8" class="d-flex flex-wrap justify-space-evenly">
         <ul>
-          <li v-for="batch in stock">{{batch.Batch_number}}</li>
+          <li v-for="batch in stock" >{{batch.Batch_number}}</li>
         </ul>
       </v-col>
     </v-row>
