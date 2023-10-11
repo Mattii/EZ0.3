@@ -68,6 +68,7 @@ const stocImput = {
 
     function stockRaportEmiter(stock) {
       context.emit('stockReady', stock);
+      console.log(stock);
     }
 
     function clearFiled() {

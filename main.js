@@ -6,7 +6,19 @@ import router from "./router.js";
 import stockInput from "./components/stock-input.js";
 
 
-const vuetify = createVuetify();
+const vuetify = createVuetify({
+  theme: {
+    themes: {
+      light: {
+        dark: false,
+        colors: {
+          primary: '#9b91f9',
+          secondary: '#64d273'
+        }
+      },
+    },
+  },
+});
 
 const app = createApp({
   setup() {
