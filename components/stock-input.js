@@ -29,16 +29,14 @@ const stocImput = {
 
     async function readJsonFile(rawFile) {
 
-      for(let e in rawFile.target.files){
+      for(let e = 0 ;e < rawFile.target.files.length; e++){
         if(rawFile.target.files[e]?.name.includes("stock")){
           let stock = await convertXLSXtoJSON(rawFile.target.files[e])
           stockEmiter(stock);
         } else if(rawFile.target.files[e]?.name.includes("raport")){
           let raport = await convertXLSXtoJSON(rawFile.target.files[e])
           raportEmiter(raport);
-        } else {
-          console.log(rawFile.target.files[e]);
-        }
+        } 
       }
 
 
