@@ -18,7 +18,7 @@ const crop = {
   <v-container fluid>
   <v-row justify="center">
 
-      <v-col cols="12" sm="6" md="4" lg="3">
+      <v-col sm="6" md="4" lg="3">
       <v-card
           class="mx-auto"
           max-width="344"
@@ -30,16 +30,15 @@ const crop = {
               <div class="text-h4 mt-2">
                 {{amountOfCrops}}
               </div>
-              <div class="text-overline mb-1">
+              <div class="text-overline mb-1 ff-nunito">
                 odmian w katalogu
               </div>
-              <div class="text-caption">Greyhound divisely hello coldly fonwderfully</div>
             </div>
           </v-card-item>
       </v-card>
       </v-col>
 
-      <v-col cols="12" sm="6" md="4" lg="3">
+      <v-col sm="6" md="4" lg="3">
       <v-card
           class="mx-auto"
           max-width="344"
@@ -49,12 +48,11 @@ const crop = {
           <v-card-item>
             <div>
             <div class="text-h4 mt-2">
-                {{amountOfBatches}}
+                {{amountOfBatchesInRaport}}/{{amountOfBatchesInStock}}
               </div>
-              <div class="text-overline mb-1">
+              <div class="text-overline mb-1 ff-nunito">
                 parti na stanie
               </div>
-              <div class="text-caption">Greyhound divisely hello coldly fonwderfully</div>
             </div>
           </v-card-item>
         </v-card>
@@ -67,7 +65,7 @@ const crop = {
     <v-row justify="center">
 
       <v-col cols="12" sm="10" md="6">
-        <stock-input @stock-ready="(data) => stock = data"></stock-input>
+        <stock-input @stock-ready="(data) => stock = data" @raport-ready="(data) => raport = data"></stock-input>
       </v-col>
 
     </v-row>
@@ -77,7 +75,7 @@ const crop = {
       <v-col cols="12" sm="10" md="6">
         <v-list lines="two">
           <v-list-item
-            v-for="(batch, index) in stock"
+            v-for="(batch, index) in raport"
             :key="index"
             :title="batch.Batch_number + ' ' + batch.Product_name"
             :subtitle="batch.Number_WARSZAWA + 'x ' + batch.Packaging + ' (' + batch.Stock_WARSZAWA + batch.Unit_code + ')'"
@@ -94,11 +92,16 @@ const crop = {
     const route = useRoute();
     const crops = ref({});
     const stock = ref([]);
+    const raport = ref([]);
 
     const amountOfCrops = computed(() => {
       return Object.values(crops.value).length
     })
-    const amountOfBatches = computed(() => {
+    const amountOfBatchesInRaport = computed(() => {
+      return raport.value.length
+    })
+
+    const amountOfBatchesInStock = computed(() => {
       return stock.value.length
     })
 
@@ -122,9 +125,11 @@ const crop = {
       route,
       crops,
       stock,
+      raport,
       onMounted,
       amountOfCrops,
-      amountOfBatches
+      amountOfBatchesInRaport,
+      amountOfBatchesInStock
     };
   },
 };

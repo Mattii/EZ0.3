@@ -24,17 +24,24 @@ const stocImput = {
     </template>
   </v-file-input>
     `,
-  emits:['stockReady'],
+  emits:['stockReady', 'raportReady'],
   setup(props, context) {
 
     async function readJsonFile(rawFile) {
 
       for(let e in rawFile.target.files){
-        console.log(rawFile.target.files[e]);
+        if(rawFile.target.files[e]?.name.includes("stock")){
+          let stock = await convertXLSXtoJSON(rawFile.target.files[e])
+          stockEmiter(stock);
+        } else if(rawFile.target.files[e]?.name.includes("raport")){
+          let raport = await convertXLSXtoJSON(rawFile.target.files[e])
+          raportEmiter(raport);
+        } else {
+          console.log(rawFile.target.files[e]);
+        }
       }
 
-     const test = await convertXLSXtoJSON(rawFile.target.files[0])
-     stockRaportEmiter(test);
+
     }
 
     const convertXLSXtoJSON = (rawFile) => {
@@ -82,9 +89,14 @@ const stocImput = {
       
     }
 
-    function stockRaportEmiter(stock) {
+    function stockEmiter(stock) {
       context.emit('stockReady', stock);
       console.log(stock);
+    }
+
+    function raportEmiter(raport) {
+      context.emit('raportReady', raport);
+      console.log(raport);
     }
 
     function clearFiled() {
