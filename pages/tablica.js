@@ -64,14 +64,32 @@ const crop = {
 
     <v-row justify="center">
 
-      <v-col cols="12" sm="10" md="6">
+      <v-col cols="11" sm="10" md="6">
         <stock-input @stock-ready="(data) => stock = data" @raport-ready="(data) => raport = data"></stock-input>
       </v-col>
 
     </v-row>
 
     <v-row justify="center">
-
+      <v-col cols="11" sm="10" md="6">
+        <v-text-field
+          prepend-icon=""
+          variant="solo"
+          label="Wyszukaj partję"
+          truncate-length="15"
+          density="compact"
+          bg-color="primary"
+          rounded="pill"
+          v-model="searchValue"
+        > 
+          <template v-slot:append>
+            <v-btn
+              color="secondary"
+              icon="mdi-magnify"
+            ></v-btn>
+          </template>
+        </v-text-field>
+      </v-col>
       <v-col cols="12" sm="10" md="6">
         <v-list lines="two">
           <v-list-item
@@ -93,17 +111,18 @@ const crop = {
     const crops = ref({});
     const stock = ref([]);
     const raport = ref([]);
+    const searchValue = ref('');
 
     const amountOfCrops = computed(() => {
-      return Object.values(crops.value).length
-    })
+      return Object.values(crops.value).length;
+    });
     const amountOfBatchesInRaport = computed(() => {
-      return raport.value.length
-    })
+      return raport.value.length;
+    });
 
     const amountOfBatchesInStock = computed(() => {
-      return stock.value.length
-    })
+      return stock.value.length;
+    });
 
     onMounted(async () => {
       const db = getDatabase(app);
@@ -126,10 +145,11 @@ const crop = {
       crops,
       stock,
       raport,
+      searchValue,
       onMounted,
       amountOfCrops,
       amountOfBatchesInRaport,
-      amountOfBatchesInStock
+      amountOfBatchesInStock,
     };
   },
 };

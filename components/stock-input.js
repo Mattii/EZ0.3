@@ -5,7 +5,7 @@ const stocImput = {
     multiple
     prepend-icon=""
     variant="solo"
-    label="Wyszukaj raport"
+    label="Załaduj raport"
     truncate-length="15"
     density="compact"
     type="file"
@@ -13,12 +13,12 @@ const stocImput = {
     @click:clear="clearFiled"
     id="file"
     accept=".xls,.xlsx"
-    bg-color="#9b91f9"
+    bg-color="primary"
     rounded="pill"
   >
   <template v-slot:prepend>
       <v-btn
-        color="#64d273"
+        color="secondary"
         icon="mdi-file-excel"
       ></v-btn>
     </template>
