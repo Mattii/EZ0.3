@@ -18,7 +18,7 @@ const crop = {
   <v-container fluid>
   <v-row justify="center">
 
-      <v-col sm="6" md="4" lg="3">
+      <v-col cols="6" sm="6" md="4" lg="3">
       <v-card
           class="mx-auto"
           max-width="344"
@@ -38,7 +38,7 @@ const crop = {
       </v-card>
       </v-col>
 
-      <v-col sm="6" md="4" lg="3">
+      <v-col cols="6" sm="6" md="4" lg="3">
       <v-card
           class="mx-auto"
           max-width="344"
@@ -52,6 +52,26 @@ const crop = {
               </div>
               <div class="text-overline mb-1 ff-nunito">
                 parti na stanie
+              </div>
+            </div>
+          </v-card-item>
+        </v-card>
+      </v-col>
+
+      <v-col cols="6" sm="6" md="4" lg="3">
+      <v-card
+          class="mx-auto"
+          max-width="344"
+          color="primary"
+          variant="tonal"
+        >
+          <v-card-item>
+            <div>
+            <div class="text-h4 mt-2">
+                {{prices.length}}
+              </div>
+              <div class="text-overline mb-1 ff-nunito">
+                lini w cenniku
               </div>
             </div>
           </v-card-item>
@@ -110,6 +130,7 @@ const crop = {
     const route = useRoute();
     const crops = ref({});
     const stock = ref([]);
+    const prices = ref([]);
     const raport = ref([]);
     const searchValue = ref('');
 
@@ -136,12 +157,12 @@ const crop = {
       );
       onValue(katalog, (snapshot) => {
         crops.value = snapshot.val();
-        console.log(snapshot.val());
+        //console.log(snapshot.val());
       });
 
       const priceList = query(fref(db, "cennik"), orderByChild('name'));
       onValue(priceList, (snap) => {
-        console.log(snap.val());
+        prices.value = snap.val();
       })
     });
 
@@ -150,6 +171,7 @@ const crop = {
       crops,
       stock,
       raport,
+      prices,
       searchValue,
       onMounted,
       amountOfCrops,
