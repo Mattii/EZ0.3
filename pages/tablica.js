@@ -138,6 +138,11 @@ const crop = {
         crops.value = snapshot.val();
         console.log(snapshot.val());
       });
+
+      const priceList = query(fref(db, "cennik"), orderByChild('name'));
+      onValue(priceList, (snap) => {
+        console.log(snap.val());
+      })
     });
 
     return {

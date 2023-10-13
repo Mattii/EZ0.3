@@ -36,7 +36,15 @@ const stocImput = {
         } else if(rawFile.target.files[e]?.name.includes("raport")){
           let raport = await convertXLSXtoJSON(rawFile.target.files[e])
           raportEmiter(raport);
-        } 
+        } else if(rawFile.target.files[e]?.name.includes("cennik")) {
+          let cennik = await convertXLSXtoJSON(rawFile.target.files[e])
+          console.log(cennik.map((ele) => {
+            ele.name = ele.name?.toLowerCase()
+            ele.segment = ele.segment?.toLowerCase()
+            ele.price = +Number.parseFloat(ele.price).toFixed(2)
+            return ele
+          }));
+        }
       }
 
 
