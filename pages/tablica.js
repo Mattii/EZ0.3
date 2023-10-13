@@ -113,7 +113,7 @@ const crop = {
       <v-col cols="12" sm="10" md="6">
         <v-list lines="two">
           <v-list-item
-            v-for="(batch, index) in raport"
+            v-for="(batch, index) in searchedStock"
             :key="index"
             :title="batch.Batch_number + ' ' + batch.Product_name"
             :subtitle="batch.Number_WARSZAWA + 'x ' + batch.Packaging + ' (' + batch.Stock_WARSZAWA + batch.Unit_code + ')'"
@@ -145,6 +145,10 @@ const crop = {
       return stock.value.length;
     });
 
+    const searchedStock = computed(() => {
+      return raport.value.filter(ele => ele.Product_name.includes(searchValue.value.toUpperCase()));
+    });
+
     onMounted(async () => {
       const db = getDatabase(app);
 
@@ -173,6 +177,7 @@ const crop = {
       raport,
       prices,
       searchValue,
+      searchedStock,
       onMounted,
       amountOfCrops,
       amountOfBatchesInRaport,
