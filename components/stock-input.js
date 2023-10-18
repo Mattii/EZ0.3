@@ -24,7 +24,7 @@ const stocImput = {
     </template>
   </v-file-input>
     `,
-  emits:['stockReady', 'raportReady'],
+  emits:['stockReady', 'raportReady','symfoniaReady'],
   setup(props, context) {
 
     async function readJsonFile(rawFile) {
@@ -44,6 +44,9 @@ const stocImput = {
             ele.price = +Number.parseFloat(ele.price).toFixed(2)
             return ele
           }));
+        } else if(rawFile.target.files[e]?.name.includes("symfonia")){
+          let symfonia = await convertXLSXtoJSON(rawFile.target.files[e])
+          symfoniaReady(symfonia);
         }
       }
 
@@ -104,6 +107,12 @@ const stocImput = {
       context.emit('raportReady', raport);
       console.log(raport);
     }
+
+    function symfoniaReady(symfonia) {
+      context.emit('symfoniaReady', symfonia);
+      console.log(symfonia);
+    }
+    
 
     function clearFiled() {
       return console.log("test clear");

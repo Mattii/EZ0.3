@@ -18,7 +18,7 @@ const crop = {
   <v-container fluid>
   <v-row justify="center">
 
-      <v-col cols="12" sm="10" md="9" class="d-flex flex-column flex-sm-row justify-sm-space-evenly flex-sm-wrap">
+      <v-col cols="12" sm="11" md="9" class="d-flex flex-column flex-sm-row justify-sm-center flex-sm-wrap">
         <v-sheet 
           class="ma-3 pa-6"
           color="primary"
@@ -46,7 +46,23 @@ const crop = {
                   {{amountOfBatchesInRaport}}/{{amountOfBatchesInStock}}
               </div>
               <div class="text-overline mb-1 ff-nunito">
-                  parti na stanie
+                  dostępne / stan
+              </div>
+            </div>
+        </v-sheet>
+
+        <v-sheet 
+          class="ma-3 pa-6"
+          color="primary"
+          rounded="lg"
+          elevation="3"
+          >
+            <div>
+              <div class="text-h4 mt-2">
+                  {{symfonia.length}}
+              </div>
+              <div class="text-overline mb-1 ff-nunito">
+                  partii w symfonii
               </div>
             </div>
         </v-sheet>
@@ -72,14 +88,14 @@ const crop = {
 
     <v-row justify="center">
 
-      <v-col cols="11" sm="10" md="6">
-        <stock-input @stock-ready="(data) => stock = data" @raport-ready="(data) => raport = data"></stock-input>
+      <v-col cols="11" sm="6" md="4">
+        <stock-input @stock-ready="(data) => stock = data" @raport-ready="(data) => raport = data" @symfonia-ready="(data) => symfonia = data"></stock-input>
       </v-col>
 
     </v-row>
 
     <v-row justify="center">
-      <v-col cols="12" sm="10" md="6">
+      <v-col cols="12" sm="6" md="4">
         <v-text-field
           prepend-icon=""
           variant="solo"
@@ -103,15 +119,47 @@ const crop = {
 
     <v-row justify="center">
       <v-col cols="12" sm="10" md="6">
-        <v-list lines="two">
-          <v-list-item
-            v-for="(batch, index) in searchedStock"
-            :key="index"
-            :title="batch.Batch_number + ' ' + batch.Product_name"
-            :subtitle="batch.Number_WARSZAWA + 'x ' + batch.Packaging + ' (' + batch.Stock_WARSZAWA + batch.Unit_code + ')'"
-            rounded="xl"
-          ></v-list-item>
-        </v-list>
+        <v-tabs
+          v-model="tab"
+          color="primary"
+          align-tabs="center"
+          center-active
+          show-arrows
+        >
+          <v-tab value="1">raport</v-tab>
+          <v-tab value="2">symfonia</v-tab>
+          <v-tab value="3">stock</v-tab>
+        </v-tabs>
+        <v-window v-model="tab">
+          <v-window-item value="1">
+            <v-list lines="two">
+              <v-list-item
+                v-for="(batch, index) in searchedStock"
+                :key="index"
+                :title="batch.Batch_number + ' ' + batch.Product_name"
+                :subtitle="batch.Number_WARSZAWA + 'x ' + batch.Packaging + ' (' + batch.Stock_WARSZAWA + batch.Unit_code + ')'"
+                rounded="xl"
+                ></v-list-item>
+            </v-list>
+          </v-window-item>
+
+          <v-window-item value="2">
+            <v-list lines="two">
+              <v-list-item
+                v-for="(batch, index) in symfonia"
+                :key="index"
+                :title="batch.batch + ' ' + batch.nazwa_towaru"
+                :subtitle="batch.kod_towaru + ' x' + batch.ilość"
+                rounded="xl"
+                >
+              </v-list-item>
+            </v-list>
+          </v-window-item>
+
+          <v-window-item value="3">
+            Three
+          </v-window-item>
+        </v-window>
       </v-col>
 
     </v-row>
@@ -124,7 +172,9 @@ const crop = {
     const stock = ref([]);
     const prices = ref([]);
     const raport = ref([]);
+    const symfonia = ref([]);
     const searchValue = ref('');
+    const tab = ref(null);
 
     const amountOfCrops = computed(() => {
       return Object.values(crops.value).length;
@@ -163,11 +213,13 @@ const crop = {
     });
 
     return {
+      tab,
       route,
       crops,
       stock,
       raport,
       prices,
+      symfonia,
       searchValue,
       searchedStock,
       onMounted,
