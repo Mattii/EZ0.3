@@ -18,67 +18,55 @@ const crop = {
   <v-container fluid>
   <v-row justify="center">
 
-      <v-col cols="6" sm="6" md="4" lg="3">
-      <v-card
-          class="mx-auto"
-          max-width="344"
+      <v-col cols="12" sm="10" md="9" class="d-flex flex-column flex-sm-row justify-sm-space-evenly flex-sm-wrap">
+        <v-sheet 
+          class="ma-3 pa-6"
           color="primary"
-          variant="tonal"
-        >
-          <v-card-item>
+          rounded="lg"
+          elevation="3"
+          >
+              <div>
+                <div class="text-h4 mt-2">
+                  {{amountOfCrops}}
+                </div>
+                <div class="text-overline mb-1 ff-nunito">
+                  odmian w katalogu
+                </div>
+              </div>
+        </v-sheet>
+
+        <v-sheet 
+          class="ma-3 pa-6"
+          color="primary"
+          rounded="lg"
+          elevation="3"
+          >
             <div>
               <div class="text-h4 mt-2">
-                {{amountOfCrops}}
+                  {{amountOfBatchesInRaport}}/{{amountOfBatchesInStock}}
               </div>
               <div class="text-overline mb-1 ff-nunito">
-                odmian w katalogu
+                  parti na stanie
               </div>
             </div>
-          </v-card-item>
-      </v-card>
-      </v-col>
+        </v-sheet>
 
-      <v-col cols="6" sm="6" md="4" lg="3">
-      <v-card
-          class="mx-auto"
-          max-width="344"
+        <v-sheet 
+          class="ma-3 pa-6"
           color="primary"
-          variant="tonal"
-        >
-          <v-card-item>
+          rounded="lg"
+          elevation="3"
+          >
             <div>
-            <div class="text-h4 mt-2">
-                {{amountOfBatchesInRaport}}/{{amountOfBatchesInStock}}
+              <div class="text-h4 mt-2">
+                  {{prices.length}}
+                </div>
+                <div class="text-overline mb-1 ff-nunito">
+                  lini w cenniku
+                </div>
               </div>
-              <div class="text-overline mb-1 ff-nunito">
-                parti na stanie
-              </div>
-            </div>
-          </v-card-item>
-        </v-card>
-      </v-col>
+        </v-sheet>
 
-      <v-col cols="6" sm="6" md="4" lg="3">
-      <v-card
-          class="mx-auto"
-          max-width="344"
-          color="primary"
-          variant="tonal"
-        >
-          <v-card-item>
-            <div>
-            <div class="text-h4 mt-2">
-                {{prices.length}}
-              </div>
-              <div class="text-overline mb-1 ff-nunito">
-                lini w cenniku
-              </div>
-            </div>
-          </v-card-item>
-        </v-card>
-      </v-col>
-
-      <v-col cols="12" sm="6" md="4" lg="3">
       </v-col>
     </v-row>
 
@@ -91,7 +79,7 @@ const crop = {
     </v-row>
 
     <v-row justify="center">
-      <v-col cols="11" sm="10" md="6">
+      <v-col cols="12" sm="10" md="6">
         <v-text-field
           prepend-icon=""
           variant="solo"
@@ -110,6 +98,10 @@ const crop = {
           </template>
         </v-text-field>
       </v-col>
+    </v-row>
+    
+
+    <v-row justify="center">
       <v-col cols="12" sm="10" md="6">
         <v-list lines="two">
           <v-list-item
