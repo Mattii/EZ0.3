@@ -150,14 +150,45 @@ const crop = {
                 :key="index"
                 :title="batch.batch + ' ' + batch.nazwa_towaru"
                 :subtitle="batch.kod_towaru + ' x' + batch.ilość"
-                rounded="xl"
                 >
               </v-list-item>
             </v-list>
           </v-window-item>
 
           <v-window-item value="3">
-            Three
+            <v-list >
+            <v-list-subheader>partje tylko na stanie ABS {{batchesJustOnStock.length}}</v-list-subheader>
+              <v-virtual-scroll
+                :items="batchesJustOnStock"
+                height="300"
+                item-height="50"
+              >
+              <template v-slot:default="{ item }">
+              <v-list-item
+                :title="item.Batch_number + ' ' + item.Article_abbreviated"
+                :subtitle="item.Packaging_abbreviated + ' x' + item.Number_balance"
+                >
+              </v-list-item>
+              </template>
+              </v-virtual-scroll>
+            </v-list>
+
+            <v-list >
+            <v-list-subheader>partje tylko w symfonii {{batchesJustOnSymfonia.length}}</v-list-subheader>
+              <v-virtual-scroll
+                :items="batchesJustOnSymfonia"
+                height="300"
+                item-height="50"
+              >
+              <template v-slot:default="{ item }">
+              <v-list-item
+                :title="item.batch + ' ' + item.nazwa_towaru"
+                :subtitle="item.kod_towaru + ' x' + item.ilość"
+                >
+              </v-list-item>
+              </template>
+              </v-virtual-scroll>
+            </v-list>
           </v-window-item>
         </v-window>
       </v-col>
@@ -176,6 +207,7 @@ const crop = {
     const searchValue = ref('');
     const tab = ref(null);
 
+
     const amountOfCrops = computed(() => {
       return Object.values(crops.value).length;
     });
@@ -191,6 +223,18 @@ const crop = {
       return raport.value.filter(ele => ele.Product_name.includes(searchValue.value.toUpperCase()));
     });
 
+    const batchesJustOnStock = computed(() => {
+      //sprawdza które batche są w ABS ale nie mam w symfonii
+      const batchesInSymfonia = symfonia.value.map((batch) => +batch.batch)
+      return stock.value.filter(ele => !batchesInSymfonia.includes(+ele.Batch_number))
+    });
+
+    const batchesJustOnSymfonia = computed(() => {
+      //sprawdza które batche są w ABS ale nie mam w symfonii
+      const batchesInStock = stock.value.map((batch) => +batch.Batch_number)
+      return symfonia.value.filter(ele => !batchesInStock.includes(+ele.batch))
+    });
+
     onMounted(async () => {
       const db = getDatabase(app);
 
@@ -201,6 +245,7 @@ const crop = {
         startAt("TO"),
         endAt("TO")
       );
+
       onValue(katalog, (snapshot) => {
         crops.value = snapshot.val();
         //console.log(snapshot.val());
@@ -226,6 +271,8 @@ const crop = {
       amountOfCrops,
       amountOfBatchesInRaport,
       amountOfBatchesInStock,
+      batchesJustOnStock,
+      batchesJustOnSymfonia
     };
   },
 };
