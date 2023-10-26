@@ -189,6 +189,23 @@ const crop = {
               </template>
               </v-virtual-scroll>
             </v-list>
+
+            <v-list >
+            <v-list-subheader>różnica między ABS a symfonii {{differenceBetweenBatchesOnStockAndSymfonia.length}}</v-list-subheader>
+              <v-virtual-scroll
+                :items="differenceBetweenBatchesOnStockAndSymfonia"
+                height="300"
+                item-height="50"
+              >
+              <template v-slot:default="{ item }">
+              <v-list-item
+                :title="item.batch + ' ' + item.name"
+                :subtitle="item.amountInABS + '/ABS - ' + item.amountInSymfonia + '/symf = ' + item.amountDiffrance"
+                >
+              </v-list-item>
+              </template>
+              </v-virtual-scroll>
+            </v-list>
           </v-window-item>
         </v-window>
       </v-col>
@@ -230,9 +247,27 @@ const crop = {
     });
 
     const batchesJustOnSymfonia = computed(() => {
-      //sprawdza które batche są w ABS ale nie mam w symfonii
+      //sprawdza które batche są w symfonii ale nie mam w symfonii ABS
       const batchesInStock = stock.value.map((batch) => +batch.Batch_number)
       return symfonia.value.filter(ele => !batchesInStock.includes(+ele.batch))
+    });
+
+    const differenceBetweenBatchesOnStockAndSymfonia = computed(() => {
+      //sprawdza które batche 
+      return stock.value.reduce((accumulator, currentValue) => {
+        const symfBatch = symfonia.value.find((batch) => +batch.batch == +currentValue.Batch_number)
+        if(+symfBatch?.batch == +currentValue.Batch_number && +symfBatch?.ilość !== +currentValue.Number_balance ){
+          const diff = {
+            'batch': +currentValue.Batch_number,
+            'name': currentValue.Article_abbreviated,
+            'amountInSymfonia':+symfBatch?.ilość,
+            'amountInABS': +currentValue.Number_balance,
+            'amountDiffrance':+currentValue.Number_balance - +symfBatch?.ilość
+          }
+          accumulator.push(diff)
+        }
+        return accumulator
+      }, [])
     });
 
     onMounted(async () => {
@@ -272,7 +307,8 @@ const crop = {
       amountOfBatchesInRaport,
       amountOfBatchesInStock,
       batchesJustOnStock,
-      batchesJustOnSymfonia
+      batchesJustOnSymfonia,
+      differenceBetweenBatchesOnStockAndSymfonia
     };
   },
 };
