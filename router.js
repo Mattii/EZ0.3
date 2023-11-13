@@ -8,6 +8,7 @@ const router = createRouter({
     // Twoje trasy
     { path: "/", component: Home, name: "home"},
     { path: "/katalog", component: () => import("./pages/katalog.js"), name:"katalog" },
+    { path: "/cennik", component: () => import("./pages/cennik.js"), name:"cennik" },
     { path: "/tablica", component: () => import("./pages/tablica.js"), name:"tablica" },
     { path: "/katalog/:family", component: () => import("./pages/family.js"), name:"family", props: true },
   ],
