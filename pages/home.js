@@ -8,7 +8,7 @@ const home = {
         <hero-element
         
         >
-          <v-btn class="mb-3 text-caption ff-nunito" block color="#FEFB08"
+          <v-btn class="mb-3 text-caption ff-nunito" rounded="pill" block color="primary"
           >Eksploruj</v-btn>
         </hero-element>
       </v-col>
@@ -18,23 +18,24 @@ const home = {
           <router-link 
             v-for="(crop, index) in crops"
             key="index"
-            class="my-3 "
+            class="ma-3"
             :to="{name: 'family', params: {family: crop.crop}, query: crop}">
             <v-card
               :color="crop.color"
               class="v-theme--dark"
+              min-width="290"
             >
-            <v-img
-              :src="{ src: crop.src, lazySrc: crop.lazySrc || '../assets/salata.jpg', aspect: '4/3' }"
-              class="align-end"
-              gradient="20deg, rgba(25,32,72,.7), rgba(25,32,72,.3), rgba(255,255,255,0), rgba(255,255,255,0)"
-              height="200px"
-              cover
-            >
-            <v-card-item>
-                <v-card-title class="ff-nunito">{{crop.title}}</v-card-title>
+              <v-img
+                :src="{ src: crop.src, lazySrc: crop.lazySrc || '../assets/salata.jpg', aspect: '4/3' }"
+                class="align-end"
+                gradient="20deg, rgba(25,32,72,.7), rgba(25,32,72,.3), rgba(255,255,255,0), rgba(255,255,255,0)"
+                height="200px"
+                cover
+              >
+                <v-card-item>
+                  <v-card-title class="ff-nunito">{{crop.title}}</v-card-title>
                 </v-card-item>
-            </v-img>
+              </v-img>
             </v-card>
           </router-link>
       </v-col>
