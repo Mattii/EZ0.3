@@ -25,7 +25,7 @@ const priceList = {
     </v-row>
     <v-row justify="center">
       <v-col  xs="12" md="10" lg="8" class="d-flex flex-wrap justify-space-evenly">
-      <v-data-table-virtual
+      <v-data-table
         fixed-header
         :headers="headers"
         :items="prices"
@@ -33,15 +33,15 @@ const priceList = {
         item-value="index"
       >
       <template v-slot:item="{ item }">
-      <tr>
-        <td>{{ item.name }}</td>
-        <td>{{ item.family }}</td>
-        <td>{{ item.price }}</td>
-        <td><strong>{{ Number.parseFloat(item.price + item.price * 0.08).toFixed(2) }}</strong></td>
-        <td>{{ item.packing }}</td>
-      </tr>
-    </template>
-      </v-data-table-virtual>
+        <tr>
+          <td><span class="text-uppercase">{{ item.name }}</span> <br/> <span class="font-weight-thin text-disabled text-subtitle-2">{{item?.segment}}</span></td>
+          <td class="text-end">{{ item.family }}</td>
+          <td class="tabular-nums text-end"><strong>{{ toPLAccountingStandards(item.price) }}</strong></td>
+          <td class="tabular-nums text-end">{{ toPLAccountingStandards(Number.parseFloat(item.price + item.price * 0.08).toFixed(2)) }}</td>
+          <td class="text-end">{{ item.packing }}</td>
+        </tr>
+      </template>
+      </v-data-table>
       </v-col>
     </v-row>
   </v-container>`,
@@ -56,6 +56,10 @@ const priceList = {
       { title: 'Cena(brutto)', align: 'end' },
       { title: 'Opakowanie', align: 'end', key: 'packing' },
     ])
+
+    const toPLAccountingStandards = (num) => new Intl.NumberFormat('pl-PL', { style: 'currency', currency: 'PLN' }).format(
+      num,
+    )
 
     onMounted(async () => {
       const db = getDatabase(app);
@@ -73,6 +77,7 @@ const priceList = {
       stock,
       headers,
       onMounted,
+      toPLAccountingStandards
     };
   },
 };
