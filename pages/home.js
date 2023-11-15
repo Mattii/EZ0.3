@@ -5,12 +5,8 @@ const home = {
   <v-container fluid>
     <v-row justify="center">
       <v-col xs="12" sm="11" md="10">
-        <hero-element
-        
-        >
-          <v-btn class="mb-3 text-caption ff-nunito" rounded="pill" block color="primary"
-          >Eksploruj</v-btn>
-        </hero-element>
+        <main-hero>
+        </main-hero>
       </v-col>
     </v-row>
     <v-row justify="center">

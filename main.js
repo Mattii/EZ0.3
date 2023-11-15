@@ -2,9 +2,9 @@ import { createApp, ref, reactive, onMounted } from "vue";
 import { createVuetify } from "vuetify";
 import vareityCard from "./components/vareity-card.js";
 import heroElement from "./components/hero-element.js";
+import mainHero from "./components/main-hero.js";
 import router from "./router.js";
 import stockInput from "./components/stock-input.js";
-
 
 const vuetify = createVuetify({
   theme: {
@@ -12,8 +12,8 @@ const vuetify = createVuetify({
       light: {
         dark: false,
         colors: {
-          primary: '#9b91f9',
-          secondary: '#64d273'
+          primary: '#68C079',
+          secondary: '#9496C2'
         }
       },
     },
@@ -46,9 +46,11 @@ const app = createApp({
   },
 });
 
+
 app.use(router);
 app.use(vuetify);
 app.component("vareity-card", vareityCard);
 app.component("hero-element", heroElement);
+app.component("main-hero", mainHero);
 app.component("stock-input", stockInput);
 app.mount("#app");
