@@ -3,7 +3,7 @@ const heroElement = {
   template: `
         <v-sheet
           rounded="xl"
-          color="secondary"
+          color="#9496C2"
           width="100%"
           class="v-theme--dark"
         >
@@ -15,12 +15,12 @@ const heroElement = {
             src="https://res.cloudinary.com/ddkef5waq/image/upload/v1684482332/enzapp/hero_kmw5p3.jpg"
           >
             <template #sources>
-              <source media="(max-width: 460px)" srcset="https://res.cloudinary.com/ddkef5waq/image/upload/v1700046172/enzapp/heroXS_my2xzj.png">
+              <source media="(max-width: 460px)" srcset="https://res.cloudinary.com/ddkef5waq/image/upload/v1700049491/enzapp/heroXS_yplnho.png">
             </template>
-          <div class="px-8 pt-9 pb-6 px-sm-12 h-100 pt-sm-16 ff-nunito d-flex flex-wrap">
-            <h2 class="text-h5 text-md-h3 text-lg-h2 mb-3 ff-nunito">Sięgnij po <br /> swój</h2>
+          <div class="px-9 pt-9 pb-6 px-sm-12 h-100 pt-sm-16 ff-nunito d-flex flex-wrap">
+            <h2 class="text-h4 text-md-h3 text-lg-h2 mb-3 ff-nunito">Sięgnij po <br /> swój</h2>
             <div class="align-self-end d-flex justify-end w-100">
-            <v-btn class="mt-3 text-capitalize ff-nunito" rounded="pill"  color="primary"
+            <v-btn to="/katalog" size="large" elevation="8" class="ff-nunito" rounded="pill"  color="primary"
             >Katalog</v-btn>
             </div>
           </div>
