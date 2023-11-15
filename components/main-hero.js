@@ -15,7 +15,7 @@ const heroElement = {
             src="https://res.cloudinary.com/ddkef5waq/image/upload/v1684482332/enzapp/hero_kmw5p3.jpg"
           >
             <template #sources>
-              <source media="(max-width: 400px)" srcset="https://res.cloudinary.com/ddkef5waq/image/upload/v1700046172/enzapp/heroXS_my2xzj.png">
+              <source media="(max-width: 460px)" srcset="https://res.cloudinary.com/ddkef5waq/image/upload/v1700046172/enzapp/heroXS_my2xzj.png">
             </template>
           <div class="px-8 pt-9 pb-6 px-sm-12 h-100 pt-sm-16 ff-nunito d-flex flex-wrap">
             <h2 class="text-h5 text-md-h3 text-lg-h2 mb-3 ff-nunito">Sięgnij po <br /> swój</h2>
