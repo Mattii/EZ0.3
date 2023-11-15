@@ -283,7 +283,7 @@ const crop = {
 
       onValue(katalog, (snapshot) => {
         crops.value = snapshot.val();
-        //console.log(snapshot.val());
+        console.log(snapshot.val());
       });
 
       const priceList = query(fref(db, "cennik"), orderByChild('name'));

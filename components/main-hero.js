@@ -15,12 +15,14 @@ const heroElement = {
             src="https://res.cloudinary.com/ddkef5waq/image/upload/v1684482332/enzapp/hero_kmw5p3.jpg"
           >
             <template #sources>
-              <source media="(max-width: 450px)" srcset="https://res.cloudinary.com/ddkef5waq/image/upload/v1700034326/enzapp/heroXS_ibrodi.png">
+              <source media="(max-width: 400px)" srcset="https://res.cloudinary.com/ddkef5waq/image/upload/v1700046172/enzapp/heroXS_my2xzj.png">
             </template>
-          <div class="px-6 pt-9 px-sm-12 pt-sm-16 ff-nunito">
-            <h2 class="text-h5 text-md-h4 text-lg-h2 mb-3 ff-nunito">{{title}}</h2>
-            <v-btn class="mt-3 text-caption ff-nunito" rounded="pill"  color="primary"
+          <div class="px-8 pt-9 pb-6 px-sm-12 h-100 pt-sm-16 ff-nunito d-flex flex-wrap">
+            <h2 class="text-h5 text-md-h3 text-lg-h2 mb-3 ff-nunito">Sięgnij po <br /> swój</h2>
+            <div class="align-self-end d-flex justify-end w-100">
+            <v-btn class="mt-3 text-capitalize ff-nunito" rounded="pill"  color="primary"
             >Katalog</v-btn>
+            </div>
           </div>
           </v-img>
           </v-col>
