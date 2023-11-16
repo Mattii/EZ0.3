@@ -4,13 +4,13 @@ const home = {
   template: `          
   <v-container fluid>
     <v-row justify="center">
-      <v-col xs="12" sm="11" md="10">
+      <v-col xs="12" sm="11" md="10" lg="8">
         <main-hero>
         </main-hero>
       </v-col>
     </v-row>
     <v-row justify="center">
-      <v-col  xs="12" md="10" lg="8" class="d-flex flex-wrap justify-space-evenly">
+      <v-col  xs="12" sm="11" md="10" lg="8" class="d-flex flex-wrap justify-space-evenly">
           <router-link 
             v-for="(crop, index) in crops"
             key="index"

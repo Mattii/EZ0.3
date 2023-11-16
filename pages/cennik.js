@@ -18,9 +18,7 @@ const priceList = {
   <v-container fluid>
     <v-row justify="center">
       <v-col xs="12" sm="11" md="10">
-        <hero-element
-        >
-        </hero-element>
+        <price-hero></price-hero>
       </v-col>
     </v-row>
     <v-row justify="center">
