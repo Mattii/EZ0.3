@@ -3,7 +3,7 @@ const heroElement = {
   template: `
         <v-sheet
           rounded="xl"
-          color="#9496C2"
+          color="#61cb6f"
           width="100%"
           class="v-theme--dark"
         >
@@ -23,7 +23,7 @@ const heroElement = {
           <div class="px-9 pt-9 pb-6 h-100 py-sm-10 pa-lg-16 ff-nunito d-flex flex-wrap">
             <h2 class="text-h4 text-md-h3 text-lg-h2 mb-3 ff-nunito">Sięgnij po </h2>
             <div class="align-self-end d-flex justify-end w-100">
-            <v-btn to="/katalog" size="large" elevation="8" class="ff-nunito" rounded="pill"  color="primary"
+            <v-btn to="/katalog" size="large" elevation="8" class="ff-nunito" rounded="pill"  color="secondary"
             >Katalog</v-btn>
             </div>
           </div>
