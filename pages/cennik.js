@@ -34,14 +34,17 @@ const priceList = {
       <template v-slot:item="{ item }">
         <tr>
           <td>
-            <span class="font-weight-thin text-medium-emphasis text-subtitle-2">{{item?.segment}}({{item.family}})</span>
+            <span class="font-weight-thin text-medium-emphasis text-subtitle-2">{{item.family}}</span>
             <br />
             <span class="text-uppercase">{{ item.name }}</span>
             <br/>
-            <span class="font-weight-thin text-medium-emphasis text-subtitle-2">{{item.packing}}</span>
+            <span class="font-weight-thin text-medium-emphasis text-subtitle-2">{{item?.segment}}</span>
           </td>
           <td class="tabular-nums text-end">
-            {{ toPLAccountingStandards(item.price) }} <br/>
+            <span class="tabular-nums font-weight-thin text-medium-emphasis text-subtitle-2">{{item.packing}}</span> 
+            <br/>
+            {{ toPLAccountingStandards(item.price) }} 
+            <br/>
             <span class="tabular-nums font-weight-thin text-medium-emphasis text-subtitle-2">{{ toPLAccountingStandards(Number.parseFloat(item.price + item.price * 0.08).toFixed(2)) }}</span>
           </td>
         </tr>
