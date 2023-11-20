@@ -23,11 +23,36 @@ const priceList = {
     </v-row>
     <v-row justify="center">
       <v-col  xs="12" md="10" lg="8" class="d-flex flex-wrap justify-space-evenly">
+        <!-- visible on screen  (width < 600)  -->
+      <v-data-table
+        fixed-header
+        :headers="headersMobile"
+        :items="prices"
+        class="h-100"
+        item-value="index"
+      >
+      <template v-slot:item="{ item }">
+        <tr>
+          <td>
+            <span class="font-weight-thin text-medium-emphasis text-subtitle-2">{{item?.segment}}({{item.family}})</span>
+            <br />
+            <span class="text-uppercase">{{ item.name }}</span>
+            <br/>
+            <span class="font-weight-thin text-medium-emphasis text-subtitle-2">{{item.packing}}</span>
+          </td>
+          <td class="tabular-nums text-end">
+            {{ toPLAccountingStandards(item.price) }} <br/>
+            <span class="tabular-nums font-weight-thin text-medium-emphasis text-subtitle-2">{{ toPLAccountingStandards(Number.parseFloat(item.price + item.price * 0.08).toFixed(2)) }}</span>
+          </td>
+        </tr>
+      </template>
+      </v-data-table>
+      <!-- visible on screen  (width > 600)  -->
       <v-data-table
         fixed-header
         :headers="headers"
         :items="prices"
-        height="400"
+        class="h-100 d-none d-sm-flex"
         item-value="index"
       >
       <template v-slot:item="{ item }">
@@ -47,6 +72,10 @@ const priceList = {
     const route = useRoute();
     const prices = ref([]);
     const stock = ref([]);
+    const headersMobile = ref([
+      { title: 'Nazwa', align: 'start', key: 'name' },
+      { title: 'Cena', align: 'end', key: 'price' },
+    ])
     const headers = ref([
       { title: 'Nazwa', align: 'start', key: 'name' },
       { title: 'Rodzina', align: 'end', key: 'family' },
@@ -74,6 +103,7 @@ const priceList = {
       prices,
       stock,
       headers,
+      headersMobile,
       onMounted,
       toPLAccountingStandards
     };

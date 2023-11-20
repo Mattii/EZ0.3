@@ -148,8 +148,8 @@ const crop = {
               <v-list-item
                 v-for="(batch, index) in symfonia"
                 :key="index"
-                :title="batch.batch + ' ' + batch.nazwa_towaru"
-                :subtitle="batch.kod_towaru + ' x' + batch.ilość"
+                :title="batch.batch + ' ' + batch.nazwa"
+                :subtitle="batch.kod + ' x' + batch.ilość"
                 >
               </v-list-item>
             </v-list>
@@ -182,8 +182,8 @@ const crop = {
               >
               <template v-slot:default="{ item }">
               <v-list-item
-                :title="item.batch + ' ' + item.nazwa_towaru"
-                :subtitle="item.kod_towaru + ' x' + item.ilość"
+                :title="item.batch + ' ' + item.nazwa"
+                :subtitle="item.kod + ' x' + item.ilość"
                 >
               </v-list-item>
               </template>
