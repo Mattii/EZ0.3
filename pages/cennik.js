@@ -28,7 +28,7 @@ const priceList = {
         fixed-header
         :headers="headersMobile"
         :items="prices"
-        class="h-100"
+        class="h-100 d-flex d-sm-none"
         item-value="index"
       >
       <template v-slot:item="{ item }">
