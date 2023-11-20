@@ -41,7 +41,7 @@ const priceList = {
             <span class="font-weight-thin text-medium-emphasis text-subtitle-2">{{item?.segment}}</span>
           </td>
           <td class="tabular-nums text-end">
-            <span class="tabular-nums font-weight-thin text-medium-emphasis text-subtitle-2">{{item.packing}}</span> 
+            <span class="tabular-nums font-weight-thin text-high-emphasis text-subtitle-2">{{item.packing}}</span> 
             <br/>
             {{ toPLAccountingStandards(item.price) }} 
             <br/>
