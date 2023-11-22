@@ -15,7 +15,8 @@ const heroElement = {
             src="https://res.cloudinary.com/ddkef5waq/image/upload/v1684482332/enzapp/hero_kmw5p3.jpg"
           >
             <template #sources>
-              <source media="(max-width: 460px)" srcset="https://res.cloudinary.com/ddkef5waq/image/upload/v1700211629/enzapp/pricehero300x200_zc6est.png">
+              <source media="(max-width: 460px)" srcset="https://res.cloudinary.com/ddkef5waq/image/upload/v1700650014/enzapp/pricehero300x200_viy5zl.png">
+              <source media="(max-width: 690px)" srcset="https://res.cloudinary.com/ddkef5waq/image/upload/v1700650014/enzapp/pricehero600x200_x8gukw.png">
             </template>
           <div class="px-9 pb-9 px-sm-12 pb-sm-12 h-100 ff-nunito d-flex align-end">
             <h2 class="text-h4 text-md-h3 text-lg-h2 ff-nunito">Cennik</h2>
