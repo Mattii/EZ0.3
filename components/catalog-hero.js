@@ -5,9 +5,7 @@ const heroElement = {
           color="#9b91f9"
           rounded="xl"
           width="100%"
-          class="v-theme--dark"
-          
-          style="overflow: hidden;"
+          class="v-theme--dark overflow-hidden"
         >
         <v-row no-gutters justify="space-around">
           <v-col cols="12">

@@ -5,7 +5,7 @@ const heroElement = {
           rounded="xl"
           color="#61cb6f"
           width="100%"
-          class="v-theme--dark"
+          class="v-theme--dark overflow-hidden"
         >
         <v-row no-gutters justify="space-around">
           <v-col cols="12">

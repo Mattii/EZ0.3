@@ -8,12 +8,12 @@ const crop = {
   template: `          
   <v-container fluid>
     <v-row justify="center">
-      <v-col xs="12" sm="11" md="10">
+      <v-col xs="12" sm="11" md="10" lg="8">
         <catalog-hero></catalog-hero>
       </v-col>
     </v-row>
     <v-row justify="center">
-      <v-col xs="12" md="10">
+      <v-col xs="12" sm="11" md="10" lg="8">
         <v-file-input
           hide-input
           variant="underlined"
