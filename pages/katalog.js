@@ -9,9 +9,7 @@ const crop = {
   <v-container fluid>
     <v-row justify="center">
       <v-col xs="12" sm="11" md="10">
-        <hero-element
-        >
-        </hero-element>
+        <catalog-hero></catalog-hero>
       </v-col>
     </v-row>
     <v-row justify="center">

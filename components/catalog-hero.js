@@ -22,7 +22,7 @@ const heroElement = {
               <source media="(max-width: 800px)" srcset="https://res.cloudinary.com/ddkef5waq/image/upload/v1700733815/enzapp/pricehero800x300_c2ebjz.png">
             </template>
           <div class="px-9 pb-9 px-sm-12 pb-sm-12 h-100 ff-nunito d-flex align-end">
-            <h2 class="text-h4 text-md-h3 text-lg-h2 ff-nunito">Cennik</h2>
+            <h2 class="text-h4 text-md-h3 text-lg-h2 ff-nunito">Katalog</h2>
           </div>
           </v-img>
           </v-col>
