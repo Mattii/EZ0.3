@@ -4,6 +4,7 @@ const heroElement = {
         <v-sheet
           rounded="xl"
           color="#61cb6f"
+          min-height="400px"
           width="100%"
           class="v-theme--dark overflow-hidden"
         >
