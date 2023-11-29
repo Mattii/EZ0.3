@@ -10,6 +10,54 @@ const home = {
       </v-col>
     </v-row>
     <v-row justify="center">
+      <v-col  xs="12" sm="6" md="4" class="d-flex flex-wrap justify-space-evenly">
+      <v-sheet
+          rounded="xl"
+          color="#94C2A6"
+          width="100%"
+          class="v-theme--dark overflow-hidden"
+        >
+        <v-row no-gutters justify="space-around">
+          <v-col cols="12">
+          <v-img
+          rounded="xl"
+            cover
+            width="100%"
+            src="https://res.cloudinary.com/ddkef5waq/image/upload/v1701249930/enzapp/sal_it9gl4.png"
+          >
+          <div class="px-8 pt-6 pb-9 h-100 ff-nunito d-flex flex-wrap justify-end">
+            <h2 class="text-h5 ff-nunito">Endive</h2>
+            </div>
+          </v-img>
+        </v-col>
+        </v-row>
+        </v-sheet>
+        </v-col>
+        <v-col  xs="12" sm="6" md="4" class="d-flex flex-wrap justify-space-evenly">
+      <v-sheet
+          rounded="xl"
+          color="#94C2A6"
+          width="100%"
+          class="v-theme--dark overflow-hidden"
+        >
+        <v-row no-gutters justify="space-around">
+          <v-col cols="12">
+          <v-img
+          rounded="xl"
+            cover
+            width="100%"
+            src="https://res.cloudinary.com/ddkef5waq/image/upload/v1701249930/enzapp/sal_it9gl4.png"
+          >
+          <div class="px-8 pt-6 pb-9 h-100 ff-nunito d-flex flex-wrap justify-end">
+            <h2 class="text-h5 ff-nunito">Endive</h2>
+            </div>
+          </v-img>
+        </v-col>
+        </v-row>
+        </v-sheet>
+        </v-col>
+    </v-row>
+    <v-row justify="center">
       <v-col  xs="12" sm="11" md="10" lg="8" class="d-flex flex-wrap justify-space-evenly">
           <router-link 
             v-for="(crop, index) in crops"
