@@ -4,15 +4,15 @@ const home = {
   template: `          
   <v-container fluid>
     <v-row justify="center">
-      <v-col xs="12" sm="10" md="9" xl="8">
+      <v-col xs="12" sm="10" md="9" lg="8" >
         <main-hero>
         </main-hero>
       </v-col>
     </v-row>
 
     <v-row justify="center" class="">
-    <v-col  xs="12" sm="10" md="9" xl="8" class="pa-0 ma-0 d-flex flex-wrap justify-space-evenly">
-          <v-col  xs="12" sm="6" md="4" xl="3" class="d-flex flex-wrap justify-space-evenly"             
+    <v-col  xs="12" sm="10" md="9" lg="8" class="pa-0 ma-0 d-flex flex-wrap justify-space-evenly">
+          <v-col  xs="12" sm="6" md="4" lg="3" class="d-flex flex-wrap justify-space-evenly"             
           v-for="(crop, index) in crops"
             key="index">
             
@@ -31,8 +31,8 @@ const home = {
                     cover
                     :src="{ src: crop.src, aspect: '16/9' }"
                     >
-                    <div class="px-8 pt-6 pb-9 h-100 ff-nunito d-flex flex-wrap justify-end">
-                      <h2 class="text-h5 ff-nunito">{{crop.title}}</h2>
+                    <div class="px-9 pt-8 h-100 ff-nunito d-flex flex-wrap justify-end">
+                      <h2 class="text-h5 text-lg-h6 ff-nunito">{{crop.title}}</h2>
                     </div>
                   </v-img>
                 </v-col>
@@ -83,7 +83,7 @@ const home = {
       },
       {
         crop: "ED",
-        src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1701249930/enzapp/sal_it9gl4.png",
+        src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1701348533/enzapp/endiv_fqcanb.png",
         lazySrc: "../assets/endive.png",
         color: "#94C2A6",
         title: "Endive",
@@ -105,14 +105,14 @@ const home = {
         title: "Ogórki",
         subtitle: "najlepszy wybór do hydroponiki i gruntu",
       },
-      // {
-      //   crop: "SP",
-      //   src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1684477638/enzapp/3.Pepper_yellow_preview_lbjt3r.jpg",
-      //   lazySrc: "../assets/paryki.jpg",
-      //   color: "#c18200",
-      //   title: "Papryki",
-      //   subtitle: "najlepszy wybór do hydroponiki i gruntu",
-      // },
+      {
+        crop: "SP",
+        src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1701349133/enzapp/pep_g1vsqt.png",
+        lazySrc: "../assets/paryki.jpg",
+        color: "#98C294",
+        title: "Papryki",
+        subtitle: "najlepszy wybór do hydroponiki i gruntu",
+      },
       // {
       //   crop: "RA",
       //   src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1684477638/enzapp/1.Radish_red_preview_cnfpuz.jpg",
