@@ -4,14 +4,14 @@ const home = {
   template: `          
   <v-container fluid>
     <v-row justify="center">
-      <v-col xs="12" md="9" xl="8">
+      <v-col xs="12" sm="10" md="9" xl="8">
         <main-hero>
         </main-hero>
       </v-col>
     </v-row>
 
     <v-row justify="center" class="">
-    <v-col  xs="12" md="9" xl="8" class="pa-0 ma-0 d-flex flex-wrap justify-space-evenly">
+    <v-col  xs="12" sm="10" md="9" xl="8" class="pa-0 ma-0 d-flex flex-wrap justify-space-evenly">
           <v-col  xs="12" sm="6" md="4" xl="3" class="d-flex flex-wrap justify-space-evenly"             
           v-for="(crop, index) in crops"
             key="index">
