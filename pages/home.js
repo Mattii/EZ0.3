@@ -4,60 +4,45 @@ const home = {
   template: `          
   <v-container fluid>
     <v-row justify="center">
-      <v-col xs="12" sm="11" md="10" lg="8">
+      <v-col xs="12" md="9" xl="8">
         <main-hero>
         </main-hero>
       </v-col>
     </v-row>
-    <v-row justify="center">
-      <v-col  xs="12" sm="6" md="4" class="d-flex flex-wrap justify-space-evenly">
-      <v-sheet
-          rounded="xl"
-          color="#94C2A6"
-          width="100%"
-          class="v-theme--dark overflow-hidden"
-        >
-        <v-row no-gutters justify="space-around">
-          <v-col cols="12">
-          <v-img
-          rounded="xl"
-            cover
-            width="100%"
-            src="https://res.cloudinary.com/ddkef5waq/image/upload/v1701249930/enzapp/sal_it9gl4.png"
-          >
-          <div class="px-8 pt-6 pb-9 h-100 ff-nunito d-flex flex-wrap justify-end">
-            <h2 class="text-h5 ff-nunito">Endive</h2>
-            </div>
-          </v-img>
-        </v-col>
-        </v-row>
-        </v-sheet>
-        </v-col>
-        <v-col  xs="12" sm="6" md="4" class="d-flex flex-wrap justify-space-evenly">
-      <v-sheet
-          rounded="xl"
-          color="#94C2A6"
-          width="100%"
-          class="v-theme--dark overflow-hidden"
-        >
-        <v-row no-gutters justify="space-around">
-          <v-col cols="12">
-          <v-img
-          rounded="xl"
-            cover
-            width="100%"
-            src="https://res.cloudinary.com/ddkef5waq/image/upload/v1701249930/enzapp/sal_it9gl4.png"
-          >
-          <div class="px-8 pt-6 pb-9 h-100 ff-nunito d-flex flex-wrap justify-end">
-            <h2 class="text-h5 ff-nunito">Endive</h2>
-            </div>
-          </v-img>
-        </v-col>
-        </v-row>
-        </v-sheet>
-        </v-col>
+
+    <v-row justify="center" class="">
+    <v-col  xs="12" md="9" xl="8" class="pa-0 ma-0 d-flex flex-wrap justify-space-evenly">
+          <v-col  xs="12" sm="6" md="4" xl="3" class="d-flex flex-wrap justify-space-evenly"             
+          v-for="(crop, index) in crops"
+            key="index">
+            
+            <v-sheet
+              rounded="xl"
+              :color="crop.color"
+              width="100%"
+              min-width="200px"
+              class="v-theme--dark overflow-hidden"
+            >
+              <v-row no-gutters justify="space-around">
+                <v-col cols="12">
+                  <v-img
+                    class="w-100 h-100"
+                    rounded="xl"
+                    cover
+                    :src="{ src: crop.src, aspect: '16/9' }"
+                    >
+                    <div class="px-8 pt-6 pb-9 h-100 ff-nunito d-flex flex-wrap justify-end">
+                      <h2 class="text-h5 ff-nunito">{{crop.title}}</h2>
+                    </div>
+                  </v-img>
+                </v-col>
+              </v-row>
+            </v-sheet>
+          </v-col>
+          </v-col>
     </v-row>
-    <v-row justify="center">
+
+    <!-- <v-row justify="center">
       <v-col  xs="12" sm="11" md="10" lg="8" class="d-flex flex-wrap justify-space-evenly">
           <router-link 
             v-for="(crop, index) in crops"
@@ -83,83 +68,83 @@ const home = {
             </v-card>
           </router-link>
       </v-col>
-    </v-row>
+    </v-row> -->
   </v-container>`,
   setup() {
     const katalog = ref({});
     const crops = ref([
       {
         crop: "LT",
-        src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1684477105/enzapp/salata_gwjbqh.jpg",
+        src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1701333265/enzapp/sala_u6emol.png",
         lazySrc: "../assets/salata.jpg",
-        color: "#3682bc",
+        color: "#9D94C2",
         title: "Słaty",
         subtitle: "najlepszy wybór do hydroponiki i gruntu",
       },
       {
         crop: "ED",
-        src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1687517959/enzapp/endive_dq5nsd.png",
+        src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1701249930/enzapp/sal_it9gl4.png",
         lazySrc: "../assets/endive.png",
-        color: "#2A9716",
+        color: "#94C2A6",
         title: "Endive",
         subtitle: "najlepszy wybór do hydroponiki i gruntu",
       },
       {
         crop: "TO",
-        src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1686559569/enzapp/pomidory_lk7zmk.png",
+        src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1701249930/enzapp/pom_se5gvw.png",
         lazySrc: "../assets/pomidory.jpg",
-        color: "#E80A0A",
+        color: "#C294B6",
         title: "Pomidory",
         subtitle: "najlepszy wybór do hydroponiki i gruntu",
       },
       {
         crop: "CC",
-        src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1687157206/enzapp/ogorki_banwj2.png",
+        src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1701249930/enzapp/ogo_tetxi2.png",
         lazySrc: "../assets/ogorki.png",
-        color: "#1E700D",
+        color: "#94C2B4",
         title: "Ogórki",
         subtitle: "najlepszy wybór do hydroponiki i gruntu",
       },
-      {
-        crop: "SP",
-        src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1684477638/enzapp/3.Pepper_yellow_preview_lbjt3r.jpg",
-        lazySrc: "../assets/paryki.jpg",
-        color: "#c18200",
-        title: "Papryki",
-        subtitle: "najlepszy wybór do hydroponiki i gruntu",
-      },
-      {
-        crop: "RA",
-        src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1684477638/enzapp/1.Radish_red_preview_cnfpuz.jpg",
-        lazySrc: "../assets/rzodkiewki.png",
-        color: "#900A2F",
-        title: "Rzodkiewki",
-        subtitle: "najlepszy wybór do hydroponiki i gruntu",
-      },
-      {
-        crop: "B_CF",
-        src: null,
-        lazySrc: "../assets/rzodkiewki.png",
-        color: "#39741C",
-        title: "Kalafiory",
-        subtitle: "najlepszy wybór do hydroponiki i gruntu",
-      },
-      {
-        crop: "B_",
-        src: null,
-        lazySrc: "../assets/rzodkiewki.png",
-        color: "#5D9F70",
-        title: "Kapusty",
-        subtitle: "najlepszy wybór do hydroponiki i gruntu",
-      },
-      {
-        crop: "B_KR",
-        src: null,
-        lazySrc: "../assets/rzodkiewki.png",
-        color: "#3C9900",
-        title: "Kalarepy",
-        subtitle: "najlepszy wybór do hydroponiki i gruntu",
-      },
+      // {
+      //   crop: "SP",
+      //   src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1684477638/enzapp/3.Pepper_yellow_preview_lbjt3r.jpg",
+      //   lazySrc: "../assets/paryki.jpg",
+      //   color: "#c18200",
+      //   title: "Papryki",
+      //   subtitle: "najlepszy wybór do hydroponiki i gruntu",
+      // },
+      // {
+      //   crop: "RA",
+      //   src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1684477638/enzapp/1.Radish_red_preview_cnfpuz.jpg",
+      //   lazySrc: "../assets/rzodkiewki.png",
+      //   color: "#900A2F",
+      //   title: "Rzodkiewki",
+      //   subtitle: "najlepszy wybór do hydroponiki i gruntu",
+      // },
+      // {
+      //   crop: "B_CF",
+      //   src: null,
+      //   lazySrc: "../assets/rzodkiewki.png",
+      //   color: "#39741C",
+      //   title: "Kalafiory",
+      //   subtitle: "najlepszy wybór do hydroponiki i gruntu",
+      // },
+      // {
+      //   crop: "B_",
+      //   src: null,
+      //   lazySrc: "../assets/rzodkiewki.png",
+      //   color: "#5D9F70",
+      //   title: "Kapusty",
+      //   subtitle: "najlepszy wybór do hydroponiki i gruntu",
+      // },
+      // {
+      //   crop: "B_KR",
+      //   src: null,
+      //   lazySrc: "../assets/rzodkiewki.png",
+      //   color: "#3C9900",
+      //   title: "Kalarepy",
+      //   subtitle: "najlepszy wybór do hydroponiki i gruntu",
+      // },
     ]);
 
     onMounted(async () => {
