@@ -19,7 +19,7 @@ const heroElement = {
               <source media="(max-width: 690px)" srcset="https://res.cloudinary.com/ddkef5waq/image/upload/v1701081641/enzapp/kataloghero600x200_ikeixi.png">
               <source media="(max-width: 800px)" srcset="https://res.cloudinary.com/ddkef5waq/image/upload/v1701081641/enzapp/kataloghero800x300_glbtwc.png">
             </template>
-          <div class="px-9 pb-9 px-sm-12 pb-sm-12 pb-lg-14 px-lg-14 h-100 ff-nunito d-flex align-end">
+          <div class="px-9 py-9 px-sm-12 pb-sm-12 pb-lg-14 px-lg-14 h-100 ff-nunito d-flex align-end">
             <h2 class="text-h4 text-md-h3 text-lg-h2 ff-nunito">Katalog</h2>
           </div>
           </v-img>

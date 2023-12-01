@@ -11,11 +11,13 @@ const home = {
     </v-row>
 
     <v-row justify="center" class="">
-    <v-col  xs="12" sm="10" md="9" lg="8" class="pa-0 ma-0 d-flex flex-wrap justify-space-evenly">
+    <v-col  xs="12" sm="10" md="9" lg="8" class="pa-0 ma-0 d-flex flex-wrap justify-center">
           <v-col  xs="12" sm="6" md="4" lg="3" class="d-flex flex-wrap justify-space-evenly"             
           v-for="(crop, index) in crops"
             key="index">
-            
+            <router-link 
+            class="w-100 h-100"
+            :to="{name: 'family', params: {family: crop.crop}, query: crop}">
             <v-sheet
               rounded="xl"
               :color="crop.color"
@@ -31,13 +33,15 @@ const home = {
                     cover
                     :src="{ src: crop.src, aspect: '16/9' }"
                     >
-                    <div class="px-9 pt-8 h-100 ff-nunito d-flex flex-wrap justify-end">
+                    <div class="px-9 pt-6 h-100 ff-nunito d-flex flex-wrap justify-end">
                       <h2 class="text-h5 text-lg-h6 ff-nunito">{{crop.title}}</h2>
                     </div>
                   </v-img>
                 </v-col>
               </v-row>
             </v-sheet>
+            
+          </router-link>
           </v-col>
           </v-col>
     </v-row>
@@ -107,28 +111,29 @@ const home = {
       },
       {
         crop: "SP",
-        src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1701349133/enzapp/pep_g1vsqt.png",
+        src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1701434906/enzapp/pep_gniytm.png",
         lazySrc: "../assets/paryki.jpg",
         color: "#98C294",
         title: "Papryki",
         subtitle: "najlepszy wybór do hydroponiki i gruntu",
       },
-      // {
-      //   crop: "RA",
-      //   src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1684477638/enzapp/1.Radish_red_preview_cnfpuz.jpg",
-      //   lazySrc: "../assets/rzodkiewki.png",
-      //   color: "#900A2F",
-      //   title: "Rzodkiewki",
-      //   subtitle: "najlepszy wybór do hydroponiki i gruntu",
-      // },
-      // {
-      //   crop: "B_CF",
-      //   src: null,
-      //   lazySrc: "../assets/rzodkiewki.png",
-      //   color: "#39741C",
-      //   title: "Kalafiory",
-      //   subtitle: "najlepszy wybór do hydroponiki i gruntu",
-      // },
+      {
+        crop: "RA",
+        src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1701423716/enzapp/rad_xopad4.png",
+        lazySrc: "../assets/rzodkiewki.png",
+        color: "#C29494",
+        title: "Rzodkiewki",
+        subtitle: "najlepszy wybór do hydroponiki i gruntu",
+      },
+      {
+        crop: "B_CF",
+        src: null,
+        src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1701434098/enzapp/cal_ngymad.png",
+        lazySrc: "../assets/rzodkiewki.png",
+        color: "#94BFC2",
+        title: "Kalafiory",
+        subtitle: "najlepszy wybór do hydroponiki i gruntu",
+      },
       // {
       //   crop: "B_",
       //   src: null,
