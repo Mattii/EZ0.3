@@ -149,6 +149,14 @@ const home = {
         title: "Cebule",
         subtitle: "najlepszy wybór do hydroponiki i gruntu",
       },
+      {
+        crop: "H_",
+        src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1701864324/enzapp/herb_oy76lx.png",
+        lazySrc: "../assets/rzodkiewki.png",
+        color: "#95C294",
+        title: "Zioła",
+        subtitle: "najlepszy wybór do hydroponiki i gruntu",
+      },
       // {
       //   crop: "B_KR",
       //   src: null,
