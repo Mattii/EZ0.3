@@ -79,7 +79,7 @@ const home = {
     const crops = ref([
       {
         crop: "LT",
-        src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1701333265/enzapp/sala_u6emol.png",
+        src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1701854322/enzapp/sala_dy54oi.png",
         lazySrc: "../assets/salata.jpg",
         color: "#9D94C2",
         title: "Słaty",
@@ -87,7 +87,7 @@ const home = {
       },
       {
         crop: "ED",
-        src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1701348533/enzapp/endiv_fqcanb.png",
+        src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1701854737/enzapp/endiv_pazfrl.png",
         lazySrc: "../assets/endive.png",
         color: "#94C2A6",
         title: "Endive",
@@ -126,22 +126,29 @@ const home = {
         subtitle: "najlepszy wybór do hydroponiki i gruntu",
       },
       {
+        crop: "B_",
+        src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1701854171/enzapp/kap_czthmi.png",
+        lazySrc: "../assets/rzodkiewki.png",
+        color: "#94C2A6",
+        title: "Kapusty",
+        subtitle: "najlepszy wybór do hydroponiki i gruntu",
+      },
+      {
         crop: "B_CF",
-        src: null,
         src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1701434098/enzapp/cal_ngymad.png",
         lazySrc: "../assets/rzodkiewki.png",
         color: "#94BFC2",
         title: "Kalafiory",
         subtitle: "najlepszy wybór do hydroponiki i gruntu",
       },
-      // {
-      //   crop: "B_",
-      //   src: null,
-      //   lazySrc: "../assets/rzodkiewki.png",
-      //   color: "#5D9F70",
-      //   title: "Kapusty",
-      //   subtitle: "najlepszy wybór do hydroponiki i gruntu",
-      // },
+      {
+        crop: "ON",
+        src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1701856234/enzapp/oni_qiira5.png",
+        lazySrc: "../assets/rzodkiewki.png",
+        color: "#C2B294",
+        title: "Cebule",
+        subtitle: "najlepszy wybór do hydroponiki i gruntu",
+      },
       // {
       //   crop: "B_KR",
       //   src: null,
