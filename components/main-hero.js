@@ -16,7 +16,7 @@ const heroElement = {
             src="https://res.cloudinary.com/ddkef5waq/image/upload/v1700138246/enzapp/hero1440_kchrpx.png"
           >
             <template #sources>
-              <source media="(max-width: 430px)" srcset="https://res.cloudinary.com/ddkef5waq/image/upload/v1700049491/enzapp/heroXS_yplnho.png">
+              <source media="(max-width: 460px)" srcset="https://res.cloudinary.com/ddkef5waq/image/upload/v1700049491/enzapp/heroXS_yplnho.png">
               <source media="(max-width: 690px)" srcset="https://res.cloudinary.com/ddkef5waq/image/upload/v1700135865/enzapp/hero600_thyykd.png">
               <source media="(max-width: 800px)" srcset="https://res.cloudinary.com/ddkef5waq/image/upload/v1700136988/enzapp/hero800_ifozsn.png">
             </template>

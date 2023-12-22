@@ -1,4 +1,5 @@
 import { ref, reactive, onMounted } from "vue";
+import { useStore } from 'vuex';
 import { useRoute } from "vue-router";
 import {
   getDatabase,
@@ -41,9 +42,9 @@ const priceList = {
             <span class="font-weight-thin text-medium-emphasis text-subtitle-2">{{item?.segment}}</span>
           </td>
           <td class="tabular-nums text-end">
-            <span class="tabular-nums font-weight-thin text-high-emphasis text-subtitle-2">{{item.packing}}</span> 
+            <span class="tabular-nums font-weight-thin text-subtitle-2">{{item.packing}}</span> 
             <br/>
-            {{ toPLAccountingStandards(item.price) }} 
+            <span class="tabular-nums">{{ toPLAccountingStandards(item.price) }}</span> 
             <br/>
             <span class="tabular-nums font-weight-thin text-medium-emphasis text-subtitle-2">{{ toPLAccountingStandards(Number.parseFloat(item.price + item.price * 0.08).toFixed(2)) }}</span>
           </td>
@@ -73,6 +74,7 @@ const priceList = {
   </v-container>`,
   setup() {
     const route = useRoute();
+    const store = useStore();
     const prices = ref([]);
     const stock = ref([]);
     const headersMobile = ref([
@@ -92,13 +94,22 @@ const priceList = {
     )
 
     onMounted(async () => {
-      const db = getDatabase(app);
 
-      const priceList = query(fref(db, "cennik"), orderByChild("name"));
-      onValue(priceList, (snap) => {
-        prices.value = snap.val();
-        console.log(snap.val());
-      });
+      if(store.getters.getPriceListFromStore.length == 0){
+        const db = getDatabase(app);
+
+        const priceList = query(fref(db, "cennik"), orderByChild("name"));
+        onValue(priceList, (snap) => {
+          prices.value = snap.val();
+          store.dispatch('insertPriceListToStore', {
+            priceList: prices.value
+          })
+          console.log(snap.val());
+        });
+      }else {
+        prices.value = store.getters.getPriceListFromStore
+      }
+
     });
 
     return {

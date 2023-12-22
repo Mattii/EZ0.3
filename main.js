@@ -1,5 +1,7 @@
 import { createApp, ref, reactive, onMounted } from "vue";
+import { createStore } from 'vuex';
 import { createVuetify } from "vuetify";
+import vuexStore from "./modules/vuex.js"
 import vareityCard from "./components/vareity-card.js";
 import heroElement from "./components/hero-element.js";
 import mainHero from "./components/main-hero.js";
@@ -21,6 +23,8 @@ const vuetify = createVuetify({
     },
   },
 });
+
+const store = createStore(vuexStore)
 
 const app = createApp({
   setup() {
@@ -50,6 +54,7 @@ const app = createApp({
 
 
 app.use(router);
+app.use(store);
 app.use(vuetify);
 app.component("vareity-card", vareityCard);
 app.component("hero-element", heroElement);
