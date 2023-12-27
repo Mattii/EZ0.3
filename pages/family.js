@@ -1,4 +1,5 @@
 import { ref, reactive, onMounted } from "vue";
+import { useStore } from 'vuex';
 import { useRoute } from "vue-router";
 import {
   getDatabase,
@@ -16,15 +17,18 @@ import app from "../modules/firebase.js";
 const crop = {
   template: `          
   <v-container fluid>
+  <v-row justify="center">
+    <v-col xs="12" sm="10" md="9" lg="8" >
+      <family-hero-element
+      :color="familyType.color"
+      :src="familyType.src"
+      :title="familyType.title"
+      ></family-hero-element>
+      </v-col>
+    </v-row>
+
     <v-row justify="center">
       <v-col xs="12" sm="11" md="10">
-        <hero-element
-          :src="route.query.src"
-          :color="route.query.color"
-          :title="route.query.title"
-          :subtitle="route.query.subtitle"
-          :lazySrc="route.query.lazySrc"
-        />
         <v-row>
           <v-col>
             <v-btn icon variant="text">
@@ -58,21 +62,6 @@ const crop = {
       </v-col>
     </v-row>
     <v-row justify="center">
-      <v-col xs="12" md="10">
-        <v-file-input
-          hide-input
-          variant="underlined"
-          label="Pobierze stock"
-          truncate-length="15"
-          type="file"
-          @change="readJsonFile"
-          @click:clear="clearFiled"
-          id="file"
-          accept=".xls,.xlsx"
-        ></v-file-input>
-      </v-col>
-    </v-row>
-    <v-row justify="center">
       <v-col  xs="12" md="10" lg="8" class="d-flex flex-wrap justify-space-evenly">
           <div
             v-for="(item, index) in crops"
@@ -83,8 +72,8 @@ const crop = {
               v-if="item"
               :item="item"
               :stock="stock"
-              :color="route.query.color"
-              :altImg="route.query.src"
+              :color="familyType.color"
+              :altImg="familyType.src"
             ></vareity-card>
           </div>
       </v-col>
@@ -98,54 +87,13 @@ const crop = {
   },
   setup(props) {
     const route = useRoute();
+    const store = useStore();
+    const familyType = ref({});
     const crops = ref({});
     const stock = ref([]);
-    console.log("route props:", props.crop);
-    function readJsonFile(rawFile) {
-      let fileReader = new FileReader();
-
-      fileReader.onload = (event) => {
-        let data = event.target.result;
-
-        if (window.Worker) {
-          // …
-          const myWorker = new Worker("/workers/xlsx.js");
-          console.log("worker works");
-          console.log("Message posted to worker");
-          myWorker.postMessage(data);
-          myWorker.onmessage = (e) => {
-            stock.value = e.data;
-            console.log("Message received from worker");
-          };
-        } else {
-          let workbook = XLSX.read(data, { type: "binary", cellDates: true });
-          workbook.SheetNames.forEach((sheet) => {
-            let rawStock = XLSX.utils.sheet_to_row_object_array(
-              workbook.Sheets[sheet],
-              { dateNF: "yyyy-mm" }
-            );
-
-            stock.value = rawStock.map((ele) => {
-              return Object.assign(
-                {},
-                ...Object.keys(ele).map((key) => {
-                  let newKey = key.replace(/\n/g, " ").replace(/\s+/g, "_");
-                  return { [newKey]: ele[key] };
-                })
-              );
-            });
-          });
-        }
-      };
-
-      fileReader.readAsBinaryString(rawFile.target.files[0]);
-    }
-
-    function clearFiled() {
-      return console.log("test clear");
-    }
 
     onMounted(async () => {
+
       const db = getDatabase(app);
 
       const dbCrops = query(
@@ -165,14 +113,15 @@ const crop = {
       // } catch (error) {
       //   console.log(error);
       // }
+
+      familyType.value = store.getters.getCropFromStore(route.params.family)
     });
 
     return {
       route,
       crops,
+      familyType,
       stock,
-      readJsonFile,
-      clearFiled,
       onMounted,
     };
   },

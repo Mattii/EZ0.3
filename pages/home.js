@@ -18,7 +18,7 @@ const home = {
             key="index">
             <router-link 
             class="w-100 h-100"
-            :to="{name: 'family', params: {family: crop.crop}, query: crop}">
+            :to="{name: 'family', params: {family: crop.crop}}">
             <v-sheet
               rounded="xl"
               :color="crop.color"

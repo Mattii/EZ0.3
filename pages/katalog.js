@@ -13,21 +13,6 @@ const crop = {
       </v-col>
     </v-row>
     <v-row justify="center">
-      <v-col xs="12" sm="11" md="10" lg="8">
-        <v-file-input
-          hide-input
-          variant="underlined"
-          label="Pobierze stock"
-          truncate-length="15"
-          type="file"
-          @change="readJsonFile"
-          @click:clear="clearFiled"
-          id="file"
-          accept=".xls,.xlsx"
-        ></v-file-input>
-      </v-col>
-    </v-row>
-    <v-row justify="center">
       <v-col  xs="12" md="10" lg="8" class="d-flex flex-wrap justify-space-evenly">
           <div
             v-for="(item, index) in crop"

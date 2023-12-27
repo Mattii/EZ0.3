@@ -7,7 +7,7 @@ export default {
               src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1701854322/enzapp/sala_dy54oi.png",
               lazySrc: "../assets/salata.jpg",
               color: "#9D94C2",
-              title: "Słaty",
+              title: "Sałaty",
               subtitle: "najlepszy wybór do hydroponiki i gruntu",
             },
             {
@@ -100,7 +100,10 @@ export default {
         },
         getCropsListFromStore (state) {
             return state.crops
-        }
+        },
+        getCropFromStore: (state) => (id) => {
+          return state.crops.find((ele) => id == ele.crop )
+        },
     },
     actions: {
         insertPriceListToStore (context, payload) {

@@ -2,25 +2,23 @@ import { ref, computed, onMounted } from "vue";
 const heroElement = {
   template: `
         <v-sheet
-          rounded
+          rounded="xl"
           :color="color"
           width="100%"
-          class="py-3 v-theme--dark"
+          class="v-theme--dark my-4 overflow-hidden"
         >
         <v-row no-gutters justify="space-around">
-          <v-col cols="12" sm="7">
+          <v-col cols="12">
           <v-img
+          rounded="xl"
+            cover
             width="100%"
-            :src="{ src: src, lazySrc: lazySrc, aspect: '16/9' }"
+            :src="src"
           >
+              <div class="px-9 pt-6 px-sm-16 pt-sm-16 h-100 ff-nunito d-flex flex-wrap justify-end">
+                  <h2 class="text-h4 text-sm-h2 text-lg-h2 ff-nunito">{{ title }}</h2>
+              </div>
           </v-img>
-          </v-col>
-          <v-col cols="12" sm="5" md="4" order-sm="first" align-self="center">
-          <div class="px-6 py-3 ff-nunito">
-            <h2 class="text-h5 text-md-h4 text-lg-h2 mb-3 ff-crete-round">{{title}}</h2>
-            <p class="mb-3 text-body-2 ff-nunito">{{subtitle}}</p>
-            <slot></slot>
-          </div>
           </v-col>
         </v-row>
         </v-sheet>
@@ -46,7 +44,6 @@ const heroElement = {
     title: {
       type: String,
       reqired: false,
-      default: "Twój Katalog",
     },
     subtitle: {
       type: String,

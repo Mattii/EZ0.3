@@ -3,7 +3,7 @@ import { createStore } from 'vuex';
 import { createVuetify } from "vuetify";
 import vuexStore from "./modules/vuex.js"
 import vareityCard from "./components/vareity-card.js";
-import heroElement from "./components/hero-element.js";
+import familyHeroElement from "./components/family-hero-element.js";
 import mainHero from "./components/main-hero.js";
 import priceHero from "./components/price-hero.js";
 import catalogHero from "./components/catalog-hero.js";
@@ -57,7 +57,7 @@ app.use(router);
 app.use(store);
 app.use(vuetify);
 app.component("vareity-card", vareityCard);
-app.component("hero-element", heroElement);
+app.component("family-hero-element", familyHeroElement);
 app.component("main-hero", mainHero);
 app.component("stock-input", stockInput);
 app.component("price-hero", priceHero);
