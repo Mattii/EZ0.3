@@ -28,6 +28,7 @@ const store = createStore(vuexStore)
 
 const app = createApp({
   setup() {
+    const loaded = ref(false)
     const compayName = ref("ENZApp");
     const icons = ref([
       "mdi-facebook",
@@ -48,6 +49,7 @@ const app = createApp({
     return {
       compayName,
       icons,
+      loaded,
     };
   },
 });

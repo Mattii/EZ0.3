@@ -3,22 +3,6 @@ export default {
       return {
         crops: [
             {
-              crop: "LT",
-              src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1701854322/enzapp/sala_dy54oi.png",
-              lazySrc: "../assets/salata.jpg",
-              color: "#9D94C2",
-              title: "Sałaty",
-              subtitle: "najlepszy wybór do hydroponiki i gruntu",
-            },
-            {
-              crop: "ED",
-              src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1701854737/enzapp/endiv_pazfrl.png",
-              lazySrc: "../assets/endive.png",
-              color: "#94C2A6",
-              title: "Endive",
-              subtitle: "najlepszy wybór do hydroponiki i gruntu",
-            },
-            {
               crop: "TO",
               src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1701249930/enzapp/pom_se5gvw.png",
               lazySrc: "../assets/pomidory.jpg",
@@ -32,6 +16,22 @@ export default {
               lazySrc: "../assets/ogorki.png",
               color: "#94C2B4",
               title: "Ogórki",
+              subtitle: "najlepszy wybór do hydroponiki i gruntu",
+            },
+            {
+              crop: "ED",
+              src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1701854737/enzapp/endiv_pazfrl.png",
+              lazySrc: "../assets/endive.png",
+              color: "#94C2A6",
+              title: "Endive",
+              subtitle: "najlepszy wybór do hydroponiki i gruntu",
+            },
+            {
+              crop: "LT",
+              src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1701854322/enzapp/sala_dy54oi.png",
+              lazySrc: "../assets/salata.jpg",
+              color: "#9D94C2",
+              title: "Sałaty",
               subtitle: "najlepszy wybór do hydroponiki i gruntu",
             },
             {
