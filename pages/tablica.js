@@ -1,5 +1,6 @@
 import { ref, reactive, onMounted, computed } from "vue";
 import { useRoute } from "vue-router";
+import { useStore } from 'vuex';
 import {
   getDatabase,
   query,
@@ -216,6 +217,7 @@ const crop = {
 
   setup() {
     const route = useRoute();
+    const store = useStore();
     const crops = ref({});
     const stock = ref([]);
     const prices = ref([]);
@@ -290,6 +292,10 @@ const crop = {
       onValue(priceList, (snap) => {
         prices.value = snap.val();
       })
+
+      if(store.getters.getStockFromStore.length != 0){
+        console.log(store.getters.getStockFromStore, "test")
+      }
     });
 
     return {

@@ -91,7 +91,8 @@ export default {
             //   subtitle: "najlepszy wybór do hydroponiki i gruntu",
             // },
         ],
-        priceList:[]
+        priceList:[],
+        stock:[]
       }
     },
     getters: {
@@ -101,18 +102,30 @@ export default {
         getCropsListFromStore (state) {
             return state.crops
         },
+        getStockFromStore (state) {
+          return state.stock
+        },
         getCropFromStore: (state) => (id) => {
           return state.crops.find((ele) => id == ele.crop )
+        },
+        getBatchFromStockInStore: (state) => (name) => {
+          return state.stock.find((ele) => name == ele.name )
         },
     },
     actions: {
         insertPriceListToStore (context, payload) {
           context.commit('insertPriceListToStore', payload)
+        },
+        insertStockToStore (context, payload) {
+          context.commit('insertStockToStore', payload)
         }
     },
     mutations: {
-        insertPriceListToStore (state, payload) {
+      insertPriceListToStore (state, payload) {
         state.priceList = payload.priceList
-      }
+      },
+      insertStockToStore (state, payload) {
+        state.stock = payload
+      },
     }
   }

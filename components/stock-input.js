@@ -1,4 +1,5 @@
 import { ref, computed, onMounted, watch } from "vue";
+import { useStore } from 'vuex';
 const stocImput = {
   template: `
     <v-file-input
@@ -26,7 +27,8 @@ const stocImput = {
     `,
   emits:['stockReady', 'raportReady','symfoniaReady'],
   setup(props, context) {
-
+    
+    const store = useStore();
     async function readJsonFile(rawFile) {
 
       for(let e = 0 ;e < rawFile.target.files.length; e++){
@@ -100,6 +102,7 @@ const stocImput = {
 
     function stockEmiter(stock) {
       context.emit('stockReady', stock);
+      store.dispatch('insertStockToStore', stock)
       console.log(stock);
     }
 
