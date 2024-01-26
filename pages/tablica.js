@@ -90,7 +90,7 @@ const crop = {
     <v-row justify="center">
 
       <v-col cols="11" sm="6" md="4">
-        <stock-input @stock-ready="(data) => stock = data" @raport-ready="(data) => raport = data" @symfonia-ready="(data) => symfonia = data"></stock-input>
+        <stock-input @stock-ready="stockUpdate" @raport-ready="raportUpdate" @symfonia-ready="symfoniaUpdate"></stock-input>
       </v-col>
 
     </v-row>
@@ -254,6 +254,21 @@ const crop = {
       return symfonia.value.filter(ele => !batchesInStock.includes(+ele.batch))
     });
 
+    const stockUpdate = (freshStock) => {
+      stock.value = freshStock;
+      store.dispatch('insertStockToStore', freshStock);
+    }
+
+    const raportUpdate = (freshRaport) => {
+      raport.value = freshRaport;
+      store.dispatch('insertRaportToStore', freshRaport);
+    }
+
+    const symfoniaUpdate = (freshSymfonia) => {
+      symfonia.value = freshSymfonia;
+      //store.dispatch('insertSymfoniaToStore', freshSymfonia);
+    }
+
     const differenceBetweenBatchesOnStockAndSymfonia = computed(() => {
       //sprawdza które batche 
       return stock.value.reduce((accumulator, currentValue) => {
@@ -295,6 +310,7 @@ const crop = {
 
       if(store.getters.getStockFromStore.length != 0){
         console.log(store.getters.getStockFromStore, "test")
+        stock.value = store.getters.getStockFromStore
       }
     });
 
@@ -314,7 +330,10 @@ const crop = {
       amountOfBatchesInStock,
       batchesJustOnStock,
       batchesJustOnSymfonia,
-      differenceBetweenBatchesOnStockAndSymfonia
+      differenceBetweenBatchesOnStockAndSymfonia,
+      stockUpdate,
+      raportUpdate,
+      symfoniaUpdate,
     };
   },
 };

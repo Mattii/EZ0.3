@@ -102,7 +102,6 @@ const stocImput = {
 
     function stockEmiter(stock) {
       context.emit('stockReady', stock);
-      store.dispatch('insertStockToStore', stock)
       console.log(stock);
     }
 

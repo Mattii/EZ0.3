@@ -92,7 +92,9 @@ export default {
             // },
         ],
         priceList:[],
-        stock:[]
+        stock:[],
+        raport:[],
+        symfonia:[],
       }
     },
     getters: {
@@ -116,6 +118,12 @@ export default {
         insertPriceListToStore (context, payload) {
           context.commit('insertPriceListToStore', payload)
         },
+        insertRaportToStore (context, payload) {
+          context.commit('insertRaportToStore', payload)
+        },
+        insertSymfoniaToStore (context, payload) {
+          context.commit('insertSymfoniaToStore', payload)
+        },
         insertStockToStore (context, payload) {
           context.commit('insertStockToStore', payload)
         }
@@ -126,6 +134,12 @@ export default {
       },
       insertStockToStore (state, payload) {
         state.stock = payload
+      },
+      insertRaportToStore (state, payload) {
+        state.raport = payload
+      },
+      insertSymfoniaToStore (state, payload) {
+        state.symfonia = payload
       },
     }
   }
