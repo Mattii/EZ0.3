@@ -266,7 +266,7 @@ const crop = {
 
     const symfoniaUpdate = (freshSymfonia) => {
       symfonia.value = freshSymfonia;
-      //store.dispatch('insertSymfoniaToStore', freshSymfonia);
+      store.dispatch('insertSymfoniaToStore', freshSymfonia);
     }
 
     const differenceBetweenBatchesOnStockAndSymfonia = computed(() => {
@@ -309,8 +309,13 @@ const crop = {
       })
 
       if(store.getters.getStockFromStore.length != 0){
-        console.log(store.getters.getStockFromStore, "test")
         stock.value = store.getters.getStockFromStore
+      }
+      if(store.getters.getRaportFromStore.length != 0){
+        raport.value = store.getters.getRaportFromStore
+      }
+      if(store.getters.getSymfoniaFromStore.length != 0){
+        symfonia.value = store.getters.getSymfoniaFromStore
       }
     });
 

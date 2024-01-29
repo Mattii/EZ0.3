@@ -107,6 +107,12 @@ export default {
         getStockFromStore (state) {
           return state.stock
         },
+        getRaportFromStore (state) {
+          return state.raport
+        },
+        getSymfoniaFromStore (state) {
+          return state.symfonia
+        },
         getCropFromStore: (state) => (id) => {
           return state.crops.find((ele) => id == ele.crop )
         },
