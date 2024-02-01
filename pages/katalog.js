@@ -12,25 +12,27 @@ const crop = {
         <catalog-hero></catalog-hero>
       </v-col>
     </v-row>
-    <v-row justify="center">
-      <v-col  xs="12" md="10" lg="8" class="d-flex flex-wrap justify-space-evenly">
-          <div
-            v-for="(item, index) in crop"
-            :key="index"
-            class="py-4"
-          >
-            <vareity-card
+    <v-row justify="center" class="">
+    <v-col  xs="12" sm="10" md="9" lg="8" class="pa-0 ma-0 d-flex flex-wrap justify-center">
+          <v-col  xs="12" sm="6" md="4" class="d-flex flex-wrap justify-space-evenly"             
+          v-for="(item, index) in crops"
+            key="index">
+            <router-link 
+            class="w-100 h-100"
+            :to="">
+            <main-vareity-card
               v-if="item"
               :item="item"
               :stock="stock"
-            ></vareity-card>
-          </div>
-      </v-col>
+            ></main-vareity-card>
+            </router-link>
+          </v-col>
+          </v-col>
     </v-row>
   </v-container>`,
   setup() {
     const route = useRoute();
-    const crop = ref({});
+    const crops = ref({});
     const stock = ref([]);
 
     function readJsonFile(rawFile) {
@@ -70,14 +72,14 @@ const crop = {
       const katalog = fref(db, 'katalog');
       const mostViewedPosts = query(fref(db, 'katalog'), orderByChild('crop'), startAt("TO"), endAt("TO"));
       onValue(katalog, (snapshot) => {
-         crop.value = snapshot.val();
+         crops.value = snapshot.val();
          console.log(snapshot.val());
        });
     });
 
     return {
       route,
-      crop,
+      crops,
       stock,
       readJsonFile,
       clearFiled,

@@ -35,38 +35,10 @@ const crop = {
             <router-link 
             class="w-100 h-100"
             :to="">
-            <v-sheet
-              rounded="xl"
-              :color="familyType.color"
-              width="100%"
-              min-width="200px"
-              class="v-theme--dark overflow-hidden"
-            >
-              <v-row no-gutters justify="space-around">
-                <v-col cols="12">
-                  <v-img
-                    class="w-100 h-100"
-                    rounded="xl"
-                    cover
-                    max-height="200px"
-                    :src="{ src: item.imgs[0], lazySrc: familyType.src || '../assets/salata.jpg', aspect: '16/9' }"
-                    >
-                    <div class=" pb-6 ff-nunito d-flex h-100 flex-wrap justify-start align-end ff-nunito">
-                      <div>
-                      <h2 
-                        :style="'background-color:'+ familyType.color" 
-                        class=" rounded-e-xl my-3 px-4 py-1 d-inline-block"
-                      >{{item.name}}</h2><br/>
-                      <p
-                      :style="'background-color:'+ familyType.color" 
-                      class="rounded-e-xl px-4 py-1 text-subtitle-2 font-weight-light d-inline-block"
-                      >{{ item.segment }}</p>  
-                      </div>
-                    </div>
-                  </v-img>
-                </v-col>
-              </v-row>
-            </v-sheet>
+            <main-vareity-card
+              v-if="item"
+              :item="item"
+            ></main-vareity-card>
             
           </router-link>
           </v-col>
