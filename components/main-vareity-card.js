@@ -8,7 +8,7 @@ const vareityCard = {
   template: `   
             <v-sheet
               rounded="xl"
-              :color="familyType.color"
+              :color="familyType?.color ? familyType.color : '#9b91f9'"
               width="100%"
               min-width="200px"
               class="v-theme--dark overflow-hidden"
