@@ -20,17 +20,17 @@ const vareityCard = {
                     rounded="xl"
                     cover
                     max-height="200px"
-                    :src="{ src: item.imgs[0], lazySrc: familyType.src || '../assets/salata.jpg', aspect: '16/9' }"
+                    :src="{ src: item.imgs[0], lazySrc: familyType?.src || '../assets/salata.jpg', aspect: '16/9' }"
                     >
                     <div class=" pb-6 ff-nunito d-flex h-100 flex-wrap justify-start align-end ff-nunito">
                       <div>
-                      <h2 
-                        :style="'background-color:'+ familyType.color" 
-                        class="rounded-e-xl my-3 px-4 py-1 d-inline-block"
-                      >{{item.name}}</h2><br/>
+                      <h3 
+                        :style="familyType?.color ? 'background-color:'+ familyType?.color : 'background-color:' + '#61cb6f'" 
+                        class="rounded-e-xl my-3 px-4 py-1 d-inline-block "
+                      >{{item.name}}</h3><br/>
                       <p
-                      :style="'background-color:'+ familyType.color" 
-                      class="rounded-e-xl px-4 py-1 text-subtitle-2 font-weight-light d-inline-block"
+                      :style="familyType?.color ? 'background-color:'+ familyType?.color : 'background-color:' + '#61cb6f'" 
+                      class="rounded-e-xl px-4 py-1 font-weight-light d-inline-block"
                       >{{ item.segment }}</p>  
                       </div>
                     </div>
