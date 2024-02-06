@@ -35,7 +35,7 @@ const home = {
                     :src="{ src: crop.src, aspect: '16/9' }"
                     >
                     <div class="px-9 py-7 h-100 ff-nunito d-flex flex-wrap justify-end">
-                      <h2 class="text-h5 text-lg-h4 ff-nunito">{{crop.title}}</h2>
+                      <h2 class="text-h4 ff-nunito">{{crop.title}}</h2>
                     </div>
                   </v-img>
                 </v-col>

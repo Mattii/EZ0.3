@@ -1,4 +1,4 @@
-import { ref, reactive, onMounted } from "vue";
+import { ref, reactive, onMounted, computed} from "vue";
 import { useStore } from 'vuex';
 import { useRoute } from "vue-router";
 import {
@@ -23,12 +23,33 @@ const priceList = {
       </v-col>
     </v-row>
     <v-row justify="center">
+      <v-col cols="12" sm="6" md="4">
+        <v-text-field
+          prepend-icon=""
+          variant="solo"
+          label="Wyszukaj odmianę"
+          truncate-length="15"
+          density="compact"
+          bg-color="primary"
+          rounded="pill"
+          v-model="searchValue"
+        > 
+          <template v-slot:append>
+            <v-btn
+              color="secondary"
+              icon="mdi-magnify"
+            ></v-btn>
+          </template>
+        </v-text-field>
+      </v-col>
+    </v-row>
+    <v-row justify="center">
       <v-col  xs="12" md="10" lg="8" class="d-flex flex-wrap justify-space-evenly">
         <!-- visible on screen  (width < 600)  -->
       <v-data-table
         fixed-header
         :headers="headersMobile"
-        :items="prices"
+        :items="searchedPriceList"
         class="h-100 d-flex d-sm-none"
         item-value="index"
       >
@@ -55,7 +76,7 @@ const priceList = {
       <v-data-table
         fixed-header
         :headers="headers"
-        :items="prices"
+        :items="searchedPriceList"
         class="h-100 d-none d-sm-flex"
         item-value="index"
       >
@@ -77,10 +98,13 @@ const priceList = {
     const store = useStore();
     const prices = ref([]);
     const stock = ref([]);
+    const searchValue = ref('');
+
     const headersMobile = ref([
       { title: 'Nazwa', align: 'start', key: 'name' },
       { title: 'Cena', align: 'end', key: 'price' },
     ])
+
     const headers = ref([
       { title: 'Nazwa', align: 'start', key: 'name' },
       { title: 'Rodzina', align: 'end', key: 'family' },
@@ -89,6 +113,10 @@ const priceList = {
       { title: 'Opakowanie', align: 'end', key: 'packing' },
     ])
 
+    const searchedPriceList = computed(() => {
+      return prices.value.filter(ele => ele.name.includes(searchValue.value));
+    });
+    
     const toPLAccountingStandards = (num) => new Intl.NumberFormat('pl-PL', { style: 'currency', currency: 'PLN' }).format(
       num,
     )
@@ -118,6 +146,8 @@ const priceList = {
       stock,
       headers,
       headersMobile,
+      searchValue,
+      searchedPriceList,
       onMounted,
       toPLAccountingStandards
     };
