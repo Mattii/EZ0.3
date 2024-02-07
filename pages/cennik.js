@@ -35,6 +35,7 @@ const priceList = {
           rounded="pill"
           v-model="searchValue"
           class="mt-3"
+          @click:clear="() => {searchValue = ''}"
         > 
           <template v-slot:append>
             <v-btn

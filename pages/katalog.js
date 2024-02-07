@@ -1,5 +1,6 @@
 import { ref, reactive, onMounted } from "vue";
 import { useRoute } from "vue-router";
+import { useStore } from 'vuex';
 import { getDatabase, query, orderByValue, orderByKey, orderByChild, onValue, startAt, endAt } from  "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
 import {ref as fref } from  "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
 import app from "../modules/firebase.js"
@@ -32,39 +33,9 @@ const crop = {
   </v-container>`,
   setup() {
     const route = useRoute();
+    const store = useStore();
     const crops = ref({});
     const stock = ref([]);
-
-    function readJsonFile(rawFile) {
-      let fileReader = new FileReader();
-
-      fileReader.onload = (event) => {
-        let data = event.target.result;
-        let workbook = XLSX.read(data, { type: "binary", cellDates: true });
-        workbook.SheetNames.forEach((sheet) => {
-          let rawStock = XLSX.utils.sheet_to_row_object_array(
-            workbook.Sheets[sheet],
-            { dateNF: "yyyy-mm" }
-          );
-
-          stock.value = rawStock.map((ele) => {
-            return Object.assign(
-              {},
-              ...Object.keys(ele).map((key) => {
-                let newKey = key.replace(/\n/g, " ").replace(/\s+/g, "_");
-                return { [newKey]: ele[key] };
-              })
-            );
-          });
-        });
-      };
-
-      fileReader.readAsBinaryString(rawFile.target.files[0]);
-    }
-
-    function clearFiled() {
-      return console.log("test clear");
-    }
 
     onMounted(async () => {
       const db = getDatabase(app);
@@ -73,7 +44,7 @@ const crop = {
       const mostViewedPosts = query(fref(db, 'katalog'), orderByChild('crop'), startAt("TO"), endAt("TO"));
       onValue(katalog, (snapshot) => {
          crops.value = snapshot.val();
-         console.log(snapshot.val());
+         store.dispatch('insertKatalogToStore', crops.value)
        });
     });
 
@@ -81,8 +52,6 @@ const crop = {
       route,
       crops,
       stock,
-      readJsonFile,
-      clearFiled,
       onMounted,
     };
   },

@@ -95,6 +95,7 @@ export default {
         stock:[],
         raport:[],
         symfonia:[],
+        katalog:{},
       }
     },
     getters: {
@@ -112,6 +113,9 @@ export default {
         },
         getSymfoniaFromStore (state) {
           return state.symfonia
+        },
+        getKatalogFromStore (state) {
+          return state.katalog
         },
         getCropFromStore: (state) => (id) => {
           return state.crops.find((ele) => id == ele.crop )
@@ -132,7 +136,10 @@ export default {
         },
         insertStockToStore (context, payload) {
           context.commit('insertStockToStore', payload)
-        }
+        },
+        insertKatalogToStore (context, payload) {
+          context.commit('insertKatalogToStore', payload)
+        },
     },
     mutations: {
       insertPriceListToStore (state, payload) {
@@ -146,6 +153,9 @@ export default {
       },
       insertSymfoniaToStore (state, payload) {
         state.symfonia = payload
+      },
+      insertKatalogToStore (state, payload) {
+        state.katalog = payload
       },
     }
   }
