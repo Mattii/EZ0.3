@@ -17,8 +17,8 @@ const heroElement = {
           >
             <template #sources>
               <source media="(max-width: 460px)" srcset="https://res.cloudinary.com/ddkef5waq/image/upload/v1700049491/enzapp/heroXS_yplnho.png">
-              <source media="(max-width: 690px)" srcset="https://res.cloudinary.com/ddkef5waq/image/upload/v1700135865/enzapp/hero600_thyykd.png">
-              <source media="(max-width: 800px)" srcset="https://res.cloudinary.com/ddkef5waq/image/upload/v1700136988/enzapp/hero800_ifozsn.png">
+              <source media="(max-width: 840px)" srcset="https://res.cloudinary.com/ddkef5waq/image/upload/v1700135865/enzapp/hero600_thyykd.png">
+              <source media="(max-width: 900px)" srcset="https://res.cloudinary.com/ddkef5waq/image/upload/v1700136988/enzapp/hero800_ifozsn.png">
             </template>
           <div class="px-9 pt-9 pb-6 h-100 py-sm-10 pa-lg-16 ff-nunito d-flex flex-wrap">
             <h2 class="text-h4 text-md-h3 text-lg-h2 mb-3 ff-nunito">Sięgnij po </h2>

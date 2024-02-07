@@ -25,6 +25,7 @@ const priceList = {
     <v-row justify="center">
       <v-col cols="12" sm="6" md="4">
         <v-text-field
+          clearable 
           prepend-icon=""
           variant="solo"
           label="Wyszukaj odmianę"
@@ -33,6 +34,7 @@ const priceList = {
           bg-color="primary"
           rounded="pill"
           v-model="searchValue"
+          class="mt-3"
         > 
           <template v-slot:append>
             <v-btn
@@ -56,14 +58,14 @@ const priceList = {
       <template v-slot:item="{ item }">
         <tr>
           <td>
-            <span class="font-weight-thin text-medium-emphasis text-subtitle-2">{{item.family}}</span>
+            <span class="font-weight-light text-medium-emphasis text-subtitle-2">{{item.family}}</span>
             <br />
             <span class="text-uppercase">{{ item.name }}</span>
             <br/>
             <span class="font-weight-thin text-medium-emphasis text-subtitle-2">{{item?.segment}}</span>
           </td>
           <td class="tabular-nums text-end">
-            <span class="tabular-nums font-weight-thin text-subtitle-2">{{item.packing}}</span> 
+            <span class="tabular-nums font-weight-light text-subtitle-2">{{item.packing}}</span> 
             <br/>
             <span class="tabular-nums">{{ toPLAccountingStandards(item.price) }}</span> 
             <br/>
@@ -114,7 +116,7 @@ const priceList = {
     ])
 
     const searchedPriceList = computed(() => {
-      return prices.value.filter(ele => ele.name.includes(searchValue.value));
+      return prices.value.filter(ele => ele.name.includes(searchValue.value.toLowerCase()));
     });
     
     const toPLAccountingStandards = (num) => new Intl.NumberFormat('pl-PL', { style: 'currency', currency: 'PLN' }).format(
