@@ -22,6 +22,11 @@ const vareityCard = {
                     max-height="200px"
                     :src="{ src: item.imgs[0], lazySrc: familyType?.src || '../assets/salata.jpg', aspect: '16/9' }"
                     >
+                    <template #sources>
+                      <source media="(max-width: 460px)" :srcset="item.imgs[0]">
+                      <source media="(max-width: 840px)" :srcset="item.imgs[0]">
+                      <source media="(max-width: 900px)" :srcset="item.imgs[0]">
+                    </template>
                     <div class=" pb-6 ff-nunito d-flex h-100 flex-wrap justify-start align-end ff-nunito">
                       <div>
                       <h3 
