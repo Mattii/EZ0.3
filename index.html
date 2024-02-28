@@ -104,10 +104,7 @@
         </div>
 
           <v-spacer></v-spacer>
-          <v-btn icon>
-            <v-icon>mdi-magnify</v-icon>
-          </v-btn>
-          <v-btn icon>
+          <v-btn class="" icon @click="drawer = !drawer">
             <v-icon>mdi-dots-vertical</v-icon>
           </v-btn>
         </v-app-bar>
@@ -177,7 +174,7 @@
           </div>
         </v-footer>
 
-        <v-bottom-navigation color="teal" grow app class="d-flex d-sm-none">
+        <v-bottom-navigation color="teal" grow app class="d-flex d-sm-none" app>
           <v-btn to="/">
               <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g id="greenhouse-svgrepo-com 1">

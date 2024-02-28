@@ -1,4 +1,4 @@
-import { createApp, ref, reactive, onMounted } from "vue";
+import { createApp, ref, reactive, onMounted, provide } from "vue";
 import { createStore } from 'vuex';
 import { createVuetify } from "vuetify";
 import vuexStore from "./modules/vuex.js"
@@ -36,6 +36,8 @@ const app = createApp({
       "mdi-linkedin",
       "mdi-instagram",
     ]);
+    const drawer = ref(false)
+    provide("drawer", drawer )
     // fetch("/katalog-export.json")
     //   .then((res) => res.json())
     //   .then((data) => {
@@ -50,6 +52,7 @@ const app = createApp({
       compayName,
       icons,
       loaded,
+      drawer,
     };
   },
 });

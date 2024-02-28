@@ -1,4 +1,4 @@
-import { ref, reactive, onMounted, computed } from "vue";
+import { ref, reactive, onMounted, computed, inject } from "vue";
 import { useRoute } from "vue-router";
 import { useStore } from 'vuex';
 import {
@@ -15,29 +15,74 @@ import { ref as fref } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-
 import app from "../modules/firebase.js";
 
 const crop = {
-  template: `          
+  template: `   
+
+      <v-navigation-drawer
+      class=""
+        v-model="drawer"
+        temporary
+        app
+      >
+        <v-list>
+          <v-list-item
+            prepend-avatar="https://randomuser.me/api/portraits/women/85.jpg"
+            title="Mateusz"
+            subtitle="MadDaimond@gravity.com"
+          ></v-list-item>
+        </v-list>
+
+        <v-divider></v-divider>
+
+        <v-list 
+          density="comfortable"
+          nav>
+          <v-list-group value="Admin">
+          <template v-slot:activator="{ props }">
+            <v-list-item
+              rounded="xl" prepend-icon="mdi-folder" value="myfiles"
+              v-bind="props"
+              title="Magazyn"
+            ></v-list-item>
+          </template>
+
+          <v-list-item
+            rounded="xl"
+            v-for="([title, icon], i) in [['Komercja', 'mdi-account-multiple-outline'], ['Sample', 'mdi-cog-outline']]"
+            :key="i"
+            :title="title"
+            :prepend-icon="icon"
+            :value="title"
+          ></v-list-item>
+        </v-list-group>
+          <v-list-item rounded="xl" prepend-icon="mdi-account-multiple" title="profil" value="shared"></v-list-item>
+          <v-list-item rounded="xl" prepend-icon="mdi-star" title="Stan" value="starred"></v-list-item>
+        </v-list>
+      </v-navigation-drawer>
+
   <v-container fluid>
+
   <v-row justify="center">
-
-      <v-col cols="12" sm="11" md="9" class="d-flex flex-column flex-sm-row justify-sm-center flex-sm-wrap">
-        <v-sheet 
-          class="ma-3 pa-6"
-          color="primary"
-          rounded="lg"
-          elevation="3"
-          >
-              <div>
-                <div class="text-h4 mt-2">
-                  {{amountOfCrops}}
+    <v-col xs="12" sm="10" md="9" lg="8" class="d-flex flex-wrap">
+        <v-col xs="6" sm="4" md="3"  class="">
+          <v-sheet 
+            class="pa-3 w-100 h-100 d-flex align-stretch"
+            color="primary"
+            rounded="lg"
+            elevation="3"
+            >
+                <div class="">
+                  <div class="text-h4 mt-2">
+                    {{amountOfCrops}}
+                  </div>
+                  <div class="text-overline mb-1 ff-nunito">
+                    odmian w katalogu
+                  </div>
                 </div>
-                <div class="text-overline mb-1 ff-nunito">
-                  odmian w katalogu
-                </div>
-              </div>
-        </v-sheet>
-
+          </v-sheet>
+        </v-col>
+        <v-col cols="6" sm="4" md="3" class="">
         <v-sheet 
-          class="ma-3 pa-6"
+          class="pa-3 w-100 h-100"
           color="primary"
           rounded="lg"
           elevation="3"
@@ -51,9 +96,10 @@ const crop = {
               </div>
             </div>
         </v-sheet>
-
+        </v-col>
+        <v-col cols="6" sm="4" md="3" class="">
         <v-sheet 
-          class="ma-3 pa-6"
+          class="pa-3 w-100 h-100"
           color="primary"
           rounded="lg"
           elevation="3"
@@ -67,9 +113,10 @@ const crop = {
               </div>
             </div>
         </v-sheet>
-
+        </v-col>
+        <v-col cols="6" sm="4" md="3" class="">
         <v-sheet 
-          class="ma-3 pa-6"
+          class="pa-3 w-100 h-100"
           color="primary"
           rounded="lg"
           elevation="3"
@@ -83,8 +130,8 @@ const crop = {
                 </div>
               </div>
         </v-sheet>
-
-      </v-col>
+        </v-col>
+        </v-col>
     </v-row>
 
     <v-row justify="center">
@@ -225,7 +272,7 @@ const crop = {
     const symfonia = ref([]);
     const searchValue = ref('');
     const tab = ref(null);
-
+    const drawer  = inject('drawer')
 
     const amountOfCrops = computed(() => {
       return Object.values(crops.value).length;
@@ -320,6 +367,7 @@ const crop = {
     });
 
     return {
+      drawer,
       tab,
       route,
       crops,
