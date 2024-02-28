@@ -66,11 +66,11 @@ const priceList = {
             <span class="font-weight-light text-medium-emphasis text-subtitle-2">{{item?.segment}}</span>
           </td>
           <td class="tabular-nums text-end">
-            <span class="tabular-nums font-weight-regular text-subtitle-2">{{item.packing}}</span> 
+            <span class="tabular-nums font-weight-light text-medium-emphasis text-subtitle-2">{{ toPLAccountingStandards(Number.parseFloat(item.price + item.price * 0.08).toFixed(2)) }}</span>          
             <br/>
             <span class="tabular-nums font-weight-medium">{{ toPLAccountingStandards(item.price) }}</span> 
             <br/>
-            <span class="tabular-nums font-weight-light text-medium-emphasis text-subtitle-2">{{ toPLAccountingStandards(Number.parseFloat(item.price + item.price * 0.08).toFixed(2)) }}</span>
+            <span class="tabular-nums font-weight-regular text-subtitle-2">{{item.packing}}</span>
           </td>
         </tr>
       </template>
@@ -105,14 +105,14 @@ const priceList = {
 
     const headersMobile = ref([
       { title: 'Nazwa', align: 'start', key: 'name' },
-      { title: 'Cena', align: 'end', key: 'price' },
+      { title: 'Cena/Opakowanie', align: 'end', key: 'price' },
     ])
 
     const headers = ref([
       { title: 'Nazwa', align: 'start', key: 'name' },
       { title: 'Rodzina', align: 'end', key: 'family' },
       { title: 'Cena(netto)', align: 'end', key: 'price' },
-      { title: 'Cena(brutto)', align: 'end' },
+      { title: 'Cena(brutto)', align: 'start' },
       { title: 'Opakowanie', align: 'end', key: 'packing' },
     ])
 

@@ -39,15 +39,16 @@ const crop = {
           <v-list-group value="Admin">
           <template v-slot:activator="{ props }">
             <v-list-item
-              rounded="xl" prepend-icon="mdi-folder" value="myfiles"
+              rounded="xl" prepend-icon="mdi-bookshelf" value="myfiles"
               v-bind="props"
               title="Magazyn"
             ></v-list-item>
           </template>
 
           <v-list-item
+            color=""
             rounded="xl"
-            v-for="([title, icon], i) in [['Komercja', 'mdi-account-multiple-outline'], ['Sample', 'mdi-cog-outline']]"
+            v-for="([title, icon], i) in [['Komercja', 'mdi-wallet-membership'], ['Sample', 'mdi-wallet-giftcard']]"
             :key="i"
             :title="title"
             :prepend-icon="icon"
