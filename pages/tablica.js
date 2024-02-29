@@ -44,15 +44,15 @@ const crop = {
               title="Magazyn"
             ></v-list-item>
           </template>
-
           <v-list-item
             color=""
             rounded="xl"
-            v-for="([title, icon], i) in [['Komercja', 'mdi-wallet-membership'], ['Sample', 'mdi-wallet-giftcard']]"
+            v-for="([title, icon, link], i) in [['Komercja', 'mdi-wallet-membership', '/tablica/komercja'], ['Sample', 'mdi-wallet-giftcard', '/tablica/pruby']]"
             :key="i"
             :title="title"
             :prepend-icon="icon"
             :value="title"
+            :to="link"
           ></v-list-item>
         </v-list-group>
           <v-list-item rounded="xl" prepend-icon="mdi-account-multiple" title="profil" value="shared"></v-list-item>
@@ -165,6 +165,11 @@ const crop = {
       </v-col>
     </v-row>
     
+    <v-row justify="center">
+      <v-col cols="12" sm="6" md="4">
+        <router-view></router-view>
+      </v-col>
+    </v-row>
 
     <v-row justify="center">
       <v-col cols="12" sm="10" md="6">
