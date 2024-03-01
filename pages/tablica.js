@@ -98,6 +98,7 @@ const crop = {
             </div>
         </v-sheet>
         </v-col>
+
         <v-col cols="6" sm="4" md="3" class="">
         <v-sheet 
           class="pa-3 w-100 h-100"
@@ -115,6 +116,7 @@ const crop = {
             </div>
         </v-sheet>
         </v-col>
+
         <v-col cols="6" sm="4" md="3" class="">
         <v-sheet 
           class="pa-3 w-100 h-100"
@@ -144,126 +146,9 @@ const crop = {
     </v-row>
 
     <v-row justify="center">
-      <v-col cols="12" sm="6" md="4">
-        <v-text-field
-          prepend-icon=""
-          variant="solo"
-          label="Wyszukaj partję"
-          truncate-length="15"
-          density="compact"
-          bg-color="primary"
-          rounded="pill"
-          v-model="searchValue"
-        > 
-          <template v-slot:append>
-            <v-btn
-              color="secondary"
-              icon="mdi-magnify"
-            ></v-btn>
-          </template>
-        </v-text-field>
-      </v-col>
-    </v-row>
-    
-    <v-row justify="center">
-      <v-col cols="12" sm="6" md="4">
+      <v-col cols="12">
         <router-view></router-view>
       </v-col>
-    </v-row>
-
-    <v-row justify="center">
-      <v-col cols="12" sm="10" md="6">
-        <v-tabs
-          v-model="tab"
-          color="primary"
-          align-tabs="center"
-          center-active
-          show-arrows
-        >
-          <v-tab value="1">raport</v-tab>
-          <v-tab value="2">symfonia</v-tab>
-          <v-tab value="3">stock</v-tab>
-        </v-tabs>
-        <v-window v-model="tab">
-          <v-window-item value="1">
-            <v-list lines="two">
-              <v-list-item
-                v-for="(batch, index) in searchedStock"
-                :key="index"
-                :title="batch.Batch_number + ' ' + batch.Product_name"
-                :subtitle="batch.Number_WARSZAWA + 'x ' + batch.Packaging + ' (' + batch.Stock_WARSZAWA + batch.Unit_code + ')'"
-                rounded="xl"
-                ></v-list-item>
-            </v-list>
-          </v-window-item>
-
-          <v-window-item value="2">
-            <v-list lines="two">
-              <v-list-item
-                v-for="(batch, index) in symfonia"
-                :key="index"
-                :title="batch.batch + ' ' + batch.nazwa"
-                :subtitle="batch.kod + ' x' + batch.ilość"
-                >
-              </v-list-item>
-            </v-list>
-          </v-window-item>
-
-          <v-window-item value="3">
-            <v-list >
-            <v-list-subheader>partje tylko na stanie ABS {{batchesJustOnStock.length}}</v-list-subheader>
-              <v-virtual-scroll
-                :items="batchesJustOnStock"
-                height="300"
-                item-height="50"
-              >
-              <template v-slot:default="{ item }">
-              <v-list-item
-                :title="item.Batch_number + ' ' + item.Article_abbreviated"
-                :subtitle="item.Packaging_abbreviated + ' x' + item.Number_balance"
-                >
-              </v-list-item>
-              </template>
-              </v-virtual-scroll>
-            </v-list>
-
-            <v-list >
-            <v-list-subheader>partje tylko w symfonii {{batchesJustOnSymfonia.length}}</v-list-subheader>
-              <v-virtual-scroll
-                :items="batchesJustOnSymfonia"
-                height="300"
-                item-height="50"
-              >
-              <template v-slot:default="{ item }">
-              <v-list-item
-                :title="item.batch + ' ' + item.nazwa"
-                :subtitle="item.kod + ' x' + item.ilość"
-                >
-              </v-list-item>
-              </template>
-              </v-virtual-scroll>
-            </v-list>
-
-            <v-list >
-            <v-list-subheader>różnica między ABS a symfonii {{differenceBetweenBatchesOnStockAndSymfonia.length}}</v-list-subheader>
-              <v-virtual-scroll
-                :items="differenceBetweenBatchesOnStockAndSymfonia"
-                height="300"
-                item-height="50"
-              >
-              <template v-slot:default="{ item }">
-              <v-list-item
-                :title="item.batch + ' ' + item.name"
-                :subtitle="item.amountInABS + '/ABS - ' + item.amountInSymfonia + '/symf = ' + item.amountDiffrance"
-                >
-              </v-list-item>
-              </template>
-              </v-virtual-scroll>
-            </v-list>
-          </v-window-item>
-        </v-window>
-      </v-col>
-
     </v-row>
 
   </v-container>`,
