@@ -126,15 +126,18 @@ export default {
     },
     actions: {
         insertPriceListToStore (context, payload) {
+          localStorage.setItem("price", JSON.stringify(payload.priceList));
           context.commit('insertPriceListToStore', payload)
         },
         insertRaportToStore (context, payload) {
+          localStorage.setItem("raport", JSON.stringify(payload));
           context.commit('insertRaportToStore', payload)
         },
         insertSymfoniaToStore (context, payload) {
           context.commit('insertSymfoniaToStore', payload)
         },
         insertStockToStore (context, payload) {
+          localStorage.setItem("stock", JSON.stringify(payload));
           context.commit('insertStockToStore', payload)
         },
         insertKatalogToStore (context, payload) {

@@ -52,6 +52,36 @@ const stock = {
           <p class="text-h5 ff-nunito">Niestety nasion nie znaleziono, załaduj plik.</p>
         </v-sheet>
         <!-- visible on screen  (width > 600)  -->
+        <div
+        v-else
+        >
+        <v-data-table
+        fixed-header
+        :headers="headersMobile"
+        :items="showStock"
+        class="h-100 d-flex d-sm-none"
+        item-value="index"
+        >
+        <template v-slot:item="{ item }">
+          <tr>
+            <td>
+              <span class="font-weight-regular text-medium-emphasis text-subtitle-2">{{ item.Product_full_name }}</span>
+              <br />
+              <span class="text-uppercase font-weight-medium">{{ item.Article_abbreviated }}</span>
+              <br/>
+              <span class="font-weight-light text-medium-emphasis text-subtitle-2">{{ item.Batch_number }} {{ item.Lot_number }}</span>
+            </td>
+            <td class="tabular-nums text-end">
+              <span class="tabular-nums font-weight-light text-medium-emphasis text-subtitle-2">{{item.Quantity_usable}} {{item.Unit_code}}</span>          
+              <br/>
+              <span class="tabular-nums font-weight-medium">{{ item.Number_balance }}</span> 
+              <br/>
+              <span class="tabular-nums font-weight-regular text-subtitle-2">{{  item.Packaging_abbreviated }}</span>
+            </td>
+          </tr>
+        </template>
+        </v-data-table>
+
         <v-data-table
         v-else
         class="w-100"
@@ -85,6 +115,7 @@ const stock = {
             </tr>
           </template>
         </v-data-table>
+        </div>
       </v-col>
     </v-row>`,
   setup() {
@@ -94,8 +125,8 @@ const stock = {
     const searchValue = ref("");
 
     const headersMobile = ref([
-      { title: "Nazwa", align: "start", key: "name" },
-      { title: "Cena/Opakowanie", align: "end", key: "price" },
+      { title: "Nazwa", align: "start", key: "Article_abbreviated" },
+      { title: "Ilość/Opakowanie", align: "end", key: "Packaging_abbreviated" },
     ]);
 
     const showStock = computed(() => store.getters.getStockFromStore.filter(ele => {
