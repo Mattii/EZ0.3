@@ -94,6 +94,7 @@ export default {
         priceList:[],
         stock:[],
         raport:[],
+        sample:[],
         symfonia:[],
         katalog:{},
       }
@@ -110,6 +111,9 @@ export default {
         },
         getRaportFromStore (state) {
           return state.raport
+        },
+        getSampleFromStore (state) {
+          return state.sample
         },
         getSymfoniaFromStore (state) {
           return state.symfonia
@@ -133,6 +137,10 @@ export default {
           localStorage.setItem("raport", JSON.stringify(payload));
           context.commit('insertRaportToStore', payload)
         },
+        insertSampleToStore (context, payload) {
+          localStorage.setItem("sample", JSON.stringify(payload));
+          context.commit('insertSampleToStore', payload)
+        },
         insertSymfoniaToStore (context, payload) {
           context.commit('insertSymfoniaToStore', payload)
         },
@@ -153,6 +161,9 @@ export default {
       },
       insertRaportToStore (state, payload) {
         state.raport = payload
+      },
+      insertSampleToStore (state, payload) {
+        state.sample = payload
       },
       insertSymfoniaToStore (state, payload) {
         state.symfonia = payload

@@ -132,7 +132,7 @@ const stock = {
       { title: "Ilość/Opakowanie", align: "end", key: "Packaging_abbreviated" },
     ]);
 
-    const showStock = computed(() => store.getters.getStockFromStore.filter(ele => {
+    const showStock = computed(() => store.getters.getSampleFromStore.filter(ele => {
 
       return ele.Article_abbreviated.includes(searchValue.value.toUpperCase())
     }));

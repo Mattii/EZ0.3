@@ -38,6 +38,9 @@ const stocImput = {
         } else if(rawFile.target.files[e]?.name.includes("raport")){
           let raport = await convertXLSXtoJSON(rawFile.target.files[e])
           raportEmiter(raport);
+        } else if(rawFile.target.files[e]?.name.includes("sample")){
+          let sample = await convertXLSXtoJSON(rawFile.target.files[e])
+          sampleEmiter(sample);
         } else if(rawFile.target.files[e]?.name.includes("cennik")) {
           let cennik = await convertXLSXtoJSON(rawFile.target.files[e])
           console.log(cennik.map((ele) => {
@@ -106,6 +109,10 @@ const stocImput = {
 
     function raportEmiter(raport) {
       store.dispatch('insertRaportToStore', raport);
+    }
+
+    function sampleEmiter(sample) {
+      store.dispatch('insertSampleToStore', sample);
     }
 
     function symfoniaReady(symfonia) {

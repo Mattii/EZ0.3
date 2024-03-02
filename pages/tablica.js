@@ -148,14 +148,18 @@ const crop = {
   setup() {
     const route = useRoute();
     const store = useStore();
-    const crops = ref({});
-    const stock = ref([]);
+    const crops = ref([]);
     const prices = ref([]);
     const raport = ref([]);
     const symfonia = ref([]);
     const searchValue = ref('');
     const tab = ref(null);
     const drawer  = inject('drawer')
+
+
+    const stock = computed(() => {
+      return store.getters.getStockFromStore
+    });
 
     const amountOfCrops = computed(() => {
       return Object.values(crops.value).length;
@@ -165,7 +169,7 @@ const crop = {
     });
 
     const amountOfBatchesInStock = computed(() => {
-      return store.getters.getStockFromStore.length;
+      return stock.value.length;
     });
 
     const searchedStock = computed(() => {
