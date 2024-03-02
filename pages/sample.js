@@ -49,7 +49,7 @@ const stock = {
         color="secondary"
         rounded="xl"
         >
-          <p class="text-h5 my-3 ff-nunito">Niestety nasion komercyjnych nie znaleziono</p>
+          <p class="text-h5 my-3 ff-nunito">Niestety nasion próbowych nie znaleziono</p>
           <v-col  xs="12" sm="8" md="6"  class="">
             <stock-input></stock-input>
           </v-col>  

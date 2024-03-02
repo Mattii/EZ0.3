@@ -27,6 +27,13 @@ const router = createRouter({
           path: 'komercja',
           name: "komercja",
           component: () => import("./pages/stock.js"),
+        },        
+        {
+          // Stock will be rendered inside User's <router-view>
+          // when /tablica/stock is matched
+          path: 'sample',
+          name: "sample",
+          component: () => import("./pages/sample.js"),
         },
       ]
     },

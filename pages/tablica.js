@@ -47,7 +47,7 @@ const crop = {
           <v-list-item
             color=""
             rounded="xl"
-            v-for="([title, icon, link], i) in [['Komercja', 'mdi-wallet-membership', '/tablica/komercja'], ['Sample', 'mdi-wallet-giftcard', '/tablica/pruby']]"
+            v-for="([title, icon, link], i) in [['Komercja', 'mdi-wallet-membership', '/tablica/komercja'], ['Sample', 'mdi-wallet-giftcard', '/tablica/sample']]"
             :key="i"
             :title="title"
             :prepend-icon="icon"
@@ -138,14 +138,6 @@ const crop = {
     </v-row>
 
     <v-row justify="center">
-
-      <v-col cols="11" sm="6" md="4">
-        <stock-input @stock-ready="stockUpdate" @raport-ready="raportUpdate" @symfonia-ready="symfoniaUpdate"></stock-input>
-      </v-col>
-
-    </v-row>
-
-    <v-row justify="center">
       <v-col cols="12">
         <router-view></router-view>
       </v-col>
@@ -173,7 +165,7 @@ const crop = {
     });
 
     const amountOfBatchesInStock = computed(() => {
-      return stock.value.length;
+      return store.getters.getStockFromStore.length;
     });
 
     const searchedStock = computed(() => {
@@ -194,17 +186,14 @@ const crop = {
 
     const stockUpdate = (freshStock) => {
       stock.value = freshStock;
-      store.dispatch('insertStockToStore', freshStock);
     }
 
     const raportUpdate = (freshRaport) => {
       raport.value = freshRaport;
-      store.dispatch('insertRaportToStore', freshRaport);
     }
 
     const symfoniaUpdate = (freshSymfonia) => {
       symfonia.value = freshSymfonia;
-      store.dispatch('insertSymfoniaToStore', freshSymfonia);
     }
 
     const differenceBetweenBatchesOnStockAndSymfonia = computed(() => {

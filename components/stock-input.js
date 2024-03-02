@@ -6,7 +6,7 @@ const stocImput = {
     multiple
     prepend-icon=""
     variant="solo"
-    label="Załaduj raport"
+    label="załaduj plik"
     truncate-length="15"
     density="compact"
     type="file"
@@ -101,18 +101,15 @@ const stocImput = {
     }
 
     function stockEmiter(stock) {
-      context.emit('stockReady', stock);
-      console.log(stock);
+      store.dispatch('insertStockToStore', stock);
     }
 
     function raportEmiter(raport) {
-      context.emit('raportReady', raport);
-      console.log(raport);
+      store.dispatch('insertRaportToStore', raport);
     }
 
     function symfoniaReady(symfonia) {
-      context.emit('symfoniaReady', symfonia);
-      console.log(symfonia);
+      store.dispatch('insertSymfoniaToStore', symfonia);
     }
     
 
