@@ -44,7 +44,8 @@ const stock = {
       <v-col  xs="12" sm="10" md="9" lg="8" class="">
 
         <!-- visible on screen  (width < 600)  -->
-        <v-sheet v-if="!showStock.length"
+        <v-sheet 
+        v-if="!showSampleStock.length"
         class="pa-12"
         color="secondary"
         rounded="xl"
@@ -61,60 +62,57 @@ const stock = {
         <v-data-table
         fixed-header
         :headers="headersMobile"
-        :items="showStock"
+        :items="showSampleStock"
         class="h-100 d-flex d-sm-none"
         item-value="index"
         >
         <template v-slot:item="{ item }">
           <tr>
             <td>
-              <span class="font-weight-regular text-medium-emphasis text-subtitle-2">{{ item.Product_full_name }}</span>
+              <span class="font-weight-regular text-medium-emphasis text-subtitle-2">{{ item.Crop }}</span>
               <br />
-              <span class="text-uppercase font-weight-medium">{{ item.Article_abbreviated }}</span>
+              <span class="text-uppercase font-weight-medium">{{ item.Description }}</span>
               <br/>
-              <span class="font-weight-light text-medium-emphasis text-subtitle-2">{{ item.Batch_number }} {{ item.Lot_number }}</span>
+              <span class="font-weight-light text-medium-emphasis text-subtitle-2">{{ item['Batch_number(s)'] }}</span>
             </td>
             <td class="tabular-nums text-end">
-              <span class="tabular-nums font-weight-light text-medium-emphasis text-subtitle-2">{{item.Quantity_usable}} {{item.Unit_code}}</span>          
+              <span class="tabular-nums font-weight-light text-medium-emphasis text-subtitle-2">{{new Date(item.Packing_date).toLocaleString({ hour12: false })}}</span>          
               <br/>
-              <span class="tabular-nums font-weight-medium">{{ item.Number_balance }}</span> 
+              <span class="tabular-nums font-weight-medium">{{ item.STAN }}</span> 
               <br/>
-              <span class="tabular-nums font-weight-regular text-subtitle-2">{{  item.Packaging_abbreviated }}</span>
+              <span class="tabular-nums font-weight-regular text-subtitle-2">{{ item.Packaging  }}</span>
             </td>
           </tr>
         </template>
         </v-data-table>
 
         <v-data-table
-        v-else
         class="w-100"
         fixed-header
         :headers="headers"
-        :items="showStock"
+        :items="showSampleStock"
         class="h-100 d-none d-sm-flex"
         item-value="index"
         >
           <template v-slot:item="{ item }">
             <tr>
               <td class="text-end">
-                <span class="text-uppercase">{{ item.Batch_number }}</span>
-                <br/>
-                <span class="font-weight-thin text-medium-emphasis text-subtitle-2">{{item.Lot_number}}</span>
+                <span class="text-uppercase">{{ item['Batch_number(s)'] }}</span>
               </td>
               <td>
-                <span class="text-uppercase">{{ item.Article_abbreviated }}</span>
+                <span class="text-uppercase">{{ item.Description }}</span>
                 <br/> 
-                <span class="font-weight-thin text-medium-emphasis text-subtitle-2">{{item.Product_full_name}}</span>
+                <span class="font-weight-thin text-medium-emphasis text-subtitle-2">{{item.Crop}}</span>
               </td>
               <td class="text-end">
-                <span class="text-uppercase">{{ item.Number_balance }}</span>
-                <br/> 
-                <span class="font-weight-thin text-medium-emphasis text-subtitle-2">{{item.Quantity_usable}} {{item.Unit_code}}</span>
+                <span class="text-uppercase">{{ item.STAN }}</span>
               </td>
               <td class="">
-                <span class="text-uppercase">{{  item.Packaging_abbreviated }}</span>
-                <br/> 
-                <span class="font-weight-thin text-medium-emphasis text-subtitle-2">{{item.Quantity_balance}} {{item.Unit_code}}</span></td>
+                <span class="text-uppercase">{{  item.Packaging }}</span>
+              </td>
+              <td class="">
+                <span class="text-uppercase">{{ new Date(item.Packing_date).toLocaleString({ hour12: false }) }}</span>
+              </td>
             </tr>
           </template>
         </v-data-table>
@@ -128,20 +126,20 @@ const stock = {
     const searchValue = ref("");
 
     const headersMobile = ref([
-      { title: "Nazwa", align: "start", key: "Article_abbreviated" },
-      { title: "Ilość/Opakowanie", align: "end", key: "Packaging_abbreviated" },
+      { title: "Nazwa", align: "start", key: "Description" },
+      { title: "Ilość/Opakowanie", align: "end", key: "Packaging" },
     ]);
 
-    const showStock = computed(() => store.getters.getSampleFromStore.filter(ele => {
-
-      return ele.Article_abbreviated.includes(searchValue.value.toUpperCase())
+    const showSampleStock = computed(() => store.getters.getSampleFromStore.filter(ele => {
+      return ele.Description.includes(searchValue.value.toUpperCase())
     }));
 
     const headers = ref([
-      { title: "Partia", align: "end", key: "Batch_number" },
-      { title: "Nazwa", align: "start", key: "Article_abbreviated" },
-      { title: "Ilość", align: "end", key: "Number_balance" },
-      { title: "Pakowanie", align: "Packaging_abbreviated" },
+      { title: "Partia", align: "end", key: "Batch_number(s)" },
+      { title: "Nazwa", align: "start", key: "Description" },
+      { title: "Ilość", align: "end", key: "STAN" },
+      { title: "Pakowanie", align: "Packaging" },
+      { title: "Data pakowania", align: "Packing_date" },
     ]);
 
     const toPLAccountingStandards = (num) =>
@@ -154,7 +152,7 @@ const stock = {
 
     return {
       route,
-      showStock,
+      showSampleStock,
       headers,
       headersMobile,
       searchValue,
