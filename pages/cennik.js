@@ -66,11 +66,11 @@ const priceList = {
             <span class="font-weight-light text-medium-emphasis text-subtitle-2">{{item?.segment}}</span>
           </td>
           <td class="tabular-nums text-end">
-            <span class="tabular-nums font-weight-light text-medium-emphasis text-subtitle-2">{{ toPLAccountingStandards(Number.parseFloat(item.price + item.price * 0.08).toFixed(2)) }}</span>          
+            <span class="tabular-nums font-weight-regular text-subtitle-2">{{item.packing}}</span>
             <br/>
             <span class="tabular-nums font-weight-medium">{{ toPLAccountingStandards(item.price) }}</span> 
             <br/>
-            <span class="tabular-nums font-weight-regular text-subtitle-2">{{item.packing}}</span>
+            <span class="tabular-nums font-weight-light text-medium-emphasis text-subtitle-2">{{ toPLAccountingStandards(Number.parseFloat(item.price + item.price * 0.08).toFixed(2)) }}</span>          
           </td>
         </tr>
       </template>
@@ -132,9 +132,7 @@ const priceList = {
         const priceList = query(fref(db, "cennik"), orderByChild("name"));
         onValue(priceList, (snap) => {
           prices.value = snap.val();
-          store.dispatch('insertPriceListToStore', {
-            priceList: prices.value
-          })
+          store.dispatch('insertPriceListToStore', snap.val())
           console.log(snap.val());
         });
       }else {

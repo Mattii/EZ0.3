@@ -96,7 +96,7 @@ export default {
         raport:[],
         sample:[],
         symfonia:[],
-        katalog:{},
+        katalog:[],
       }
     },
     getters: {
@@ -130,7 +130,7 @@ export default {
     },
     actions: {
         insertPriceListToStore (context, payload) {
-          localStorage.setItem("price", JSON.stringify(payload.priceList));
+          localStorage.setItem("price", JSON.stringify(payload));
           context.commit('insertPriceListToStore', payload)
         },
         insertRaportToStore (context, payload) {
@@ -149,12 +149,13 @@ export default {
           context.commit('insertStockToStore', payload)
         },
         insertKatalogToStore (context, payload) {
+          localStorage.setItem("katalog", JSON.stringify(payload));
           context.commit('insertKatalogToStore', payload)
         },
     },
     mutations: {
       insertPriceListToStore (state, payload) {
-        state.priceList = payload.priceList
+        state.priceList = payload
       },
       insertStockToStore (state, payload) {
         state.stock = payload

@@ -63,7 +63,7 @@ const crop = {
   <v-container fluid>
 
   <v-row justify="center">
-    <v-col xs="12" sm="10" md="9" lg="8" class="d-flex flex-wrap">
+    <v-col xs="12" sm="10" md="9" lg="8" class="d-flex flex-wrap ma-0 pa-0">
         <v-col xs="6" sm="4" md="3"  class="">
           <v-sheet 
             class="pa-3 w-100 h-100 d-flex align-stretch"
@@ -137,7 +137,7 @@ const crop = {
         </v-col>
     </v-row>
 
-    <v-row justify="center">
+    <v-row justify="center" class="">
       <v-col cols="12">
         <router-view></router-view>
       </v-col>
@@ -220,8 +220,6 @@ const crop = {
 
     onMounted(async () => {
       const db = getDatabase(app);
-
-      const katalog = fref(db, "katalog");
       const mostViewedPosts = query(
         fref(db, "katalog"),
         orderByChild("crop"),
@@ -229,15 +227,27 @@ const crop = {
         endAt("TO")
       );
 
-      onValue(katalog, (snapshot) => {
-        crops.value = snapshot.val();
-        console.log(snapshot.val());
-      });
 
-      const priceList = query(fref(db, "cennik"), orderByChild('name'));
-      onValue(priceList, (snap) => {
-        prices.value = snap.val();
-      })
+      if(store.getters.getKatalogFromStore.length != 0){
+        crops.value = store.getters.getKatalogFromStore
+      }else{
+        const katalog = fref(db, "katalog");
+        onValue(katalog, (snapshot) => {
+          store.dispatch('insertKatalogToStore', snapshot.val())
+          crops.value = snapshot.val();
+          console.log(snapshot.val());
+        });
+      }
+
+      if(store.getters.getPriceListFromStore.length != 0){
+        prices.value = store.getters.getPriceListFromStore
+      }else{
+        const priceList = query(fref(db, "cennik"), orderByChild('name'));
+        onValue(priceList, (snap) => {
+          store.dispatch('insertPriceListToStore', snap.val())
+          prices.value = snap.val();
+        })
+      }
 
       if(store.getters.getStockFromStore.length != 0){
         stock.value = store.getters.getStockFromStore

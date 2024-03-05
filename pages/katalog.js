@@ -40,12 +40,16 @@ const crop = {
     onMounted(async () => {
       const db = getDatabase(app);
 
-      const katalog = fref(db, 'katalog');
-      const mostViewedPosts = query(fref(db, 'katalog'), orderByChild('crop'), startAt("TO"), endAt("TO"));
-      onValue(katalog, (snapshot) => {
-         crops.value = snapshot.val();
-         store.dispatch('insertKatalogToStore', crops.value)
-       });
+      if(store.getters.getKatalogFromStore.length != 0){
+        crops.value = store.getters.getKatalogFromStore
+      }else{
+        const katalog = fref(db, "katalog");
+        onValue(katalog, (snapshot) => {
+          store.dispatch('insertKatalogToStore', snapshot.val())
+          crops.value = snapshot.val();
+        });
+      }
+      
     });
 
     return {
