@@ -17,7 +17,7 @@ import app from "../modules/firebase.js";
 const stock = {
   template: `
       <v-row justify="center">
-      <v-col  xs="12" md="4" lg="3" class="">
+      <v-col  xs="12" sm="8" md="6" lg="4" class="">
         <v-text-field
           clearable 
           prepend-icon=""
@@ -73,12 +73,12 @@ const stock = {
               <br />
               <span class="text-uppercase font-weight-medium">{{ item.Description }}</span>
               <br/>
-              <span class="font-weight-light text-medium-emphasis text-subtitle-2">{{ item['Batch_number(s)'] }}</span>
+              <span class="font-weight-light text-medium-emphasis text-subtitle-2">{{ item.Batch }}</span>
             </td>
             <td class="tabular-nums text-end">
-              <span class="tabular-nums font-weight-light text-medium-emphasis text-subtitle-2">{{new Date(item.Packing_date).toLocaleString({ hour12: false })}}</span>          
+              <span class="tabular-nums font-weight-light text-medium-emphasis text-subtitle-2">{{new Date(item.Packing_date).toLocaleString("pl-PL", { year: "numeric", month: "numeric"})}}</span>          
               <br/>
-              <span class="tabular-nums font-weight-medium">{{ item['Number of  packs'] }}</span> 
+              <span class="tabular-nums font-weight-medium">{{ item['Number_of_packs'] }}</span> 
               <br/>
               <span class="tabular-nums font-weight-regular text-subtitle-2">{{ item.Packaging  }}</span>
             </td>
@@ -97,21 +97,22 @@ const stock = {
           <template v-slot:item="{ item }">
             <tr>
               <td class="text-end">
-                <span class="text-uppercase">{{ item['Batch_number(s)'] }}</span>
+                <span class="text-uppercase">{{ item.Batch }}</span>
               </td>
               <td>
                 <span class="text-uppercase">{{ item.Description }}</span>
-                <br/> 
+              </td>
+              <td>
                 <span class="font-weight-thin text-medium-emphasis text-subtitle-2">{{item.Crop}}</span>
               </td>
               <td class="text-end">
-                <span class="text-uppercase">{{ item['Number of  packs'] }}</span>
+                <span class="text-uppercase">{{ item['Number_of_packs'] }}</span>
               </td>
               <td class="">
                 <span class="text-uppercase">{{  item.Packaging }}</span>
               </td>
               <td class="">
-                <span class="text-uppercase">{{ new Date(item.Packing_date).toLocaleString({ hour12: false }) }}</span>
+                <span class="text-uppercase">{{ new Date(item.Packing_date).toLocaleString("pl-PL", { year: "numeric", month: "numeric"}) }}</span>
               </td>
             </tr>
           </template>
@@ -137,7 +138,8 @@ const stock = {
     const headers = ref([
       { title: "Partia", align: "end", key: "Batch_number(s)" },
       { title: "Nazwa", align: "start", key: "Description" },
-      { title: "Ilość", align: "end", key: "Number of  packs" },
+      { title: "Segment", align: "start", key: "Crop" },
+      { title: "Ilość", align: "end", key: "Number_of_packs" },
       { title: "Pakowanie", align: "Packaging" },
       { title: "Data pakowania", align: "Packing_date" },
     ]);

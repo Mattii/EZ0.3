@@ -107,19 +107,35 @@ export default {
             return state.crops
         },
         getStockFromStore (state) {
-          return state.stock
+          const stock = localStorage.getItem('stock')
+          if (stock) {
+            return JSON.parse(stock)
+          } else {
+            return state.stock
+          }
         },
         getRaportFromStore (state) {
           return state.raport
         },
         getSampleFromStore (state) {
-          return state.sample
+          const sample = localStorage.getItem('sample')
+          if (sample) {
+            return JSON.parse(sample)
+          } else {
+            return state.sample
+          }
+          
         },
         getSymfoniaFromStore (state) {
           return state.symfonia
         },
         getKatalogFromStore (state) {
-          return state.katalog
+          const katalog = localStorage.getItem('katalog')
+          if (katalog) {
+            return JSON.parse(katalog)
+          } else {
+            return state.katalog
+          }
         },
         getCropFromStore: (state) => (id) => {
           return state.crops.find((ele) => id == ele.crop )

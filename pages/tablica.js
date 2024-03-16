@@ -81,6 +81,7 @@ const crop = {
                 </div>
           </v-sheet>
         </v-col>
+
         <v-col cols="6" sm="4" md="3" class="">
         <v-sheet 
           class="pa-3 w-100 h-100"
@@ -134,12 +135,27 @@ const crop = {
               </div>
         </v-sheet>
         </v-col>
-        </v-col>
-    </v-row>
+    </v-col>
+  </v-row>
 
     <v-row justify="center" class="">
       <v-col cols="12">
         <router-view></router-view>
+      </v-col>
+    </v-row>
+
+    <v-row justify="center" class="">
+      <v-col xs="12" sm="10" md="9" lg="8">
+        <v-sheet
+          class="pa-12"
+          color="secondary"
+          rounded="xl"
+          >
+            <p class="text-h5 my-3 ff-nunito">Niestety nasion komercyjnych nie znaleziono</p>
+            <v-col  xs="12" sm="8" md="6"  class="">
+              <stock-input></stock-input>
+            </v-col>  
+          </v-sheet>
       </v-col>
     </v-row>
 

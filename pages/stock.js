@@ -17,7 +17,7 @@ import app from "../modules/firebase.js";
 const stock = {
   template: `
       <v-row justify="center" class="mt-8">
-      <v-col  xs="12" md="4" lg="3" class="">
+      <v-col  xs="12" sm="8" md="6" lg="4" class="">
         <v-text-field
           clearable 
           prepend-icon=""
@@ -75,7 +75,10 @@ const stock = {
               <span class="font-weight-light text-medium-emphasis text-subtitle-2">{{ item.Batch_number }} {{ item.Lot_number }}</span>
             </td>
             <td class="tabular-nums text-end">
-              <span class="tabular-nums font-weight-light text-medium-emphasis text-subtitle-2">{{item.Quantity_usable}} {{item.Unit_code}}</span>          
+              <span class="tabular-nums font-weight-light text-medium-emphasis text-subtitle-2">
+                <v-chip color="red" variant="tonal" density="comfortable" v-if="!item.Quantity_usable">Niedostępne</v-chip>
+                <span v-else>{{item.Quantity_usable}} {{item.Unit_code}}</span>
+              </span>          
               <br/>
               <span class="tabular-nums font-weight-medium">{{ item.Number_balance }}</span> 
               <br/>
@@ -108,7 +111,10 @@ const stock = {
               <td class="text-end">
                 <span class="text-uppercase">{{ item.Number_balance }}</span>
                 <br/> 
-                <span class="font-weight-thin text-medium-emphasis text-subtitle-2">{{item.Quantity_usable}} {{item.Unit_code}}</span>
+                <span class="font-weight-thin text-medium-emphasis text-subtitle-2">
+                  <v-chip color="red" variant="tonal" density="comfortable" v-if="!item.Quantity_usable">Niedostępne</v-chip>
+                  <span v-else>{{item.Quantity_usable}} {{item.Unit_code}}</span>
+                </span>
               </td>
               <td class="">
                 <span class="text-uppercase">{{  item.Packaging_abbreviated }}</span>
