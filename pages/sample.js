@@ -78,7 +78,7 @@ const stock = {
             <td class="tabular-nums text-end">
               <span class="tabular-nums font-weight-light text-medium-emphasis text-subtitle-2">{{new Date(item.Packing_date).toLocaleString({ hour12: false })}}</span>          
               <br/>
-              <span class="tabular-nums font-weight-medium">{{ item.STAN }}</span> 
+              <span class="tabular-nums font-weight-medium">{{ item['Number of  packs'] }}</span> 
               <br/>
               <span class="tabular-nums font-weight-regular text-subtitle-2">{{ item.Packaging  }}</span>
             </td>
@@ -105,7 +105,7 @@ const stock = {
                 <span class="font-weight-thin text-medium-emphasis text-subtitle-2">{{item.Crop}}</span>
               </td>
               <td class="text-end">
-                <span class="text-uppercase">{{ item.STAN }}</span>
+                <span class="text-uppercase">{{ item['Number of  packs'] }}</span>
               </td>
               <td class="">
                 <span class="text-uppercase">{{  item.Packaging }}</span>
@@ -137,7 +137,7 @@ const stock = {
     const headers = ref([
       { title: "Partia", align: "end", key: "Batch_number(s)" },
       { title: "Nazwa", align: "start", key: "Description" },
-      { title: "Ilość", align: "end", key: "STAN" },
+      { title: "Ilość", align: "end", key: "Number of  packs" },
       { title: "Pakowanie", align: "Packaging" },
       { title: "Data pakowania", align: "Packing_date" },
     ]);
