@@ -16,7 +16,7 @@ import app from "../modules/firebase.js";
 
 const stock = {
   template: `
-      <v-row justify="center" class="mt-8">
+      <v-row justify="center" class="">
       <v-col  xs="12" sm="8" md="6" lg="4" class="">
         <v-text-field
           clearable 

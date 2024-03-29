@@ -17,49 +17,6 @@ import app from "../modules/firebase.js";
 const crop = {
   template: `   
 
-      <v-navigation-drawer
-      class=""
-        v-model="drawer"
-        temporary
-        app
-      >
-        <v-list>
-          <v-list-item
-            prepend-avatar="https://randomuser.me/api/portraits/women/85.jpg"
-            title="Mateusz"
-            subtitle="MadDaimond@gravity.com"
-          ></v-list-item>
-        </v-list>
-
-        <v-divider></v-divider>
-
-        <v-list 
-          density="comfortable"
-          nav>
-          <v-list-group value="Admin">
-          <template v-slot:activator="{ props }">
-            <v-list-item
-              rounded="xl" prepend-icon="mdi-bookshelf" value="myfiles"
-              v-bind="props"
-              title="Magazyn"
-            ></v-list-item>
-          </template>
-          <v-list-item
-            color=""
-            rounded="xl"
-            v-for="([title, icon, link], i) in [['Komercja', 'mdi-wallet-membership', '/tablica/komercja'], ['Sample', 'mdi-wallet-giftcard', '/tablica/sample']]"
-            :key="i"
-            :title="title"
-            :prepend-icon="icon"
-            :value="title"
-            :to="link"
-          ></v-list-item>
-        </v-list-group>
-          <v-list-item rounded="xl" prepend-icon="mdi-account-multiple" title="profil" value="shared"></v-list-item>
-          <v-list-item rounded="xl" prepend-icon="mdi-star" title="Stan" value="starred"></v-list-item>
-        </v-list>
-      </v-navigation-drawer>
-
   <v-container fluid>
 
   <v-row justify="center">
@@ -91,10 +48,10 @@ const crop = {
           >
             <div>
               <div class="text-h4 mt-2">
-                  {{amountOfBatchesInRaport}}/{{amountOfBatchesInStock}}
+                  {{amountOfBatchesInRaport}}
               </div>
               <div class="text-overline mb-1 ff-nunito">
-                  dostępne / stan
+                  dostępne
               </div>
             </div>
         </v-sheet>
@@ -135,10 +92,36 @@ const crop = {
               </div>
         </v-sheet>
         </v-col>
+
+        <v-col cols="6" sm="4" md="3" class=""
+          v-for="([title, icon, link], i) in [['Komercja', 'mdi-wallet-membership', '/tablica/komercja'], ['Sample', 'mdi-wallet-giftcard', '/tablica/sample']]"
+          :key="i"
+        >
+          <router-link
+            :to="link"
+          >
+            <v-sheet 
+              class="pa-3 w-100 h-100"
+              color="primary"
+              rounded="lg"
+              elevation="3"
+              >
+                <div>
+                  <div class="text-h4 mt-2">
+                      {{title == "Komercja" ? amountOfBatchesInStock : amountOfSampleInStock}}
+                    </div>
+                    <div class="text-overline mb-1 ff-nunito">
+                      {{ title }}
+                    </div>
+                  </div>
+            </v-sheet>
+          </router-link>
+
+        </v-col>
     </v-col>
   </v-row>
 
-    <v-row justify="center" class="">
+    <v-row justify="center" class="mt-12">
       <v-col cols="12">
         <router-view></router-view>
       </v-col>
@@ -188,6 +171,10 @@ const crop = {
       return stock.value.length;
     });
 
+    const amountOfSampleInStock = computed(() => {
+      return store.getters.getSampleFromStore.length;
+    });
+
     const searchedStock = computed(() => {
       return raport.value.filter(ele => ele.Product_name.includes(searchValue.value.toUpperCase()));
     });
@@ -204,17 +191,6 @@ const crop = {
       return symfonia.value.filter(ele => !batchesInStock.includes(+ele.batch))
     });
 
-    const stockUpdate = (freshStock) => {
-      stock.value = freshStock;
-    }
-
-    const raportUpdate = (freshRaport) => {
-      raport.value = freshRaport;
-    }
-
-    const symfoniaUpdate = (freshSymfonia) => {
-      symfonia.value = freshSymfonia;
-    }
 
     const differenceBetweenBatchesOnStockAndSymfonia = computed(() => {
       //sprawdza które batche 
@@ -268,9 +244,11 @@ const crop = {
       if(store.getters.getStockFromStore.length != 0){
         stock.value = store.getters.getStockFromStore
       }
+
       if(store.getters.getRaportFromStore.length != 0){
         raport.value = store.getters.getRaportFromStore
       }
+      
       if(store.getters.getSymfoniaFromStore.length != 0){
         symfonia.value = store.getters.getSymfoniaFromStore
       }
@@ -291,12 +269,10 @@ const crop = {
       amountOfCrops,
       amountOfBatchesInRaport,
       amountOfBatchesInStock,
+      amountOfSampleInStock,
       batchesJustOnStock,
       batchesJustOnSymfonia,
       differenceBetweenBatchesOnStockAndSymfonia,
-      stockUpdate,
-      raportUpdate,
-      symfoniaUpdate,
     };
   },
 };

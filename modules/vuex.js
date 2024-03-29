@@ -115,7 +115,12 @@ export default {
           }
         },
         getRaportFromStore (state) {
-          return state.raport
+          const raport = localStorage.getItem('raport')
+          if (raport) {
+            return JSON.parse(raport)
+          } else {
+            return state.raport
+          }
         },
         getSampleFromStore (state) {
           const sample = localStorage.getItem('sample')
