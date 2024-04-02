@@ -99,6 +99,8 @@ const crop = {
         >
           <router-link
             :to="link"
+            activeClass="active-link"
+            exactActiveClass="active-link"
           >
             <v-sheet 
               class="pa-3 w-100 h-100"
