@@ -44,6 +44,13 @@ const router = createRouter({
       props: true,
       
     },
+    {
+      path: "/katalog/odmiana/:name",
+      component: () => import("./pages/crop.js"),
+      name: "crop",
+      props: true,
+      
+    },
   ],
 });
 

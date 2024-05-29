@@ -1,2231 +1,2047 @@
 [
     {
-        "family": "pomidor",
         "segment": "beef ",
         "name": "barteza",
         "packing": 1000,
-        "price": 2795.31
+        "price": 2795.31,
+        "family": "pomidor"
     },
     {
-        "family": "pomidor",
         "segment": "beef ",
         "name": "e15b.42750",
         "packing": 1000,
-        "price": 4762.8
+        "price": 4762.8,
+        "family": "pomidor"
     },
     {
-        "family": "pomidor",
         "segment": "beef ",
         "name": "forenza",
         "packing": 500,
-        "price": 1247.4
+        "price": 1247.4,
+        "family": "pomidor"
     },
     {
-        "family": "pomidor",
         "segment": "beef ",
         "name": "fortuneza",
         "packing": 1000,
-        "price": 2812.32
+        "price": 2812.32,
+        "family": "pomidor"
     },
     {
-        "family": "pomidor",
         "segment": "beef ",
         "name": "baikonur",
         "packing": 500,
-        "price": 449.06
+        "price": 449.06,
+        "family": "pomidor"
     },
     {
-        "family": "pomidor",
         "segment": "beef ",
         "name": "bellfort",
         "packing": 500,
-        "price": 420.71
+        "price": 420.71,
+        "family": "pomidor"
     },
     {
-        "family": "pomidor",
         "segment": "beef ",
         "name": "berberana",
         "packing": 500,
-        "price": 459.27
+        "price": 459.27,
+        "family": "pomidor"
     },
     {
-        "family": "pomidor",
         "segment": "beef ",
         "name": "enzalina",
         "packing": 1000,
-        "price": 2937.06
+        "price": 2937.06,
+        "family": "pomidor"
     },
     {
-        "family": "pomidor",
         "segment": "beef ",
         "name": "mattinaro",
         "packing": 1000,
-        "price": 3112.83
+        "price": 3112.83,
+        "family": "pomidor"
     },
     {
-        "family": "pomidor",
         "segment": "beef ",
         "name": "tobinaro",
         "packing": 1000,
-        "price": 4762.8
+        "price": 4762.8,
+        "family": "pomidor"
     },
     {
-        "family": "pomidor",
         "segment": "beef ",
         "name": "elpida",
         "packing": 500,
-        "price": 476.28
+        "price": 476.28,
+        "family": "pomidor"
     },
     {
-        "family": "pomidor",
         "segment": "beef pink",
         "name": "buenarosa ",
         "packing": 500,
-        "price": 1401.62
+        "price": 1401.62,
+        "family": "pomidor"
     },
     {
-        "family": "pomidor",
         "segment": "beef pink",
-        "name": "corsica (e15a.42914) hrez",
+        "name": "corsica",
         "packing": 1000,
-        "price": 4762.8
+        "price": 4762.8,
+        "family": "pomidor"
     },
     {
-        "family": "pomidor",
-        "segment": "beef pink",
-        "name": "taipink",
-        "packing": 500,
-        "price": 447.93
-    },
-    {
-        "family": "pomidor",
         "segment": "beef pink",
         "name": "dimerosa",
         "packing": 500,
-        "price": 425.25
+        "price": 425.25,
+        "family": "pomidor"
     },
     {
-        "family": "pomidor",
         "segment": "beef pink",
         "name": "dimerosa organic",
         "packing": 500,
-        "price": 532.98
+        "price": 532.98,
+        "family": "pomidor"
     },
     {
-        "family": "pomidor",
-        "segment": "beef pink",
-        "name": "mamipink",
-        "packing": 500,
-        "price": 1375
-    },
-    {
-        "family": "pomidor",
         "segment": "beef pink",
         "name": "perugino",
         "packing": 500,
-        "price": 317.52
+        "price": 317.52,
+        "family": "pomidor"
     },
     {
-        "family": "pomidor",
+        "segment": "beef pink",
+        "name": "mamipink",
+        "packing": 250,
+        "price": 1375,
+        "family": "pomidor"
+    },
+    {
         "segment": "beef yellow",
         "name": "taiyo",
         "packing": 250,
-        "price": 430.92
+        "price": 452.47,
+        "family": "pomidor"
     },
     {
-        "family": "pomidor",
         "segment": "specialities",
         "name": "annaisa",
         "packing": 500,
-        "price": 3543.75
+        "price": 3543.75,
+        "family": "pomidor"
     },
     {
-        "family": "pomidor",
         "segment": "specialities",
         "name": "annadark",
         "packing": 500,
-        "price": 3543.75
+        "price": 3543.75,
+        "family": "pomidor"
     },
     {
-        "family": "pomidor",
         "segment": "specialities",
         "name": "annaorange",
         "packing": 500,
-        "price": 3543.75
+        "price": 3543.75,
+        "family": "pomidor"
     },
     {
-        "family": "pomidor",
         "segment": "specialities",
         "name": "annarozay",
         "packing": 500,
-        "price": 3543.75
+        "price": 3543.75,
+        "family": "pomidor"
     },
     {
-        "family": "pomidor",
         "segment": "specialities",
         "name": "annasun",
         "packing": 500,
-        "price": 3543.75
+        "price": 3543.75,
+        "family": "pomidor"
     },
     {
-        "family": "pomidor",
         "segment": "specialities",
         "name": "ardirose",
         "packing": 500,
-        "price": 2300
+        "price": 2300,
+        "family": "pomidor"
     },
     {
-        "family": "pomidor",
         "segment": "specialities",
         "name": "ardiles",
         "packing": 500,
-        "price": 2200
+        "price": 2200,
+        "family": "pomidor"
     },
     {
-        "family": "pomidor",
         "segment": "specialities",
         "name": "cubalibre",
         "packing": 1000,
-        "price": 2178.75
+        "price": 2178.75,
+        "family": "pomidor"
     },
     {
-        "family": "pomidor",
         "segment": "specialities",
         "name": "laudrup",
         "packing": 1000,
-        "price": 4962.6
+        "price": 4962.6,
+        "family": "pomidor"
     },
     {
-        "family": "pomidor",
         "segment": "specialities",
         "name": "tomagino",
         "packing": 500,
-        "price": 2160
+        "price": 2160,
+        "family": "pomidor"
     },
     {
-        "family": "pomidor",
         "segment": "specialities",
         "name": "tomagellow",
         "packing": 500,
-        "price": 2160
+        "price": 2160,
+        "family": "pomidor"
     },
     {
-        "family": "pomidor",
         "segment": "specialities",
         "name": "tomarange",
         "packing": 500,
-        "price": 2160
+        "price": 2160,
+        "family": "pomidor"
     },
     {
-        "family": "pomidor",
         "segment": "specialities",
         "name": "vespolino",
         "packing": 500,
-        "price": 2154.6
+        "price": 2154.6,
+        "family": "pomidor"
     },
     {
-        "family": "pomidor",
         "segment": "small round",
         "name": "caroleza",
         "packing": 1000,
-        "price": 3737.66
+        "price": 3737.66,
+        "family": "pomidor"
     },
     {
-        "family": "pomidor",
         "segment": "small round",
         "name": "ustica",
         "packing": 1000,
-        "price": 4600
+        "price": 4600,
+        "family": "pomidor"
     },
     {
-        "family": "pomidor",
         "segment": "truss large",
         "name": "perimos ",
         "packing": 1000,
-        "price": 4762.8
+        "price": 4762.8,
+        "family": "pomidor"
     },
     {
-        "family": "pomidor",
         "segment": "san marzano",
         "name": "pozzano",
         "packing": 500,
-        "price": 464.94
+        "price": 464.94,
+        "family": "pomidor"
     },
     {
-        "family": "pomidor",
         "segment": "san marzano",
         "name": "pozzano organic",
         "packing": 500,
-        "price": 737.1
+        "price": 737.1,
+        "family": "pomidor"
     },
     {
-        "family": "pomidor",
         "segment": "medium ",
         "name": "cindel",
         "packing": 500,
-        "price": 300.51
+        "price": 300.51,
+        "family": "pomidor"
     },
     {
-        "family": "pomidor",
         "segment": "medium ",
         "name": "cindel organic",
         "packing": 500,
-        "price": 396.9
+        "price": 396.9,
+        "family": "pomidor"
     },
     {
-        "family": "pomidor",
         "segment": "plum",
         "name": "granadero",
         "packing": 500,
-        "price": 419.58
+        "price": 419.58,
+        "family": "pomidor"
     },
     {
-        "family": "pomidor",
         "segment": "plum",
         "name": "granadero organic ",
         "packing": 500,
-        "price": 510.3
+        "price": 510.3,
+        "family": "pomidor"
     },
     {
-        "family": "pomidor",
         "segment": "plum",
         "name": "savantas",
         "packing": 500,
-        "price": 1557.36
+        "price": 1557.36,
+        "family": "pomidor"
     },
     {
-        "family": "pomidor",
         "segment": "plum",
         "name": "savantas organic",
         "packing": 500,
-        "price": 1724.22
+        "price": 1724.22,
+        "family": "pomidor"
     },
     {
-        "family": "pomidor",
-        "segment": "podkładka",
         "name": "fortamino",
         "packing": "1 000 pills",
-        "price": 1116.99
+        "price": 1116.99,
+        "family": "podkładka pomidora"
     },
     {
-        "family": "ogórek",
         "segment": "let",
         "name": "gulfstream",
         "packing": 1000,
-        "price": 3637.55
+        "price": 3819.43,
+        "family": "ogórek"
     },
     {
-        "family": "ogórek",
         "segment": "let",
         "name": "dee lite",
         "packing": 1000,
-        "price": 3637.55
+        "price": 3819.43,
+        "family": "ogórek"
     },
     {
-        "family": "ogórek",
         "segment": "let",
         "name": "dee rect",
         "packing": 1000,
-        "price": 3637.55
+        "price": 3819.43,
+        "family": "ogórek"
     },
     {
-        "family": "ogórek",
+        "segment": "let",
+        "name": "dee scribe",
+        "packing": 1000,
+        "price": 3819.43,
+        "family": "ogórek"
+    },
+    {
+        "segment": "let",
+        "name": "dee viate",
+        "packing": 1000,
+        "price": 3819.43,
+        "family": "ogórek"
+    },
+    {
         "segment": "let",
         "name": "dee zire",
         "packing": 1000,
-        "price": 3637.55
+        "price": 3819.43,
+        "family": "ogórek"
     },
     {
-        "family": "ogórek",
         "segment": "let",
         "name": "dee freece",
         "packing": 1000,
-        "price": 3882.28
+        "price": 4076.39,
+        "family": "ogórek"
     },
     {
-        "family": "ogórek",
         "segment": "let",
         "name": "kurios",
         "packing": 1000,
-        "price": 3937.9
+        "price": 4134.79,
+        "family": "ogórek"
     },
     {
-        "family": "ogórek",
         "segment": "let",
         "name": "lucania",
         "packing": 1000,
-        "price": 3637.55
+        "price": 3819.43,
+        "family": "ogórek"
     },
     {
-        "family": "ogórek",
         "segment": "let",
         "name": "sumapol",
         "packing": 1000,
-        "price": 3637.55
+        "price": 3819.43,
+        "family": "ogórek"
     },
     {
-        "family": "ogórek",
         "segment": "let",
         "name": "toplight",
         "packing": 1000,
-        "price": 3637.55
+        "price": 3819.43,
+        "family": "ogórek"
     },
     {
-        "family": "ogórek",
         "segment": "midi",
         "name": "grummel",
         "packing": 500,
-        "price": 1092.04
+        "price": 1124.8,
+        "family": "ogórek"
     },
     {
-        "family": "ogórek",
         "segment": "midi",
         "name": "melen",
         "packing": 500,
-        "price": 955.55
+        "price": 1003.33,
+        "family": "ogórek"
     },
     {
-        "family": "ogórek",
         "segment": "midi",
         "name": "melen",
         "packing": 250,
-        "price": 491.78
+        "price": 516.36,
+        "family": "ogórek"
     },
     {
-        "family": "ogórek",
         "segment": "midi",
         "name": "sultanit (cgmmv hr)",
         "packing": 500,
-        "price": 1215.38
+        "price": 1251.84,
+        "family": "ogórek"
     },
     {
-        "family": "ogórek",
         "segment": "bat",
         "name": "picolino",
         "packing": 1000,
-        "price": 1946.7
+        "price": 2044.04,
+        "family": "ogórek"
     },
     {
-        "family": "ogórek",
         "segment": "pickling",
         "name": "bjorn (cgmmv ir)",
         "packing": 250,
-        "price": 154.22
+        "price": 158.85,
+        "family": "ogórek"
     },
     {
-        "family": "ogórek",
         "segment": "pickling",
         "name": "erlend",
         "packing": 250,
-        "price": 129.04
+        "price": 135.49,
+        "family": "ogórek"
     },
     {
-        "family": "ogórek",
         "segment": "pickling",
         "name": "gunnar",
         "packing": 250,
-        "price": 86.77
+        "price": 91.11,
+        "family": "ogórek"
     },
     {
-        "family": "ogórek",
         "segment": "pickling",
         "name": "severin",
         "packing": 250,
-        "price": 94.55
+        "price": 99.28,
+        "family": "ogórek"
     },
     {
-        "family": "ogórek",
-        "segment": "podkładka",
         "name": "flexifort",
         "packing": 500,
-        "price": 166.86
+        "price": 175.2,
+        "family": "podkładka ogórka"
     },
     {
-        "family": "ogórek",
         "name": "flexifort organic",
         "packing": 500,
-        "price": 194.67
+        "price": 204.4,
+        "family": "podkładka ogórka"
     },
     {
-        "family": "ogórek",
         "name": "status",
         "packing": 500,
-        "price": 205.79
+        "price": 216.08,
+        "family": "podkładka ogórka"
     },
     {
-        "family": "papryka",
         "segment": "blocky",
-        "name": "banckers",
+        "name": "banckers f1",
         "packing": 500,
-        "price": 324.32
+        "price": 324.32,
+        "family": "papryka"
     },
     {
-        "family": "papryka",
         "segment": "blocky",
-        "name": "maduro",
+        "name": "mikel f1",
         "packing": 500,
-        "price": 405
+        "price": 375.07,
+        "family": "papryka"
     },
     {
-        "family": "papryka",
         "segment": "blocky",
-        "name": "mikel",
+        "name": "dragoney f1",
         "packing": 500,
-        "price": 375.07
+        "price": 357.21,
+        "family": "papryka"
     },
     {
-        "family": "papryka",
         "segment": "blocky",
-        "name": "dragoney",
+        "name": "magno f1",
         "packing": 500,
-        "price": 357.21
+        "price": 468.34,
+        "family": "papryka"
     },
     {
-        "family": "papryka",
         "segment": "blocky",
-        "name": "magno",
+        "name": "milena f1",
         "packing": 500,
-        "price": 468.34
+        "price": 407.11,
+        "family": "papryka"
     },
     {
-        "family": "papryka",
         "segment": "blocky",
-        "name": "milena",
+        "name": "volante f1",
         "packing": 500,
-        "price": 407.11
+        "price": 314.12,
+        "family": "papryka"
     },
     {
-        "family": "papryka",
-        "segment": "blocky",
-        "name": "volante",
-        "packing": 500,
-        "price": 314.12
-    },
-    {
-        "family": "papryka",
         "segment": "stożek",
-        "name": "sixto",
+        "name": "sixto f1",
         "packing": 500,
-        "price": 1065.96
+        "price": 1065.96,
+        "family": "papryka"
     },
     {
-        "family": "papryka",
         "segment": "typ capia",
-        "name": "crispyred",
+        "name": "crispyred f1",
         "packing": 500,
-        "price": 243
+        "price": 243,
+        "family": "papryka"
     },
     {
-        "family": "papryka",
         "segment": "jalapenio",
-        "name": "cuatrero",
+        "name": "cuatrero f1",
         "packing": 250,
-        "price": 132.68
+        "price": 132.68,
+        "family": "papryka"
     },
     {
-        "family": "papryka",
         "segment": "hot",
-        "name": "hyffae",
+        "name": "shakira f1",
         "packing": 250,
-        "price": 150.82
+        "price": 137.21,
+        "family": "papryka"
     },
     {
-        "family": "papryka",
-        "segment": "hot",
-        "name": "shakira",
-        "packing": 250,
-        "price": 137.21
-    },
-    {
-        "family": "kapustne",
         "segment": "kalafior",
-        "name": "bielic",
+        "name": "chione f1",
         "packing": "2 500 prec.",
-        "price": 345.6
+        "price": 410.79,
+        "family": "kapustne"
     },
     {
-        "family": "kapustne",
         "segment": "kalafior",
-        "name": "chione",
+        "name": "elintos f1",
         "packing": "2 500 prec.",
-        "price": 391.23
+        "price": 363.16,
+        "family": "kapustne"
     },
     {
-        "family": "kapustne",
         "segment": "kalafior",
-        "name": "crossway",
+        "name": "telergy f1",
         "packing": "2 500 prec.",
-        "price": 345.6
+        "price": 345.87,
+        "family": "kapustne"
     },
     {
-        "family": "kapustne",
         "segment": "kalafior",
-        "name": "elintos",
+        "name": "xenia f1",
         "packing": "2 500 prec.",
-        "price": 345.87
+        "price": 363.16,
+        "family": "kapustne"
     },
     {
-        "family": "kapustne",
-        "segment": "kalafior",
-        "name": "telergy",
-        "packing": "2 500 prec.",
-        "price": 329.4
-    },
-    {
-        "family": "kapustne",
-        "segment": "kalafior",
-        "name": "xenia",
-        "packing": "2 500 prec.",
-        "price": 345.87
-    },
-    {
-        "family": "kapustne",
         "segment": "kapusta pekińska",
-        "name": "enduro",
+        "name": "enduro f1",
         "packing": "2 500 prec.",
-        "price": 110.16
+        "price": 115.67,
+        "family": "kapustne"
     },
     {
-        "family": "kapustne",
         "segment": "kapusta pekińska",
-        "name": "orient surprise",
+        "name": "orient surprise f1",
         "packing": "2 500 prec.",
-        "price": 110.16
+        "price": 115.67,
+        "family": "kapustne"
     },
     {
-        "family": "kapustne",
-        "segment": "kapusta pekińska",
-        "name": "preduro",
-        "packing": "2 500 prec.",
-        "price": 110.16
-    },
-    {
-        "family": "kapustne",
         "segment": "kalarepa",
-        "name": "avaya",
+        "name": "solares f1",
         "packing": "2 500 prec.",
-        "price": 216.92
+        "price": 216.92,
+        "family": "kapustne"
     },
     {
-        "family": "kapustne",
         "segment": "kalarepa",
-        "name": "solares",
+        "name": "timpano f1",
         "packing": "2 500 prec.",
-        "price": 216.92
+        "price": 198.56,
+        "family": "kapustne"
     },
     {
-        "family": "kapustne",
         "segment": "kalarepa",
-        "name": "timpano",
+        "name": "keyah f1",
         "packing": "2 500 prec.",
-        "price": 189.11
+        "price": 234.27,
+        "family": "kapustne"
     },
     {
-        "family": "kapustne",
-        "segment": "kalarepa",
-        "name": "opus",
-        "packing": "2 500 prec.",
-        "price": 216.92
-    },
-    {
-        "family": "kapustne",
-        "segment": "kalarepa",
-        "name": "keyah",
-        "packing": "2 500 prec.",
-        "price": 234.27
-    },
-    {
-        "family": "kapustne",
         "segment": "kapusta włoska",
-        "name": "sonho",
+        "name": "sonho f1",
         "packing": "2 500 prec.",
-        "price": 198.29
+        "price": 208.2,
+        "family": "kapustne"
     },
     {
-        "family": "kapustne",
         "segment": "kapusta włoska",
-        "name": "convoy",
+        "name": "convoy f1",
         "packing": "2 500 prec.",
-        "price": 187.27
+        "price": 196.64,
+        "family": "kapustne"
     },
     {
-        "family": "kapustne",
         "segment": "kapusta włoska",
-        "name": "deuce",
+        "name": "deuce f1",
         "packing": "2 500 prec.",
-        "price": 214.81
+        "price": 225.55,
+        "family": "kapustne"
     },
     {
-        "family": "kapustne",
         "segment": "kapusta biała",
-        "name": "cheeta",
+        "name": "commander f1",
         "packing": "2 500 prec.",
-        "price": 187.11
+        "price": 208.37,
+        "family": "kapustne"
     },
     {
-        "family": "kapustne",
         "segment": "kapusta biała",
-        "name": "commander ",
+        "name": "compass f1",
         "packing": "2 500 prec.",
-        "price": 198.45
+        "price": 208.37,
+        "family": "kapustne"
     },
     {
-        "family": "kapustne",
         "segment": "kapusta biała",
-        "name": "compass",
+        "name": "coronation f1",
         "packing": "2 500 prec.",
-        "price": 198.45
+        "price": 208.37,
+        "family": "kapustne"
     },
     {
-        "family": "kapustne",
         "segment": "kapusta biała",
-        "name": "coronation ",
+        "name": "gepard f1",
         "packing": "2 500 prec.",
-        "price": 198.45
+        "price": 208.37,
+        "family": "kapustne"
     },
     {
-        "family": "kapustne",
         "segment": "kapusta biała",
-        "name": "gepard ",
+        "name": "predeco f1",
         "packing": "2 500 prec.",
-        "price": 198.45
+        "price": 196.47,
+        "family": "kapustne"
     },
     {
-        "family": "kapustne",
         "segment": "kapusta biała",
-        "name": "predeco",
+        "name": "storka f1",
         "packing": "2 500 prec.",
-        "price": 187.11
+        "price": 196.47,
+        "family": "kapustne"
     },
     {
-        "family": "kapustne",
         "segment": "kapusta biała",
-        "name": "storka",
+        "name": "strukta f1",
         "packing": "2 500 prec.",
-        "price": 187.11
+        "price": 196.47,
+        "family": "kapustne"
     },
     {
-        "family": "kapustne",
         "segment": "kapusta biała",
-        "name": "strukta",
+        "name": "sunta f1",
         "packing": "2 500 prec.",
-        "price": 187.11
+        "price": 190.51,
+        "family": "kapustne"
     },
     {
-        "family": "kapustne",
         "segment": "kapusta biała",
-        "name": "sunta",
+        "name": "verdeco f1",
         "packing": "2 500 prec.",
-        "price": 181.44
+        "price": 196.47,
+        "family": "kapustne"
     },
     {
-        "family": "kapustne",
-        "segment": "kapusta biała",
-        "name": "verdeco",
-        "packing": "2 500 prec.",
-        "price": 187.11
-    },
-    {
-        "family": "kapustne",
         "segment": "kapusta płaska",
-        "name": "autumn king",
+        "name": "autumn king f1",
         "packing": "2 500 prec.",
-        "price": 198.45
+        "price": 208.37,
+        "family": "kapustne"
     },
     {
-        "family": "kapustne",
         "segment": "kapusta płaska",
-        "name": "green lunar",
+        "name": "green lunar f1",
         "packing": "2 500 prec.",
-        "price": 198.45
+        "price": 208.37,
+        "family": "kapustne"
     },
     {
-        "family": "kapustne",
         "segment": "kapusta płaska",
-        "name": "green prime",
+        "name": "green prime f1",
         "packing": "2 500 prec.",
-        "price": 328.86
+        "price": 345.3,
+        "family": "kapustne"
     },
     {
-        "family": "kapustne",
         "segment": "kapusta płaska",
-        "name": "geen stellar",
+        "name": "infinity f1",
         "packing": "2 500 prec.",
-        "price": 189
+        "price": 198.45,
+        "family": "kapustne"
     },
     {
-        "family": "kapustne",
-        "segment": "kapusta płaska",
-        "name": "infinity",
-        "packing": "2 500 prec.",
-        "price": 189
-    },
-    {
-        "family": "kapustne",
-        "segment": "koper włoski",
-        "name": "preludio",
-        "packing": "1000 prec.",
-        "price": 90.72
-    },
-    {
-        "family": "kapustne",
-        "segment": "koper włoski",
-        "name": "preludio organic",
-        "packing": "1000 pills",
-        "price": 134.95
-    },
-    {
-        "family": "kapustne",
-        "segment": "koper włoski",
-        "name": "preludio organic",
-        "packing": "1000 prec.",
-        "price": 107.15
-    },
-    {
-        "family": "endyvia",
-        "segment": "endyvia",
         "name": "ascari",
         "packing": "10 000 pills",
-        "price": 996.9
+        "price": 1026.81,
+        "family": "endywia"
     },
     {
-        "family": "endyvia",
-        "segment": "endyvia",
         "name": "comaneci",
         "packing": "10 000 pills",
-        "price": 1178.7
+        "price": 1214.06,
+        "family": "endywia"
     },
     {
-        "family": "endyvia",
-        "segment": "endyvia",
         "name": "confiance",
         "packing": "10 000 pills",
-        "price": 1065.2
+        "price": 1097.16,
+        "family": "endywia"
     },
     {
-        "family": "endyvia",
-        "segment": "endyvia",
         "name": "curlesi",
         "packing": "10 000 pills",
-        "price": 1125
+        "price": 1158.75,
+        "family": "endywia"
     },
     {
-        "family": "endyvia",
-        "segment": "endyvia",
         "name": "domari",
         "packing": "10 000 pills",
-        "price": 997
+        "price": 1026.91,
+        "family": "endywia"
     },
     {
-        "family": "endyvia",
-        "segment": "endyvia",
         "name": "imari",
         "packing": "10 000 pills",
-        "price": 1173.2
+        "price": 1208.4,
+        "family": "endywia"
     },
     {
-        "family": "endyvia",
-        "segment": "endyvia",
         "name": "parmance",
         "packing": "10 000 pills",
-        "price": 1065.2
+        "price": 1097.16,
+        "family": "endywia"
     },
     {
-        "family": "endyvia",
-        "segment": "endyvia",
+        "name": "parmenide",
+        "packing": "10 000 pills",
+        "price": 1118.58,
+        "family": "endywia"
+    },
+    {
         "name": "performance",
         "packing": "10 000 pills",
-        "price": 1086
+        "price": 1118.58,
+        "family": "endywia"
     },
     {
-        "family": "endyvia",
-        "segment": "endyvia",
         "name": "simbari",
         "packing": "10 000 pills",
-        "price": 1125.1
+        "price": 1158.85,
+        "family": "endywia"
     },
     {
-        "family": "sałata",
         "segment": "batavia",
         "name": "caipira",
         "packing": "10 000 pills",
-        "price": 1167.5
+        "price": 1202.53,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
+        "segment": "batavia",
+        "name": "olana",
+        "packing": "10 000 pills",
+        "price": 1290.59,
+        "family": "sałata"
+    },
+    {
         "segment": "butterhead",
         "name": "aferdita",
         "packing": "10 000 pills",
-        "price": 1179
+        "price": 1214.37,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
         "segment": "butterhead",
         "name": "analena",
         "packing": "5000 pills",
-        "price": 589.5
+        "price": 607.19,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
         "segment": "butterhead",
         "name": "anandra",
-        "packing": "5000 pills",
-        "price": 589.5
+        "packing": "10 000 pills",
+        "price": 1214.37,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
         "segment": "butterhead",
         "name": "casey",
         "packing": "10 000 pills",
-        "price": 1293.5
+        "price": 1293.5,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
         "segment": "butterhead",
         "name": "fairly",
         "packing": "10 000 pills",
-        "price": 1257
+        "price": 1294.71,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
         "segment": "butterhead",
         "name": "fusandra (fusarium res.)",
         "packing": "10 000 pills",
-        "price": 1400
+        "price": 1442,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
         "segment": "butterhead",
         "name": "ilona",
         "packing": "10 000 pills",
-        "price": 1235
+        "price": 1272.05,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
         "segment": "butterhead",
         "name": "jones  (fusarium res.)",
         "packing": "10 000 pills",
-        "price": 1400
+        "price": 1442,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
         "segment": "butterhead",
         "name": "melodion",
         "packing": "5 gramów",
-        "price": 145
+        "price": 149.35,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
         "segment": "butterhead",
         "name": "melodion ",
         "packing": "10 000 pills",
-        "price": 945
+        "price": 973.35,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
         "segment": "butterhead",
         "name": "stretcha ",
         "packing": "10 000 pills",
-        "price": 1224
+        "price": 1260.72,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
         "segment": "butterhead",
         "name": "stretcha ",
         "packing": "5000 prec.",
-        "price": 211.5
+        "price": 217.84,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
         "segment": "butterhead",
         "name": "takoda",
         "packing": "5000 pills",
-        "price": 617
+        "price": 635.51,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
         "segment": "butterhead",
         "name": "vitrine",
         "packing": "10 000 pills",
-        "price": 1224
+        "price": 1260.72,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
         "segment": "iceberg",
         "name": "adanto",
         "packing": "10 000 pills",
-        "price": 1140
+        "price": 1174.2,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
         "segment": "iceberg",
         "name": "cellist",
         "packing": "10 000 pills",
-        "price": 1135
+        "price": 1169.05,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
         "segment": "iceberg",
         "name": "casemiro",
         "packing": "10 000 pills",
-        "price": 1190
+        "price": 1225.7,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
         "segment": "iceberg",
         "name": "damion",
         "packing": "10 000 pills",
-        "price": 1135
+        "price": 1169.05,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
         "segment": "iceberg",
         "name": "danilo",
         "packing": "5000 pills",
-        "price": 595
+        "price": 612.85,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
-        "segment": "iceberg",
-        "name": "etude",
-        "packing": "10 000 pills",
-        "price": 1025
-    },
-    {
-        "family": "sałata",
         "segment": "iceberg",
         "name": "gido",
         "packing": "10 000 pills",
-        "price": 1190
+        "price": 1225.7,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
         "segment": "iceberg",
         "name": "mercelo",
         "packing": "10 000 pills",
-        "price": 1190
+        "price": 1225.7,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
         "segment": "iceberg",
         "name": "napelo",
         "packing": "5000 pills",
-        "price": 595
+        "price": 612.85,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
         "segment": "iceberg",
         "name": "philemo",
         "packing": "10 000 pills",
-        "price": 1212.5
+        "price": 1248.88,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
         "segment": "iceberg",
         "name": "plano",
         "packing": "5000 pills",
-        "price": 595
+        "price": 612.85,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
         "segment": "iceberg",
         "name": "rodolfo",
         "packing": "5000 pills",
-        "price": 595
+        "price": 612.85,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
         "segment": "iceberg",
         "name": "valeriano",
         "packing": "10 000 pills",
-        "price": 1190
+        "price": 1225.7,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
         "segment": "lollo bionda",
         "name": "brietta",
         "packing": "10 000 pills",
-        "price": 1246
+        "price": 1283.38,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
         "segment": "lollo bionda",
         "name": "dabi",
         "packing": "10 000 pills",
-        "price": 1179
+        "price": 1214.37,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
         "segment": "lollo bionda",
         "name": "jokary",
         "packing": "10 000 pills",
-        "price": 1245
+        "price": 1282.35,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
         "segment": "lollo bionda",
         "name": "vili",
         "packing": "5000 pills",
-        "price": 589.5
+        "price": 607.19,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
         "segment": "lollo rossa",
         "name": "azirka",
         "packing": "10 000 pills",
-        "price": 1146
+        "price": 1180.38,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
         "segment": "lollo rossa",
         "name": "lea",
         "packing": "10 000 pills",
-        "price": 1146
+        "price": 1180.38,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
         "segment": "lollo rossa",
         "name": "litska",
         "packing": "10 000 pills",
-        "price": 1234
+        "price": 1271.02,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
         "segment": "lollo rossa",
         "name": "tuska",
         "packing": "5000 prec.",
-        "price": 211.5
+        "price": 217.84,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
         "segment": "oakleaf red",
         "name": "rosalyn",
         "packing": "10 000 pills",
-        "price": 1234
+        "price": 1271.02,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
         "segment": "oakleaf green",
         "name": "divisor",
         "packing": "10 000 pills",
-        "price": 1432
+        "price": 1474.96,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
         "segment": "romaine",
         "name": "adicamp",
         "packing": "10 000 pills",
-        "price": 1179
+        "price": 1214.37,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
-        "segment": "romaine",
-        "name": "clouny",
-        "packing": "10 000 pills",
-        "price": 1179
-    },
-    {
-        "family": "sałata",
         "segment": "romaine",
         "name": "colbiana",
         "packing": "10 000 pills",
-        "price": 1179
+        "price": 1214.37,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
         "segment": "romaine",
         "name": "kilnsey",
         "packing": "10 000 pills",
-        "price": 1179
+        "price": 1214.37,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
         "segment": "romaine mini",
         "name": "xalbadora",
         "packing": "10 000 pills",
-        "price": 1179
+        "price": 1214.37,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
-        "segment": "romaine mini",
-        "name": "xanadu",
-        "packing": "10 000 pills",
-        "price": 1123.5
-    },
-    {
-        "family": "sałata",
         "segment": "romaine mini",
         "name": "xavira",
         "packing": "10 000 pills",
-        "price": 1179
+        "price": 1214.37,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
         "segment": "romaine mini",
         "name": "xemerius",
         "packing": "10 000 pills",
-        "price": 1279
+        "price": 1317.37,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
         "segment": "romaine mini",
         "name": "ximenes",
         "packing": "10 000 pills",
-        "price": 1790
+        "price": 1843.7,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
         "segment": "romaine mini",
         "name": "xoana",
         "packing": "10 000 pills",
-        "price": 1335
+        "price": 1375.05,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
         "segment": "romaine red",
         "name": "moonred",
         "packing": "10 000 pills",
-        "price": 1179
+        "price": 1214.37,
+        "family": "sałata"
     },
     {
-        "family": "sałata",
         "segment": "romaine red",
         "name": "ovired",
         "packing": "10 000 pills",
-        "price": 1179
+        "price": 1214.37,
+        "family": "sałata"
     },
     {
-        "family": "pory",
-        "segment": "pory",
         "name": "cherokee",
         "packing": 10000,
-        "price": 887.6
+        "price": 931.98,
+        "family": "por"
     },
     {
-        "family": "pory",
-        "segment": "pory",
         "name": "cherokee f1 organic",
         "packing": 10000,
-        "price": 1005.6
+        "price": 1055.88,
+        "family": "por"
     },
     {
-        "family": "pory",
-        "segment": "pory",
         "name": "chinook",
         "packing": 10000,
-        "price": 887.6
+        "price": 931.98,
+        "family": "por"
     },
     {
-        "family": "pory",
-        "segment": "pory",
         "name": "chinook f1 organic",
         "packing": 10000,
-        "price": 1005.6
+        "price": 1055.88,
+        "family": "por"
     },
     {
-        "family": "pory",
-        "segment": "pory",
         "name": "comanche",
         "packing": 10000,
-        "price": 887.6
+        "price": 931.98,
+        "family": "por"
     },
     {
-        "family": "pory",
-        "segment": "pory",
         "name": "comanche f1 organic",
         "packing": 10000,
-        "price": 1005.6
+        "price": 1055.88,
+        "family": "por"
     },
     {
-        "family": "pory",
-        "segment": "pory",
         "name": "oslo",
         "packing": 10000,
-        "price": 1004.9
+        "price": 1055.14,
+        "family": "por"
     },
     {
-        "family": "cebule",
         "segment": "typ japoński",
-        "name": "takmark",
+        "name": "comae f1",
         "packing": "250 000 prec.",
-        "price": 1304.1
+        "price": 2321.87,
+        "family": "cebula"
     },
     {
-        "family": "cebule",
         "segment": "typ japoński",
-        "name": "takstar",
+        "name": "superon f1",
         "packing": "250 000 prec.",
-        "price": 1304.1
+        "price": 1428.84,
+        "family": "cebula"
     },
     {
-        "family": "cebule",
         "segment": "typ japoński",
-        "name": "comae",
+        "name": "bonus f1",
         "packing": "250 000 prec.",
-        "price": 2211.3
+        "price": 1369.31,
+        "family": "cebula"
     },
     {
-        "family": "cebule",
         "segment": "typ japoński",
-        "name": "superon",
+        "name": "medusa f1",
         "packing": "250 000 prec.",
-        "price": 1360.8
+        "price": 1488.38,
+        "family": "cebula"
     },
     {
-        "family": "cebule",
-        "segment": "typ japoński",
-        "name": "bonus",
-        "packing": "250 000 prec.",
-        "price": 1304.1
-    },
-    {
-        "family": "cebule",
-        "segment": "typ japoński",
-        "name": "medusa",
-        "packing": "250 000 prec.",
-        "price": 1417.5
-    },
-    {
-        "family": "cebule",
         "segment": "typ hiszpański",
-        "name": "vuelta",
+        "name": "vuelta f1",
         "packing": "250 000 prec.",
-        "price": 1474.2
+        "price": 1547.91,
+        "family": "cebula"
     },
     {
-        "family": "cebule",
-        "name": "iroko  (fusarium res.)",
+        "name": "iroko f1 (fusarium res.)",
         "packing": "250 000 prec.",
-        "price": 1984.5
+        "price": 2083.73,
+        "family": "cebula"
     },
     {
-        "family": "cebule",
-        "name": "jatoba",
+        "name": "jatoba f1",
         "packing": "250 000 prec.",
-        "price": 1394.82
+        "price": 1464.56,
+        "family": "cebula"
     },
     {
-        "family": "cebule",
         "segment": "rijnsburer",
-        "name": "bruce",
+        "name": "bruce f1",
         "packing": "250 000 prec.",
-        "price": 1357.4
+        "price": 1425.27,
+        "family": "cebula"
     },
     {
-        "family": "cebule",
         "segment": "rijnsburer",
-        "name": "bruce (podkiełkowane nasiona)",
+        "name": "bruce f1 (podkiełkowane nasiona)",
         "packing": "250 000 prec.",
-        "price": 1756.57
+        "price": 1844.39,
+        "family": "cebula"
     },
     {
-        "family": "cebule",
         "segment": "rijns. czerwony",
-        "name": "monastrell",
+        "name": "monastrell f1",
         "packing": "250 000 prec.",
-        "price": 997.92
+        "price": 1047.82,
+        "family": "cebula"
     },
     {
-        "family": "cebule",
         "segment": "rijns. czerwony",
-        "name": "ruby star",
+        "name": "ruby star f1",
         "packing": "250 000 prec.",
-        "price": 1697.6
+        "price": 1782.48,
+        "family": "cebula"
     },
     {
-        "family": "cebule",
         "segment": "zimująca",
-        "name": "senshyu yellow",
+        "name": "boreas f1",
         "packing": "250 000 prec.",
-        "price": 792.67
+        "price": 3405.4,
+        "family": "cebula"
     },
     {
-        "family": "cebule",
         "segment": "zimująca",
-        "name": "boreas",
+        "name": "galatea f1",
         "packing": "250 000 prec.",
-        "price": 3243.24
+        "price": 3405.4,
+        "family": "cebula"
     },
     {
-        "family": "cebule",
         "segment": "zimująca",
-        "name": "galatea",
+        "name": "hi keeper f1",
         "packing": "250 000 prec.",
-        "price": 3243.24
+        "price": 3405.4,
+        "family": "cebula"
     },
     {
-        "family": "cebule",
         "segment": "zimująca",
-        "name": "hi keeper",
+        "name": "sonic f1",
         "packing": "250 000 prec.",
-        "price": 3243.24
+        "price": 3405.4,
+        "family": "cebula"
     },
     {
-        "family": "cebule",
         "segment": "zimująca",
-        "name": "sonic",
+        "name": "telesto f1",
         "packing": "250 000 prec.",
-        "price": 3243.24
+        "price": 3405.4,
+        "family": "cebula"
     },
     {
-        "family": "cebule",
         "segment": "zimująca",
-        "name": "telesto",
+        "name": "tough ball f1",
         "packing": "250 000 prec.",
-        "price": 3243.24
+        "price": 3405.4,
+        "family": "cebula"
     },
     {
-        "family": "cebule",
-        "segment": "zimująca",
-        "name": "tough ball",
-        "packing": "250 000 prec.",
-        "price": 3243.24
-    },
-    {
-        "family": "cebule",
         "segment": "siedmiolatka",
-        "name": "estafette",
+        "name": "estafette f1",
         "packing": "50 000 prec.",
-        "price": 187.87
+        "price": 197.26,
+        "family": "cebula"
     },
     {
-        "family": "cebule",
         "segment": "siedmiolatka",
-        "name": "estafette",
+        "name": "estafette f1",
         "packing": "250 000 prec.",
-        "price": 914.33
+        "price": 960.04,
+        "family": "cebula"
     },
     {
-        "family": "cebule",
         "segment": "siedmiolatka",
         "name": "feast",
         "packing": "50 000 prec.",
-        "price": 139.9
+        "price": 146.9,
+        "family": "cebula"
     },
     {
-        "family": "cebule",
         "segment": "siedmiolatka",
         "name": "kaigaro",
         "packing": "50 000 prec.",
-        "price": 146.56
+        "price": 153.88,
+        "family": "cebula"
     },
     {
-        "family": "cebule",
         "segment": "siedmiolatka",
         "name": "kaigaro",
         "packing": "250 000 prec.",
-        "price": 707.78
+        "price": 743.17,
+        "family": "cebula"
     },
     {
-        "family": "cebule",
         "segment": "siedmiolatka",
-        "name": "tycoon",
+        "name": "tycoon f1",
         "packing": "50 000 prec.",
-        "price": 171.72
+        "price": 180.31,
+        "family": "cebula"
     },
     {
-        "family": "cebule",
         "segment": "siedmiolatka",
-        "name": "tycoon",
+        "name": "tycoon f1",
         "packing": "250 000 prec.",
-        "price": 833.6
+        "price": 875.28,
+        "family": "cebula"
     },
     {
-        "family": "dynie",
-        "segment": "dynia",
-        "name": "bellatrix",
+        "name": "bellatrix f1",
         "packing": 500,
-        "price": 187.27
+        "price": 196.64,
+        "family": "dynia"
     },
     {
-        "family": "dynie",
-        "segment": "dynia",
-        "name": "flexi kuri",
+        "name": "flexi kuri f1",
         "packing": 500,
-        "price": 462.67
+        "price": 485.81,
+        "family": "dynia"
     },
     {
-        "family": "dynie",
-        "segment": "dynia",
-        "name": "flexi kuri organic",
+        "name": "flexi kuri f1 organic",
         "packing": 500,
-        "price": 539.78
+        "price": 566.77,
+        "family": "dynia"
     },
     {
-        "family": "dynie",
-        "segment": "dynia",
-        "name": "hannah",
+        "name": "hannah f1",
         "packing": 500,
-        "price": 183.97
+        "price": 193.17,
+        "family": "dynia"
     },
     {
-        "family": "dynie",
-        "segment": "dynia",
         "name": "hannah f1 organic ",
         "packing": 500,
-        "price": 220.32
+        "price": 231.34,
+        "family": "dynia"
     },
     {
-        "family": "dynie",
-        "segment": "dynia",
-        "name": "kaori kuri",
+        "name": "kaori kuri f1",
         "packing": 500,
-        "price": 451.66
+        "price": 474.24,
+        "family": "dynia"
     },
     {
-        "family": "dynie",
-        "segment": "dynia",
         "name": "kaori kuri f1 organic",
         "packing": 500,
-        "price": 528.77
+        "price": 555.21,
+        "family": "dynia"
     },
     {
-        "family": "dynie",
-        "segment": "dynia",
-        "name": "musquee de provence f1 organic",
+        "name": "musquee de provence organic",
+        "packing": 250,
+        "price": 135.91,
+        "family": "dynia"
+    },
+    {
+        "name": "matilda f1",
         "packing": 500,
-        "price": 258.88
+        "price": 193.17,
+        "family": "dynia"
     },
     {
-        "family": "dynie",
-        "segment": "dynia",
-        "name": "matilda",
+        "name": "matilda f1 organic",
         "packing": 500,
-        "price": 183.97
+        "price": 233.6,
+        "family": "dynia"
     },
     {
-        "family": "dynie",
-        "segment": "dynia",
-        "name": "matilda",
+        "name": "nelson f1  ",
         "packing": 500,
-        "price": 222.48
+        "price": 364.35,
+        "family": "dynia"
     },
     {
-        "family": "dynie",
-        "segment": "dynia",
-        "name": "nelson",
-        "packing": 500,
-        "price": 347
-    },
-    {
-        "family": "dynie",
-        "segment": "dynia",
         "name": "nelson f1 organic",
         "packing": 500,
-        "price": 429.62
+        "price": 451.11,
+        "family": "dynia"
     },
     {
-        "family": "dynie",
-        "segment": "dynia",
-        "name": "orange summer",
+        "name": "orange summer f1  ",
         "packing": 500,
-        "price": 440.64
+        "price": 462.67,
+        "family": "dynia"
     },
     {
-        "family": "dynie",
-        "segment": "dynia",
         "name": "orange summer f1 organic",
         "packing": 500,
-        "price": 528.77
+        "price": 555.21,
+        "family": "dynia"
     },
     {
-        "family": "dynie",
-        "segment": "dynia",
-        "name": "spellcast",
+        "name": "spellcast f1",
         "packing": 500,
-        "price": 220.32
+        "price": 231.34,
+        "family": "dynia"
     },
     {
-        "family": "dynie",
-        "segment": "dynia",
-        "name": "tiana",
+        "name": "tiana f1",
         "packing": 500,
-        "price": 183.97
+        "price": 193.17,
+        "family": "dynia"
     },
     {
-        "family": "dynie",
-        "segment": "dynia",
-        "name": "tiana organic",
+        "name": "tiana f1 organic",
         "packing": 500,
-        "price": 220.32
+        "price": 231.34,
+        "family": "dynia"
     },
     {
-        "family": "dynie",
-        "segment": "dynia",
         "name": "uchiki kur organic",
         "packing": 500,
-        "price": 220.32
+        "price": 231.34,
+        "family": "dynia"
     },
     {
-        "family": "dynie",
-        "segment": "dynia",
         "name": "uchiki kuri",
-        "packing": 1000,
-        "price": 220.32
-    },
-    {
-        "family": "cukinie",
-        "segment": "cukinia",
-        "name": "dunja",
         "packing": 500,
-        "price": 247.86
+        "price": 115.67,
+        "family": "dynia"
     },
     {
-        "family": "cukinie",
-        "segment": "cukinia",
-        "name": "keesha",
+        "name": "keesha f1",
+        "packing": 250,
+        "price": 182.18,
+        "family": "cukinia"
+    },
+    {
+        "name": "soleil f1",
         "packing": 500,
-        "price": 347
+        "price": 260.25,
+        "family": "cukinia"
     },
     {
-        "family": "cukinie",
-        "segment": "cukinia",
-        "name": "soleil",
+        "name": "yellowfin f1",
         "packing": 500,
-        "price": 247.86
+        "price": 303.05,
+        "family": "cukinia"
     },
     {
-        "family": "cukinie",
-        "segment": "cukinia",
-        "name": "yellowfin",
-        "packing": 500,
-        "price": 288.62
-    },
-    {
-        "family": "cykoria",
-        "segment": "cykoria",
         "name": "giove",
         "packing": "10 000 pills",
-        "price": 1388
+        "price": 1429.64,
+        "family": "cykoria sałatowa(radicchio)"
     },
     {
-        "family": "cykoria",
-        "segment": "cykoria",
         "name": "sumero",
         "packing": "10 000 pills",
-        "price": 1245
+        "price": 1282.35,
+        "family": "cykoria sałatowa(radicchio)"
     },
     {
-        "family": "cykoria",
-        "segment": "cykoria",
         "name": "vespero",
         "packing": "10 000 pills",
-        "price": 1135
+        "price": 1169.05,
+        "family": "cykoria sałatowa(radicchio)"
     },
     {
-        "family": "rzodkiewka",
-        "segment": "rzodkiewka",
         "name": "celesta f1 kal 3,00-3,25",
         "packing": 1000000,
-        "price": 6681.96
+        "price": 6681.96,
+        "family": "rzodkiewka"
     },
     {
-        "family": "rzodkiewka",
-        "segment": "rzodkiewka",
         "name": "celesta f1 kal 2,75-3,00",
         "packing": 1000000,
-        "price": 6544.8
+        "price": 6544.8,
+        "family": "rzodkiewka"
     },
     {
-        "family": "rzodkiewka",
-        "segment": "rzodkiewka",
         "name": "celesta f1 kal 2,50-2,75",
         "packing": 1000000,
-        "price": 6411.96
+        "price": 6411.96,
+        "family": "rzodkiewka"
     },
     {
-        "family": "rzodkiewka",
-        "segment": "rzodkiewka",
         "name": "celesta f1 organic",
         "packing": 1000000,
-        "price": 8337.6
+        "price": 8337.6,
+        "family": "rzodkiewka"
     },
     {
-        "family": "rzodkiewka",
-        "segment": "rzodkiewka",
         "name": "celesta f1 kal 3,00-3,25",
         "packing": 50000,
-        "price": 340.1
+        "price": 340.1,
+        "family": "rzodkiewka"
     },
     {
-        "family": "rzodkiewka",
-        "segment": "rzodkiewka",
         "name": "celesta f1 kal 2,75-3,00",
         "packing": 50000,
-        "price": 333.24
+        "price": 333.24,
+        "family": "rzodkiewka"
     },
     {
-        "family": "rzodkiewka",
-        "segment": "rzodkiewka",
         "name": "celesta f1 kal 2,50-2,75",
         "packing": 50000,
-        "price": 326.6
+        "price": 326.6,
+        "family": "rzodkiewka"
     },
     {
-        "family": "rzodkiewka",
-        "segment": "rzodkiewka",
         "name": "escala f1 kal 3,00-3,25",
         "packing": 1000000,
-        "price": 6681.96
+        "price": 6681.96,
+        "family": "rzodkiewka"
     },
     {
-        "family": "rzodkiewka",
-        "segment": "rzodkiewka",
         "name": "escala f1 kal 2,75-3,00",
         "packing": 1000000,
-        "price": 6544.8
+        "price": 6544.8,
+        "family": "rzodkiewka"
     },
     {
-        "family": "rzodkiewka",
-        "segment": "rzodkiewka",
         "name": "escala f1 kal 2,50-2,75",
         "packing": 1000000,
-        "price": 6411.96
+        "price": 6411.96,
+        "family": "rzodkiewka"
     },
     {
-        "family": "rzodkiewka",
-        "segment": "rzodkiewka",
         "name": "escala f1 kal 3,00-3,25",
         "packing": 50000,
-        "price": 340.1
+        "price": 340.1,
+        "family": "rzodkiewka"
     },
     {
-        "family": "rzodkiewka",
-        "segment": "rzodkiewka",
         "name": "escala f1 kal 2,75-3,00",
         "packing": 50000,
-        "price": 333.24
+        "price": 333.24,
+        "family": "rzodkiewka"
     },
     {
-        "family": "rzodkiewka",
-        "segment": "rzodkiewka",
         "name": "escala f1 kal 2,50-2,75",
         "packing": 50000,
-        "price": 326.6
+        "price": 326.6,
+        "family": "rzodkiewka"
     },
     {
-        "family": "rzodkiewka",
-        "segment": "rzodkiewka",
         "name": "dzoura f1 (e66r.3025) kal 3,00-3,25",
         "packing": 1000000,
-        "price": 7020
+        "price": 7020,
+        "family": "rzodkiewka"
     },
     {
-        "family": "rzodkiewka",
-        "segment": "rzodkiewka",
         "name": "dzoura f1 (e66r.3025) kal 2,75-3,00",
         "packing": 1000000,
-        "price": 6858
+        "price": 6858,
+        "family": "rzodkiewka"
     },
     {
-        "family": "rzodkiewka",
-        "segment": "rzodkiewka",
         "name": "dzoura f1 (e66r.3025) kal 2,50-2,75",
         "packing": 1000000,
-        "price": 6696
+        "price": 6696,
+        "family": "rzodkiewka"
     },
     {
-        "family": "rzodkiewka",
-        "segment": "rzodkiewka",
         "name": "dzoura f1 (e66r.3025) kal 3,00-3,25",
         "packing": 50000,
-        "price": 357
+        "price": 357,
+        "family": "rzodkiewka"
     },
     {
-        "family": "rzodkiewka",
-        "segment": "rzodkiewka",
         "name": "dzoura f1 (e66r.3025) kal 2,75-3,00",
         "packing": 50000,
-        "price": 348.9
+        "price": 348.9,
+        "family": "rzodkiewka"
     },
     {
-        "family": "rzodkiewka",
-        "segment": "rzodkiewka",
         "name": "dzoura f1 (e66r.3025) kal 2,50-2,75",
         "packing": 50000,
-        "price": 340.8
+        "price": 340.8,
+        "family": "rzodkiewka"
     },
     {
-        "family": "rzodkiewka",
-        "segment": "rzodkiewka",
         "name": "sarita f1 (e66r.3009) kal 3,00-3,25",
         "packing": 1000000,
-        "price": 7020
+        "price": 7020,
+        "family": "rzodkiewka"
     },
     {
-        "family": "rzodkiewka",
-        "segment": "rzodkiewka",
         "name": "sarita f1 (e66r.3009) kal 2,75-3,00",
         "packing": 1000000,
-        "price": 6858
+        "price": 6858,
+        "family": "rzodkiewka"
     },
     {
-        "family": "rzodkiewka",
-        "segment": "rzodkiewka",
         "name": "sarita f1 (e66r.3009) kal 2,50-2,75",
         "packing": 1000000,
-        "price": 6696
+        "price": 6696,
+        "family": "rzodkiewka"
     },
     {
-        "family": "rzodkiewka",
-        "segment": "rzodkiewka",
         "name": "sarita f1 (e66r.3009) kal 3,00-3,25",
         "packing": 50000,
-        "price": 357
+        "price": 357,
+        "family": "rzodkiewka"
     },
     {
-        "family": "rzodkiewka",
-        "segment": "rzodkiewka",
         "name": "sarita f1 (e66r.3009) kal 2,75-3,00",
         "packing": 50000,
-        "price": 348.9
+        "price": 348.9,
+        "family": "rzodkiewka"
     },
     {
-        "family": "rzodkiewka",
-        "segment": "rzodkiewka",
         "name": "sarita f1 (e66r.3009) kal 2,50-2,75",
         "packing": 50000,
-        "price": 340.8
+        "price": 340.8,
+        "family": "rzodkiewka"
     },
     {
-        "family": "rzodkiewka",
-        "segment": "rzodkiewka",
         "name": "pearl f1",
         "packing": 1000000,
-        "price": 15120
+        "price": 15120,
+        "family": "rzodkiewka"
     },
     {
-        "family": "rzodkiewka",
-        "segment": "rzodkiewka",
         "name": "vienna f1 kal 3,00-3,25",
         "packing": 1000000,
-        "price": 6681.96
+        "price": 6681.96,
+        "family": "rzodkiewka"
     },
     {
-        "family": "rzodkiewka",
-        "segment": "rzodkiewka",
         "name": "vienna f1 kal 2,75-3,00",
         "packing": 1000000,
-        "price": 6544.8
+        "price": 6544.8,
+        "family": "rzodkiewka"
     },
     {
-        "family": "rzodkiewka",
-        "segment": "rzodkiewka",
         "name": "vienna f1 kal 2,50-2,75",
         "packing": 1000000,
-        "price": 6411.96
+        "price": 6411.96,
+        "family": "rzodkiewka"
     },
     {
-        "family": "rzodkiewka",
-        "segment": "rzodkiewka",
         "name": "vienna f1 kal 3,00-3,25",
         "packing": 50000,
-        "price": 340.1
+        "price": 340.1,
+        "family": "rzodkiewka"
     },
     {
-        "family": "rzodkiewka",
-        "segment": "rzodkiewka",
         "name": "vienna f1 kal 2,75-3,00",
         "packing": 50000,
-        "price": 333.24
+        "price": 333.24,
+        "family": "rzodkiewka"
     },
     {
-        "family": "rzodkiewka",
-        "segment": "rzodkiewka",
         "name": "vienna f1 kal 2,50-2,75",
         "packing": 50000,
-        "price": 326.6
+        "price": 326.6,
+        "family": "rzodkiewka"
     },
     {
-        "family": "rzodkiew",
-        "segment": "rzodkiew",
         "name": "april cross",
         "packing": "100 gramów",
-        "price": 235.87
+        "price": 247.67,
+        "family": "rzodkiew"
     },
     {
-        "family": "rzodkiew",
-        "segment": "rzodkiew",
         "name": "minowase summer cross",
         "packing": "100 gramów",
-        "price": 229.07
+        "price": 240.52,
+        "family": "rzodkiew"
     },
     {
-        "family": "rzepa",
-        "segment": "rzepa",
-        "name": "natsukomachi",
+        "name": "natsukomachi f1",
         "packing": "100 gramów",
-        "price": 210.81
+        "price": 221.35,
+        "family": "rzepa biała"
     },
     {
-        "family": "szparagi",
-        "segment": "szparagi",
-        "name": "daleza",
+        "name": "daleza f1",
         "packing": 1000,
-        "price": 997.92
+        "price": 1047.82,
+        "family": "szparagi"
     },
     {
-        "family": "szpinak",
-        "segment": "szpinak",
-        "name": "crosstrek",
+        "name": "crosstrek f1",
         "packing": 1000000,
-        "price": 1581
+        "price": 1628.43,
+        "family": "szpinak"
     },
     {
-        "family": "szpinak",
-        "segment": "szpinak",
-        "name": "frontier",
+        "name": "frontier f1",
         "packing": 1000000,
-        "price": 1581
+        "price": 1628.43,
+        "family": "szpinak"
     },
     {
-        "family": "szpinak",
-        "segment": "szpinak",
-        "name": "longhorn",
+        "name": "jeep f1",
         "packing": 1000000,
-        "price": 1635
+        "price": 1684.05,
+        "family": "szpinak"
     },
     {
-        "family": "szpinak",
-        "segment": "szpinak",
-        "name": "traverse",
+        "name": "longhorn f1",
         "packing": 1000000,
-        "price": 1635
+        "price": 1684.05,
+        "family": "szpinak"
     },
     {
-        "family": "szpinak",
-        "segment": "szpinak",
-        "name": "trailboss",
+        "name": "traverse f1",
         "packing": 1000000,
-        "price": 1167
+        "price": 1684.05,
+        "family": "szpinak"
     },
     {
-        "family": "szpinak",
-        "segment": "szpinak",
-        "name": "tundra",
-        "packing": 500000,
-        "price": 583.58
-    },
-    {
-        "family": "szpinak",
-        "segment": "szpinak",
-        "name": "tundra",
+        "name": "trailboss f1",
         "packing": 1000000,
-        "price": 1167
+        "price": 1202.01,
+        "family": "szpinak"
     },
     {
-        "family": "zioła",
         "segment": "bazylia",
         "name": "genoveser",
         "packing": "50 000 (76g)",
-        "price": 30.06
+        "price": 30.81,
+        "family": "zioła"
     },
     {
-        "family": "zioła",
         "segment": "bazylia",
         "name": "genoveser",
         "packing": "1 000 000 (1,5kg)",
-        "price": 501.23
+        "price": 516.26,
+        "family": "zioła"
     },
     {
-        "family": "zioła",
         "segment": "bazylia",
         "name": "keira",
         "packing": "50 000 (76g)",
-        "price": 66.29
+        "price": 68.13,
+        "family": "zioła"
     },
     {
-        "family": "zioła",
         "segment": "bazylia",
         "name": "keira",
         "packing": "1 000 000 (1,5kg)",
-        "price": 1225.8
+        "price": 1262.57,
+        "family": "zioła"
     },
     {
-        "family": "zioła",
         "segment": "bazylia",
         "name": "marian",
         "packing": "50 000 (76g)",
-        "price": 56.52
+        "price": 58.06,
+        "family": "zioła"
     },
     {
-        "family": "zioła",
         "segment": "bazylia",
         "name": "marian",
         "packing": "1 000 000 (1,5kg)",
-        "price": 1030.32
+        "price": 1061.23,
+        "family": "zioła"
     },
     {
-        "family": "zioła",
         "segment": "bazylia",
         "name": "marian organic",
         "packing": "1 000 000 (1,5kg)",
-        "price": 1285.2
+        "price": 1323.76,
+        "family": "zioła"
     },
     {
-        "family": "zioła",
         "segment": "bazylia",
         "name": "piccolino",
         "packing": "50 000 (76g)",
-        "price": 64.94
+        "price": 66.74,
+        "family": "zioła"
     },
     {
-        "family": "zioła",
         "segment": "bazylia",
         "name": "piccolino",
         "packing": "1 000 000 (1,5kg)",
-        "price": 1198.8
+        "price": 1234.76,
+        "family": "zioła"
     },
     {
-        "family": "zioła",
         "segment": "bazylia",
         "name": "rosie",
         "packing": "50 000 (76g)",
-        "price": 76.55
+        "price": 78.7,
+        "family": "zioła"
     },
     {
-        "family": "zioła",
         "segment": "bazylia",
         "name": "rosie",
         "packing": "1 000 000 (1,5kg)",
-        "price": 1431
+        "price": 1473.93,
+        "family": "zioła"
     },
     {
-        "family": "zioła",
         "segment": "szczypiorek",
         "name": "staro",
-        "packing": "1 000 000 (1,4kg)",
-        "price": 1362.69
+        "packing": "250 000 (0,4kg)",
+        "price": 350.89,
+        "family": "zioła"
     },
     {
-        "family": "zioła",
         "segment": "szczypiorek",
         "name": "staro organic",
-        "packing": "1 000 000 (1,4kg)",
-        "price": 2730.94
+        "packing": "250 000 (0,4kg)",
+        "price": 703.22,
+        "family": "zioła"
     },
     {
-        "family": "zioła",
         "segment": "kolendra",
         "name": "marino",
         "packing": "100 000 (1kg)",
-        "price": 138.67
+        "price": 142.83,
+        "family": "zioła"
     },
     {
-        "family": "zioła",
         "segment": "kolendra",
         "name": "marino",
         "packing": "500 000 (5kg)",
-        "price": 693.36
+        "price": 714.16,
+        "family": "zioła"
     },
     {
-        "family": "zioła",
         "segment": "kolendra",
         "name": "marino organic",
         "packing": "100 000 (1kg)",
-        "price": 259.2
+        "price": 266.98,
+        "family": "zioła"
     },
     {
-        "family": "zioła",
         "segment": "koper",
         "name": "ella",
         "packing": "1 000 000 (1,4kg)",
-        "price": 436.06
+        "price": 449.14,
+        "family": "zioła"
     },
     {
-        "family": "zioła",
         "segment": "koper",
         "name": "ella organic",
         "packing": "1 000 000 (1,4kg)",
-        "price": 873.23
+        "price": 899.43,
+        "family": "zioła"
     },
     {
-        "family": "zioła",
+        "segment": "koper",
+        "name": "goldkrone",
+        "packing": "250 000 (360g)",
+        "price": 112.29,
+        "family": "zioła"
+    },
+    {
         "segment": "koper",
         "name": "goldkrone",
         "packing": "1 000 000 (1,4kg)",
-        "price": 436.06
+        "price": 449.14,
+        "family": "zioła"
     },
     {
-        "family": "zioła",
         "segment": "koper",
         "name": "green sleeve",
         "packing": "250 000 (360g)",
-        "price": 109.02
+        "price": 112.29,
+        "family": "zioła"
     },
     {
-        "family": "zioła",
         "segment": "koper",
         "name": "green sleeve",
         "packing": "1 000 000 (1,4kg)",
-        "price": 436.06
+        "price": 449.14,
+        "family": "zioła"
     },
     {
-        "family": "zioła",
         "segment": "koper",
         "name": "teddy",
         "packing": "1 000 000 (1,4kg)",
-        "price": 551.12
+        "price": 567.65,
+        "family": "zioła"
     },
     {
-        "family": "zioła",
         "segment": "melisa",
         "name": "citrina",
-        "packing": "2 500 000 (1,5kg)",
-        "price": 1287.36
+        "packing": "100 000 (0,05kg)",
+        "price": 53.04,
+        "family": "zioła"
     },
     {
-        "family": "zioła",
         "segment": "melisa",
         "name": "citrina organic",
-        "packing": "2 500 000 (1,5kg)",
-        "price": 3882.6
+        "packing": "100 000 (0,05kg)",
+        "price": 159.96,
+        "family": "zioła"
     },
     {
-        "family": "zioła",
         "segment": "majeranek",
         "name": "marjoleine",
         "packing": 250000,
-        "price": 33.37
+        "price": 34.37,
+        "family": "zioła"
     },
     {
-        "family": "zioła",
         "segment": "lubczyk",
         "name": "elsbetha",
         "packing": "50 000 (200g)",
-        "price": 127.69
+        "price": 131.37,
+        "family": "zioła"
     },
     {
-        "family": "zioła",
         "segment": "lubczyk",
         "name": "elsbetha",
         "packing": "250 000 (1KG)",
-        "price": 613.44
+        "price": 631.84,
+        "family": "zioła"
     },
     {
-        "family": "zioła",
         "segment": "lubczyk",
         "name": "elsbetha",
         "packing": "2 500 000 (10KG)",
-        "price": 6134.4
+        "price": 6318.43,
+        "family": "zioła"
     },
     {
-        "family": "zioła",
+        "segment": "pietruszka",
+        "name": "argon",
+        "packing": "50 000 (0,87 kg)",
+        "price": 36.05,
+        "family": "zioła"
+    },
+    {
         "segment": "pietruszka",
         "name": "argon",
         "packing": "1 000 000 (1,75KG)",
-        "price": 602.92
+        "price": 621.01,
+        "family": "zioła"
     },
     {
-        "family": "zioła",
         "segment": "pietruszka",
         "name": "gigante d'italia organic",
         "packing": "1 000 000 (1,75KG)",
-        "price": 1490.62
+        "price": 1535.33,
+        "family": "zioła"
     },
     {
-        "family": "zioła",
         "segment": "pietruszka",
         "name": "katinka",
         "packing": "1 000 000 (1,75KG)",
-        "price": 880.2
+        "price": 906.61,
+        "family": "zioła"
     },
     {
-        "family": "zioła",
         "segment": "pietruszka",
         "name": "peione",
         "packing": "100 000 (175g)",
-        "price": 66.19
+        "price": 68.18,
+        "family": "zioła"
     },
     {
-        "family": "zioła",
         "segment": "pietruszka",
         "name": "peione",
         "packing": "1 000 000 (1,75KG)",
-        "price": 661.9
+        "price": 681.76,
+        "family": "zioła"
     },
     {
-        "family": "zioła",
         "segment": "rukola",
-        "name": "anastazia",
+        "name": "anastazia (dostępne opak.: 5 mln)",
         "packing": 1000000,
-        "price": 716.04
+        "price": 737.52,
+        "family": "zioła"
     },
     {
-        "family": "zioła",
         "segment": "rukola",
-        "name": "bellezia",
+        "name": "bellezia (dostępne opak.: 1, 5, 30 mln)",
         "packing": 1000000,
-        "price": 550.8
+        "price": 567.32,
+        "family": "zioła"
     },
     {
-        "family": "zioła",
         "segment": "rukola",
-        "name": "bellezia organic",
+        "name": "bellezia organic (dostępne opak.: 15 mln)",
         "packing": 1000000,
-        "price": 716.04
+        "price": 737.52,
+        "family": "zioła"
     },
     {
-        "family": "zioła",
         "segment": "rukola",
-        "name": "jolizia",
+        "name": "florenzia (dostępne opak.: 15, 30 mln)",
         "packing": 1000000,
-        "price": 680.79
+        "price": 628.64,
+        "family": "zioła"
     },
     {
-        "family": "zioła",
         "segment": "rukola",
-        "name": "prudenzia",
+        "name": "jolizia (dostępne opak.: 15, 30 mln)",
         "packing": 1000000,
-        "price": 680.79
+        "price": 701.21,
+        "family": "zioła"
     },
     {
-        "family": "zioła",
         "segment": "rukola",
-        "name": "selvatica",
+        "name": "prudenzia (dostępne opak.: 15, 30 mln)",
         "packing": 1000000,
-        "price": 306.72
+        "price": 701.21,
+        "family": "zioła"
     },
     {
-        "family": "zioła",
-        "segment": "szłwia",
+        "segment": "rukola",
+        "name": "selvatica  (dostępne opak.: 15, 30 mln)",
+        "packing": 1000000,
+        "price": 315.92,
+        "family": "zioła"
+    },
+    {
+        "segment": "szałwia",
         "name": "fanni",
         "packing": "100 000 (1KG)",
-        "price": 827.28
+        "price": 852.1,
+        "family": "zioła"
     },
     {
-        "family": "zioła",
-        "segment": "szłwia",
+        "segment": "szałwia",
         "name": "fanni o",
         "packing": "100 000 (1KG)",
-        "price": 2401.92
+        "price": 2473.98,
+        "family": "zioła"
     },
     {
-        "family": "zioła",
         "segment": "tymianek",
         "name": "german winter",
         "packing": "250 000 (75G)",
-        "price": 109.13
+        "price": 112.4,
+        "family": "zioła"
     },
     {
-        "family": "zioła",
         "segment": "tymianek",
         "name": "german winter",
         "packing": "5 000 000 (1,5kg)",
-        "price": 2182.53
+        "price": 2248,
+        "family": "zioła"
     },
     {
-        "family": "zioła",
         "segment": "tymianek",
         "name": "german winter",
         "packing": "30 000 000 (10kg)",
-        "price": 13095.17
+        "price": 13488.03,
+        "family": "zioła"
     },
     {
-        "family": "zioła",
         "segment": "tymianek",
         "name": "german winter o",
         "packing": "5 000 000 (1,5kg)",
-        "price": 4616.46
+        "price": 4754.95,
+        "family": "zioła"
     }
 ]

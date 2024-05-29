@@ -34,7 +34,7 @@ const crop = {
             key="index">
             <router-link 
             class="w-100 h-100"
-            to="/">
+            :to="{name: 'crop', params: {name: index}}">
             <main-vareity-card
               v-if="item"
               :item="item"
