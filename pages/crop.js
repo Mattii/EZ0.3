@@ -23,7 +23,7 @@ const crop = {
                     class="w-100 h-100"
                     rounded="xl"
                     cover
-                    max-height="260px"                   
+                    max-height="300px"                   
                     :src="imgSrc"
                     >
                     <template #sources>
@@ -58,7 +58,7 @@ const crop = {
               :color="familyType?.color ? familyType.color : '#9b91f9'"
               width="100%"
               min-width="200px"
-              class="px-3 py-6 v-theme--dark overflow-hidden"
+              class="pa-6 v-theme--dark overflow-hidden"
             >
             <p>{{ index }} {{ item }}</p>
             </v-sheet>

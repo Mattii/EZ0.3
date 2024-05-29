@@ -98,8 +98,8 @@
           <v-btn to="/cennik" variant="text" rounded="pill" class="text-capitalize px-6 app-btn">
             Cennik
           </v-btn>
-          <v-btn to="/tablica" variant="text" rounded="pill" class="text-capitalize px-6 app-btn">
-            Tablica
+          <v-btn variant="text" rounded="pill" class="text-capitalize px-6 app-btn" @click.stop="drawer = !drawer">
+            Nawiguj
           </v-btn>
         </div>
 
@@ -108,6 +108,23 @@
             <v-icon>mdi-dots-vertical</v-icon>
           </v-btn>
         </v-app-bar>
+
+        <v-navigation-drawer
+        v-model="drawer"
+        temporary
+      >
+        <v-list-item
+          prepend-avatar="https://randomuser.me/api/portraits/men/78.jpg"
+          title="John Leider"
+        ></v-list-item>
+
+        <v-divider></v-divider>
+
+        <v-list density="compact" nav>
+          <v-list-item prepend-icon="mdi-view-dashboard" title="Tablica" value="dashboard" to="/tablica"></v-list-item>
+        </v-list>
+      </v-navigation-drawer>
+
 
         <v-main app>
           <router-view v-slot="{ Component }">
@@ -236,13 +253,14 @@
             </svg>
           </v-btn>
 
-          <v-btn to="/tablica">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <v-btn @click.stop="drawer = !drawer">
+            <!-- <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" clip-rule="evenodd" d="M10.836 13.0001H5.164C4.33174 12.994 3.53082 13.282 2.93746 13.8008C2.34408 14.3195 2.00686 15.0266 2 15.7663V26.2355C2.0154 27.7754 3.43168 29.0129 5.164 28.9999H10.836C11.6682 29.0061 12.4692 28.7181 13.0626 28.1994C13.656 27.6806 13.9932 26.9736 14 26.2337V15.7663C13.9932 15.0266 13.656 14.3195 13.0626 13.8008C12.4692 13.282 11.6682 12.994 10.836 13.0001Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               <path fill-rule="evenodd" clip-rule="evenodd" d="M10.836 3.00091H5.164C3.46652 2.96561 2.05118 3.96709 2 5.23973V6.76027C2.05118 8.03292 3.46652 9.03441 5.164 8.99909H10.836C12.5334 9.03441 13.9488 8.03292 14 6.76027V5.23973C13.9488 3.96709 12.5334 2.96561 10.836 3.00091Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               <path fill-rule="evenodd" clip-rule="evenodd" d="M20.164 18.9999H25.834C26.6666 19.0065 27.468 18.7187 28.0618 18.1999C28.6556 17.681 28.9932 16.9738 29 16.2337V5.76627C28.9932 5.02652 28.656 4.31947 28.0626 3.80071C27.4692 3.28194 26.6682 2.99395 25.836 3.0001H20.164C19.3318 2.99395 18.5308 3.28194 17.9374 3.80071C17.344 4.31947 17.0068 5.02652 17 5.76627V16.2337C17.0068 16.9734 17.344 17.6804 17.9374 18.1992C18.5308 18.7179 19.3318 19.0059 20.164 18.9999Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               <path fill-rule="evenodd" clip-rule="evenodd" d="M20.164 29.9987H25.834C27.5322 30.0469 28.9488 28.7113 29 27.0137V24.9863C28.9488 23.2894 27.5334 21.9542 25.836 22.0012H20.164C18.4666 21.9542 17.0512 23.2894 17 24.9863V27.0117C17.05 28.7093 18.4658 30.0457 20.164 29.9987Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+            </svg> -->
+            <v-icon size="x-large">mdi-map-legend</v-icon>
           </v-btn>
         </v-bottom-navigation>
       </v-app>
