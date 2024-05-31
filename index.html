@@ -123,13 +123,28 @@
         <v-divider></v-divider>
 
         <v-list density="compact" nav>
-          <v-list-item prepend-icon="mdi-view-dashboard" title="Tablica" value="dashboard" to="/tablica">
+          <v-list-item 
+          prepend-icon="mdi-view-dashboard"
+          active-class="rounded-xl"
+          title="Tablica" 
+          value="dashboard" 
+          to="/tablica">
         </v-list>
 
         <v-list density="compact" nav>
           <v-list-subheader>Magazyn</v-list-subheader>
-          <v-list-item prepend-icon="mdi-wallet-membership" title="Stan komercji" value="komercja" to="/komercja"></v-list-item>
-          <v-list-item prepend-icon="mdi-wallet-giftcard" title="Stan prób" value="próby" to="/proby"></v-list-item>
+          <v-list-item
+            prepend-icon="mdi-wallet-membership"
+            active-class="rounded-xl"
+            title="Stan komercji" 
+            value="komercja" 
+            to="/komercja"></v-list-item>
+          <v-list-item 
+            prepend-icon="mdi-wallet-giftcard"
+            active-class="rounded-xl" 
+            title="Stan prób" 
+            value="próby" 
+            to="/proby"></v-list-item>
         </v-list>
       </v-navigation-drawer>
 
