@@ -16,6 +16,14 @@ import app from "../modules/firebase.js";
 
 const stock = {
   template: `
+    <v-container fluid>
+      <v-row justify="center" class="mb-6">
+      <v-col xs="12" sm="11" md="10" lg="8">
+        <hero-element
+        title="Komercja"
+        ></hero-element>
+      </v-col>
+    </v-row>
       <v-row justify="center" class="">
       <v-col  xs="12" sm="8" md="6" lg="4" class="">
         <v-text-field
@@ -125,7 +133,9 @@ const stock = {
         </v-data-table>
         </div>
       </v-col>
-    </v-row>`,
+    </v-row>
+    </v-container>
+    `,
   setup() {
     const route = useRoute();
     const store = useStore();

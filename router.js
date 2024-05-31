@@ -20,14 +20,7 @@ const router = createRouter({
       path: "/tablica",
       component: () => import("./pages/tablica.js"),
       name: "tablica",
-      children: [
-        {
-          // Stock will be rendered inside User's <router-view>
-          // when /tablica/stock is matched
-          path: 'komercja',
-          name: "komercja",
-          component: () => import("./pages/stock.js"),
-        },        
+      children: [      
         {
           // Stock will be rendered inside User's <router-view>
           // when /tablica/stock is matched
@@ -36,6 +29,20 @@ const router = createRouter({
           component: () => import("./pages/sample.js"),
         },
       ]
+    },
+    {
+      // Stock will be rendered inside User's <router-view>
+      // when /tablica/stock is matched
+      path: '/komercja',
+      name: "komercja",
+      component: () => import("./pages/stock.js"),
+    },   
+    {
+      // Stock will be rendered inside User's <router-view>
+      // when /tablica/stock is matched
+      path: '/proby',
+      name: "proby",
+      component: () => import("./pages/sample.js"),
     },
     {
       path: "/katalog/:family",

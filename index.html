@@ -110,18 +110,26 @@
         </v-app-bar>
 
         <v-navigation-drawer
+        
         v-model="drawer"
         temporary
       >
         <v-list-item
+          class="py-3"
           prepend-avatar="https://randomuser.me/api/portraits/men/78.jpg"
-          title="John Leider"
+          title="Gość"
         ></v-list-item>
 
         <v-divider></v-divider>
 
         <v-list density="compact" nav>
-          <v-list-item prepend-icon="mdi-view-dashboard" title="Tablica" value="dashboard" to="/tablica"></v-list-item>
+          <v-list-item prepend-icon="mdi-view-dashboard" title="Tablica" value="dashboard" to="/tablica">
+        </v-list>
+
+        <v-list density="compact" nav>
+          <v-list-subheader>Magazyn</v-list-subheader>
+          <v-list-item prepend-icon="mdi-wallet-membership" title="Stan komercji" value="komercja" to="/komercja"></v-list-item>
+          <v-list-item prepend-icon="mdi-wallet-giftcard" title="Stan prób" value="próby" to="/proby"></v-list-item>
         </v-list>
       </v-navigation-drawer>
 

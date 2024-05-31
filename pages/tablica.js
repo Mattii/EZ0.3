@@ -94,7 +94,7 @@ const crop = {
         </v-col>
 
         <v-col cols="6" sm="4" md="3" class=""
-          v-for="([title, icon, link], i) in [['Komercja', 'mdi-wallet-membership', '/tablica/komercja'], ['Sample', 'mdi-wallet-giftcard', '/tablica/sample']]"
+          v-for="([title, icon, link], i) in [['Komercja', 'mdi-wallet-membership', '/komercja'], ['Sample', 'mdi-wallet-giftcard', '/proby']]"
           :key="i"
         >
           <router-link
@@ -123,11 +123,6 @@ const crop = {
     </v-col>
   </v-row>
 
-    <v-row justify="center" class="mt-12">
-      <v-col cols="12">
-        <router-view></router-view>
-      </v-col>
-    </v-row>
 
     <v-row justify="center" class="">
       <v-col xs="12" sm="10" md="9" lg="8">
