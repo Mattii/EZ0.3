@@ -24,10 +24,7 @@ const stock = {
         ></hero-element>
       </v-col>
     </v-row>
-     
-    </v-row>
     
-
     <v-row justify="center" class="">
       <v-col xs="12" sm="10" md="9" lg="8">
         <v-sheet
