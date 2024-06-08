@@ -1,5 +1,20 @@
 import { ref, computed, onMounted, watch } from "vue";
 import { useStore } from 'vuex';
+import {
+  getDatabase,
+  query,
+  orderByValue,
+  orderByKey,
+  orderByChild,
+  onValue,
+  startAt,
+  endAt,
+  set,
+} from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
+import { ref as fref } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
+import app from "../modules/firebase.js";
+
+
 const stocImput = {
   template: `
     <v-file-input
@@ -28,6 +43,7 @@ const stocImput = {
   emits:['stockReady', 'raportReady','symfoniaReady'],
   setup(props, context) {
     
+    const db = getDatabase(app);
     const store = useStore();
     async function readJsonFile(rawFile) {
 
@@ -43,7 +59,8 @@ const stocImput = {
           sampleEmiter(sample);
         } else if(rawFile.target.files[e]?.name.includes("cennik")) {
           let cennik = await convertXLSXtoJSON(rawFile.target.files[e])
-          console.log(cennik.map((ele) => {
+
+          set(fref(db, 'cennik'), cennik.map((ele) => {
             ele.name = ele.name?.toLowerCase()
             ele.segment = ele.segment?.toLowerCase()
             ele.price = +Number.parseFloat(ele.price).toFixed(2)
@@ -90,7 +107,7 @@ const stocImput = {
                 return Object.assign(
                   {},
                   ...Object.keys(ele).map((key) => {
-                    let newKey = key.replace(/\n/g, " ").replace(/\s+/g, "_");
+                    let newKey = key.replace(/\n/g, " ").replace(/V\//g, "").replace(/\s+/g, "_");
                     return { [newKey]: ele[key] };
                   })
                 );
@@ -104,6 +121,7 @@ const stocImput = {
     }
 
     function stockEmiter(stock) {
+      set(fref(db, 'stoc'), stock);
       store.dispatch('insertStockToStore', stock);
     }
 
@@ -112,6 +130,7 @@ const stocImput = {
     }
 
     function sampleEmiter(sample) {
+      set(fref(db, 'sample'), sample);
       store.dispatch('insertSampleToStore', sample);
     }
 

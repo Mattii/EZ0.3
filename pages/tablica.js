@@ -124,21 +124,6 @@ const crop = {
   </v-row>
 
 
-    <v-row justify="center" class="">
-      <v-col xs="12" sm="10" md="9" lg="8">
-        <v-sheet
-          class="pa-12"
-          color="secondary"
-          rounded="xl"
-          >
-            <p class="text-h5 my-3 ff-nunito">Niestety nasion komercyjnych nie znaleziono</p>
-            <v-col  xs="12" sm="8" md="6"  class="">
-              <stock-input></stock-input>
-            </v-col>  
-          </v-sheet>
-      </v-col>
-    </v-row>
-
   </v-container>`,
 
   setup() {

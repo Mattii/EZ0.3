@@ -58,6 +58,13 @@ const router = createRouter({
       props: true,
       
     },
+    {
+      path: "/update",
+      component: () => import("./pages/update.js"),
+      name: "update",
+      props: false,
+      
+    },
   ],
 });
 
