@@ -60,7 +60,7 @@ const stock = {
         >
           <p class="text-h5 my-3 ff-nunito">Niestety nasion próbowych nie znaleziono</p>
           <v-col  xs="12" sm="8" md="6"  class="">
-            <stock-input></stock-input>
+            <p>need to login</p>>
           </v-col>  
         </v-sheet>
         <!-- visible on screen  (width > 600)  -->
@@ -134,6 +134,7 @@ const stock = {
     const store = useStore();
     const stock = ref([]);
     const searchValue = ref("");
+    const db = getDatabase(app);
 
     const headersMobile = ref([
       { title: "Nazwa", align: "start", key: "Description" },
@@ -159,7 +160,12 @@ const stock = {
         currency: "PLN",
       }).format(num);
 
-    onMounted(async () => {});
+    onMounted(async () => {
+      const sample = fref(db, "sample");
+      onValue(sample, (snapshot) => {
+        store.dispatch('insertSampleToStore', snapshot.val());
+      });
+    });
 
     return {
       route,

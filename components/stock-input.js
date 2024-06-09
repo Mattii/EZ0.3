@@ -121,7 +121,7 @@ const stocImput = {
     }
 
     function stockEmiter(stock) {
-      set(fref(db, 'stoc'), stock);
+      set(fref(db, 'stock'), stock);
       store.dispatch('insertStockToStore', stock);
     }
 
