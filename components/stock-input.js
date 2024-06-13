@@ -130,8 +130,12 @@ const stocImput = {
     }
 
     function sampleEmiter(sample) {
-      set(fref(db, 'sample'), sample);
-      store.dispatch('insertSampleToStore', sample);
+      const editSample = sample.map(ele => {
+        ele.Packing_date = ele.Packing_date.getTime()
+        return ele
+      })
+      set(fref(db, 'sample'), editSample);
+      store.dispatch('insertSampleToStore', editSample);
     }
 
     function symfoniaReady(symfonia) {
