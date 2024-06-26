@@ -74,7 +74,7 @@ const stock = {
         item-value="index"
         >
         <template v-slot:item="{ item }">
-          <tr>
+        <tr @click="selectBatch(item)">
             <td>
               <span class="font-weight-regular text-medium-emphasis text-subtitle-2">{{ item.Product_full_name }}</span>
               <br />
@@ -134,6 +134,37 @@ const stock = {
         </div>
       </v-col>
     </v-row>
+    <v-bottom-sheet v-model="sheet">
+      <v-card
+        class=""
+      >
+      <v-btn
+            variant="text"
+            @click="sheet = !sheet"
+          >
+            zamknij 
+      </v-btn>
+
+    <v-card-item>
+        <v-card-subtitle class="text-h5">
+        </v-card-subtitle>
+        <v-card-title class="text-h3">
+          {{sheetData.Article_abbreviated}}
+          <p class="text-subtitle-1"></p>
+        </v-card-title>
+      </v-card-item>
+        <v-card-text>
+          <div class="py-3">
+            {{sheetData}}
+          <v-divider />
+          <div class="py-3">
+          </div>
+          <v-divider />
+          <div class="py-3">
+          </div>
+        </v-card-text>
+      </v-card>
+    </v-bottom-sheet>
     </v-container>
     `,
   setup() {
@@ -142,6 +173,8 @@ const stock = {
     const stock = ref([]);
     const searchValue = ref("");
     const db = getDatabase(app);
+    const sheet = ref(false);
+    const sheetData = ref({});
 
     const headersMobile = ref([
       { title: "Nazwa", align: "start", key: "Article_abbreviated" },
@@ -166,6 +199,12 @@ const stock = {
         currency: "PLN",
       }).format(num);
 
+      const selectBatch = (item) => {
+        sheet.value = !sheet.value;
+        sheetData.value = item
+        console.log(item);
+      }  
+
     onMounted(async () => {
       const stock = fref(db, "stock");
       onValue(stock, (snapshot) => {
@@ -180,6 +219,9 @@ const stock = {
       headersMobile,
       searchValue,
       onMounted,
+      sheet,
+      sheetData,
+      selectBatch,
       toPLAccountingStandards,
     };
   },

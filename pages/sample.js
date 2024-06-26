@@ -75,7 +75,7 @@ const stock = {
         item-value="index"
         >
         <template v-slot:item="{ item }">
-          <tr @click="sheet = !sheet">
+          <tr @click="selectBatch(item)">
             <td>
               <span class="font-weight-regular text-medium-emphasis text-subtitle-2">{{ item.Crop }}</span>
               <br />
@@ -131,22 +131,35 @@ const stock = {
 
     <v-bottom-sheet v-model="sheet">
       <v-card
-        class="text-center"
-        height="200"
+        class=""
       >
-        <v-card-text>
-          <v-btn
+      <v-btn
             variant="text"
             @click="sheet = !sheet"
           >
             zamknij 
-          </v-btn>
+      </v-btn>
 
-          <br>
-          <br>
-
-          <div>
-            Wkrótce więcej danych 
+      <v-card-item>
+        <v-card-subtitle class="text-h5">
+        {{sheetData.Batch}}
+        </v-card-subtitle>
+        <v-card-title class="text-h3">
+          {{sheetData.Description}}
+          <p class="text-subtitle-1">{{sheetData.Crop}}</p>
+        </v-card-title>
+      </v-card-item>
+        <v-card-text>
+          <div class="py-3">
+            {{sheetData.Number_of_packs}}x {{sheetData.Packaging}}
+          </div>
+          <v-divider />
+          <div class="py-3">
+          {{ new Date(sheetData.Packing_date).toLocaleString("pl-PL", { year: "numeric", month: "numeric"}) }}
+          </div>
+          <v-divider />
+          <div class="py-3">
+            {{sheetData.Reference}}
           </div>
         </v-card-text>
       </v-card>
@@ -160,6 +173,7 @@ const stock = {
     const searchValue = ref("");
     const db = getDatabase(app);
     const sheet = ref(false);
+    const sheetData = ref({});
 
     const headersMobile = ref([
       { title: "Nazwa", align: "start", key: "Description" },
@@ -185,6 +199,11 @@ const stock = {
         currency: "PLN",
       }).format(num);
 
+    const selectBatch = (item) => {
+      sheet.value = !sheet.value;
+      sheetData.value = item
+    }  
+
     onMounted(async () => {
       const sample = fref(db, "sample");
       onValue(sample, (snapshot) => {
@@ -200,6 +219,8 @@ const stock = {
       searchValue,
       onMounted,
       sheet,
+      sheetData,
+      selectBatch,
       toPLAccountingStandards,
     };
   },
