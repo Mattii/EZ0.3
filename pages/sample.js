@@ -75,7 +75,7 @@ const stock = {
         item-value="index"
         >
         <template v-slot:item="{ item }">
-          <tr>
+          <tr @click="sheet = !sheet">
             <td>
               <span class="font-weight-regular text-medium-emphasis text-subtitle-2">{{ item.Crop }}</span>
               <br />
@@ -128,6 +128,30 @@ const stock = {
         </div>
       </v-col>
     </v-row>
+
+    <v-bottom-sheet v-model="sheet">
+      <v-card
+        class="text-center"
+        height="200"
+      >
+        <v-card-text>
+          <v-btn
+            variant="text"
+            @click="sheet = !sheet"
+          >
+            zamknij 
+          </v-btn>
+
+          <br>
+          <br>
+
+          <div>
+            Wkrótce więcej danych 
+          </div>
+        </v-card-text>
+      </v-card>
+    </v-bottom-sheet>
+
     </v-container>`,
   setup() {
     const route = useRoute();
@@ -135,6 +159,7 @@ const stock = {
     const stock = ref([]);
     const searchValue = ref("");
     const db = getDatabase(app);
+    const sheet = ref(false);
 
     const headersMobile = ref([
       { title: "Nazwa", align: "start", key: "Description" },
@@ -174,6 +199,7 @@ const stock = {
       headersMobile,
       searchValue,
       onMounted,
+      sheet,
       toPLAccountingStandards,
     };
   },
