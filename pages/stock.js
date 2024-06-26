@@ -146,6 +146,8 @@ const stock = {
       </v-btn>
 
     <v-card-item>
+        
+        <v-chip color="red" variant="tonal" density="comfortable" v-if="!sheetData.Quantity_usable">Niedostępne</v-chip>
         <v-card-subtitle class="text-h5">
         </v-card-subtitle>
         <v-card-title class="text-h3">
