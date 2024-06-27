@@ -129,22 +129,31 @@ const stock = {
       </v-col>
     </v-row>
 
-    <v-bottom-sheet v-model="sheet">
+    <v-bottom-sheet
+      max-height="60vh"
+      v-model="sheet"
+    >
       <v-card
         class=""
       >
-      <v-btn
-            variant="text"
-            @click="sheet = !sheet"
-          >
-            zamknij 
-      </v-btn>
+      <v-fab
+            :active="sheet"
+            class=""
+            color="secondary"
+            icon="mdi-close"
+            location="bottom end"
+            size="small"
+            position="sticky"
+             @click="sheet = !sheet"
+             appear
+             app
+          ></v-fab>
 
       <v-card-item>
         <v-card-subtitle class="text-h5">
         {{sheetData.Batch}}
         </v-card-subtitle>
-        <v-card-title class="text-h3">
+        <v-card-title class="text-h4">
           {{sheetData.Description}}
           <p class="text-subtitle-1">{{sheetData.Crop}}</p>
         </v-card-title>

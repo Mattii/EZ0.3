@@ -134,25 +134,35 @@ const stock = {
         </div>
       </v-col>
     </v-row>
-    <v-bottom-sheet v-model="sheet">
+    <v-bottom-sheet 
+      max-height="60vh"
+      v-model="sheet"
+    >
       <v-card
         class=""
       >
-      <v-btn
-            variant="text"
-            @click="sheet = !sheet"
-          >
-            zamknij 
-      </v-btn>
+      <v-fab
+            :active="sheet"
+            class=""
+            color="secondary"
+            icon="mdi-close"
+            location="bottom end"
+            size="small"
+            position="sticky"
+             @click="sheet = !sheet"
+             appear
+             app
+        ></v-fab>
 
     <v-card-item>
         
         <v-chip color="red" variant="tonal" density="comfortable" v-if="!sheetData.Quantity_usable">Niedostępne</v-chip>
-        <v-card-subtitle class="text-h5">
+        <v-card-subtitle>
+          {{sheetData.Batch_number}}
         </v-card-subtitle>
-        <v-card-title class="text-h3">
+        <v-card-title class="text-h5">
           {{sheetData.Article_abbreviated}}
-          <p class="text-subtitle-1"></p>
+          <p class="text-subtitle-1">{{sheetData.Product_full_name}}</p>
         </v-card-title>
       </v-card-item>
         <v-card-text>
