@@ -85,6 +85,7 @@ const stock = {
             <td class="tabular-nums text-end">
               <span class="tabular-nums font-weight-light text-medium-emphasis text-subtitle-2">
                 <v-chip color="red" variant="tonal" density="comfortable" v-if="!item.Quantity_usable">Niedostępne</v-chip>
+                <v-chip class="my-1" color="red" variant="tonal" density="comfortable" v-if="item.Blocked_indicator">Blokada</v-chip>
                 <span v-else>{{item.Quantity_usable}} {{item.Unit_code}}</span>
               </span>          
               <br/>
@@ -121,6 +122,7 @@ const stock = {
                 <br/> 
                 <span class="font-weight-thin text-medium-emphasis text-subtitle-2">
                   <v-chip color="red" variant="tonal" density="comfortable" v-if="!item.Quantity_usable">Niedostępne</v-chip>
+                  <v-chip class="my-1" color="red" variant="tonal" density="comfortable" v-if="item.Blocked_indicator">Blokada</v-chip>
                   <span v-else>{{item.Quantity_usable}} {{item.Unit_code}}</span>
                 </span>
               </td>
@@ -134,6 +136,7 @@ const stock = {
         </div>
       </v-col>
     </v-row>
+
     <v-bottom-sheet 
       max-height="60vh"
       v-model="sheet"
@@ -155,10 +158,14 @@ const stock = {
         ></v-fab>
 
     <v-card-item>
-        
-        <v-chip color="red" variant="tonal" density="comfortable" v-if="!sheetData.Quantity_usable">Niedostępne</v-chip>
+
+        <div class="my-3 d-flex flex-row-reverse">
+          <v-chip class="mr-3" color="red" variant="tonal" density="comfortable" v-if="!sheetData.Quantity_usable">Niedostępne</v-chip>
+          <v-chip class="mr-3" color="red" variant="tonal" density="comfortable" v-if="sheetData.Blocked_indicator">Blokada</v-chip>  
+        </div>
+
         <v-card-subtitle>
-          {{sheetData.Batch_number}}
+          {{sheetData.Batch_number}} <span class="font-weight-thin text-medium-emphasis text-subtitle-2">{{sheetData.Lot_number}}</span>
         </v-card-subtitle>
         <v-card-title class="text-h5">
           {{sheetData.Article_abbreviated}}
@@ -166,7 +173,10 @@ const stock = {
         </v-card-title>
       </v-card-item>
         <v-card-text>
-          <div class="py-3">
+        Na stanie: <span class="text-uppercase">{{  sheetData.Number_balance }}</span> x <span class="text-uppercase">{{  sheetData.Packaging_abbreviated }}</span> <br/>
+        <span>{{sheetData.Quantity_usable}} {{sheetData.Unit_code}}</span> 
+        <span class="font-weight-thin text-medium-emphasis text-subtitle-2">{{sheetData.Quantity_balance}} {{sheetData.Unit_code}}</span>
+          <div class="d-none py-3">
             {{sheetData}}
           <v-divider />
           <div class="py-3">
