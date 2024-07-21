@@ -165,7 +165,7 @@ const stock = {
         </div>
 
         <v-card-subtitle>
-          {{sheetData.Batch_number}} <span class="font-weight-thin text-medium-emphasis text-subtitle-2">{{sheetData.Lot_number}}</span>
+          {{sheetData.Batch_number}} <span class="font-weight-thin text-medium-emphasis text-subtitle-1"> {{sheetData.Lot_number}}</span>
         </v-card-subtitle>
         <v-card-title class="text-h5">
           {{sheetData.Article_abbreviated}}
@@ -175,15 +175,20 @@ const stock = {
         <v-card-text>
         Na stanie: <span class="text-uppercase">{{  sheetData.Number_balance }}</span> x <span class="text-uppercase">{{  sheetData.Packaging_abbreviated }}</span> <br/>
         <span>{{sheetData.Quantity_usable}} {{sheetData.Unit_code}}</span> 
-        <span class="font-weight-thin text-medium-emphasis text-subtitle-2">{{sheetData.Quantity_balance}} {{sheetData.Unit_code}}</span>
+        <span class="font-weight-thin text-medium-emphasis text-subtitle-1"> {{sheetData.Quantity_balance}} {{sheetData.Unit_code}}</span>
+ 
+          <div class="py-3"
+            v-for="(item,kay) in showBatchPrice"
+          >
+            {{item.name}} {{item.packing}} x {{item.price}}zł
+          </div>
+          <v-divider />
+          <div class="py-3">
+          </div>
           <div class="d-none py-3">
             {{sheetData}}
-          <v-divider />
-          <div class="py-3">
           </div>
           <v-divider />
-          <div class="py-3">
-          </div>
         </v-card-text>
       </v-card>
     </v-bottom-sheet>
@@ -208,6 +213,11 @@ const stock = {
       return ele.Article_abbreviated.includes(searchValue.value.toUpperCase())
     }));
 
+    const showBatchPrice = computed(() => store.getters.getPriceListFromStore.filter(ele => {
+     
+      return ele.name.toUpperCase().includes(sheetData.value.Article_abbreviated) && comparePacking(ele.packing, sheetData.value.Packaging_abbreviated)
+    }));
+
     const headers = ref([
       { title: "Partia", align: "end", key: "Batch_number" },
       { title: "Nazwa", align: "start", key: "Article_abbreviated" },
@@ -224,8 +234,13 @@ const stock = {
       const selectBatch = (item) => {
         sheet.value = !sheet.value;
         sheetData.value = item
-        console.log(item);
       }  
+
+      const comparePacking = (item1, item2) => {
+        const milTest = (num) => num <= 20 ? num * 1000000 : num 
+        console.log(item1.toString().replace('.', '').replace(' ', '').match(/\d+/g)[0] , milTest(item2.toString().replace('.', '').replace(' ', '').match(/\d+/g)[0]));
+        return item1.toString().replace('.', '').replace(' ', '').match(/\d+/g)[0] == milTest(item2.toString().replace('.', '').replace(' ', '').match(/\d+/g)[0])
+      }
 
     onMounted(async () => {
       const stock = fref(db, "stock");
@@ -245,6 +260,7 @@ const stock = {
       sheetData,
       selectBatch,
       toPLAccountingStandards,
+      showBatchPrice,
     };
   },
 };

@@ -101,7 +101,17 @@ export default {
     },
     getters: {
         getPriceListFromStore (state) {
-          return state.priceList
+          const price = localStorage.getItem('price')
+          if (price) {
+            return JSON.parse(price)
+          } else {
+            return state.priceList
+          }
+        },
+        getBatchPriceFromPriceListStore: (state) => (id) => {
+            return state.priceList.filter(ele => {
+              return ele.name.toUpperCase().includes(id)
+            })
         },
         getCropsListFromStore (state) {
             return state.crops
