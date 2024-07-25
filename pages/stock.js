@@ -138,13 +138,13 @@ const stock = {
     </v-row>
 
     <v-bottom-sheet 
-      max-height="60vh"
+      max-height="70vh"
       v-model="sheet"
     >
       <v-card
         class=""
       >
-      <v-fab
+        <v-fab
             :active="sheet"
             class=""
             color="secondary"
@@ -156,6 +156,33 @@ const stock = {
              appear
              app
         ></v-fab>
+        <v-img
+                    v-if="findVareityInKatalog"
+                    class="mx-4 my-6"
+                    rounded="xl"
+                    cover
+                    max-height="300px"                   
+                    :src="findVareityInKatalog['imgs'][0]"
+                    >
+                    <!-- <template #sources>
+                      <source media="(max-width: 460px)" :srcset="crop.imgs[0]">
+                      <source media="(max-width: 840px)" :srcset="crop.imgs[0]">
+                      <source media="(max-width: 900px)" :srcset="crop.imgs[0]">
+                    </template>
+-->
+                    <div class=" pb-6 ff-nunito d-flex h-100 flex-wrap justify-start align-end ff-nunito">
+                      <div>
+                      <h3 
+                        :style="familyType?.color ? 'background-color:'+ familyType?.color : 'background-color:' + '#61cb6f'" 
+                        class="rounded-e-xl my-3 px-4 py-1 d-inline-block "
+                      >{{sheetData.Article_abbreviated}}</h3><br/>
+                      <p
+                      :style="familyType?.color ? 'background-color:'+ familyType?.color : 'background-color:' + '#61cb6f'" 
+                      class="rounded-e-xl px-4 py-1 font-weight-light d-inline-block"
+                      >{{ sheetData.Product_full_name }}</p>  
+                      </div>
+                    </div> 
+        </v-img>
 
     <v-card-item>
 
@@ -183,7 +210,8 @@ const stock = {
             {{item.name}} {{item.packing}} x {{item.price}}zł
           </div>
           <v-divider />
-          <div class="py-3">
+          <div class=" d-none py-3">
+            {{findVareityInKatalog}}
           </div>
           <div class="d-none py-3">
             {{sheetData}}
@@ -218,6 +246,8 @@ const stock = {
       return ele.name.toUpperCase().includes(sheetData.value.Article_abbreviated) && comparePacking(ele.packing, sheetData.value.Packaging_abbreviated)
     }));
 
+    const findVareityInKatalog = computed(() => store.getters.getKatalogFromStore[`${sheetData.value.Article_abbreviated.toLowerCase()}`]);
+
     const headers = ref([
       { title: "Partia", align: "end", key: "Batch_number" },
       { title: "Nazwa", align: "start", key: "Article_abbreviated" },
@@ -238,7 +268,6 @@ const stock = {
 
       const comparePacking = (item1, item2) => {
         const milTest = (num) => num <= 20 ? num * 1000000 : num 
-        console.log(item1.toString().replace('.', '').replace(' ', '').match(/\d+/g)[0] , milTest(item2.toString().replace('.', '').replace(' ', '').match(/\d+/g)[0]));
         return item1.toString().replace('.', '').replace(' ', '').match(/\d+/g)[0] == milTest(item2.toString().replace('.', '').replace(' ', '').match(/\d+/g)[0])
       }
 
@@ -260,6 +289,7 @@ const stock = {
       sheetData,
       selectBatch,
       toPLAccountingStandards,
+      findVareityInKatalog,
       showBatchPrice,
     };
   },
