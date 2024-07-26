@@ -40,7 +40,8 @@ const crop = {
     onMounted(async () => {
       const db = getDatabase(app);
 
-      if(store.getters.getKatalogFromStore.length != 0){
+
+      if(store.getters.getKatalogFromStore.length != 0 && !navigator.onLine){
         crops.value = store.getters.getKatalogFromStore
       }else{
         const katalog = fref(db, "katalog");
