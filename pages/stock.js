@@ -158,11 +158,12 @@ const stock = {
         ></v-fab>
         <v-img
                     v-if="findVareityInKatalog"
+                     :color="familyType?.color ? familyType.color : '#9b91f9'"
                     class="mx-4 my-6"
                     rounded="xl"
                     cover
                     max-height="300px"                   
-                    :src="findVareityInKatalog['imgs'][0]"
+                    :src="{ src: findVareityInKatalog['imgs'][0], lazySrc: familyType?.src, aspect: '16/9' }"
                     >
                     <!-- <template #sources>
                       <source media="(max-width: 460px)" :srcset="crop.imgs[0]">
@@ -241,12 +242,16 @@ const stock = {
       return ele.Article_abbreviated.includes(searchValue.value.toUpperCase())
     }));
 
+    const familyType = computed(() => store.getters.getCropsListFromStore.find(ele => {
+      return ele.crop == sheetData.value.Crop_code
+    })); 
+
     const showBatchPrice = computed(() => store.getters.getPriceListFromStore.filter(ele => {
      
-      return ele.name.toUpperCase().includes(sheetData.value.Article_abbreviated) && comparePacking(ele.packing, sheetData.value.Packaging_abbreviated)
+      return ele.name.toUpperCase().includes(sheetData.value.Article_abbreviated.replace(' ', '')) && comparePacking(ele.packing, sheetData.value.Packaging_abbreviated)
     }));
 
-    const findVareityInKatalog = computed(() => store.getters.getKatalogFromStore[`${sheetData.value.Article_abbreviated.toLowerCase()}`]);
+    const findVareityInKatalog = computed(() => store.getters.getKatalogFromStore[`${sheetData.value.Article_abbreviated.toLowerCase().replace(' ', '_')}`]);
 
     const headers = ref([
       { title: "Partia", align: "end", key: "Batch_number" },
@@ -287,6 +292,7 @@ const stock = {
       onMounted,
       sheet,
       sheetData,
+      familyType,
       selectBatch,
       toPLAccountingStandards,
       findVareityInKatalog,
