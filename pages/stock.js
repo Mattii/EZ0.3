@@ -147,7 +147,7 @@ const stock = {
         <v-fab
             :active="sheet"
             class=""
-            color="secondary"
+            :color="familyType?.color ? familyType.color : '#61cb6f'"
             icon="mdi-close"
             location="bottom end"
             size="small"
@@ -159,7 +159,7 @@ const stock = {
         <v-img
                     v-if="findVareityInKatalog"
                      :color="familyType?.color ? familyType.color : '#9b91f9'"
-                    class="mx-4 my-6"
+                    class="mx-4 mt-6 mb-0"
                     rounded="xl"
                     cover
                     max-height="300px"                   
@@ -175,7 +175,7 @@ const stock = {
                       <div>
                       <h3 
                         :style="familyType?.color ? 'background-color:'+ familyType?.color : 'background-color:' + '#61cb6f'" 
-                        class="rounded-e-xl my-3 px-4 py-1 d-inline-block "
+                        class="rounded-e-xl text-h5 my-3 px-4 py-1 d-inline-block "
                       >{{sheetData.Article_abbreviated}}</h3><br/>
                       <p
                       :style="familyType?.color ? 'background-color:'+ familyType?.color : 'background-color:' + '#61cb6f'" 
@@ -185,39 +185,80 @@ const stock = {
                     </div> 
         </v-img>
 
-    <v-card-item>
+        <v-card-item>
 
-        <div class="my-3 d-flex flex-row-reverse">
-          <v-chip class="mr-3" color="red" variant="tonal" density="comfortable" v-if="!sheetData.Quantity_usable">Niedostępne</v-chip>
-          <v-chip class="mr-3" color="red" variant="tonal" density="comfortable" v-if="sheetData.Blocked_indicator">Blokada</v-chip>  
-        </div>
+          <div class="my-3 d-flex flex-row-reverse">
+            <v-chip class="mr-3" color="red" variant="tonal" density="comfortable" v-if="!sheetData.Quantity_usable">Niedostępne</v-chip>
+            <v-chip class="mr-3" color="red" variant="tonal" density="comfortable" v-if="!findVareityInKatalog">Brak w katalogu</v-chip>
+            <v-chip class="mr-3" color="red" variant="tonal" density="comfortable" v-if="sheetData.Blocked_indicator">Blokada</v-chip>  
+          </div>
 
-        <v-card-subtitle>
-          {{sheetData.Batch_number}} <span class="font-weight-thin text-medium-emphasis text-subtitle-1"> {{sheetData.Lot_number}}</span>
-        </v-card-subtitle>
-        <v-card-title class="text-h5">
-          {{sheetData.Article_abbreviated}}
-          <p class="text-subtitle-1">{{sheetData.Product_full_name}}</p>
-        </v-card-title>
-      </v-card-item>
+          <div v-if="!findVareityInKatalog">
+            <v-card-subtitle>
+              {{sheetData.Batch_number}} <span class="font-weight-thin text-medium-emphasis text-subtitle-1"> {{sheetData.Lot_number}}</span>
+            </v-card-subtitle>
+            <v-card-title class="text-h5">
+              {{sheetData.Article_abbreviated}}
+              <p class="text-subtitle-1">{{sheetData.Product_full_name}}</p>
+            </v-card-title>
+          </div>
+          <div v-else>
+            <v-card-subtitle>
+              {{sheetData.Lot_number}}
+            </v-card-subtitle>
+
+            <v-card-title class="text-h5">
+              {{sheetData.Batch_number}}
+            </v-card-title>
+          </div>
+
+
+        </v-card-item>
+
         <v-card-text>
-        Na stanie: <span class="text-uppercase">{{  sheetData.Number_balance }}</span> x <span class="text-uppercase">{{  sheetData.Packaging_abbreviated }}</span> <br/>
-        <span>{{sheetData.Quantity_usable}} {{sheetData.Unit_code}}</span> 
-        <span class="font-weight-thin text-medium-emphasis text-subtitle-1"> {{sheetData.Quantity_balance}} {{sheetData.Unit_code}}</span>
- 
+          <v-divider />
+
+          <div class="py-3">
+              <span class="text-medium-emphasis text-subtitle-2">Na stanie:</span>
+              <br/>
+                <span class="text-uppercase">{{  sheetData.Number_balance }}</span> x <span class="text-uppercase">{{  sheetData.Packaging_abbreviated }}</span>
+                <span class="font-weight-thin text-medium-emphasis text-subtitle-1"> ({{sheetData.Quantity_balance}} {{sheetData.Unit_code}})</span>
+              <br/>
+              <span class="text-medium-emphasis text-subtitle-2">Dostępne:</span>
+              <br/>
+                <span>{{sheetData.Quantity_usable}} {{sheetData.Unit_code}}</span>
+            
+          </div>
+
+          <v-divider />
+
           <div class="py-3"
             v-for="(item,kay) in showBatchPrice"
-          >
+            >
             {{item.name}} {{item.packing}} x {{item.price}}zł
           </div>
+
           <v-divider />
+
+          <div class="py-3" v-if="findVareityInKatalog">
+          <v-btn 
+            :style="familyType?.color ? 'background-color:'+ familyType?.color : 'background-color:' + '#61cb6f'"
+            :to="{name: 'crop', params: {name: sheetData.Article_abbreviated.toLowerCase().replace(' ', '_')}}" 
+            elevation="8" 
+            class="ff-nunito" 
+            rounded="pill"  
+          >Zobacz w katalogu</v-btn>
+          </div>
+
           <div class=" d-none py-3">
             {{findVareityInKatalog}}
           </div>
           <div class="d-none py-3">
-            {{sheetData}}
+              {{sheetData}}
           </div>
+
           <v-divider />
+
         </v-card-text>
       </v-card>
     </v-bottom-sheet>
