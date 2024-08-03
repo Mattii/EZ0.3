@@ -194,22 +194,26 @@ const stock = {
           </div>
 
           <div v-if="!findVareityInKatalog">
-            <v-card-subtitle>
-              {{sheetData.Batch_number}} <span class="font-weight-thin text-medium-emphasis text-subtitle-1"> {{sheetData.Lot_number}}</span>
-            </v-card-subtitle>
+
             <v-card-title class="text-h5">
               {{sheetData.Article_abbreviated}}
               <p class="text-subtitle-1">{{sheetData.Product_full_name}}</p>
             </v-card-title>
+            
+            <v-card-subtitle>
+              {{sheetData.Batch_number}} <span class="font-weight-thin text-medium-emphasis text-subtitle-1"> {{sheetData.Lot_number}}</span>
+            </v-card-subtitle>
           </div>
           <div v-else>
+
+            <span class="text-medium-emphasis text-subtitle-2">Partja <span class="font-weight-thin text-medium-emphasis">(Główna partja)</span></span>
+            <v-card-title class="text-h5">
+              {{sheetData.Batch_number}} <span class="font-weight-thin text-medium-emphasis">( {{ sheetData.Sales_batch_number }} )</span>
+            </v-card-title>
+
             <v-card-subtitle>
               {{sheetData.Lot_number}}
             </v-card-subtitle>
-
-            <v-card-title class="text-h5">
-              {{sheetData.Batch_number}}
-            </v-card-title>
           </div>
 
 
@@ -219,35 +223,39 @@ const stock = {
           <v-divider />
 
           <div class="py-3">
-              <span class="text-medium-emphasis text-subtitle-2">Na stanie:</span>
+              <span class="text-medium-emphasis text-subtitle-2">Stan</span>
               <br/>
                 <span class="text-uppercase">{{  sheetData.Number_balance }}</span> x <span class="text-uppercase">{{  sheetData.Packaging_abbreviated }}</span>
                 <span class="font-weight-thin text-medium-emphasis text-subtitle-1"> ({{sheetData.Quantity_balance}} {{sheetData.Unit_code}})</span>
               <br/>
-              <span class="text-medium-emphasis text-subtitle-2">Dostępne:</span>
+              <span class="text-medium-emphasis text-subtitle-2">Dostępne</span>
               <br/>
                 <span>{{sheetData.Quantity_usable}} {{sheetData.Unit_code}}</span>
             
           </div>
-
+          <div v-if="showBatchPrice.length != 0">
           <v-divider />
-
-          <div class="py-3"
-            v-for="(item,kay) in showBatchPrice"
-            >
-            {{item.name}} {{item.packing}} x {{item.price}}zł
+            <div class="py-3">
+              
+            <span class="text-medium-emphasis text-subtitle-2">Cennik</span>
+              <p v-for="(item,kay) in showBatchPrice"
+              >{{item.name}} {{item.packing}} x {{item.price}}zł</p>
+              
+            </div>
           </div>
 
+          <div v-if="findVareityInKatalog">
           <v-divider />
 
-          <div class="py-3" v-if="findVareityInKatalog">
-          <v-btn 
-            :style="familyType?.color ? 'background-color:'+ familyType?.color : 'background-color:' + '#61cb6f'"
-            :to="{name: 'crop', params: {name: sheetData.Article_abbreviated.toLowerCase().replace(' ', '_')}}" 
-            elevation="8" 
-            class="ff-nunito" 
-            rounded="pill"  
-          >Zobacz w katalogu</v-btn>
+            <div class="py-3">
+            <v-btn 
+              :style="familyType?.color ? 'background-color:'+ familyType?.color : 'background-color:' + '#61cb6f'"
+              :to="{name: 'crop', params: {name: sheetData.Article_abbreviated.toLowerCase().replace(' ', '_')}}" 
+              elevation="1" 
+              class="ff-nunito text-caption" 
+              rounded="pill"  
+            >Zobacz w katalogu</v-btn>
+            </div>
           </div>
 
           <div class=" d-none py-3">
@@ -256,8 +264,6 @@ const stock = {
           <div class="d-none py-3">
               {{sheetData}}
           </div>
-
-          <v-divider />
 
         </v-card-text>
       </v-card>
