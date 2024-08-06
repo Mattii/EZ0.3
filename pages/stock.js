@@ -296,7 +296,7 @@ const stock = {
 
     const showBatchPrice = computed(() => store.getters.getPriceListFromStore.filter(ele => {
      
-      return ele.name.toUpperCase().includes(sheetData.value.Article_abbreviated.replace(' ', '')) && comparePacking(ele.packing, sheetData.value.Packaging_abbreviated)
+      return ele.name.toUpperCase().replace(' ', '_').includes(sheetData.value.Article_abbreviated.replace(' ', '_')) && comparePacking(ele.packing, sheetData.value.Packaging_abbreviated)
     }));
 
     const findVareityInKatalog = computed(() => store.getters.getKatalogFromStore[`${sheetData.value.Article_abbreviated.toLowerCase().replace(' ', '_')}`]);
