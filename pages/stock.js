@@ -188,9 +188,10 @@ const stock = {
         <v-card-item>
 
           <div class="my-3 d-flex flex-row-reverse">
+            <v-chip class="mr-3" variant="tonal" density="comfortable" v-if="!findVareityInKatalog">Brak w katalogu</v-chip>
+            <v-chip class="mr-3" variant="tonal" density="comfortable" v-if="showBatchPrice.length == 0">Brak w cenniku</v-chip>  
             <v-chip class="mr-3" color="red" variant="tonal" density="comfortable" v-if="!sheetData.Quantity_usable">Niedostępne</v-chip>
-            <v-chip class="mr-3" color="red" variant="tonal" density="comfortable" v-if="!findVareityInKatalog">Brak w katalogu</v-chip>
-            <v-chip class="mr-3" color="red" variant="tonal" density="comfortable" v-if="sheetData.Blocked_indicator">Blokada</v-chip>  
+            <v-chip class="mr-3" color="red" variant="tonal" density="comfortable" v-if="sheetData.Blocked_indicator">Blokada</v-chip>
           </div>
 
           <div v-if="!findVareityInKatalog">
@@ -206,7 +207,7 @@ const stock = {
           </div>
           <div v-else>
 
-            <span class="text-medium-emphasis text-subtitle-2">Partja <span class="font-weight-thin text-medium-emphasis">(Główna partja)</span></span>
+            <span class="text-medium-emphasis text-subtitle-2">Partja <span class="font-weight-thin text-medium-emphasis">(partja mateczna)</span></span>
             <v-card-title class="text-h5">
               {{sheetData.Batch_number}} <span class="font-weight-thin text-medium-emphasis">( {{ sheetData.Sales_batch_number }} )</span>
             </v-card-title>
