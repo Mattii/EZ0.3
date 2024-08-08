@@ -1,12 +1,12 @@
 {
     "name": "nzazademapp",
-    "short_name": "ezapp",
+    "short_name": "EZapp",
     "description": "cyfrowy katalog produktów pod ręką",
     "categories": ["nasiona", "warzywa", "sadzenie"],
     "start_url": "/",
     "id":"/",
-    "theme_color": "#333",
-    "background_color": "#333",
+    "theme_color": "#61cb6f",
+    "background_color": "#61cb6f",
     "display": "standalone",
     "icons": [
         {
