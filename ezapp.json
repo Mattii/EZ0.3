@@ -1,0 +1,63 @@
+{
+    "name": "nzazademapp",
+    "short_name": "ezapp",
+    "description": "cyfrowy katalog produktów pod ręką",
+    "categories": ["nasiona", "warzywa", "sadzenie"],
+    "start_url": "/",
+    "id":"/",
+    "theme_color": "#333",
+    "background_color": "#333",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "assets/ezappWhite.svg",
+            "sizes": "any"
+        }
+    ],
+    "shortcuts" : [
+        {
+            "name": "Komercja",
+            "url": "/komercja",
+            "description": "Lista odmian komercyjnych na magazynie",
+            "icons":[
+                {
+                    "src": "assets/komercja.svg",
+                    "sizes": "96x96"
+                }
+            ]
+        },
+        {
+            "name": "Próby",
+            "url": "/proby",
+            "description": "Lista odmian próbowych na magazynie",
+            "icons":[
+                {
+                    "src": "assets/proby.svg",
+                    "sizes": "96x96"
+                }
+            ]
+        },
+        {
+            "name": "Katalog",
+            "url": "/katalog",
+            "desc/ription": "Katalog odmian",
+            "icons":[
+                {
+                    "src": "assets/catalog.svg",
+                    "sizes": "96x96"
+                }
+            ]
+        },
+        {
+            "name": "Cennik",
+            "url": "/cennik",
+            "desc/ription": "Cennik odmian",
+            "icons":[
+                {
+                    "src": "assets/cennik.svg",
+                    "sizes": "96x96"
+                }
+            ]
+        }
+    ]
+}
