@@ -10,8 +10,12 @@
     "display": "standalone",
     "icons": [
         {
-            "src": "assets/ezappWhite.svg",
-            "sizes": "48x48 72x72 96x96 128x128 256x256 512x512"
+            "src": "assets/ezappWhite48x48.svg",
+            "sizes": "48x48"
+        },
+        {
+            "src": "assets/ezappWhite512x512.svg",
+            "sizes": "512x512"
         }
     ],
     "shortcuts" : [
