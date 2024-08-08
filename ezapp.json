@@ -1,5 +1,5 @@
 {
-    "name": "nzazademapp",
+    "name": "EZapp",
     "short_name": "EZapp",
     "description": "cyfrowy katalog produktów pod ręką",
     "categories": ["nasiona", "warzywa", "sadzenie"],
@@ -11,7 +11,7 @@
     "icons": [
         {
             "src": "assets/ezappWhite.svg",
-            "sizes": "any"
+            "sizes": "48x48 72x72 96x96 128x128 256x256 512x512"
         }
     ],
     "shortcuts" : [
