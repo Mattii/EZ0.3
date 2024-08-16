@@ -189,6 +189,7 @@ const stock = {
 
           <div class="my-3 d-flex flex-row-reverse">
             <v-chip class="mr-3" variant="tonal" density="comfortable" v-if="!findVareityInKatalog">Brak w katalogu</v-chip>
+            <v-chip class="mr-3" variant="tonal" density="comfortable" v-if="showSampleBatch.length == 0">Brak sampli</v-chip>
             <v-chip class="mr-3" variant="tonal" density="comfortable" v-if="showBatchPrice.length == 0">Brak w cenniku</v-chip>  
             <v-chip class="mr-3" color="red" variant="tonal" density="comfortable" v-if="!sheetData.Quantity_usable">Niedostępne</v-chip>
             <v-chip class="mr-3" color="red" variant="tonal" density="comfortable" v-if="sheetData.Blocked_indicator">Blokada</v-chip>
@@ -224,7 +225,7 @@ const stock = {
           <v-divider />
 
           <div class="py-3">
-              <span class="text-medium-emphasis text-subtitle-2">Stan</span>
+              <span class="text-medium-emphasis text-subtitle-2">Stan komercji</span>
               <br/>
                 <span class="text-uppercase">{{  sheetData.Number_balance }}</span> x <span class="text-uppercase">{{  sheetData.Packaging_abbreviated }}</span>
                 <span class="font-weight-thin text-medium-emphasis text-subtitle-1"> ({{sheetData.Quantity_balance}} {{sheetData.Unit_code}})</span>
@@ -240,7 +241,18 @@ const stock = {
               
             <span class="text-medium-emphasis text-subtitle-2">Cennik</span>
               <p v-for="(item,kay) in showBatchPrice"
-              >{{item.name}} {{item.packing}} x {{item.price}}zł</p>
+              >{{item.name.toUpperCase()}} {{item.packing}} x {{item.price}}zł</p>
+              
+            </div>
+          </div>
+
+          <div v-if="showSampleBatch.length != 0">
+          <v-divider />
+            <div class="py-3">
+              
+            <span class="text-medium-emphasis text-subtitle-2">Stan sampli</span>
+              <p v-for="(item,kay) in showSampleBatch"
+              >{{item.Description}} {{item.Number_of_packs}} x {{item.Packaging}} B:{{item.Batch}} {{ new Date(item.Packing_date).toLocaleString("pl-PL", { year: "numeric", month: "numeric"}) }}</p>
               
             </div>
           </div>
@@ -258,6 +270,7 @@ const stock = {
             >Zobacz w katalogu</v-btn>
             </div>
           </div>
+
 
           <div class=" d-none py-3">
             {{findVareityInKatalog}}
@@ -297,6 +310,11 @@ const stock = {
     const showBatchPrice = computed(() => store.getters.getPriceListFromStore.filter(ele => {
      
       return ele.name.toUpperCase().replace(' ', '_').includes(sheetData.value.Article_abbreviated.replace(' ', '_')) && comparePacking(ele.packing, sheetData.value.Packaging_abbreviated)
+    }));
+
+    const showSampleBatch= computed(() => store.getters.getSampleFromStore.filter(ele => {
+     
+      return ele.Description.toUpperCase().replace(' ', '_').includes(sheetData.value.Article_abbreviated.replace(' ', '_'))
     }));
 
     const findVareityInKatalog = computed(() => store.getters.getKatalogFromStore[`${sheetData.value.Article_abbreviated.toLowerCase().replace(' ', '_')}`]);
@@ -341,6 +359,7 @@ const stock = {
       sheet,
       sheetData,
       familyType,
+      showSampleBatch,
       selectBatch,
       toPLAccountingStandards,
       findVareityInKatalog,
