@@ -141,9 +141,7 @@ const stock = {
       max-height="70vh"
       v-model="sheet"
     >
-      <v-card
-        class=""
-      >
+      <v-card>
         <v-fab
             :active="sheet"
             class=""
@@ -169,8 +167,8 @@ const stock = {
                       <source media="(max-width: 460px)" :srcset="crop.imgs[0]">
                       <source media="(max-width: 840px)" :srcset="crop.imgs[0]">
                       <source media="(max-width: 900px)" :srcset="crop.imgs[0]">
-                    </template>
--->
+                    </template>-->
+                    
                     <div class=" pb-6 ff-nunito d-flex h-100 flex-wrap justify-start align-end ff-nunito">
                       <div>
                       <h3 
@@ -239,9 +237,9 @@ const stock = {
           <v-divider />
             <div class="py-3">
               
-            <span class="text-medium-emphasis text-subtitle-2">Cennik</span><br/>
-              <span v-for="(item,kay) in showBatchPrice"
-              >{{item.name.toUpperCase()}} {{item.packing}} x {{item.price}}zł</span>
+            <span class="text-medium-emphasis text-subtitle-2">Cennik</span>
+              <p v-for="(item,kay) in showBatchPrice"
+              >{{item.name.toUpperCase()}} {{item.packing}} x {{item.price}}zł</p>
               
             </div>
           </div>
@@ -250,9 +248,9 @@ const stock = {
           <v-divider />
             <div class="py-3">
               
-            <span class="text-medium-emphasis text-subtitle-2">Stan sampli</span><br/>
-              <span v-for="(item,kay) in showSampleBatch"
-              >{{item.Description}} {{item.Number_of_packs}} x {{item.Packaging}} B:{{item.Batch}} {{ new Date(item.Packing_date).toLocaleString("pl-PL", { year: "numeric", month: "numeric"}) }}</span>
+            <span class="text-medium-emphasis text-subtitle-2">Stan sampli</span>
+              <p v-for="(item,kay) in showSampleBatch"
+              >{{item.Description}} {{item.Number_of_packs}} x {{item.Packaging}} B:{{item.Batch}} {{ new Date(item.Packing_date).toLocaleString("pl-PL", { year: "numeric", month: "numeric"}) }}</p>
               
             </div>
           </div>
