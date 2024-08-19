@@ -239,9 +239,9 @@ const stock = {
           <v-divider />
             <div class="py-3">
               
-            <span class="text-medium-emphasis text-subtitle-2">Cennik</span>
-              <p v-for="(item,kay) in showBatchPrice"
-              >{{item.name.toUpperCase()}} {{item.packing}} x {{item.price}}zł</p>
+            <span class="text-medium-emphasis text-subtitle-2">Cennik</span><br/>
+              <span v-for="(item,kay) in showBatchPrice"
+              >{{item.name.toUpperCase()}} {{item.packing}} x {{item.price}}zł</span>
               
             </div>
           </div>
@@ -250,9 +250,9 @@ const stock = {
           <v-divider />
             <div class="py-3">
               
-            <span class="text-medium-emphasis text-subtitle-2">Stan sampli</span>
-              <p v-for="(item,kay) in showSampleBatch"
-              >{{item.Description}} {{item.Number_of_packs}} x {{item.Packaging}} B:{{item.Batch}} {{ new Date(item.Packing_date).toLocaleString("pl-PL", { year: "numeric", month: "numeric"}) }}</p>
+            <span class="text-medium-emphasis text-subtitle-2">Stan sampli</span><br/>
+              <span v-for="(item,kay) in showSampleBatch"
+              >{{item.Description}} {{item.Number_of_packs}} x {{item.Packaging}} B:{{item.Batch}} {{ new Date(item.Packing_date).toLocaleString("pl-PL", { year: "numeric", month: "numeric"}) }}</span>
               
             </div>
           </div>
