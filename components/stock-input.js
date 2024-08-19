@@ -126,6 +126,7 @@ const stocImput = {
     }
 
     function raportEmiter(raport) {
+      set(fref(db, 'raport'), raport);
       store.dispatch('insertRaportToStore', raport);
     }
 

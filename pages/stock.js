@@ -269,6 +269,9 @@ const stock = {
             </div>
           </div>
 
+          <div class=" d-none py-3">
+            {{raportBatch}}
+          </div>
 
           <div class=" d-none py-3">
             {{findVareityInKatalog}}
@@ -285,7 +288,7 @@ const stock = {
   setup() {
     const route = useRoute();
     const store = useStore();
-    const stock = ref([]);
+    const raportBatch = ref([]);
     const searchValue = ref("");
     const db = getDatabase(app);
     const sheet = ref(false);
@@ -333,6 +336,15 @@ const stock = {
       const selectBatch = (item) => {
         sheet.value = !sheet.value;
         sheetData.value = item
+        const rBatch = query(
+          fref(db, "raport"),
+          orderByChild("Batch_number"),
+          startAt(sheetData.value.Batch_number),
+          endAt(sheetData.value.Batch_number)
+        );
+        onValue(rBatch, (snapshot) => {
+          raportBatch.value = snapshot.val();
+        });
       }  
 
       const comparePacking = (item1, item2) => {
@@ -358,6 +370,7 @@ const stock = {
       sheetData,
       familyType,
       showSampleBatch,
+      raportBatch,
       selectBatch,
       toPLAccountingStandards,
       findVareityInKatalog,
