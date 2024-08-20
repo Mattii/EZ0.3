@@ -150,7 +150,7 @@ const stock = {
             location="bottom end"
             size="small"
             position="sticky"
-             @click="sheet = !sheet"
+             @click="() => {sheet = !sheet; raportBatch = {}}"
              appear
              app
         ></v-fab>
