@@ -126,8 +126,15 @@ const stocImput = {
     }
 
     function raportEmiter(raport) {
-      set(fref(db, 'raport'), raport);
-      store.dispatch('insertRaportToStore', raport);
+      const editRaport = raport.map(ele => {
+        ele.Expiry_date = ele.Expiry_date.getTime()
+        if(ele.Germ_date) ele.Germ_date = ele.Germ_date.getTime()
+        if(ele.Packing_date) ele.Packing_date = ele.Packing_date.getTime()
+        ele.USA_Germ_date = ele.USA_Germ_date.getTime()
+        return ele
+      })
+      set(fref(db, 'raport'), editRaport);
+      store.dispatch('insertRaportToStore', editRaport);
     }
 
     function sampleEmiter(sample) {

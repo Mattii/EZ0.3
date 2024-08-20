@@ -190,6 +190,7 @@ const stock = {
             <v-chip class="mr-3" variant="tonal" density="comfortable" v-if="showSampleBatch.length == 0">Brak sampli</v-chip>
             <v-chip class="mr-3" variant="tonal" density="comfortable" v-if="showBatchPrice.length == 0">Brak w cenniku</v-chip>  
             <v-chip class="mr-3" color="red" variant="tonal" density="comfortable" v-if="!sheetData.Quantity_usable">Niedostępne</v-chip>
+            <v-chip class="mr-3" color="red" variant="tonal" density="comfortable" v-if="!raportBatch.Release_for_allocation">Brak alokacji</v-chip>
             <v-chip class="mr-3" color="red" variant="tonal" density="comfortable" v-if="sheetData.Blocked_indicator">Blokada</v-chip>
           </div>
 
@@ -214,9 +215,46 @@ const stock = {
             <v-card-subtitle>
               {{sheetData.Lot_number}}
             </v-card-subtitle>
+
           </div>
+          
+          <v-sheet
+              class="py-3 d-flex"
+            >
+            <v-sheet
+            >
+              <span class="text-medium-emphasis text-subtitle-2">Germinacja:</span>
+              <div class="pt-2">
+              <v-progress-circular
+                :model-value="raportBatch.USA_Germ"
+                :rotate="360"
+                :size="100"
+                :width="6"
+                :color="familyType?.color ? familyType?.color : '#61cb6f'"
+              >
+              <span 
+              class="d-flex  flex-column align-center">
+                <span >{{ raportBatch.USA_Germ }}%</span>
+                <span class="font-weight-thin text-medium-emphasis text-subtitle-2"> {{ toPolishTime(raportBatch.USA_Germ_date ) }} </span>
+              </span>
+              </v-progress-circular>
+              </div>
+            </v-sheet>
 
-
+            <!-- <v-sheet class="flex-1-1-100 align-self-center pl-6">
+            <div class="text-caption">Tick labels</div>
+              <v-slider
+                v-model="9"
+                thumb-label="always"
+                :max="24"
+                :ticks="[0,1,2,3,4,5,6,7,8,9]"
+                show-ticks="always"
+                step="1"
+                tick-size="3"
+              ></v-slider>
+            </v-sheet> -->
+            
+          </v-sheet>  
         </v-card-item>
 
         <v-card-text>
@@ -269,7 +307,8 @@ const stock = {
             </div>
           </div>
 
-          <div class=" d-none py-3">
+          <div class="d-none py-3">
+
             {{raportBatch}}
           </div>
 
@@ -327,6 +366,8 @@ const stock = {
       { title: "Pakowanie", align: "Packaging_abbreviated" },
     ]);
 
+    const toPolishTime = (date) => new Date(date).toLocaleString("pl-PL", { year: "numeric", month: "numeric"})
+
     const toPLAccountingStandards = (num) =>
       new Intl.NumberFormat("pl-PL", {
         style: "currency",
@@ -343,7 +384,8 @@ const stock = {
           endAt(sheetData.value.Batch_number)
         );
         onValue(rBatch, (snapshot) => {
-          raportBatch.value = snapshot.val();
+          let keys = Object.keys(snapshot.val())
+          raportBatch.value = snapshot.val()[keys[0]];
         });
       }  
 
@@ -373,6 +415,7 @@ const stock = {
       raportBatch,
       selectBatch,
       toPLAccountingStandards,
+      toPolishTime,
       findVareityInKatalog,
       showBatchPrice,
     };

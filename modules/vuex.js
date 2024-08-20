@@ -119,6 +119,7 @@ export default {
         getStockFromStore (state) {
           const stock = localStorage.getItem('stock')
           if (stock) {
+            state.stock = stock
             return JSON.parse(stock)
           } else {
             return state.stock
@@ -127,6 +128,7 @@ export default {
         getRaportFromStore (state) {
           const raport = localStorage.getItem('raport')
           if (raport) {
+            state.raport = raport
             return JSON.parse(raport)
           } else {
             return state.raport
@@ -135,6 +137,7 @@ export default {
         getSampleFromStore (state) {
           const sample = localStorage.getItem('sample')
           if (sample) {
+            state.sample = sample
             return JSON.parse(sample)
           } else {
             return state.sample
