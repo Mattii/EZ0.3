@@ -219,7 +219,7 @@ const stock = {
           </div>
           
           <v-sheet
-              class="py-3 d-flex"
+              class="py-3 d-flex justify-space-around flex-wrapflex-wrap"
             >
             <v-sheet
             >
@@ -241,18 +241,25 @@ const stock = {
               </div>
             </v-sheet>
 
-            <!-- <v-sheet class="flex-1-1-100 align-self-center pl-6">
-            <div class="text-caption">Tick labels</div>
-              <v-slider
-                v-model="9"
-                thumb-label="always"
-                :max="24"
-                :ticks="[0,1,2,3,4,5,6,7,8,9]"
-                show-ticks="always"
-                step="1"
-                tick-size="3"
-              ></v-slider>
-            </v-sheet> -->
+            <v-sheet
+            >
+              <span class="text-medium-emphasis text-subtitle-2">Przydatność:</span>
+              <div class="pt-2">
+              <v-progress-circular
+                :model-value="batchLiveSpan()"
+                :rotate="360"
+                :size="100"
+                :width="6"
+                :color="familyType?.color ? familyType?.color : '#61cb6f'"
+              >
+              <span 
+              class="d-flex  flex-column align-center">
+                <span >{{ raportBatch?.Packing_date ? toPolishTime(raportBatch.Packing_date) : toPolishTime(raportBatch.Expiry_date  - 63072000000 ) }}</span>
+                <span class=""> {{ raportBatch?.Packing_date ? toPolishTime(raportBatch.Packing_date + 63072000000 ) : toPolishTime(raportBatch.Expiry_date ) }} </span>
+              </span>
+              </v-progress-circular>
+              </div>
+            </v-sheet>
             
           </v-sheet>  
         </v-card-item>
@@ -359,6 +366,19 @@ const stock = {
 
     const findVareityInKatalog = computed(() => store.getters.getKatalogFromStore[`${sheetData.value.Article_abbreviated.toLowerCase().replace(' ', '_')}`]);
 
+    const batchLiveSpan = () => {
+        const twoYears = 63072000000;
+        const time = new Date().getTime();
+        let batchAge;
+        if(raportBatch?.value.Packing_date){
+          batchAge = (time - raportBatch.value.Packing_date) / twoYears * 100;
+        }else{
+          batchAge = (time - (raportBatch.value.Expiry_date  - twoYears)) / twoYears * 100;
+        }
+
+      return Math.round(batchAge)
+    }; 
+
     const headers = ref([
       { title: "Partia", align: "end", key: "Batch_number" },
       { title: "Nazwa", align: "start", key: "Article_abbreviated" },
@@ -413,6 +433,7 @@ const stock = {
       familyType,
       showSampleBatch,
       raportBatch,
+      batchLiveSpan,
       selectBatch,
       toPLAccountingStandards,
       toPolishTime,
