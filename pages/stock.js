@@ -185,13 +185,13 @@ const stock = {
 
         <v-card-item>
 
-          <div class="my-3 d-flex flex-row-reverse">
-            <v-chip class="mr-3" variant="tonal" density="comfortable" v-if="!findVareityInKatalog">Brak w katalogu</v-chip>
-            <v-chip class="mr-3" variant="tonal" density="comfortable" v-if="showSampleBatch.length == 0">Brak sampli</v-chip>
-            <v-chip class="mr-3" variant="tonal" density="comfortable" v-if="showBatchPrice.length == 0">Brak w cenniku</v-chip>  
-            <v-chip class="mr-3" color="red" variant="tonal" density="comfortable" v-if="!sheetData.Quantity_usable">Niedostępne</v-chip>
-            <v-chip class="mr-3" color="red" variant="tonal" density="comfortable" v-if="!raportBatch.Release_for_allocation">Brak alokacji</v-chip>
-            <v-chip class="mr-3" color="red" variant="tonal" density="comfortable" v-if="sheetData.Blocked_indicator">Blokada</v-chip>
+          <div class="pb-3 d-flex justify-end flex-wrap">  
+            <v-chip class="ml-3 mt-3" color="red" variant="tonal" density="comfortable" v-if="!sheetData.Quantity_usable">Niedostępne</v-chip>
+            <v-chip class="ml-3 mt-3" color="red" variant="tonal" density="comfortable" v-if="!raportBatch.Release_for_allocation">{{raportBatch.Batch_number?'Brak alokacji':'Brak raportu'}}</v-chip>
+            <v-chip class="ml-3 mt-3" color="red" variant="tonal" density="comfortable" v-if="sheetData.Blocked_indicator">Blokada</v-chip>
+            <v-chip class="ml-3 mt-3" variant="tonal" density="comfortable" v-if="!findVareityInKatalog">Brak w katalogu</v-chip>
+            <v-chip class="ml-3 mt-3" variant="tonal" density="comfortable" v-if="showSampleBatch.length == 0">Brak sampli</v-chip>
+            <v-chip class="ml-3 mt-3" variant="tonal" density="comfortable" v-if="showBatchPrice.length == 0">Brak w cenniku</v-chip>
           </div>
 
           <div v-if="!findVareityInKatalog">
@@ -220,6 +220,7 @@ const stock = {
           
           <v-sheet
               class="py-3 d-flex justify-space-around flex-wrapflex-wrap"
+              v-if="raportBatch.Batch_number"
             >
             <v-sheet
             >
@@ -404,8 +405,10 @@ const stock = {
           endAt(sheetData.value.Batch_number)
         );
         onValue(rBatch, (snapshot) => {
+          if(snapshot.val()){
           let keys = Object.keys(snapshot.val())
           raportBatch.value = snapshot.val()[keys[0]];
+          }
         });
       }  
 

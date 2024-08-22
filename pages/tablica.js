@@ -131,7 +131,6 @@ const crop = {
     const store = useStore();
     const crops = ref([]);
     const prices = ref([]);
-    const raport = ref([]);
     const symfonia = ref([]);
     const searchValue = ref('');
     const tab = ref(null);
@@ -143,14 +142,14 @@ const crop = {
     });
 
     const amountOfCrops = computed(() => {
-      return Object.values(crops.value).length;
+      return Object.values(store.getters.getKatalogFromStore).length;
     });
     const amountOfBatchesInRaport = computed(() => {
-      return raport.value.length;
+      return store.getters.getRaportFromStore.length;
     });
 
     const amountOfBatchesInStock = computed(() => {
-      return stock.value.length;
+      return store.getters.getStockFromStore.length;
     });
 
     const amountOfSampleInStock = computed(() => {
@@ -194,6 +193,12 @@ const crop = {
 
     onMounted(async () => {
       const db = getDatabase(app);
+
+      const raport = fref(db, "raport");
+      onValue(raport, (snapshot) => {
+        store.dispatch('insertRaportToStore', snapshot.val());
+      });
+
       const mostViewedPosts = query(
         fref(db, "katalog"),
         orderByChild("crop"),
@@ -223,13 +228,6 @@ const crop = {
         })
       }
 
-      if(store.getters.getStockFromStore.length != 0){
-        stock.value = store.getters.getStockFromStore
-      }
-
-      if(store.getters.getRaportFromStore.length != 0){
-        raport.value = store.getters.getRaportFromStore
-      }
       
       if(store.getters.getSymfoniaFromStore.length != 0){
         symfonia.value = store.getters.getSymfoniaFromStore
@@ -242,7 +240,6 @@ const crop = {
       route,
       crops,
       stock,
-      raport,
       prices,
       symfonia,
       searchValue,
