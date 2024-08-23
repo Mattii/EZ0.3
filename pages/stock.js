@@ -21,6 +21,10 @@ const stock = {
       <v-col xs="12" sm="11" md="10" lg="8">
         <hero-element
         title="Komercja"
+        mainSrc="https://res.cloudinary.com/ddkef5waq/image/upload/v1724404629/enzapp/komercja-hero1400x400_dyvnu8.png"
+        :mainSrcSource="['https://res.cloudinary.com/ddkef5waq/image/upload/v1724406814/enzapp/komercja-hero300x200_jwfogr.png',
+          'https://res.cloudinary.com/ddkef5waq/image/upload/v1724404628/enzapp/komercja-hero600x200_qxwue2.png',
+          'https://res.cloudinary.com/ddkef5waq/image/upload/v1724404629/enzapp/komercja-hero800x300_coqrqb.png']"
         ></hero-element>
       </v-col>
     </v-row>
