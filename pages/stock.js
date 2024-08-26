@@ -394,10 +394,10 @@ const stock = {
 
     const showStock = computed(() => store.getters.getStockFromStore.filter(ele => {
 
-      return ele.Article_abbreviated.includes(searchValue.value.toUpperCase()) && (filterValues.value.length > 0?filterValues.value.includes(ele.Family_code):true)
+      return ele.Article_abbreviated.includes(searchValue.value.toUpperCase()) && (filterValues.value.length > 0?filterValues.value.includes(ele.Crop_code):true)
     }));
 
-    const filterItems = computed(() => [...new Set(store.getters.getStockFromStore.map(ele => ele.Family_code))]);
+    const filterItems = computed(() => [...new Set(store.getters.getStockFromStore.map(ele => ele.Crop_code))]);
 
     const familyType = computed(() => store.getters.getCropsListFromStore.find(ele => {
       return ele.crop == sheetData.value.Crop_code
@@ -432,27 +432,33 @@ const stock = {
     const cropCodeToFullCropName = (expr) => {
         switch (expr) {
           case "LT":
-            return "Sałaty"
+            return "Sałata"
           case "ON":
-            return "Cebule"
-          case "TOM":
-            return "Pomidory"
-          case "PUM":
-            return "Dynie"
+            return "Cebula"
+          case "ON_B":
+            return "Cebula Dymka"
+          case "TO":
+            return "Pomidor"
+          case "PP":
+            return "Dynia"
           case "RA":
-            return "Rzodkiewki"
+            return "Rzodkiewka"
           case "DK":
             return "Rzodkiew"
           case "CC":
-            return "Ogórki"
+            return "Ogórek"
+          case "RS_C":
+            return "Podkładka ogórka"
           case "LK":
             return "Pory"
           case "RD":
             return "Cykoria"
           case "ED":
-            return "Endyvie"
-          case "PEP":
-            return "Papryki"
+            return "Endyvia"
+          case "SP":
+            return "Słodka papryka"
+          case "HP":
+            return "Ostra papryka"
           case "SQ":
             return "Cukinie"
           case "B_WC":
@@ -464,8 +470,8 @@ const stock = {
           case "B_CC":
             return "Kapusta Pekińska"
           case "B_CF":
-            return "Kalafiory"
-          case "H_RC":
+            return "Kalafior"
+          case "H_RS":
             return "Rukola"
           case "H_BA":
             return "Bazylia"
