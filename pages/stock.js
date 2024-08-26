@@ -47,8 +47,48 @@ const stock = {
               color="secondary"
               icon="mdi-magnify"
             ></v-btn>
+          <v-btn
+            class="ml-3"
+            color="secondary"
+            icon="mdi-filter"
+            @click="() => {
+              filterShow = !filterShow;
+              filterValues = []
+              }"
+            >
+          </v-btn>
           </template>
         </v-text-field>
+        <v-slide-y-transition>
+          <v-select
+            v-if="filterShow"
+            v-model="filterValues"
+            :items="filterItems"
+            variant="solo"
+            density="compact"
+            bg-color="primary"
+            rounded="pill"
+            label="Wybierz segment"
+            clearable
+            multiple
+          >
+            <template v-slot:selection="{ item, index }">
+              <v-chip v-if="index < 3">
+                <span>{{ cropCodeToFullCropName(item.title) }}</span>
+              </v-chip>
+              <span
+                v-if="index === 3"
+                class="text-lightgrey text-caption align-self-center"
+              >
+                (+{{ filterValues.length - 3 }} )
+              </span>
+            </template>
+
+            <template v-slot:item="{ props, item }">
+              <v-list-item v-bind="props" :title="cropCodeToFullCropName(item.title)"></v-list-item>
+            </template>
+          </v-select>
+        </v-slide-y-transition>
         </v-col>
     </v-row>
     
@@ -344,6 +384,8 @@ const stock = {
     const db = getDatabase(app);
     const sheet = ref(false);
     const sheetData = ref({});
+    const filterShow = ref(false);
+    const filterValues = ref([])
 
     const headersMobile = ref([
       { title: "Nazwa", align: "start", key: "Article_abbreviated" },
@@ -352,8 +394,10 @@ const stock = {
 
     const showStock = computed(() => store.getters.getStockFromStore.filter(ele => {
 
-      return ele.Article_abbreviated.includes(searchValue.value.toUpperCase())
+      return ele.Article_abbreviated.includes(searchValue.value.toUpperCase()) && (filterValues.value.length > 0?filterValues.value.includes(ele.Family_code):true)
     }));
+
+    const filterItems = computed(() => [...new Set(store.getters.getStockFromStore.map(ele => ele.Family_code))]);
 
     const familyType = computed(() => store.getters.getCropsListFromStore.find(ele => {
       return ele.crop == sheetData.value.Crop_code
@@ -382,7 +426,75 @@ const stock = {
         }
 
       return Math.round(batchAge)
+      
     }; 
+
+    const cropCodeToFullCropName = (expr) => {
+        switch (expr) {
+          case "LT":
+            return "Sałaty"
+          case "ON":
+            return "Cebule"
+          case "TOM":
+            return "Pomidory"
+          case "PUM":
+            return "Dynie"
+          case "RA":
+            return "Rzodkiewki"
+          case "DK":
+            return "Rzodkiew"
+          case "CC":
+            return "Ogórki"
+          case "LK":
+            return "Pory"
+          case "RD":
+            return "Cykoria"
+          case "ED":
+            return "Endyvie"
+          case "PEP":
+            return "Papryki"
+          case "SQ":
+            return "Cukinie"
+          case "B_WC":
+            return "Biała kapusta"
+          case "B_SC":
+            return "Włoska kapusta"
+          case "B_KR":
+            return "Kalarepa"
+          case "B_CC":
+            return "Kapusta Pekińska"
+          case "B_CF":
+            return "Kalafiory"
+          case "H_RC":
+            return "Rukola"
+          case "H_BA":
+            return "Bazylia"
+          case "H_OR":
+            return "Oregano"
+          case "H_PA":
+            return "Pietruszka"
+          case "H_DL":
+            return "Koperek"
+          case "H_LB":
+            return "Melisa"
+          case "H_CR":
+            return "Rzeżucha"
+          case "H_CI":
+            return "Szczypiorek"
+          case "H_SM":
+            return "Majeranek"
+          case "H_LV":
+            return "Lubczyk"
+          case "H_CO":
+            return "Kolendra"
+          case "H_TH":
+            return "Tymianek"
+          case "H_SG":
+            return "Szałwia"
+          default:
+            return expr
+        }
+    }
 
     const headers = ref([
       { title: "Partia", align: "end", key: "Batch_number" },
@@ -440,10 +552,14 @@ const stock = {
       familyType,
       showSampleBatch,
       raportBatch,
+      filterShow,
+      filterItems,
+      filterValues,
       batchLiveSpan,
       selectBatch,
       toPLAccountingStandards,
       toPolishTime,
+      cropCodeToFullCropName,
       findVareityInKatalog,
       showBatchPrice,
     };
