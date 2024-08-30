@@ -13,6 +13,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
 import { ref as fref } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
 import app from "../modules/firebase.js";
+import cropCodeToFullCropName from "../modules/cropCodeToFullCropName.js"
 
 const stock = {
   template: `
@@ -43,8 +44,48 @@ const stock = {
               color="secondary"
               icon="mdi-magnify"
             ></v-btn>
+            <v-btn
+            class="ml-3"
+            color="secondary"
+            icon="mdi-filter"
+            @click="() => {
+              filterShow = !filterShow;
+              filterValues = []
+              }"
+            >
+          </v-btn>
           </template>
         </v-text-field>
+        <v-slide-y-transition>
+          <v-select
+            v-if="filterShow"
+            v-model="filterValues"
+            :items="filterItems"
+            variant="solo"
+            density="compact"
+            bg-color="primary"
+            rounded="pill"
+            label="Wybierz segment"
+            clearable
+            multiple
+          >
+            <template v-slot:selection="{ item, index }">
+              <v-chip v-if="index < 3">
+                <span>{{ cropCodeToFullCropName(item.title) }}</span>
+              </v-chip>
+              <span
+                v-if="index === 3"
+                class="text-lightgrey text-caption align-self-center"
+              >
+                (+{{ filterValues.length - 3 }} )
+              </span>
+            </template>
+
+            <template v-slot:item="{ props, item }">
+              <v-list-item v-bind="props" :title="cropCodeToFullCropName(item.title)"></v-list-item>
+            </template>
+          </v-select>
+        </v-slide-y-transition>
         </v-col>
     </v-row>
     
@@ -183,14 +224,21 @@ const stock = {
     const db = getDatabase(app);
     const sheet = ref(false);
     const sheetData = ref({});
+    const filterShow = ref(false);
+    const filterValues = ref([])
+
+    
 
     const headersMobile = ref([
       { title: "Nazwa", align: "start", key: "Description" },
       { title: "Ilość/Opakowanie", align: "end", key: "Packaging" },
     ]);
 
+
+    const filterItems = computed(() => [...new Set(store.getters.getSampleFromStore.map(ele => ele.Crop))]);
+
     const showSampleStock = computed(() => store.getters.getSampleFromStore.filter(ele => {
-      return ele.Description.includes(searchValue.value.toUpperCase())
+      return ele.Description.includes(searchValue.value.toUpperCase()) && (filterValues.value.length > 0?filterValues.value.includes(ele.Crop):true)
     }));
 
     const headers = ref([
@@ -229,8 +277,12 @@ const stock = {
       onMounted,
       sheet,
       sheetData,
+      filterShow,
+      filterValues,
+      filterItems,
       selectBatch,
       toPLAccountingStandards,
+      cropCodeToFullCropName
     };
   },
 };
