@@ -65,6 +65,13 @@ const router = createRouter({
       props: false,
       
     },
+    {
+      path: "/logowanie",
+      component: () => import("./pages/login.js"),
+      name: "logowanie",
+      props: false,
+      
+    },
   ],
 });
 
