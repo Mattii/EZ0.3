@@ -22,9 +22,9 @@ const stock = {
       <hero-element
         title="Logowanie"
         mainSrc="https://res.cloudinary.com/ddkef5waq/image/upload/v1726141224/enzapp/login-hero1400x400_kzijoj.png"
-        :mainSrcSource="['https://res.cloudinary.com/ddkef5waq/image/upload/v1726141223/enzapp/login-hero600x250_v1rsxu.png',
-          'https://res.cloudinary.com/ddkef5waq/image/upload/v1726141224/enzapp/login-hero800x300_ddi3th.png',
-          'https://res.cloudinary.com/ddkef5waq/image/upload/v1726141223/enzapp/login-hero300x200_m91euq.png']"
+        :mainSrcSource="['https://res.cloudinary.com/ddkef5waq/image/upload/v1726141223/enzapp/login-hero300x200_m91euq.png',
+          'https://res.cloudinary.com/ddkef5waq/image/upload/v1726141223/enzapp/login-hero600x250_v1rsxu.png',
+          'https://res.cloudinary.com/ddkef5waq/image/upload/v1726141224/enzapp/login-hero800x300_ddi3th.png']"
         ></hero-element>
       </v-col>
     </v-row>
