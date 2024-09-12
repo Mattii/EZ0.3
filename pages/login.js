@@ -78,11 +78,15 @@ const stock = {
               </v-text-field>
             </v-col> 
             <v-col  xs="12" md="8"  class="">
+            <v-btn
+                  color="secondary"
+                  icon="mdi-login"
+                ></v-btn>
               <v-btn
+                class="ml-4 "
                 color="secondary"
                 rounded="xl"
                 size="large"
-                append-icon="mdi-login"
               > 
                 Zaloguj
               </v-btn>
