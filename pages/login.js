@@ -49,16 +49,14 @@ const stock = {
               v-model="mail"
               @click:clear="() => {}"
               > 
-              <template v-slot:append>
+              <template v-slot:prepend>
                 <v-btn
                   color="secondary"
                   icon="mdi-at"
                 ></v-btn>
               </template>
               </v-text-field>
-            </v-col>
 
-            <v-col  xs="12" md="8"  class="">
               <v-text-field
               clearable 
               prepend-icon=""
@@ -71,7 +69,7 @@ const stock = {
               v-model="password"
               @click:clear="() => {}"
               > 
-              <template v-slot:append>
+              <template v-slot:prepend>
                 <v-btn
                   color="secondary"
                   icon="mdi-form-textbox-password"
