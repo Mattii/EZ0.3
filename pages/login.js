@@ -12,6 +12,7 @@ import {
   endAt,
 } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
 import { ref as fref } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
 import app from "../modules/firebase.js";
 
 const stock = {
@@ -87,6 +88,7 @@ const stock = {
                 color="secondary"
                 rounded="xl"
                 size="large"
+                @click="signIn"
               > 
                 Zaloguj
               </v-btn>
@@ -102,13 +104,36 @@ const stock = {
     const mail = ref("");
     const password = ref("")
 
-    onMounted(async () => {});
+    const auth = getAuth();
+
+    const signIn = () => {
+      signInWithEmailAndPassword(auth, mail.value, password.value)
+        .then((userCredential) => {
+          // Signed in 
+          const user = userCredential.user;
+          console.log(userCredential, user);
+          
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          console.error(errorCode, errorMessage);
+          
+        });
+    }
+    onMounted(async () => {
+        console.log(auth.currentUser);
+        
+      
+    });
 
     return {
       route,
       onMounted,
       mail,
       password,
+      signIn,
     };
   },
 };
