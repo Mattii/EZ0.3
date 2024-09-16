@@ -12,6 +12,7 @@ import {
   endAt,
 } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
 import { ref as fref } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
 import app from "../modules/firebase.js";
 
 const crop = {
@@ -136,6 +137,8 @@ const crop = {
     const tab = ref(null);
     const drawer  = inject('drawer')
 
+    const auth = getAuth();
+
 
     const stock = computed(() => {
       return store.getters.getStockFromStore
@@ -232,6 +235,7 @@ const crop = {
       if(store.getters.getSymfoniaFromStore.length != 0){
         symfonia.value = store.getters.getSymfoniaFromStore
       }
+
     });
 
     return {

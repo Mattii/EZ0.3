@@ -1,6 +1,7 @@
 export default {
     state () {
       return {
+        logedInUser:null,
         crops: [
             {
               crop: "TO",
@@ -100,6 +101,9 @@ export default {
       }
     },
     getters: {
+        getUserFromStore (state) {
+            return state.logedInUser
+        },
         getPriceListFromStore (state) {
           const price = localStorage.getItem('price')
           if (price) {
@@ -163,6 +167,9 @@ export default {
         },
     },
     actions: {
+        insertUserToStore (context, payload) {
+          context.commit('insertUserToStore', payload)
+        },
         insertPriceListToStore (context, payload) {
           localStorage.setItem("price", JSON.stringify(payload));
           context.commit('insertPriceListToStore', payload)
@@ -188,6 +195,9 @@ export default {
         },
     },
     mutations: {
+      insertUserToStore (state, payload) {
+        state.logedInUser = payload
+      },
       insertPriceListToStore (state, payload) {
         state.priceList = payload
       },

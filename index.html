@@ -127,15 +127,6 @@
 
         <v-list density="compact" nav>
           <v-list-item 
-          prepend-icon="mdi-login"
-          active-class="rounded-xl"
-          title="Logowanie" 
-          value="dashboard" 
-          to="/logowanie">
-        </v-list>
-
-        <v-list density="compact" nav>
-          <v-list-item 
           prepend-icon="mdi-view-dashboard"
           active-class="rounded-xl"
           title="Tablica" 
@@ -143,7 +134,7 @@
           to="/tablica">
         </v-list>
 
-        <v-list density="compact" nav>
+        <v-list v-if="logedInUser" density="compact" nav>
           <v-list-subheader>Magazyn</v-list-subheader>
           <v-list-item
             prepend-icon="mdi-wallet-membership"
@@ -159,7 +150,7 @@
             to="/proby"></v-list-item>
         </v-list>
 
-        <v-list density="compact" nav>
+        <v-list v-if="logedInUser" density="compact"  nav>
           <v-list-subheader>Dane</v-list-subheader>
           <v-list-item 
           prepend-icon="mdi-tray-arrow-up"
@@ -167,6 +158,25 @@
           title="Update" 
           value="update" 
           to="/update">
+        </v-list>
+
+        <v-list density="compact" nav>
+            <v-list-item v-if="!logedInUser"
+            prepend-icon="mdi-login"
+            active-class="rounded-xl"
+            title="Logowanie" 
+            value="logowanie" 
+            to="/logowanie"
+            ></v-list-item>
+
+            <v-list-item 
+            v-else
+            prepend-icon="mdi-logout"
+            active-class="rounded-xl"
+            title="Wyloguj" 
+            value="wyloguj"
+            @click="logOut"
+            ></v-list-item>
         </v-list>
       </v-navigation-drawer>
 

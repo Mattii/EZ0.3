@@ -1,6 +1,6 @@
 import { ref, reactive, onMounted, computed } from "vue";
 import { useStore } from "vuex";
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 import {
   getDatabase,
   query,
@@ -12,7 +12,7 @@ import {
   endAt,
 } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
 import { ref as fref } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
-import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
 import app from "../modules/firebase.js";
 
 const stock = {
@@ -100,9 +100,10 @@ const stock = {
     </v-container>`,
   setup() {
     const route = useRoute();
+    const router = useRouter();
     const store = useStore();
     const mail = ref("");
-    const password = ref("")
+    const password = ref("");
 
     const auth = getAuth();
 
@@ -110,9 +111,8 @@ const stock = {
       signInWithEmailAndPassword(auth, mail.value, password.value)
         .then((userCredential) => {
           // Signed in 
-          const user = userCredential.user;
-          console.log(userCredential, user);
-          
+          store.dispatch('insertUserToStore', userCredential)
+          router.push('/tablica')
           // ...
         })
         .catch((error) => {
@@ -122,9 +122,9 @@ const stock = {
           
         });
     }
+
     onMounted(async () => {
         console.log(auth.currentUser);
-        
       
     });
 

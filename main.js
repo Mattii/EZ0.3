@@ -1,4 +1,5 @@
-import { createApp, ref, reactive, onMounted, provide } from "vue";
+import { createApp, computed, ref, reactive, onMounted, provide } from "vue";
+import { useRoute, useRouter } from "vue-router";
 import { createStore } from 'vuex';
 import { createVuetify } from "vuetify";
 import vuexStore from "./modules/vuex.js"
@@ -10,6 +11,7 @@ import heroElement from "./components/hero-element.js";
 import catalogHero from "./components/catalog-hero.js";
 import router from "./router.js";
 import stockInput from "./components/stock-input.js";
+import { getAuth, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
 
 const vuetify = createVuetify({
   theme: {
@@ -48,11 +50,44 @@ const app = createApp({
     //   })
     //   .then((changed) => JSON.stringify(changed));
 
+    const router = useRouter();
+
+    const auth = getAuth();
+    const logedInUser = computed(()=> store.getters.getUserFromStore);
+    const logOut = () => {
+      signOut(auth).then(() => {
+        // Sign-out successful.
+        console.log("Wylogowano");
+        router.push('/')
+      }).catch((error) => {
+        // An error happened.
+        console.log("Ooooppsi nie wylogowano");
+      });
+    }
+
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/auth.user
+        
+        store.dispatch('insertUserToStore', user)
+        console.log(user);
+        // ...
+      } else {
+        // User is signed out
+        // ...
+        store.dispatch('insertUserToStore', null)
+        console.log("Wylogowano");
+      }
+    });
+
     return {
       compayName,
       icons,
       loaded,
       drawer,
+      logedInUser,
+      logOut
     };
   },
 });
