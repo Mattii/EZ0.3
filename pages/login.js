@@ -36,6 +36,7 @@ const stock = {
           class="pa-3 pa-xl-12 d-flex flex-column justify-center"
           rounded="xl"
           >
+          <v-form @submit.prevent="signIn">
             <v-col  xs="12" md="8"  class="">
               <v-text-field
               clearable 
@@ -54,6 +55,7 @@ const stock = {
                 <v-btn
                   color="secondary"
                   icon="mdi-at"
+                  readonly
                 ></v-btn>
               </template>
               </v-text-field>
@@ -74,6 +76,7 @@ const stock = {
                 <v-btn
                   color="secondary"
                   icon="mdi-form-textbox-password"
+                  readonly
                 ></v-btn>
               </template>
               </v-text-field>
@@ -82,17 +85,19 @@ const stock = {
             <v-btn
                   color="secondary"
                   icon="mdi-login"
+                  readonly
                 ></v-btn>
               <v-btn
                 class="ml-4 "
                 color="secondary"
                 rounded="xl"
                 size="large"
-                @click="signIn"
+                type="submit"
               > 
                 Zaloguj
               </v-btn>
             </v-col>   
+            </v-form>
           </v-sheet>
       </v-col>
     </v-row>

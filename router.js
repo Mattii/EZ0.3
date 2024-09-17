@@ -43,6 +43,7 @@ const router = createRouter({
       name: "komercja",
       component: () => import("./pages/stock.js"),
       beforeEnter: (to, from, next) => {
+        const isAuth = () => auth.currentUser;
         if ( !isAuth() ) next({ name: 'logowanie' })
         else next()
       },
@@ -54,6 +55,7 @@ const router = createRouter({
       name: "proby",
       component: () => import("./pages/sample.js"),      
       beforeEnter: (to, from, next) => {
+        const isAuth = () => auth.currentUser;
         if ( !isAuth() ) next({ name: 'logowanie' })
         else next()
       },

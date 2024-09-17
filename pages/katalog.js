@@ -26,7 +26,7 @@ const crop = {
           density="compact"
           bg-color="primary"
           rounded="pill"
-          v-model="searchValue"
+          v-model.trim="searchValue"
           @click:clear="() => {searchValue = ''}"
         > 
           <template v-slot:append>
