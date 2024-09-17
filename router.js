@@ -1,5 +1,11 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "./pages/home.js";
+import { useStore } from 'vuex';
+import { getAuth, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+
+const auth = getAuth();
+
+const isAuth = () => auth.currentUser;
 
 const router = createRouter({
   history: createWebHistory(),
@@ -26,7 +32,7 @@ const router = createRouter({
           // when /tablica/stock is matched
           path: 'sample',
           name: "sample",
-          component: () => import("./pages/sample.js"),
+          component: () => import(''),
         },
       ]
     },
@@ -36,13 +42,21 @@ const router = createRouter({
       path: '/komercja',
       name: "komercja",
       component: () => import("./pages/stock.js"),
+      beforeEnter: (to, from, next) => {
+        if ( !isAuth() ) next({ name: 'logowanie' })
+        else next()
+      },
     },   
     {
       // Stock will be rendered inside User's <router-view>
       // when /tablica/stock is matched
       path: '/proby',
       name: "proby",
-      component: () => import("./pages/sample.js"),
+      component: () => import("./pages/sample.js"),      
+      beforeEnter: (to, from, next) => {
+        if ( !isAuth() ) next({ name: 'logowanie' })
+        else next()
+      },
     },
     {
       path: "/katalog/:family",
@@ -62,8 +76,11 @@ const router = createRouter({
       path: "/update",
       component: () => import("./pages/update.js"),
       name: "update",
-      props: false,
-      
+      props: false,      
+      beforeEnter: (to, from, next) => {
+        if ( !isAuth() ) next({ name: 'logowanie' })
+        else next()
+      },
     },
     {
       path: "/logowanie",

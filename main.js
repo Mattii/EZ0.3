@@ -57,6 +57,8 @@ const app = createApp({
     const logOut = () => {
       signOut(auth).then(() => {
         // Sign-out successful.
+        
+        store.dispatch('insertUserToStore', null)
         console.log("Wylogowano");
         router.push('/')
       }).catch((error) => {
@@ -71,13 +73,13 @@ const app = createApp({
         // https://firebase.google.com/docs/reference/js/auth.user
         
         store.dispatch('insertUserToStore', user)
-        console.log(user);
         // ...
       } else {
         // User is signed out
         // ...
+        
         store.dispatch('insertUserToStore', null)
-        console.log("Wylogowano");
+        console.log("Wylogowany");
       }
     });
 

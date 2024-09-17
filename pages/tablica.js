@@ -197,18 +197,24 @@ const crop = {
     onMounted(async () => {
       const db = getDatabase(app);
 
+      // get the raport data from firebase
+
       const raport = fref(db, "raport");
       onValue(raport, (snapshot) => {
         store.dispatch('insertRaportToStore', snapshot.val());
-      });
+        console.log(snapshot.val());
+        
+      })
 
-      const mostViewedPosts = query(
-        fref(db, "katalog"),
-        orderByChild("crop"),
-        startAt("TO"),
-        endAt("TO")
-      );
+      // const mostViewedPosts = query(
+      //   fref(db, "katalog"),
+      //   orderByChild("crop"),
+      //   startAt("TO"),
+      //   endAt("TO")
+      // );
 
+      
+      // get the katalog data from firebase of theres no localy 
 
       if(store.getters.getKatalogFromStore.length != 0){
         crops.value = store.getters.getKatalogFromStore
@@ -217,9 +223,10 @@ const crop = {
         onValue(katalog, (snapshot) => {
           store.dispatch('insertKatalogToStore', snapshot.val())
           crops.value = snapshot.val();
-          console.log(snapshot.val());
         });
       }
+
+      // get the cennik data from firebase of theres no localy 
 
       if(store.getters.getPriceListFromStore.length != 0){
         prices.value = store.getters.getPriceListFromStore
