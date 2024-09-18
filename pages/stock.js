@@ -143,15 +143,17 @@ const stock = {
         </v-data-table>
 
         <v-data-table
+        v-model:expanded="expanded"
         class="w-100"
         fixed-header
         :headers="headers"
         :items="showStock"
         class="h-100 d-none d-sm-flex"
         item-value="index"
+        show-expand
         >
           <template v-slot:item="{ item }">
-            <tr>
+            <tr @click="selectBatch(item)">
               <td class="text-end">
                 <span class="text-uppercase">{{ item.Batch_number }}</span>
                 <br/>
@@ -174,8 +176,10 @@ const stock = {
               <td class="">
                 <span class="text-uppercase">{{  item.Packaging_abbreviated }}</span>
                 <br/> 
-                <span class="font-weight-thin text-medium-emphasis text-subtitle-2">{{item.Quantity_balance}} {{item.Unit_code}}</span></td>
-            </tr>
+                <span class="font-weight-thin text-medium-emphasis text-subtitle-2">{{item.Quantity_balance}} {{item.Unit_code}}</span>
+              </td>
+              </tr>              
+              
           </template>
         </v-data-table>
         </div>
@@ -185,6 +189,7 @@ const stock = {
     <v-bottom-sheet 
       max-height="70vh"
       v-model="sheet"
+      inset
     >
       <v-card>
         <v-fab
@@ -387,6 +392,7 @@ const stock = {
     const sheetData = ref({});
     const filterShow = ref(false);
     const filterValues = ref([])
+    const expanded = ref([]);
 
     const headersMobile = ref([
       { title: "Nazwa", align: "start", key: "Article_abbreviated" },
@@ -482,6 +488,7 @@ const stock = {
       searchValue,
       onMounted,
       sheet,
+      expanded,
       sheetData,
       familyType,
       showSampleBatch,
