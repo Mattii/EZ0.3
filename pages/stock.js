@@ -311,8 +311,33 @@ const stock = {
               </v-progress-circular>
               </div>
             </v-sheet>
+
             
-          </v-sheet>  
+            <v-sheet
+            >
+              <span class="text-medium-emphasis text-subtitle-2">Ważność:</span>
+              <div class="pt-2">
+              <v-progress-circular
+                model-value="100"
+                :rotate="360"
+                :size="100"
+                :width="6"
+                :color="raportBatch.Expiry_date > new Date().getTime()? familyType?.color : '#e53935'"
+              >
+              <span 
+              class="d-flex  flex-column align-center">
+                <span class=""> {{toPolishTime(raportBatch.Expiry_date)}} </span>
+              </span>
+              </v-progress-circular>
+              </div>
+            </v-sheet>
+            
+          </v-sheet>
+          <div class="pt-3">
+          <span class="text-medium-emphasis text-subtitle-2">Waga tysiąca nasion:</span>
+          <br/>
+            <span>{{raportBatch.TCW}} gram</span>
+          </div>
         </v-card-item>
 
         <v-card-text>
@@ -329,6 +354,7 @@ const stock = {
                 <span>{{sheetData.Quantity_usable}} {{sheetData.Unit_code}}</span>
             
           </div>
+
           <div v-if="showBatchPrice.length != 0">
           <v-divider />
             <div class="py-3">

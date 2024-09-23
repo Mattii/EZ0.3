@@ -5,7 +5,7 @@ import { getAuth, signOut, onAuthStateChanged } from "https://www.gstatic.com/fi
 
 const auth = getAuth();
 
-const isAuth = () => auth.currentUser;
+const isAuthCheck = async () => await auth.currentUser;
 
 const router = createRouter({
   history: createWebHistory(),
@@ -43,8 +43,8 @@ const router = createRouter({
       name: "komercja",
       component: () => import("./pages/stock.js"),
       beforeEnter: (to, from, next) => {
-        const isAuth = () => auth.currentUser;
-        if ( !isAuth() ) next({ name: 'logowanie' })
+        const isAuth = isAuthCheck();
+        if ( !isAuth ) next({ name: 'logowanie' })
         else next()
       },
     },   
@@ -55,8 +55,8 @@ const router = createRouter({
       name: "proby",
       component: () => import("./pages/sample.js"),      
       beforeEnter: (to, from, next) => {
-        const isAuth = () => auth.currentUser;
-        if ( !isAuth() ) next({ name: 'logowanie' })
+        const isAuth = isAuthCheck();
+        if ( !isAuth ) next({ name: 'logowanie' })
         else next()
       },
     },
@@ -80,7 +80,8 @@ const router = createRouter({
       name: "update",
       props: false,      
       beforeEnter: (to, from, next) => {
-        if ( !isAuth() ) next({ name: 'logowanie' })
+        const isAuth = isAuthCheck();
+        if ( !isAuth ) next({ name: 'logowanie' })
         else next()
       },
     },
