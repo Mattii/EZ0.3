@@ -33,22 +33,34 @@ const stock = {
     <v-row justify="center" class="">
       <v-col xs="12" sm="10" md="9" lg="8">
         <v-sheet
+          v-if="userError"
+          class="pa-3 pa-xl-12"
+          rounded="xl"
+          >
+          <v-col  xs="12" md="8"  class="d-flex align-center justify-center">
+            <span>{{userError}}</span>
+          </v-col>
+        </v-sheet>
+        <v-sheet
           class="pa-3 pa-xl-12 d-flex flex-column justify-center"
           rounded="xl"
           >
           <v-form @submit.prevent="signIn">
             <v-col  xs="12" md="8"  class="">
               <v-text-field
+              class="mb-2"
               clearable 
               prepend-icon=""
               variant="solo"
-              label="Wpisz adres mailowy"
+              label="e-mail"
               placeholder="twójadres@gmail.com"
               density="compact"
               bg-color="primary"
               rounded="pill"
               type="email"
               v-model="mail"
+              :rules="[rules.required]"
+              :error-messages="emailError"
               @click:clear="() => {}"
               > 
               <template v-slot:prepend>
@@ -62,14 +74,17 @@ const stock = {
 
               <v-text-field
               clearable 
-              prepend-icon=""
+              :append-inner-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
               variant="solo"
-              label="Wpisz swoje hasło"
+              label="hasło"
               density="compact"
               bg-color="primary"
               rounded="pill"
-              type="password"
+              :rules="[rules.required]"
+              :type="showPassword ? 'text' : 'password'"
+              :error-messages="passwordError"
               v-model="password"
+              @click:append-inner="showPassword = !showPassword"
               @click:clear="() => {}"
               > 
               <template v-slot:prepend>
@@ -109,8 +124,26 @@ const stock = {
     const store = useStore();
     const mail = ref("");
     const password = ref("");
+    const showPassword = ref(false);
+    const fireBaseError = ref({});
+    const rules = reactive({
+      required: value => !!value || 'Wypełnij',
+      min: v => v.length >= 8 || 'Min 8 characters',
+      emailMatch: () => (`The email and password you entered don't match`),
+    })
 
     const auth = getAuth();
+
+    const userError = computed(() => {
+      return fireBaseError.value.code === 'auth/user-not-found' ? 'Nie znaleźiono takiego urzytkownika' : '';
+    });
+    const passwordError = computed(() => {
+      return fireBaseError.value.code === 'auth/missing-password' ? 'Nieprawidłowe hasło' : '';
+    });
+    const emailError = computed(() => {
+      return fireBaseError.value.code === 'auth/invalid-email' ? 'Nieprawidłowy email' : '';
+    });
+
 
     const signIn = () => {
       signInWithEmailAndPassword(auth, mail.value, password.value)
@@ -121,6 +154,7 @@ const stock = {
           // ...
         })
         .catch((error) => {
+          fireBaseError.value = error;
           const errorCode = error.code;
           const errorMessage = error.message;
           console.error(errorCode, errorMessage);
@@ -138,6 +172,11 @@ const stock = {
       onMounted,
       mail,
       password,
+      showPassword,
+      passwordError,
+      emailError,
+      userError,
+      rules,
       signIn,
     };
   },
