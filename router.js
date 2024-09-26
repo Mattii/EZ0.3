@@ -5,7 +5,9 @@ import { getAuth, signOut, onAuthStateChanged } from "https://www.gstatic.com/fi
 
 const auth = getAuth();
 
-const isAuthCheck = async () => await auth.currentUser;
+const isAuthCheck = () => auth.currentUser;
+
+
 
 const router = createRouter({
   history: createWebHistory(),
@@ -42,8 +44,8 @@ const router = createRouter({
       path: '/komercja',
       name: "komercja",
       component: () => import("./pages/stock.js"),
-      beforeEnter: (to, from, next) => {
-        const isAuth = isAuthCheck();
+      beforeEnter: async (to, from, next) => {
+        const isAuth = isAuthCheck()
         if ( !isAuth ) next({ name: 'logowanie' })
         else next()
       },
