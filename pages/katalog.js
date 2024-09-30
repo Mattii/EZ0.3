@@ -82,11 +82,11 @@ const crop = {
     <v-row justify="center" class="">
     <v-col  xs="12" sm="10" md="9" lg="8" class="pa-0 ma-0 d-flex flex-wrap justify-center">
           <v-col  xs="12" sm="6" md="4" class="d-flex flex-wrap justify-space-evenly"             
-          v-for="(item, index) in crops"
+          v-for="(item, index) in showCrops"
             key="index">
             <router-link 
             class="w-100 h-100"
-            :to="{name: 'crop', params: {name: index}}">
+            :to="{name: 'crop', params: {name: item.name}}">
             <main-vareity-card
               v-if="item"
               :item="item"
@@ -106,21 +106,24 @@ const crop = {
     const filterValues = ref([]);
     const searchValue = ref("");
 
+    // const filterItems = computed(() => [...new Set(store.getters.getKatalogFromStore.map(ele => ele.crop))]);
+    
     const filterItems = computed(() => [...new Set(store.getters.getKatalogFromStore.map(ele => ele.crop))]);
+
+    const showCrops = computed(() => store.getters.getKatalogFromStore.filter(ele => {
+
+      return ele.name.toLocaleLowerCase().includes(searchValue.value.toLocaleLowerCase()) && (filterValues.value.length > 0?filterValues.value.includes(ele.family):true)
+    }));
 
     onMounted(async () => {
       const db = getDatabase(app);
 
 
-      if(store.getters.getKatalogFromStore.length != 0 && !navigator.onLine){
-        crops.value = store.getters.getKatalogFromStore
-      }else{
         const katalog = fref(db, "katalog");
         onValue(katalog, (snapshot) => {
           store.dispatch('insertKatalogToStore', snapshot.val())
           crops.value = snapshot.val();
         });
-      }
       
     });
 
@@ -128,6 +131,7 @@ const crop = {
       route,
       crops,
       stock,
+      showCrops,
       filterShow,
       filterItems,
       filterValues,

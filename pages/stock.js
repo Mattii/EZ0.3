@@ -322,7 +322,7 @@ const stock = {
                 :rotate="360"
                 :size="100"
                 :width="6"
-                :color="raportBatch.Expiry_date > new Date().getTime()? familyType?.color : '#e53935'"
+                :color="raportBatch.Expiry_date > new Date().getTime()? familyType?.color || 'primary' : '#e53935'"
               >
               <span 
               class="d-flex  flex-column align-center">
@@ -383,7 +383,7 @@ const stock = {
             <div class="py-3">
             <v-btn 
               :style="familyType?.color ? 'background-color:'+ familyType?.color : 'background-color:' + '#61cb6f'"
-              :to="{name: 'crop', params: {name: sheetData.Article_abbreviated.toLowerCase().replace(' ', '_')}}" 
+              :to="{name: 'crop', params: {name: findVareityInKatalog.name}}" 
               elevation="1" 
               class="ff-nunito text-caption" 
               rounded="pill"  
@@ -446,7 +446,7 @@ const stock = {
       return ele.Description.toUpperCase().replace(' ', '_').includes(sheetData.value.Article_abbreviated.replace(' ', '_'))
     }));
 
-    const findVareityInKatalog = computed(() => store.getters.getKatalogFromStore[`${sheetData.value.Article_abbreviated.toLowerCase().replace(' ', '_')}`]);
+    const findVareityInKatalog = computed(() => store.getters.getKatalogFromStore.find(ele => ele.name.toLocaleLowerCase().includes(searchValue.value.toLocaleLowerCase())));
 
     const batchLiveSpan = () => {
         const twoYears = 63072000000;
@@ -500,6 +500,9 @@ const stock = {
       }
 
     onMounted(async () => {
+
+      
+
       const stock = fref(db, "stock");
       onValue(stock, (snapshot) => {
         store.dispatch('insertStockToStore', snapshot.val());

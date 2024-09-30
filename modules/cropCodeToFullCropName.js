@@ -72,6 +72,10 @@ export default (expr) => {
         return "Tymianek"
       case "H_SG":
         return "Szałwia"
+      case "FK":
+        return "Koper włoski"
+      case "H_":
+        return "Zioła"
       default:
         return expr
     }

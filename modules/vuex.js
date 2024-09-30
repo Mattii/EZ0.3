@@ -190,8 +190,9 @@ export default {
           context.commit('insertStockToStore', payload)
         },
         insertKatalogToStore (context, payload) {
-          localStorage.setItem("katalog", JSON.stringify(payload));
-          context.commit('insertKatalogToStore', payload)
+          const payloadArray = Object.values(payload)
+          localStorage.setItem("katalog", JSON.stringify(payloadArray));
+          context.commit('insertKatalogToStore', payloadArray)
         },
     },
     mutations: {

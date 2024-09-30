@@ -8,6 +8,7 @@ import {
   orderByKey,
   orderByChild,
   onValue,
+  equalTo,
   startAt,
   endAt,
 } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
@@ -80,15 +81,13 @@ const crop = {
 
       const db = getDatabase(app);
 
-      const dbCrops = query(
-        fref(db, `katalog/${route.params.name}`),
-        orderByChild("crop"),
-      );
+      const dbCrops = query(fref(db, 'katalog'), orderByChild('name'), equalTo(route.params.name));
       onValue(dbCrops, (snapshot) => {
-        crop.value = snapshot.val();
+        crop.value = Object.values(snapshot.val())[0];
         imgSrc.value = crop.value.imgs[0]
         familyType.value = store.getters.getCropFromStore(crop.value.family)
       });
+
       // try {
       //   const newKatalog = await fetch(
       //     `https://nuxtestapp-default-rtdb.europe-west1.firebasedatabase.app/katalog.json?orderBy="crop"&startAt="${route.params.crop}"&endAt="${route.params.crop}\uf8ff"`

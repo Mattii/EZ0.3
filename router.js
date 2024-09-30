@@ -5,7 +5,7 @@ import { getAuth, signOut, onAuthStateChanged } from "https://www.gstatic.com/fi
 
 const auth = getAuth();
 
-const isAuthCheck = async () => await auth.currentUser;
+const isAuthCheck = () =>  auth.currentUser;
 
 const router = createRouter({
   history: createWebHistory(),
@@ -42,11 +42,12 @@ const router = createRouter({
       path: '/komercja',
       name: "komercja",
       component: () => import("./pages/stock.js"),
-      beforeEnter: (to, from, next) => {
-        const isAuth = isAuthCheck();
+      beforeEnter: async (to, from, next) => {
+        const isAuth = await isAuthCheck();
         if ( !isAuth ) next({ name: 'logowanie' })
         else next()
       },
+
     },   
     {
       // Stock will be rendered inside User's <router-view>
@@ -54,7 +55,7 @@ const router = createRouter({
       path: '/proby',
       name: "proby",
       component: () => import("./pages/sample.js"),      
-      beforeEnter: (to, from, next) => {
+      beforeEnter: async (to, from, next) => {
         const isAuth = isAuthCheck();
         if ( !isAuth ) next({ name: 'logowanie' })
         else next()
@@ -79,7 +80,7 @@ const router = createRouter({
       component: () => import("./pages/update.js"),
       name: "update",
       props: false,      
-      beforeEnter: (to, from, next) => {
+      beforeEnter: async (to, from, next) => {
         const isAuth = isAuthCheck();
         if ( !isAuth ) next({ name: 'logowanie' })
         else next()
