@@ -67,7 +67,6 @@ const vareityCard = {
     const prices = ref({});
     const show = ref(false);
     const store = useStore();
-    const familyType = ref({})
 
     const availableStock = computed(() => {
       return props.stock.filter(
@@ -79,6 +78,8 @@ const vareityCard = {
       return `${price.price}zł (${Number.parseFloat(price.price + price.price * 0.08).toFixed(2)}zł)`;
     };
 
+    const familyType = computed(() => store.getters.getCropFromStore(props.item.family))
+
     onMounted(async () => {
       //podczas pobierania przez SDK żle pobiera pozycje 0 i 1 jeżeli zbiór dnych jest tablicą
       const db = getDatabase(app);
@@ -89,7 +90,6 @@ const vareityCard = {
         prices.value = snapshot.val();
       });
 
-       familyType.value = store.getters.getCropFromStore(props.item.family)
     });
 
     return {
