@@ -83,6 +83,23 @@ const app = createApp({
       }
     });
 
+    onMounted(async () => {
+      let katalog = localStorage.getItem('katalog');
+
+      if(!Array.isArray(JSON.parse(katalog))){
+        localStorage.removeItem("katalog")
+        const db = getDatabase(app);
+
+
+        const katalog = fref(db, "katalog");
+        onValue(katalog, (snapshot) => {
+          store.dispatch('insertKatalogToStore', snapshot.val())
+          crops.value = snapshot.val();
+        });
+      }
+      
+    });
+
     return {
       compayName,
       icons,
