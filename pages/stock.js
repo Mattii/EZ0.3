@@ -446,7 +446,7 @@ const stock = {
       return ele.Description.toUpperCase().replace(' ', '_').includes(sheetData.value.Article_abbreviated.replace(' ', '_'))
     }));
 
-    const findVareityInKatalog = computed(() => store.getters.getKatalogFromStore.find(ele => ele.name.toLocaleLowerCase().includes(searchValue.value.toLocaleLowerCase())));
+    const findVareityInKatalog = computed(() => store.getters.getKatalogFromStore.find(ele => ele.name.toLocaleLowerCase().includes(sheetData?.value.Article_abbreviated.toLocaleLowerCase())));
 
     const batchLiveSpan = () => {
         const twoYears = 63072000000;
@@ -501,6 +501,7 @@ const stock = {
 
     onMounted(async () => {
 
+      
       
 
       const stock = fref(db, "stock");
