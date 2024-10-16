@@ -64,6 +64,14 @@ const stocImput = {
             ele.name = ele.name?.toLowerCase()
             ele.segment = ele.segment?.toLowerCase()
             ele.price = +Number.parseFloat(ele.price).toFixed(2)
+            if(ele.new){
+              ele.new = !!ele?.new
+            }
+            if(ele.hrez){ele.hrez = !!ele?.hrez}
+            if(ele.bio){ele.bio = !!ele?.bio}
+            if(ele.cgmmv_hr){ele.cgmmv_hr = !!ele?.cgmmv_hr}
+            if(ele.takii){ele.takii = !!ele?.takii}
+
             return ele
           }));
         } else if(rawFile.target.files[e]?.name.includes("symfonia")){
@@ -92,6 +100,8 @@ const stocImput = {
             myWorker.postMessage(data);
             myWorker.onmessage = (e) => {
               console.log("Message received from worker");
+              
+              
               resolve(e.data)
             };
           } else {

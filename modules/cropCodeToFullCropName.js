@@ -37,13 +37,15 @@ export default (expr) => {
       case "SN":
         return "Szpinak"
       case "B_WC":
-        return "Biała kapusta"
+        return "Kapusta Biała"
       case "B_SC":
-        return "Włoska kapusta"
+        return "Kapusta Włoska"
       case "B_KR":
         return "Kalarepa"
       case "B_CC":
         return "Kapusta Pekińska"
+      case "B_FC":
+        return "Kapusta Płaska"
       case "B_CF":
         return "Kalafior"
       case "H_RS":
@@ -76,6 +78,10 @@ export default (expr) => {
         return "Koper włoski"
       case "H_":
         return "Zioła"
+      case "TU":
+        return "Rzepa Biała"
+      case "AS":
+        return "Szparagi"
       default:
         return expr
     }

@@ -117,7 +117,7 @@ const priceList = {
     ])
 
     const searchedPriceList = computed(() => {
-      return prices.value.filter(ele => ele.name.includes(searchValue.value.toLowerCase()));
+      return store.getters.getPriceListFromStore.filter(ele => ele.name.includes(searchValue.value.toLowerCase()));
     });
     
     const toPLAccountingStandards = (num) => new Intl.NumberFormat('pl-PL', { style: 'currency', currency: 'PLN' }).format(
@@ -126,7 +126,7 @@ const priceList = {
 
     onMounted(async () => {
 
-      if(store.getters.getPriceListFromStore.length == 0){
+
         const db = getDatabase(app);
 
         const priceList = query(fref(db, "cennik"), orderByChild("name"));
@@ -135,9 +135,7 @@ const priceList = {
           store.dispatch('insertPriceListToStore', snap.val())
           console.log(snap.val());
         });
-      }else {
-        prices.value = store.getters.getPriceListFromStore
-      }
+
 
     });
 
