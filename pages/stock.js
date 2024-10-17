@@ -103,9 +103,7 @@ const stock = {
         rounded="xl"
         >
           <p class="text-h5 my-3 ff-nunito">Niestety nasion komercyjnych nie znaleziono</p>
-          <v-col  xs="12" sm="8" md="6"  class="">
-            <p>need to login</p>
-          </v-col>  
+
         </v-sheet>
         <!-- visible on screen  (width > 600)  -->
         <div

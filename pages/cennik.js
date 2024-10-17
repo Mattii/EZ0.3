@@ -13,6 +13,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
 import { ref as fref } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
 import app from "../modules/firebase.js";
+import cropCodeToFullCropName from "../modules/cropCodeToFullCropName.js";
 
 const priceList = {
   template: `          
@@ -42,8 +43,50 @@ const priceList = {
               color="secondary"
               icon="mdi-magnify"
             ></v-btn>
+            <v-btn
+            class="ml-3"
+            color="secondary"
+            icon="mdi-filter"
+            @click="() => {
+              filterShow = !filterShow;
+              filterValues = []
+              }"
+            >
+          </v-btn>
           </template>
         </v-text-field>
+
+        <v-slide-y-transition>
+          <v-select
+            v-if="filterShow"
+            v-model="filterValues"
+            :items="filterItems"
+            variant="solo"
+            density="compact"
+            bg-color="primary"
+            rounded="pill"
+            label="Wybierz segment"
+            class=""
+            clearable
+            multiple
+          >
+            <template v-slot:selection="{ item, index }">
+              <v-chip v-if="index < 3">
+                <span>{{ cropCodeToFullCropName(item.title) }}</span>
+              </v-chip>
+              <span
+                v-if="index === 3"
+                class="text-lightgrey text-caption align-self-center"
+              >
+                (+{{ filterValues.length - 3 }} )
+              </span>
+            </template>
+
+            <template v-slot:item="{ props, item }">
+              <v-list-item v-bind="props" :title="cropCodeToFullCropName(item.title)"></v-list-item>
+            </template>
+          </v-select>
+        </v-slide-y-transition>
       </v-col>
     </v-row>
     <v-row justify="center">
@@ -55,17 +98,26 @@ const priceList = {
         :items="searchedPriceList"
         class="h-100 d-flex d-sm-none"
         item-value="index"
+        density="comfortable"
       >
       <template v-slot:item="{ item }">
         <tr>
-          <td>
-            <span class="font-weight-regular text-medium-emphasis text-subtitle-2">{{item.family}}</span>
+          <td class="">
+              
+            <span v-if="item.new" class="rounded-xl px-3 mr-1 py-0 bg-red">Nowość</span>
+            <span v-if="item.hrez" class="rounded-xl px-3 py-0 mr-1 bg-red-darken-3 text-decoration-underline">HREZ</span>
+            <span v-if="item.cgmmv_hr" class="rounded-xl px-3 py-0 mr-1 bg-green">CGMMV HR</span>
+            <span v-if="item.bio" class="rounded-xl px-3 py-0 mr-1 bg-green-darken-3">BIO</span>
+            <br v-if="item.new || item.hrez || item.bio || item.cgmmv_hr" />
+            <span class="font-weight-regular text-medium-emphasis text-subtitle-2">{{cropCodeToFullCropName(item.family)}}</span>
             <br />
             <span class="text-uppercase font-weight-medium">{{ item.name }}</span>
             <br/>
             <span class="font-weight-light text-medium-emphasis text-subtitle-2">{{item?.segment}}</span>
           </td>
           <td class="tabular-nums text-end">
+              
+            <br v-if="item.new || item.hrez || item.bio || item.cgmmv_hr" />
             <span class="tabular-nums font-weight-regular text-subtitle-2">{{item.packing}}</span>
             <br/>
             <span class="tabular-nums font-weight-medium">{{ toPLAccountingStandards(item.price) }}</span> 
@@ -86,7 +138,7 @@ const priceList = {
       <template v-slot:item="{ item }">
         <tr>
           <td><span class="text-uppercase">{{ item.name }}</span> <br/> <span class="font-weight-thin text-medium-emphasis text-subtitle-2">{{item?.segment}}</span></td>
-          <td class="text-end">{{ item.family }}</td>
+          <td class="text-end">{{ cropCodeToFullCropName(item.family) }}</td>
           <td class="tabular-nums text-end">{{ toPLAccountingStandards(item.price) }}</td>
           <td class="tabular-nums font-weight-thin text-medium-emphasis text-subtitle-2">{{ toPLAccountingStandards(Number.parseFloat(item.price + item.price * 0.08).toFixed(2)) }}</td>
           <td class="text-end">{{ item.packing }}</td>
@@ -102,6 +154,8 @@ const priceList = {
     const prices = ref([]);
     const stock = ref([]);
     const searchValue = ref('');
+    const filterShow = ref(false);
+    const filterValues = ref([])
 
     const headersMobile = ref([
       { title: 'Nazwa', align: 'start', key: 'name' },
@@ -116,9 +170,11 @@ const priceList = {
       { title: 'Opakowanie', align: 'end', key: 'packing' },
     ])
 
-    const searchedPriceList = computed(() => {
-      return store.getters.getPriceListFromStore.filter(ele => ele.name.includes(searchValue.value.toLowerCase()));
-    });
+    const filterItems = computed(() => [...new Set(store.getters.getPriceListFromStore.map(ele => ele.family))]);
+
+    const searchedPriceList = computed(() => store.getters.getPriceListFromStore.filter(ele => {
+      return ele.name.includes(searchValue.value.toLowerCase()) && (filterValues.value.length > 0?filterValues.value.includes(ele.family):true)
+    }));
     
     const toPLAccountingStandards = (num) => new Intl.NumberFormat('pl-PL', { style: 'currency', currency: 'PLN' }).format(
       num,
@@ -147,7 +203,11 @@ const priceList = {
       headersMobile,
       searchValue,
       searchedPriceList,
+      filterShow,
+      filterValues,
+      filterItems,
       onMounted,
+      cropCodeToFullCropName,
       toPLAccountingStandards
     };
   },
