@@ -98,26 +98,25 @@ const priceList = {
         :items="searchedPriceList"
         class="h-100 d-flex d-sm-none"
         item-value="index"
-        density="comfortable"
       >
       <template v-slot:item="{ item }">
-        <tr>
-          <td class="">
-              
+        <tr class="">
+          <td class="py-2">
             <span v-if="item.new" class="rounded-xl px-3 mr-1 py-0 bg-red">Nowość</span>
-            <span v-if="item.hrez" class="rounded-xl px-3 py-0 mr-1 bg-red-darken-3 text-decoration-underline">HREZ</span>
-            <span v-if="item.cgmmv_hr" class="rounded-xl px-3 py-0 mr-1 bg-green">CGMMV HR</span>
-            <span v-if="item.bio" class="rounded-xl px-3 py-0 mr-1 bg-green-darken-3">BIO</span>
-            <br v-if="item.new || item.hrez || item.bio || item.cgmmv_hr" />
+            <br v-if="item.new" />
             <span class="font-weight-regular text-medium-emphasis text-subtitle-2">{{cropCodeToFullCropName(item.family)}}</span>
             <br />
             <span class="text-uppercase font-weight-medium">{{ item.name }}</span>
+            <span v-if="item.hrez" class="rounded-xl px-3 py-0 ml-1 bg-red-darken-3 text-decoration-underline">HREZ</span>
+            <span v-if="item.bio" class="rounded-xl px-3 py-0 ml-1 bg-green-darken-3">ORGANIC</span>
+            <span v-if="item.cgmmv_hr" class="rounded-xl px-3 py-0 ml-1 bg-green">CGMMV HR</span>
+            <span v-if="item.cgmmv_ir" class="rounded-xl px-3 py-0 ml-1 bg-green">CGMMV IR</span>
             <br/>
             <span class="font-weight-light text-medium-emphasis text-subtitle-2">{{item?.segment}}</span>
           </td>
           <td class="tabular-nums text-end">
               
-            <br v-if="item.new || item.hrez || item.bio || item.cgmmv_hr" />
+            <br v-if="item.new" />
             <span class="tabular-nums font-weight-regular text-subtitle-2">{{item.packing}}</span>
             <br/>
             <span class="tabular-nums font-weight-medium">{{ toPLAccountingStandards(item.price) }}</span> 
