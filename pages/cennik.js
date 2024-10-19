@@ -86,7 +86,68 @@ const priceList = {
               <v-list-item v-bind="props" :title="cropCodeToFullCropName(item.title)"></v-list-item>
             </template>
           </v-select>
+          
         </v-slide-y-transition>
+
+        <v-slide-y-transition>
+        <v-slider    
+          max="30"
+          min="0"
+          v-if="filterShow"
+          v-model="discountAmount"
+          step="1"
+          :thumb-size="28"
+          color="primary"
+          class="ma-0"
+        >        
+        <template v-slot:prepend>
+        <v-btn   
+          rounded="pill"
+          height="48"
+          color="secondary"
+          readonly
+          class="mr-6 text-capitalize text-body-1"
+        >
+        Upust
+        </v-btn>
+        </template>
+
+          <template v-slot:append>
+            <v-btn
+            icon
+            color="secondary"
+            rounded="pill"
+            readonly
+            class="ml-6"
+            >{{discountAmount}}</v-btn>
+          </template>
+        </v-slider>
+
+      </v-slide-y-transition>
+
+      <v-slide-y-transition>
+        <v-switch
+          v-if="filterShow"
+          v-model="fastPaymentDiscount"
+          inset
+          color="secondary"
+        >
+        
+        <template v-slot:prepend>
+        <v-btn   
+          rounded="pill"
+          height="48"
+          color="secondary"
+          readonly
+          class="mr-3 text-capitalize text-body-1"
+        >
+        Szybka płatnosć
+        </v-btn>
+        </template>
+        
+        </v-switch>
+      </v-slide-y-transition>
+
       </v-col>
     </v-row>
     <v-row justify="center">
@@ -117,11 +178,13 @@ const priceList = {
           <td class="tabular-nums text-end">
               
             <br v-if="item.new" />
-            <span class="tabular-nums font-weight-regular text-subtitle-2">{{item.packing}}</span>
+            <span class="tabular-nums font-weight-regular text-subtitle-2">{{item.packing}} <price-display :price="item.price" :discount="discountAmount"></price-display></span>
             <br/>
-            <span class="tabular-nums font-weight-medium">{{ toPLAccountingStandards(item.price) }}</span> 
+            <span v-if="fastPaymentDiscount" class="tabular-nums font-weight-medium">{{ toPLAccountingStandards((item.price - (item.price*discountAmount/100)) * 0.98) }}</span> 
+            <span v-else class="tabular-nums font-weight-medium">{{ toPLAccountingStandards(item.price - (item.price*discountAmount/100)) }}</span>
             <br/>
-            <span class="tabular-nums font-weight-light text-medium-emphasis text-subtitle-2">{{ toPLAccountingStandards(Number.parseFloat(item.price + item.price * 0.08).toFixed(2)) }}</span>          
+            <span v-if="fastPaymentDiscount" class="tabular-nums font-weight-light text-medium-emphasis text-subtitle-2">{{ toPLAccountingStandards(Number.parseFloat(((item.price - (item.price*discountAmount/100)) * 0.98) * 1.08).toFixed(2)) }}</span>
+            <span v-else class="tabular-nums font-weight-light text-medium-emphasis text-subtitle-2">{{ toPLAccountingStandards(Number.parseFloat((item.price - (item.price*discountAmount/100)) * 1.08).toFixed(2)) }}</span>         
           </td>
         </tr>
       </template>
@@ -155,6 +218,8 @@ const priceList = {
     const searchValue = ref('');
     const filterShow = ref(false);
     const filterValues = ref([])
+    const discountAmount = ref(0)
+    const fastPaymentDiscount = ref(false);
 
     const headersMobile = ref([
       { title: 'Nazwa', align: 'start', key: 'name' },
@@ -170,6 +235,8 @@ const priceList = {
     ])
 
     const filterItems = computed(() => [...new Set(store.getters.getPriceListFromStore.map(ele => ele.family))]);
+
+    
 
     const searchedPriceList = computed(() => store.getters.getPriceListFromStore.filter(ele => {
       return ele.name.includes(searchValue.value.toLowerCase()) && (filterValues.value.length > 0?filterValues.value.includes(ele.family):true)
@@ -202,6 +269,8 @@ const priceList = {
       headersMobile,
       searchValue,
       searchedPriceList,
+      discountAmount,
+      fastPaymentDiscount,
       filterShow,
       filterValues,
       filterItems,
