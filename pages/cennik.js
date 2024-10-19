@@ -49,7 +49,9 @@ const priceList = {
             icon="mdi-filter"
             @click="() => {
               filterShow = !filterShow;
-              filterValues = []
+              filterValues = [];
+              discountAmount = 0;
+              fastPaymentDiscount = false;
               }"
             >
           </v-btn>
@@ -201,8 +203,8 @@ const priceList = {
         <tr>
           <td><span class="text-uppercase">{{ item.name }}</span> <br/> <span class="font-weight-thin text-medium-emphasis text-subtitle-2">{{item?.segment}}</span></td>
           <td class="text-end">{{ cropCodeToFullCropName(item.family) }}</td>
-          <td class="tabular-nums text-end">{{ toPLAccountingStandards(item.price) }}</td>
-          <td class="tabular-nums font-weight-thin text-medium-emphasis text-subtitle-2">{{ toPLAccountingStandards(Number.parseFloat(item.price + item.price * 0.08).toFixed(2)) }}</td>
+          <td class="tabular-nums text-end">{{ fastPaymentDiscount?toPLAccountingStandards((item.price - (item.price*discountAmount/100)) * 0.98):toPLAccountingStandards(item.price - (item.price*discountAmount/100)) }}</td>
+          <td class="tabular-nums font-weight-thin text-medium-emphasis text-subtitle-2">{{ fastPaymentDiscount?toPLAccountingStandards(Number.parseFloat(((item.price - (item.price*discountAmount/100)) * 0.98) * 1.08).toFixed(2)):toPLAccountingStandards(Number.parseFloat((item.price - (item.price*discountAmount/100)) * 1.08).toFixed(2)) }}</td>
           <td class="text-end">{{ item.packing }}</td>
         </tr>
       </template>
