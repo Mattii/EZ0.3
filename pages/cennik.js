@@ -24,7 +24,7 @@ const priceList = {
       </v-col>
     </v-row>
     <v-row justify="center">
-      <v-col cols="12" sm="6" md="5" class="pb-0">
+      <v-col cols="12" sm="6" md="5" lg="4" class="pb-0">
         <v-text-field
           clearable 
           prepend-icon=""
@@ -92,7 +92,7 @@ const priceList = {
         </v-slide-y-transition>
       </v-col>
 
-      <v-col cols="12" sm="6" md="5" class="py-0 pt-sm-6">
+      <v-col cols="12" sm="6" md="5" lg="4" class="py-0 pt-sm-6">
         <v-slide-y-transition>
         <v-slider    
           max="30"
@@ -131,7 +131,7 @@ const priceList = {
 
       <v-slide-y-transition>
         <v-switch
-          v-if="filterShow"
+          v-if="false"
           v-model="fastPaymentDiscount"
           inset
           color="secondary"
@@ -151,7 +151,38 @@ const priceList = {
         
         </v-switch>
       </v-slide-y-transition>
-      
+
+      <v-slide-y-transition>
+        <div class="d-flex" v-if="filterShow">    
+          <v-btn   
+
+          v-if="filterShow"
+          rounded="pill"
+          height="48"
+          color="secondary"
+          readonly
+          class="mr-3 text-capitalize text-body-1"
+        >
+        Szybka płatnosć
+        </v-btn>
+        <v-btn
+          height="48"
+          width="120"
+          rounded="pill"
+          class="d-flex justify-start"
+          :class="fastPaymentDiscount?'justify-end bg-green-lighten-4':'justify-start bg-grey-lighten-2'"
+          @click="() => {fastPaymentDiscount=!fastPaymentDiscount}"
+        >
+          <div
+          class="rounded-circle ma-auto"
+          :class="fastPaymentDiscount?'bg-primary':'bg-grey-lighten-1'"
+          width="25"
+          style="height: 26px; width: 26px;"
+          >
+          </div>
+        </v-btn>
+        </div>  
+      </v-slide-y-transition>
       </v-col>
     </v-row>
     <v-row justify="center">
