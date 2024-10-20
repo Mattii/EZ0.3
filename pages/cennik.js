@@ -19,12 +19,12 @@ const priceList = {
   template: `          
   <v-container fluid>
     <v-row justify="center">
-      <v-col xs="12" sm="11" md="10" lg="8">
+      <v-col xs="12" md="10" lg="8">
         <price-hero></price-hero>
       </v-col>
     </v-row>
     <v-row justify="center">
-      <v-col cols="12" sm="6" md="4">
+      <v-col cols="12" sm="6" md="5" class="pb-0">
         <v-text-field
           clearable 
           prepend-icon=""
@@ -90,7 +90,9 @@ const priceList = {
           </v-select>
           
         </v-slide-y-transition>
+      </v-col>
 
+      <v-col cols="12" sm="6" md="5" class="py-0 pt-sm-6">
         <v-slide-y-transition>
         <v-slider    
           max="30"
@@ -149,7 +151,7 @@ const priceList = {
         
         </v-switch>
       </v-slide-y-transition>
-
+      
       </v-col>
     </v-row>
     <v-row justify="center">
