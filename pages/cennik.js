@@ -233,7 +233,17 @@ const priceList = {
       >
       <template v-slot:item="{ item }">
         <tr>
-          <td><span class="text-uppercase">{{ item.name }}</span> <br/> <span class="font-weight-thin text-medium-emphasis text-subtitle-2">{{item?.segment}}</span></td>
+          <td  class="py-2">
+            <span v-if="item.new" class="rounded-xl px-3 mr-1 py-0 bg-red">Nowość</span>
+            <br v-if="item.new" />
+            <span class="text-uppercase">{{ item.name }}</span>
+            <span v-if="item.hrez" class="rounded-xl px-3 py-0 ml-1 bg-red-darken-3 text-decoration-underline">HREZ</span>
+            <span v-if="item.bio" class="rounded-xl px-3 py-0 ml-1 bg-green-darken-3">ORGANIC</span>
+            <span v-if="item.cgmmv_hr" class="rounded-xl px-3 py-0 ml-1 bg-green">CGMMV HR</span>
+            <span v-if="item.cgmmv_ir" class="rounded-xl px-3 py-0 ml-1 bg-green">CGMMV IR</span>
+            <br/>
+            <span class="font-weight-thin text-medium-emphasis text-subtitle-2">{{item?.segment}}</span>
+          </td>
           <td class="text-end">{{ cropCodeToFullCropName(item.family) }}</td>
           <td class="tabular-nums text-end">{{ fastPaymentDiscount?toPLAccountingStandards((item.price - (item.price*discountAmount/100)) * 0.98):toPLAccountingStandards(item.price - (item.price*discountAmount/100)) }}</td>
           <td class="tabular-nums font-weight-thin text-medium-emphasis text-subtitle-2">{{ fastPaymentDiscount?toPLAccountingStandards(Number.parseFloat(((item.price - (item.price*discountAmount/100)) * 0.98) * 1.08).toFixed(2)):toPLAccountingStandards(Number.parseFloat((item.price - (item.price*discountAmount/100)) * 1.08).toFixed(2)) }}</td>
