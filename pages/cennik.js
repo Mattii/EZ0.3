@@ -167,17 +167,16 @@ const priceList = {
         </v-btn>
         <v-btn
           height="48"
-          width="120"
+          width="96"
           rounded="pill"
-          class="d-flex justify-start"
-          :class="fastPaymentDiscount?'justify-end bg-green-lighten-4':'justify-start bg-grey-lighten-2'"
+          class="d-flex"
+          :class="fastPaymentDiscount?'justify-end bg-green-lighten-4 pr-2':'justify-start bg-grey-lighten-2'"
           @click="() => {fastPaymentDiscount=!fastPaymentDiscount}"
         >
           <div
           class="rounded-circle ma-auto"
           :class="fastPaymentDiscount?'bg-primary':'bg-grey-lighten-1'"
-          width="25"
-          style="height: 26px; width: 26px;"
+          :style="fastPaymentDiscount?'height: 36px; width: 36px;':'height: 28px; width: 28px;'"
           >
           </div>
         </v-btn>
