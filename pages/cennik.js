@@ -203,9 +203,10 @@ const priceList = {
             <br />
             <span class="text-uppercase font-weight-medium">{{ item.name }}</span>
             <span v-if="item.hrez" class="rounded-xl px-3 py-0 ml-1 bg-red-darken-3 text-decoration-underline">HREZ</span>
-            <span v-if="item.bio" class="rounded-xl px-3 py-0 ml-1 bg-green-darken-3">ORGANIC</span>
+            <span v-if="item.bio" class="rounded-xl px-3 py-0 ml-1 bg-green-lighten-3">ORGANIC</span>
             <span v-if="item.cgmmv_hr" class="rounded-xl px-3 py-0 ml-1 bg-green">CGMMV HR</span>
             <span v-if="item.cgmmv_ir" class="rounded-xl px-3 py-0 ml-1 bg-green">CGMMV IR</span>
+            <span v-if="item.fusarium_res" class="rounded-xl px-3 py-0 ml-1 bg-light-green-darken-1">FUSARIUM RES.</span>
             <br/>
             <span class="font-weight-light text-medium-emphasis text-subtitle-2">{{item?.segment}}</span>
           </td>
@@ -238,9 +239,10 @@ const priceList = {
             <br v-if="item.new" />
             <span class="text-uppercase">{{ item.name }}</span>
             <span v-if="item.hrez" class="rounded-xl px-3 py-0 ml-1 bg-red-darken-3 text-decoration-underline">HREZ</span>
-            <span v-if="item.bio" class="rounded-xl px-3 py-0 ml-1 bg-green-darken-3">ORGANIC</span>
+            <span v-if="item.bio" class="rounded-xl px-3 py-0 ml-1 bg-green-lighten-3">ORGANIC</span>
             <span v-if="item.cgmmv_hr" class="rounded-xl px-3 py-0 ml-1 bg-green">CGMMV HR</span>
             <span v-if="item.cgmmv_ir" class="rounded-xl px-3 py-0 ml-1 bg-green">CGMMV IR</span>
+            <span v-if="item.fusarium_res" class="rounded-xl px-3 py-0 ml-1 bg-light-green-darken-1">FUSARIUM RES.</span>
             <br/>
             <span class="font-weight-thin text-medium-emphasis text-subtitle-2">{{item?.segment}}</span>
           </td>

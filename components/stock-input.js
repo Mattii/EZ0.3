@@ -70,7 +70,9 @@ const stocImput = {
             if(ele.hrez){ele.hrez = !!ele?.hrez}
             if(ele.bio){ele.bio = !!ele?.bio}
             if(ele.cgmmv_hr){ele.cgmmv_hr = !!ele?.cgmmv_hr}
+            if(ele.cgmmv_it){ele.cgmmv_ir = !!ele?.cgmmv_ir}
             if(ele.takii){ele.takii = !!ele?.takii}
+            if(ele.fusarium_res){ele.fusarium_res = !!ele?.fusarium_res}
 
             return ele
           }));
