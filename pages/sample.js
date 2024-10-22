@@ -90,7 +90,7 @@ const stock = {
     </v-row>
     
     <v-row justify="center">
-      <v-col  xs="12" sm="10" md="9" lg="8" class="">
+      <v-col  xs="12" sm="10" md="9" lg="8" class="px-0 px-sm-3">
 
         <!-- visible on screen  (width < 600)  -->
         <v-sheet 
@@ -117,7 +117,7 @@ const stock = {
         >
         <template v-slot:item="{ item }">
           <tr @click="selectBatch(item)">
-            <td>
+            <td class="py-2">
               <span class="font-weight-regular text-medium-emphasis text-subtitle-2">{{ item.Crop }}</span>
               <br />
               <span class="text-uppercase font-weight-medium">{{ item.Description }}</span>
@@ -144,8 +144,8 @@ const stock = {
         item-value="index"
         >
           <template v-slot:item="{ item }">
-            <tr>
-              <td class="text-end">
+            <tr class="">
+              <td class="text-end ">
                 <span class="text-uppercase">{{ item.Batch }}</span>
               </td>
               <td>
