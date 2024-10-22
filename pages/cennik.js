@@ -185,7 +185,7 @@ const priceList = {
       </v-col>
     </v-row>
     <v-row justify="center">
-      <v-col  xs="12" md="10" lg="8" class="d-flex flex-wrap justify-space-evenly">
+      <v-col  xs="12" md="10" lg="8" class="px-0 px-sm-3 d-flex flex-wrap justify-space-evenly 0">
         <!-- visible on screen  (width < 600)  -->
       <v-data-table
         fixed-header
