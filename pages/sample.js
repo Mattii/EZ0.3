@@ -136,7 +136,6 @@ const stock = {
         </v-data-table>
 
         <v-data-table
-        class="w-100"
         fixed-header
         :headers="headers"
         :items="showSampleStock"

@@ -142,7 +142,6 @@ const stock = {
 
         <v-data-table
         v-model:expanded="expanded"
-        class="w-100"
         fixed-header
         :headers="headers"
         :items="showStock"
