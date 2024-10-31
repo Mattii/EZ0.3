@@ -94,7 +94,7 @@ const stock = {
     </v-row>
     
     <v-row justify="center">
-      <v-col  xs="12" sm="10" md="9" lg="8" class="">
+      <v-col  xs="12" sm="10" md="9" lg="8" class="px-0 px-sm-3">
 
         <!-- visible on screen  (width < 600)  -->
         <v-sheet v-if="!showStock.length"
@@ -118,14 +118,14 @@ const stock = {
         >
         <template v-slot:item="{ item }">
         <tr @click="selectBatch(item)">
-            <td>
+            <td class="py-2">
               <span class="font-weight-regular text-medium-emphasis text-subtitle-2">{{ item.Product_full_name }}</span>
               <br />
               <span class="text-uppercase font-weight-medium">{{ item.Article_abbreviated }}</span>
               <br/>
               <span class="font-weight-light text-medium-emphasis text-subtitle-2">{{ item.Batch_number }} {{ item.Lot_number }}</span>
             </td>
-            <td class="tabular-nums text-end">
+            <td class="tabular-nums text-end py-2">
               <span class="tabular-nums font-weight-light text-medium-emphasis text-subtitle-2">
                 <v-chip color="red" variant="tonal" density="comfortable" v-if="!item.Quantity_usable">Niedostępne</v-chip>
                 <v-chip class="my-1" color="red" variant="tonal" density="comfortable" v-if="item.Blocked_indicator">Blokada</v-chip>
@@ -152,15 +152,15 @@ const stock = {
         >
           <template v-slot:item="{ item }">
             <tr @click="selectBatch(item)">
-              <td class="text-end">
+              <td class="text-end  py-2" >
                 <span class="text-uppercase">{{ item.Batch_number }}</span>
                 <br/>
                 <span class="font-weight-thin text-medium-emphasis text-subtitle-2">{{item.Lot_number}}</span>
               </td>
               <td>
-                <span class="text-uppercase">{{ item.Article_abbreviated }}</span>
+                <span class="text-uppercase py-2">{{ item.Article_abbreviated }}</span>
                 <br/> 
-                <span class="font-weight-thin text-medium-emphasis text-subtitle-2">{{item.Product_full_name}}</span>
+                <span class="font-weight-thin text-medium-emphasis text-subtitle-2 py-2">{{item.Product_full_name}}</span>
               </td>
               <td class="text-end">
                 <span class="text-uppercase">{{ item.Number_balance }}</span>
