@@ -1,5 +1,5 @@
-import { ref, reactive, onMounted, computed} from "vue";
-import { useStore } from 'vuex';
+import { ref, reactive, onMounted, computed } from "vue";
+import { useStore } from "vuex";
 import { useRoute } from "vue-router";
 import {
   getDatabase,
@@ -261,50 +261,55 @@ const priceList = {
     const store = useStore();
     const prices = ref([]);
     const stock = ref([]);
-    const searchValue = ref('');
+    const searchValue = ref("");
     const filterShow = ref(false);
-    const filterValues = ref([])
-    const discountAmount = ref(0)
+    const filterValues = ref([]);
+    const discountAmount = ref(0);
     const fastPaymentDiscount = ref(false);
 
     const headersMobile = ref([
-      { title: 'Nazwa', align: 'start', key: 'name' },
-      { title: 'Cena/Opakowanie', align: 'end', key: 'price' },
-    ])
+      { title: "Nazwa", align: "start", key: "name" },
+      { title: "Cena/Opakowanie", align: "end", key: "price" },
+    ]);
 
     const headers = ref([
-      { title: 'Nazwa', align: 'start', key: 'name' },
-      { title: 'Rodzina', align: 'end', key: 'family' },
-      { title: 'Cena(netto)', align: 'end', key: 'price' },
-      { title: 'Cena(brutto)', align: 'start' },
-      { title: 'Opakowanie', align: 'end', key: 'packing' },
-    ])
+      { title: "Nazwa", align: "start", key: "name" },
+      { title: "Rodzina", align: "end", key: "family" },
+      { title: "Cena(netto)", align: "end", key: "price" },
+      { title: "Cena(brutto)", align: "start" },
+      { title: "Opakowanie", align: "end", key: "packing" },
+    ]);
 
-    const filterItems = computed(() => [...new Set(store.getters.getPriceListFromStore.map(ele => ele.family))]);
+    const filterItems = computed(() => [
+      ...new Set(store.getters.getPriceListFromStore.map((ele) => ele.family)),
+    ]);
 
-    
+    const searchedPriceList = computed(() =>
+      store.getters.getPriceListFromStore.filter((ele) => {
+        return (
+          ele.name.includes(searchValue.value.toLowerCase()) &&
+          (filterValues.value.length > 0
+            ? filterValues.value.includes(ele.family)
+            : true)
+        );
+      })
+    );
 
-    const searchedPriceList = computed(() => store.getters.getPriceListFromStore.filter(ele => {
-      return ele.name.includes(searchValue.value.toLowerCase()) && (filterValues.value.length > 0?filterValues.value.includes(ele.family):true)
-    }));
-    
-    const toPLAccountingStandards = (num) => new Intl.NumberFormat('pl-PL', { style: 'currency', currency: 'PLN' }).format(
-      num,
-    )
+    const toPLAccountingStandards = (num) =>
+      new Intl.NumberFormat("pl-PL", {
+        style: "currency",
+        currency: "PLN",
+      }).format(num);
 
     onMounted(async () => {
+      const db = getDatabase(app);
 
-
-        const db = getDatabase(app);
-
-        const priceList = query(fref(db, "cennik"), orderByChild("name"));
-        onValue(priceList, (snap) => {
-          prices.value = snap.val();
-          store.dispatch('insertPriceListToStore', snap.val())
-          console.log(snap.val());
-        });
-
-
+      const priceList = query(fref(db, "cennik"), orderByChild("name"));
+      onValue(priceList, (snap) => {
+        prices.value = snap.val();
+        store.dispatch("insertPriceListToStore", snap.val());
+        console.log(snap.val());
+      });
     });
 
     return {
@@ -322,7 +327,7 @@ const priceList = {
       filterItems,
       onMounted,
       cropCodeToFullCropName,
-      toPLAccountingStandards
+      toPLAccountingStandards,
     };
   },
 };

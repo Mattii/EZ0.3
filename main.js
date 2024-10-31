@@ -1,8 +1,8 @@
 import { createApp, computed, ref, reactive, onMounted, provide } from "vue";
 import { useRoute, useRouter } from "vue-router";
-import { createStore } from 'vuex';
+import { createStore } from "vuex";
 import { createVuetify } from "vuetify";
-import vuexStore from "./modules/vuex.js"
+import vuexStore from "./modules/vuex.js";
 import mainVareityCard from "./components/main-vareity-card.js";
 import familyHeroElement from "./components/family-hero-element.js";
 import mainHero from "./components/main-hero.js";
@@ -11,26 +11,30 @@ import heroElement from "./components/hero-element.js";
 import catalogHero from "./components/catalog-hero.js";
 import router from "./router.js";
 import stockInput from "./components/stock-input.js";
-import { getAuth, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+import {
+  getAuth,
+  signOut,
+  onAuthStateChanged,
+} from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
 
 const vuetify = createVuetify({
   theme: {
     themes: {
       light: {
         colors: {
-          primary: '#61cb6f',
-          secondary: '#9b91f9'
-        }
+          primary: "#61cb6f",
+          secondary: "#9b91f9",
+        },
       },
     },
   },
 });
 
-const store = createStore(vuexStore)
+const store = createStore(vuexStore);
 
 const app = createApp({
   setup() {
-    const loaded = ref(false)
+    const loaded = ref(false);
     const compayName = ref("ENZApp");
     const icons = ref([
       "mdi-facebook",
@@ -38,8 +42,8 @@ const app = createApp({
       "mdi-linkedin",
       "mdi-instagram",
     ]);
-    const drawer = ref(false)
-    provide("drawer", drawer )
+    const drawer = ref(false);
+    provide("drawer", drawer);
     // fetch("/katalog-export.json")
     //   .then((res) => res.json())
     //   .then((data) => {
@@ -53,51 +57,51 @@ const app = createApp({
     const router = useRouter();
 
     const auth = getAuth();
-    const logedInUser = computed(()=> store.getters.getUserFromStore);
+    const logedInUser = computed(() => store.getters.getUserFromStore);
     const logOut = () => {
-      signOut(auth).then(() => {
-        // Sign-out successful.
-        
-        store.dispatch('insertUserToStore', null)
-        console.log("Wylogowano");
-        router.push('/')
-      }).catch((error) => {
-        // An error happened.
-        console.log("Ooooppsi nie wylogowano");
-      });
-    }
+      signOut(auth)
+        .then(() => {
+          // Sign-out successful.
+
+          store.dispatch("insertUserToStore", null);
+          console.log("Wylogowano");
+          router.push("/");
+        })
+        .catch((error) => {
+          // An error happened.
+          console.log("Ooooppsi nie wylogowano");
+        });
+    };
 
     onAuthStateChanged(auth, (user) => {
       if (user) {
         // User is signed in, see docs for a list of available properties
         // https://firebase.google.com/docs/reference/js/auth.user
-        
-        store.dispatch('insertUserToStore', user)
+
+        store.dispatch("insertUserToStore", user);
         // ...
       } else {
         // User is signed out
         // ...
-        
-        store.dispatch('insertUserToStore', null)
+
+        store.dispatch("insertUserToStore", null);
         console.log("Wylogowany");
       }
     });
 
     onMounted(async () => {
-      let katalog = localStorage.getItem('katalog');
+      let katalog = localStorage.getItem("katalog");
 
-      if(!Array.isArray(JSON.parse(katalog))){
-        localStorage.removeItem("katalog")
+      if (!Array.isArray(JSON.parse(katalog))) {
+        localStorage.removeItem("katalog");
         const db = getDatabase(app);
-
 
         const katalog = fref(db, "katalog");
         onValue(katalog, (snapshot) => {
-          store.dispatch('insertKatalogToStore', snapshot.val())
+          store.dispatch("insertKatalogToStore", snapshot.val());
           crops.value = snapshot.val();
         });
       }
-      
     });
 
     return {
@@ -106,11 +110,10 @@ const app = createApp({
       loaded,
       drawer,
       logedInUser,
-      logOut
+      logOut,
     };
   },
 });
-
 
 app.use(router);
 app.use(store);

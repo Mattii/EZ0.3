@@ -415,7 +415,7 @@ const stock = {
     const sheet = ref(false);
     const sheetData = ref({});
     const filterShow = ref(false);
-    const filterValues = ref([])
+    const filterValues = ref([]);
     const expanded = ref([]);
 
     const headersMobile = ref([
@@ -423,42 +423,69 @@ const stock = {
       { title: "Ilość/Opakowanie", align: "end", key: "Packaging_abbreviated" },
     ]);
 
-    const showStock = computed(() => store.getters.getStockFromStore.filter(ele => {
+    const showStock = computed(() =>
+      store.getters.getStockFromStore.filter((ele) => {
+        return (
+          ele.Article_abbreviated.includes(searchValue.value.toUpperCase()) &&
+          (filterValues.value.length > 0
+            ? filterValues.value.includes(ele.Crop_code)
+            : true)
+        );
+      })
+    );
 
-      return ele.Article_abbreviated.includes(searchValue.value.toUpperCase()) && (filterValues.value.length > 0?filterValues.value.includes(ele.Crop_code):true)
-    }));
+    const filterItems = computed(() => [
+      ...new Set(store.getters.getStockFromStore.map((ele) => ele.Crop_code)),
+    ]);
 
-    const filterItems = computed(() => [...new Set(store.getters.getStockFromStore.map(ele => ele.Crop_code))]);
+    const familyType = computed(() =>
+      store.getters.getCropsListFromStore.find((ele) => {
+        return ele.crop == sheetData.value.Crop_code;
+      })
+    );
 
-    const familyType = computed(() => store.getters.getCropsListFromStore.find(ele => {
-      return ele.crop == sheetData.value.Crop_code
-    })); 
+    const showBatchPrice = computed(() =>
+      store.getters.getPriceListFromStore.filter((ele) => {
+        return (
+          ele.name
+            .toUpperCase()
+            .replace(" ", "_")
+            .includes(sheetData.value.Article_abbreviated.replace(" ", "_")) &&
+          comparePacking(ele.packing, sheetData.value.Packaging_abbreviated)
+        );
+      })
+    );
 
-    const showBatchPrice = computed(() => store.getters.getPriceListFromStore.filter(ele => {
-     
-      return ele.name.toUpperCase().replace(' ', '_').includes(sheetData.value.Article_abbreviated.replace(' ', '_')) && comparePacking(ele.packing, sheetData.value.Packaging_abbreviated)
-    }));
+    const showSampleBatch = computed(() =>
+      store.getters.getSampleFromStore.filter((ele) => {
+        return ele.Description.toUpperCase()
+          .replace(" ", "_")
+          .includes(sheetData.value.Article_abbreviated.replace(" ", "_"));
+      })
+    );
 
-    const showSampleBatch= computed(() => store.getters.getSampleFromStore.filter(ele => {
-     
-      return ele.Description.toUpperCase().replace(' ', '_').includes(sheetData.value.Article_abbreviated.replace(' ', '_'))
-    }));
-
-    const findVareityInKatalog = computed(() => store.getters.getKatalogFromStore.find(ele => ele.name.toLocaleLowerCase().includes(sheetData?.value.Article_abbreviated.toLocaleLowerCase())));
+    const findVareityInKatalog = computed(() =>
+      store.getters.getKatalogFromStore.find((ele) =>
+        ele.name
+          .toLocaleLowerCase()
+          .includes(sheetData?.value.Article_abbreviated.toLocaleLowerCase())
+      )
+    );
 
     const batchLiveSpan = () => {
-        const twoYears = 63072000000;
-        const time = new Date().getTime();
-        let batchAge;
-        if(raportBatch?.value.Packing_date){
-          batchAge = (time - raportBatch.value.Packing_date) / twoYears * 100;
-        }else{
-          batchAge = (time - (raportBatch.value.Expiry_date  - twoYears)) / twoYears * 100;
-        }
+      const twoYears = 63072000000;
+      const time = new Date().getTime();
+      let batchAge;
+      if (raportBatch?.value.Packing_date) {
+        batchAge = ((time - raportBatch.value.Packing_date) / twoYears) * 100;
+      } else {
+        batchAge =
+          ((time - (raportBatch.value.Expiry_date - twoYears)) / twoYears) *
+          100;
+      }
 
-      return Math.round(batchAge)
-      
-    }; 
+      return Math.round(batchAge);
+    };
 
     const headers = ref([
       { title: "Partia", align: "end", key: "Batch_number" },
@@ -467,7 +494,11 @@ const stock = {
       { title: "Pakowanie", align: "Packaging_abbreviated" },
     ]);
 
-    const toPolishTime = (date) => new Date(date).toLocaleString("pl-PL", { year: "numeric", month: "numeric"})
+    const toPolishTime = (date) =>
+      new Date(date).toLocaleString("pl-PL", {
+        year: "numeric",
+        month: "numeric",
+      });
 
     const toPLAccountingStandards = (num) =>
       new Intl.NumberFormat("pl-PL", {
@@ -475,36 +506,37 @@ const stock = {
         currency: "PLN",
       }).format(num);
 
-      const selectBatch = (item) => {
-        sheet.value = !sheet.value;
-        sheetData.value = item
-        const rBatch = query(
-          fref(db, "raport"),
-          orderByChild("Batch_number"),
-          startAt(sheetData.value.Batch_number),
-          endAt(sheetData.value.Batch_number)
-        );
-        onValue(rBatch, (snapshot) => {
-          if(snapshot.val()){
-          let keys = Object.keys(snapshot.val())
+    const selectBatch = (item) => {
+      sheet.value = !sheet.value;
+      sheetData.value = item;
+      const rBatch = query(
+        fref(db, "raport"),
+        orderByChild("Batch_number"),
+        startAt(sheetData.value.Batch_number),
+        endAt(sheetData.value.Batch_number)
+      );
+      onValue(rBatch, (snapshot) => {
+        if (snapshot.val()) {
+          let keys = Object.keys(snapshot.val());
           raportBatch.value = snapshot.val()[keys[0]];
-          }
-        });
-      }  
+        }
+      });
+    };
 
-      const comparePacking = (item1, item2) => {
-        const milTest = (num) => num <= 20 ? num * 1000000 : num 
-        return item1.toString().replace('.', '').replace(' ', '').match(/\d+/g)[0] == milTest(item2.toString().replace('.', '').replace(' ', '').match(/\d+/g)[0])
-      }
+    const comparePacking = (item1, item2) => {
+      const milTest = (num) => (num <= 20 ? num * 1000000 : num);
+      return (
+        item1.toString().replace(".", "").replace(" ", "").match(/\d+/g)[0] ==
+        milTest(
+          item2.toString().replace(".", "").replace(" ", "").match(/\d+/g)[0]
+        )
+      );
+    };
 
     onMounted(async () => {
-
-      
-      
-
       const stock = fref(db, "stock");
       onValue(stock, (snapshot) => {
-        store.dispatch('insertStockToStore', snapshot.val());
+        store.dispatch("insertStockToStore", snapshot.val());
       });
     });
 

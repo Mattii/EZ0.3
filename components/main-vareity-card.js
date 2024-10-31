@@ -1,8 +1,17 @@
 import { ref, computed, onMounted } from "vue";
-import { getDatabase, query, orderByValue, orderByKey, orderByChild, onValue, startAt, endAt } from  "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
-import {ref as fref } from  "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
-import app from "../modules/firebase.js"
-import { useStore } from 'vuex';
+import {
+  getDatabase,
+  query,
+  orderByValue,
+  orderByKey,
+  orderByChild,
+  onValue,
+  startAt,
+  endAt,
+} from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
+import { ref as fref } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
+import app from "../modules/firebase.js";
+import { useStore } from "vuex";
 
 const vareityCard = {
   template: `   
@@ -75,21 +84,28 @@ const vareityCard = {
     });
 
     const getPrice = (price) => {
-      return `${price.price}zł (${Number.parseFloat(price.price + price.price * 0.08).toFixed(2)}zł)`;
+      return `${price.price}zł (${Number.parseFloat(
+        price.price + price.price * 0.08
+      ).toFixed(2)}zł)`;
     };
 
-    const familyType = computed(() => store.getters.getCropFromStore(props.item.family))
+    const familyType = computed(() =>
+      store.getters.getCropFromStore(props.item.family)
+    );
 
     onMounted(async () => {
       //podczas pobierania przez SDK żle pobiera pozycje 0 i 1 jeżeli zbiór dnych jest tablicą
       const db = getDatabase(app);
 
-      const cropPrices = query(fref(db, 'cennik'), orderByChild('name'), startAt(props.item.name.toLowerCase()), endAt(props.item.name.toLowerCase() + "\uf8ff"));
+      const cropPrices = query(
+        fref(db, "cennik"),
+        orderByChild("name"),
+        startAt(props.item.name.toLowerCase()),
+        endAt(props.item.name.toLowerCase() + "\uf8ff")
+      );
       onValue(cropPrices, (snapshot) => {
-
         prices.value = snapshot.val();
       });
-
     });
 
     return {
@@ -98,7 +114,7 @@ const vareityCard = {
       getPrice,
       availableStock,
       onMounted,
-      familyType
+      familyType,
     };
   },
 };

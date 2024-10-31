@@ -1,10 +1,19 @@
-import { ref, reactive,computed, onMounted } from "vue";
+import { ref, reactive, computed, onMounted } from "vue";
 import { useRoute } from "vue-router";
-import { useStore } from 'vuex';
-import { getDatabase, query, orderByValue, orderByKey, orderByChild, onValue, startAt, endAt } from  "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
-import {ref as fref } from  "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
-import app from "../modules/firebase.js"
-import cropCodeToFullCropName from "../modules/cropCodeToFullCropName.js"
+import { useStore } from "vuex";
+import {
+  getDatabase,
+  query,
+  orderByValue,
+  orderByKey,
+  orderByChild,
+  onValue,
+  startAt,
+  endAt,
+} from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
+import { ref as fref } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
+import app from "../modules/firebase.js";
+import cropCodeToFullCropName from "../modules/cropCodeToFullCropName.js";
 
 const crop = {
   template: `          
@@ -107,24 +116,32 @@ const crop = {
     const searchValue = ref("");
 
     // const filterItems = computed(() => [...new Set(store.getters.getKatalogFromStore.map(ele => ele.crop))]);
-    
-    const filterItems = computed(() => [...new Set(store.getters.getKatalogFromStore.map(ele => ele.crop))]);
 
-    const showCrops = computed(() => store.getters.getKatalogFromStore.filter(ele => {
+    const filterItems = computed(() => [
+      ...new Set(store.getters.getKatalogFromStore.map((ele) => ele.crop)),
+    ]);
 
-      return ele.name.toLocaleLowerCase().includes(searchValue.value.toLocaleLowerCase()) && (filterValues.value.length > 0?filterValues.value.includes(ele.family):true)
-    }));
+    const showCrops = computed(() =>
+      store.getters.getKatalogFromStore.filter((ele) => {
+        return (
+          ele.name
+            .toLocaleLowerCase()
+            .includes(searchValue.value.toLocaleLowerCase()) &&
+          (filterValues.value.length > 0
+            ? filterValues.value.includes(ele.family)
+            : true)
+        );
+      })
+    );
 
     onMounted(async () => {
       const db = getDatabase(app);
 
-
-        const katalog = fref(db, "katalog");
-        onValue(katalog, (snapshot) => {
-          store.dispatch('insertKatalogToStore', snapshot.val())
-          crops.value = snapshot.val();
-        });
-      
+      const katalog = fref(db, "katalog");
+      onValue(katalog, (snapshot) => {
+        store.dispatch("insertKatalogToStore", snapshot.val());
+        crops.value = snapshot.val();
+      });
     });
 
     return {

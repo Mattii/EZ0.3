@@ -1,11 +1,15 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "./pages/home.js";
-import { useStore } from 'vuex';
-import { getAuth, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+import { useStore } from "vuex";
+import {
+  getAuth,
+  signOut,
+  onAuthStateChanged,
+} from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
 
 const auth = getAuth();
 
-const isAuthCheck = () =>  auth.currentUser;
+const isAuthCheck = () => auth.currentUser;
 
 const router = createRouter({
   history: createWebHistory(),
@@ -26,39 +30,38 @@ const router = createRouter({
       path: "/tablica",
       component: () => import("./pages/tablica.js"),
       name: "tablica",
-      children: [      
+      children: [
         {
           // Stock will be rendered inside User's <router-view>
           // when /tablica/stock is matched
-          path: 'sample',
+          path: "sample",
           name: "sample",
-          component: () => import(''),
+          component: () => import(""),
         },
-      ]
+      ],
     },
     {
       // Stock will be rendered inside User's <router-view>
       // when /tablica/stock is matched
-      path: '/komercja',
+      path: "/komercja",
       name: "komercja",
       component: () => import("./pages/stock.js"),
       beforeEnter: async (to, from, next) => {
         const isAuth = await isAuthCheck();
-        if ( !isAuth ) next({ name: 'logowanie' })
-        else next()
+        if (!isAuth) next({ name: "logowanie" });
+        else next();
       },
-
-    },   
+    },
     {
       // Stock will be rendered inside User's <router-view>
       // when /tablica/stock is matched
-      path: '/proby',
+      path: "/proby",
       name: "proby",
-      component: () => import("./pages/sample.js"),      
+      component: () => import("./pages/sample.js"),
       beforeEnter: async (to, from, next) => {
         const isAuth = isAuthCheck();
-        if ( !isAuth ) next({ name: 'logowanie' })
-        else next()
+        if (!isAuth) next({ name: "logowanie" });
+        else next();
       },
     },
     {
@@ -66,24 +69,22 @@ const router = createRouter({
       component: () => import("./pages/family.js"),
       name: "family",
       props: true,
-      
     },
     {
       path: "/katalog/odmiana/:name",
       component: () => import("./pages/crop.js"),
       name: "crop",
       props: true,
-      
     },
     {
       path: "/update",
       component: () => import("./pages/update.js"),
       name: "update",
-      props: false,      
+      props: false,
       beforeEnter: async (to, from, next) => {
         const isAuth = isAuthCheck();
-        if ( !isAuth ) next({ name: 'logowanie' })
-        else next()
+        if (!isAuth) next({ name: "logowanie" });
+        else next();
       },
     },
     {
@@ -91,7 +92,6 @@ const router = createRouter({
       component: () => import("./pages/login.js"),
       name: "logowanie",
       props: false,
-      
     },
   ],
 });

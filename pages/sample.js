@@ -13,7 +13,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
 import { ref as fref } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
 import app from "../modules/firebase.js";
-import cropCodeToFullCropName from "../modules/cropCodeToFullCropName.js"
+import cropCodeToFullCropName from "../modules/cropCodeToFullCropName.js";
 
 const stock = {
   template: `
@@ -225,21 +225,27 @@ const stock = {
     const sheet = ref(false);
     const sheetData = ref({});
     const filterShow = ref(false);
-    const filterValues = ref([])
-
-    
+    const filterValues = ref([]);
 
     const headersMobile = ref([
       { title: "Nazwa", align: "start", key: "Description" },
       { title: "Ilość/Opakowanie", align: "end", key: "Packaging" },
     ]);
 
+    const filterItems = computed(() => [
+      ...new Set(store.getters.getSampleFromStore.map((ele) => ele.Crop)),
+    ]);
 
-    const filterItems = computed(() => [...new Set(store.getters.getSampleFromStore.map(ele => ele.Crop))]);
-
-    const showSampleStock = computed(() => store.getters.getSampleFromStore.filter(ele => {
-      return ele.Description.includes(searchValue.value.toUpperCase()) && (filterValues.value.length > 0?filterValues.value.includes(ele.Crop):true)
-    }));
+    const showSampleStock = computed(() =>
+      store.getters.getSampleFromStore.filter((ele) => {
+        return (
+          ele.Description.includes(searchValue.value.toUpperCase()) &&
+          (filterValues.value.length > 0
+            ? filterValues.value.includes(ele.Crop)
+            : true)
+        );
+      })
+    );
 
     const headers = ref([
       { title: "Partia", align: "end", key: "Batch_number(s)" },
@@ -258,13 +264,13 @@ const stock = {
 
     const selectBatch = (item) => {
       sheet.value = !sheet.value;
-      sheetData.value = item
-    }  
+      sheetData.value = item;
+    };
 
     onMounted(async () => {
       const sample = fref(db, "sample");
       onValue(sample, (snapshot) => {
-        store.dispatch('insertSampleToStore', snapshot.val());
+        store.dispatch("insertSampleToStore", snapshot.val());
       });
     });
 
@@ -282,7 +288,7 @@ const stock = {
       filterItems,
       selectBatch,
       toPLAccountingStandards,
-      cropCodeToFullCropName
+      cropCodeToFullCropName,
     };
   },
 };

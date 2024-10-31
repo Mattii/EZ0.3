@@ -12,7 +12,11 @@ import {
   endAt,
 } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
 import { ref as fref } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
-import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+} from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
 import app from "../modules/firebase.js";
 
 const stock = {
@@ -127,30 +131,35 @@ const stock = {
     const showPassword = ref(false);
     const fireBaseError = ref({});
     const rules = reactive({
-      required: value => !!value || 'Wypełnij',
-      min: v => v.length >= 8 || 'Min 8 characters',
-      emailMatch: () => (`The email and password you entered don't match`),
-    })
+      required: (value) => !!value || "Wypełnij",
+      min: (v) => v.length >= 8 || "Min 8 characters",
+      emailMatch: () => `The email and password you entered don't match`,
+    });
 
     const auth = getAuth();
 
     const userError = computed(() => {
-      return fireBaseError.value.code === 'auth/user-not-found' ? 'Nie znaleźiono takiego urzytkownika' : '';
+      return fireBaseError.value.code === "auth/user-not-found"
+        ? "Nie znaleźiono takiego urzytkownika"
+        : "";
     });
     const passwordError = computed(() => {
-      return fireBaseError.value.code === 'auth/missing-password' ? 'Nieprawidłowe hasło' : '';
+      return fireBaseError.value.code === "auth/missing-password"
+        ? "Nieprawidłowe hasło"
+        : "";
     });
     const emailError = computed(() => {
-      return fireBaseError.value.code === 'auth/invalid-email' ? 'Nieprawidłowy email' : '';
+      return fireBaseError.value.code === "auth/invalid-email"
+        ? "Nieprawidłowy email"
+        : "";
     });
-
 
     const signIn = () => {
       signInWithEmailAndPassword(auth, mail.value, password.value)
         .then((userCredential) => {
-          // Signed in 
-          store.dispatch('insertUserToStore', userCredential)
-          router.push('/tablica')
+          // Signed in
+          store.dispatch("insertUserToStore", userCredential);
+          router.push("/tablica");
           // ...
         })
         .catch((error) => {
@@ -158,13 +167,11 @@ const stock = {
           const errorCode = error.code;
           const errorMessage = error.message;
           console.error(errorCode, errorMessage);
-          
         });
-    }
+    };
 
     onMounted(async () => {
-        console.log(auth.currentUser);
-      
+      console.log(auth.currentUser);
     });
 
     return {
