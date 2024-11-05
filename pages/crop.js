@@ -35,13 +35,13 @@ const crop = {
 
                     <div class=" pb-6 ff-nunito d-flex h-100 flex-wrap justify-start align-end ff-nunito">
                       <div>
-                      <h2 
+                      <h3 
                         :style="familyType?.color ? 'background-color:'+ familyType?.color : 'background-color:' + '#61cb6f'" 
-                        class="rounded-e-xl text-md-h4 my-3 px-4 px-sm-6 py-1 d-inline-block "
-                      >{{crop.name}}</h2><br/>
+                        class="rounded-e-xl my-3 px-4 py-1 d-inline-block "
+                      >{{crop.name}}</h3><br/>
                       <p
-                        :style="familyType?.color ? 'background-color:'+ familyType?.color : 'background-color:' + '#61cb6f'" 
-                        class="rounded-e-xl text-md-h6 px-4 px-sm-6 py-1 font-weight-light d-inline-block"
+                      :style="familyType?.color ? 'background-color:'+ familyType?.color : 'background-color:' + '#61cb6f'" 
+                      class="rounded-e-xl px-4 py-1 font-weight-light d-inline-block"
                       >{{ crop.segment }}</p>  
                       </div>
                     </div>
@@ -51,55 +51,18 @@ const crop = {
 
     
     <v-row justify="center" class="">
-      <v-col  xs="12" sm="10" md="9" lg="8" class="pa-0 ma-0 d-flex flex-wrap ">
-          <!-- <v-col 
-            v-if="crop.plant"
-            class="d-flex flex-wrap justify-space-evenly"
-            >
-
-            <v-sheet
-              class="rounded-xl pa-6"
-              :color="familyType?.color ? familyType.color : '#9b91f9'"
-              width="100%"
-              min-width="200px"
-            >
-            <p :color="familyType?.color ? familyType.color : '#9b91f9'" class="py-3 text-subtitle-2">Cechy rośliny:</p>
-            <p             
-            v-for="(item, index) in crop.plant"
-              key="index"
-              class="v-nowrap">{{ item }}</p>
-            </v-sheet>
-          </v-col>
-
-          <v-col 
-            v-if="crop.plant" 
-            class="d-flex flex-wrap justify-space-evenly"
-            >
-            <v-sheet
-              class="rounded-xl pa-6"
-              :color="familyType?.color ? familyType.color : '#9b91f9'"
-              width="100%"
-              min-width="200px"
-            >
-            <p :color="familyType?.color ? familyType.color : '#9b91f9'" class="py-3 text-subtitle-2">Cechy owoców:</p>
-            <p             
-            v-for="(item, index) in crop.frut"
-              key="index"
-              class="v-nowrap">{{ item }}</p>
-            </v-sheet>
-          </v-col> -->
-
-          <v-col class="d-flex flex-wrap justify-space-evenly"             
+      <v-col  xs="12" sm="10" md="9" lg="8" class="pa-0 ma-0 d-flex flex-wrap justify-center">
+          <v-col  xs="12" sm="6" md="4" class="d-flex flex-wrap justify-space-evenly"             
           v-for="(item, index) in crop"
             key="index">
             <v-sheet
-            class="rounded-xl pa-6"
+              rounded="xl"
               :color="familyType?.color ? familyType.color : '#9b91f9'"
               width="100%"
               min-width="200px"
+              class="pa-6 v-theme--dark overflow-hidden"
             >
-            <p :color="familyType?.color ? familyType.color : '#9b91f9'" class="py-3 v-theme--dark overflow-hidden">{{ index }}</p>
-            <p>{{ item }}</p>
+            <p>{{ index }} {{ item }}</p>
             </v-sheet>
           </v-col>
         </v-col>
