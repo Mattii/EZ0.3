@@ -56,7 +56,7 @@ const crop = {
     
     <v-row justify="center" class="">
       <v-col  xs="12" sm="10" md="9" lg="8" class="pa-0 ma-0 d-flex flex-wrap ">
-          <v-col 
+          <!-- <v-col 
             v-if="crop.plant"
             class="d-flex flex-wrap justify-space-evenly"
             >
@@ -91,7 +91,7 @@ const crop = {
               key="index"
               class="v-nowrap">{{ item }}</p>
             </v-sheet>
-          </v-col>
+          </v-col> -->
 
           <v-col class="d-flex flex-wrap justify-space-evenly"             
           v-for="(item, index) in crop"
