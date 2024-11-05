@@ -1,5 +1,5 @@
 import { ref, reactive, onMounted, computed } from "vue";
-import { useStore } from 'vuex';
+import { useStore } from "vuex";
 import { useRoute } from "vue-router";
 import {
   getDatabase,
@@ -35,13 +35,13 @@ const crop = {
 
                     <div class=" pb-6 ff-nunito d-flex h-100 flex-wrap justify-start align-end ff-nunito">
                       <div>
-                      <h1 
+                      <h2 
                         :style="familyType?.color ? 'background-color:'+ familyType?.color : 'background-color:' + '#61cb6f'" 
-                        class="rounded-e-xl text-sm-h3 my-3 px-4 px-sm-6 py-1 d-inline-block "
-                      >{{crop.name}}</h1><br/>
+                        class="rounded-e-xl text-md-h4 my-3 px-4 px-sm-6 py-1 d-inline-block "
+                      >{{crop.name}}</h2><br/>
                       <p
-                      :style="familyType?.color ? 'background-color:'+ familyType?.color : 'background-color:' + '#61cb6f'" 
-                      class="rounded-e-xl text-sm-h5 px-4 px-sm-6 py-1 font-weight-light d-inline-block"
+                        :style="familyType?.color ? 'background-color:'+ familyType?.color : 'background-color:' + '#61cb6f'" 
+                        class="rounded-e-xl text-md-h6 px-4 px-sm-6 py-1 font-weight-light d-inline-block"
                       >{{ crop.segment }}</p>  
                       </div>
                     </div>
@@ -56,10 +56,12 @@ const crop = {
     
     <v-row justify="center" class="">
       <v-col  xs="12" sm="10" md="9" lg="8" class="pa-0 ma-0 d-flex flex-wrap ">
-          <v-col class="d-flex flex-wrap justify-space-evenly">
+          <v-col 
+            v-if="crop.plant"
+            class="d-flex flex-wrap justify-space-evenly"
+            >
 
             <v-sheet
-              v-if="crop.plant"
               class="rounded-xl pa-6"
               :color="familyType?.color ? familyType.color : '#9b91f9'"
               width="100%"
@@ -73,9 +75,11 @@ const crop = {
             </v-sheet>
           </v-col>
 
-          <v-col class="d-flex flex-wrap justify-space-evenly">
+          <v-col 
+            v-if="crop.plant" 
+            class="d-flex flex-wrap justify-space-evenly"
+            >
             <v-sheet
-              v-if="crop.plant"
               class="rounded-xl pa-6"
               :color="familyType?.color ? familyType.color : '#9b91f9'"
               width="100%"
@@ -112,18 +116,20 @@ const crop = {
     const crop = ref({});
     const stock = ref([]);
 
-    const imgSrc =  ref("");
+    const imgSrc = ref("");
 
-    
     onMounted(async () => {
-
       const db = getDatabase(app);
 
-      const dbCrops = query(fref(db, 'katalog'), orderByChild('name'), equalTo(route.params.name));
+      const dbCrops = query(
+        fref(db, "katalog"),
+        orderByChild("name"),
+        equalTo(route.params.name)
+      );
       onValue(dbCrops, (snapshot) => {
         crop.value = Object.values(snapshot.val())[0];
-        imgSrc.value = crop.value.imgs[0]
-        familyType.value = store.getters.getCropFromStore(crop.value.family)
+        imgSrc.value = crop.value.imgs[0];
+        familyType.value = store.getters.getCropFromStore(crop.value.family);
       });
 
       // try {
@@ -134,8 +140,6 @@ const crop = {
       // } catch (error) {
       //   console.log(error);
       // }
-
-      
     });
 
     return {
