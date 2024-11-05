@@ -49,10 +49,6 @@ const crop = {
       </v-col>
     </v-row>
 
-    <v-row justify="center" class="">
-    <v-col  xs="12" sm="10" md="9" lg="8" class="pa-0 ma-0 d-flex flex-wrap ">
-    </v-col>
-    </v-row>
     
     <v-row justify="center" class="">
       <v-col  xs="12" sm="10" md="9" lg="8" class="pa-0 ma-0 d-flex flex-wrap ">
