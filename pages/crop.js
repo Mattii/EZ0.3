@@ -53,6 +53,88 @@ const crop = {
     <v-row justify="center" class="">
       <v-col  xs="12" sm="10" md="9" lg="8" class="pa-0 ma-0 d-flex flex-wrap justify-center">
           <v-col 
+            xs="6"
+            sm="4"
+            md="3"
+            v-if="crop.resistance" 
+            class="d-flex flex-wrap justify-space-evenly"
+            >
+
+            <v-sheet
+              class="rounded-xl pa-3"
+              width="100%"
+              min-width="200px"
+            >
+            <v-chip class=" mb-3 font-weight-light text-subtitle-2">odporność:</v-chip>
+            <p             
+            v-for="(item, index) in crop.resistance"
+              key="index"
+              class="">{{ item }}</p>
+            </v-sheet>
+          </v-col>          
+
+          <v-col 
+            xs="6"
+            sm="4"
+            md="3"
+            v-if="crop.cultivation" 
+            class="d-flex flex-wrap justify-space-evenly"
+            >
+
+            <v-sheet
+              class="rounded-xl pa-3"
+              width="100%"
+              min-width="200px"
+            >
+            <v-chip class=" mb-3 font-weight-light text-subtitle-2">uprawa:</v-chip>
+            <p             
+            v-for="(item, index) in crop.cultivation"
+              key="index"
+              class="">{{ item }}</p>
+            </v-sheet>
+          </v-col>   
+
+          <v-col 
+            xs="6"
+            sm="4"
+            md="3"
+            v-if="crop.shape" 
+            class="d-flex flex-wrap justify-space-evenly"
+            >
+
+            <v-sheet
+              class="rounded-xl pa-3"
+              width="100%"
+              min-width="200px"
+            >
+            <v-chip class=" mb-3 font-weight-light text-subtitle-2">kształt:</v-chip>
+            <p             
+              class="">{{ crop.shape }}</p>
+            </v-sheet>
+          </v-col>   
+
+          <v-col 
+            xs="6"
+            sm="4"
+            md="3"
+            v-if="crop.intended" 
+            class="d-flex flex-wrap justify-space-evenly"
+            >
+
+            <v-sheet
+              class="rounded-xl pa-3"
+              width="100%"
+              min-width="200px"
+            >
+            <v-chip class=" mb-3 font-weight-light text-subtitle-2">przeznaczenie:</v-chip>
+            <p             
+            v-for="(item, index) in crop.intended"
+              key="index"
+              class="">{{ item }}</p>
+            </v-sheet>
+          </v-col>  
+
+          <v-col 
             sm="6"
             v-if="crop.plant" 
             class="d-flex flex-wrap justify-space-evenly"
@@ -63,7 +145,7 @@ const crop = {
               width="100%"
               min-width="200px"
             >
-            <v-chip class=" my-3 font-weight-light text-subtitle-2">roślina:</v-chip>
+            <v-chip class=" mb-3 font-weight-light text-subtitle-2">roślina:</v-chip>
             <p             
             v-for="(item, index) in crop.plant"
               key="index"
@@ -81,7 +163,7 @@ const crop = {
               width="100%"
               min-width="200px"
             >
-            <v-chip class=" my-3 font-weight-light text-subtitle-2">owoce:</v-chip>
+            <v-chip class=" mb-3 font-weight-light text-subtitle-2">owoce:</v-chip>
             <p             
             v-for="(item, index) in crop.frut"
               key="index"
