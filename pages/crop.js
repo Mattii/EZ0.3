@@ -183,8 +183,10 @@ const crop = {
               width="100%"
             >
             <v-chip class=" mb-3 font-weight-light text-subtitle-2">opiekun:</v-chip>
-            <p class="">{{ crop.guardian }}</p>
-            </v-sheet>
+            <p class="">{{ saleForceGuardian(crop.guardian).fullName }}
+              <v-btn v-if="saleForceGuardian(crop.guardian)?.phone" icon="mdi-phone" :color="familyType?.color ? familyType.color : '#9b91f9'" class="ml-3 align-self-center" :href="'tel:'+saleForceGuardian(crop.guardian).phone"></v-btn>
+            </p>
+          </v-sheet>
           </v-col>  
 
           <v-col 
@@ -310,6 +312,11 @@ const crop = {
 
     const imgSrc = ref("");
 
+    const saleForceGuardian = (fullName) => {
+      let guardian = store.getters.getPersoneFromSalesForceInStore(fullName);
+      return guardian ? guardian : { fullName: fullName };
+    };
+
     onMounted(async () => {
       const db = getDatabase(app);
 
@@ -341,6 +348,7 @@ const crop = {
       imgSrc,
       stock,
       onMounted,
+      saleForceGuardian,
     };
   },
 };

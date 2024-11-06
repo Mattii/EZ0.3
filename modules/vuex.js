@@ -92,6 +92,50 @@ export default {
         //   subtitle: "najlepszy wybór do hydroponiki i gruntu",
         // },
       ],
+      saleForce: [
+        {
+          crops: "gruntowe",
+          region: "Polska południowa",
+          phone: "+48 605 374 767",
+          fullName: "Bernard Zioło",
+          email: "b.ziolo@enzazaden.pl",
+        },
+        {
+          crops: "gruntowe",
+          region: "Polska północna",
+          phone: "+48 885 889 892",
+          fullName: "Paweł Wechterowicz",
+          email: "p.wechterowicz@enzazaden.pl",
+        },
+        {
+          crops: "gruntowe",
+          region: "Polska centralna",
+          phone: "+48 603 277 556",
+          fullName: "Piotr Pietrzak",
+          email: "p.pietrzak@enzazaden.pl",
+        },
+        {
+          crops: "gruntowe",
+          region: "Polska zachodnia",
+          phone: "+48 887 761 387",
+          fullName: "Aleksandra Krzyżanowska",
+          email: "a.krzyzanowska@enzazaden.pl",
+        },
+        {
+          crops: "szklarniowe",
+          region: "Polska zachodnia",
+          phone: "+48 885 508 001",
+          fullName: "Tomasz Nowak",
+          email: "t.nowak@enzazaden.pl",
+        },
+        {
+          crops: "szklarniowe",
+          region: "Polska wschodnia",
+          phone: "+48 609 999 842",
+          fullName: "Krzysztof Odziba",
+          email: "k.odzioba@enzazaden.pl",
+        },
+      ],
       priceList: [],
       stock: [],
       raport: [],
@@ -163,6 +207,12 @@ export default {
     },
     getBatchFromStockInStore: (state) => (name) => {
       return state.stock.find((ele) => name == ele.name);
+    },
+    getPersoneFromSalesForceInStore: (state) => (id) => {
+      return state.saleForce.find((ele) => id == ele.fullName);
+    },
+    getSalesForceFromStore(state) {
+      return state.saleForce;
     },
   },
   actions: {
