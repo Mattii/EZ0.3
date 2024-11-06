@@ -35,10 +35,10 @@ const crop = {
 
                     <div class=" pb-6 ff-nunito d-flex h-100 flex-wrap justify-start align-end ff-nunito">
                       <div>
-                      <h3 
+                      <h2 
                         :style="familyType?.color ? 'background-color:'+ familyType?.color : 'background-color:' + '#61cb6f'" 
-                        class="rounded-e-xl my-3 px-4 py-1 d-inline-block "
-                      >{{crop.name}}</h3><br/>
+                        class="rounded-e-xl my-3  text-h5  text-md-h4 px-4 py-1 d-inline-block "
+                      >{{crop.name}}</h2><br/>
                       <p
                       :style="familyType?.color ? 'background-color:'+ familyType?.color : 'background-color:' + '#61cb6f'" 
                       class="rounded-e-xl px-4 py-1 font-weight-light d-inline-block"
@@ -98,6 +98,27 @@ const crop = {
             xs="6"
             sm="4"
             md="3"
+            v-if="crop.production" 
+            class="d-flex flex-wrap justify-space-evenly"
+            >
+
+            <v-sheet
+              class="rounded-xl pa-3"
+              width="100%"
+              min-width="200px"
+            >
+            <v-chip class=" mb-3 font-weight-light text-subtitle-2">produkcja:</v-chip>
+            <p             
+            v-for="(item, index) in crop.production"
+              key="index"
+              class="">{{ item }}</p>
+            </v-sheet>
+          </v-col>  
+
+          <v-col 
+            xs="6"
+            sm="4"
+            md="3"
             v-if="crop.shape" 
             class="d-flex flex-wrap justify-space-evenly"
             >
@@ -135,6 +156,58 @@ const crop = {
           </v-col>  
 
           <v-col 
+            xs="6"
+            sm="4"
+            md="3"
+            v-if="crop.early" 
+            class="d-flex flex-wrap justify-space-evenly"
+            >
+
+            <v-sheet
+              class="rounded-xl pa-3"
+              width="100%"
+              min-width="200px"
+            >
+            <v-chip class=" mb-3 font-weight-light text-subtitle-2">wczesność:</v-chip>
+            <p class="">{{ crop.early }}</p>
+            </v-sheet>
+          </v-col>
+
+          <v-col 
+            xs="6"
+            sm="4"
+            md="3"
+            v-if="crop.guardian" 
+            class="d-flex flex-wrap justify-space-evenly "
+            >
+
+            <v-sheet
+              class="rounded-xl pa-3"
+              width="100%"
+            >
+            <v-chip class=" mb-3 font-weight-light text-subtitle-2">opiekun:</v-chip>
+            <p class="">{{ crop.guardian }}</p>
+            </v-sheet>
+          </v-col>  
+
+          <v-col 
+            xs="6"
+            sm="4"
+            md="3"
+            v-if="crop.type" 
+            class="d-flex flex-wrap justify-space-evenly "
+            >
+
+            <v-sheet
+              class="rounded-xl pa-3"
+              width="100%"
+            >
+            <v-chip class=" mb-3 font-weight-light text-subtitle-2">typ:</v-chip>
+            <p class="">{{ crop.type }}</p>
+            </v-sheet>
+          </v-col>  
+
+          <v-col 
             sm="6"
             v-if="crop.plant" 
             class="d-flex flex-wrap justify-space-evenly"
@@ -166,6 +239,39 @@ const crop = {
             <v-chip class=" mb-3 font-weight-light text-subtitle-2">owoce:</v-chip>
             <p             
             v-for="(item, index) in crop.frut"
+              key="index"
+              class="">{{ item }},</p>
+            </v-sheet>
+          </v-col>
+
+          <v-col
+            sm="6"
+            v-if="crop.description"
+            class="d-flex flex-wrap justify-space-evenly"
+            >
+            <v-sheet
+              class="rounded-xl pa-3"
+              width="100%"
+              min-width="200px"
+            >
+            <v-chip class=" mb-3 font-weight-light text-subtitle-2">opis:</v-chip>
+            <p class="">{{ crop.description }},</p>
+            </v-sheet>
+          </v-col>
+
+          <v-col
+            sm="6"
+            v-if="crop.remarks"
+            class="d-flex flex-wrap justify-space-evenly"
+            >
+            <v-sheet
+              class="rounded-xl pa-3"
+              width="100%"
+              min-width="200px"
+            >
+            <v-chip class=" mb-3 font-weight-light text-subtitle-2">uwagi:</v-chip>
+            <p             
+            v-for="(item, index) in crop.remarks"
               key="index"
               class="">{{ item }},</p>
             </v-sheet>
