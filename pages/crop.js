@@ -208,6 +208,7 @@ const crop = {
           </v-col>  
 
           <v-col 
+            xs="12"
             sm="6"
             v-if="crop.plant" 
             class="d-flex flex-wrap justify-space-evenly"
@@ -227,6 +228,7 @@ const crop = {
           </v-col>
 
           <v-col
+            xs="12"
             sm="6"
             v-if="crop.frut"
             class="d-flex flex-wrap justify-space-evenly"
@@ -245,6 +247,7 @@ const crop = {
           </v-col>
 
           <v-col
+            xs="12"
             sm="6"
             v-if="crop.description"
             class="d-flex flex-wrap justify-space-evenly"
@@ -260,6 +263,7 @@ const crop = {
           </v-col>
 
           <v-col
+            xs="12"
             sm="6"
             v-if="crop.remarks"
             class="d-flex flex-wrap justify-space-evenly"
