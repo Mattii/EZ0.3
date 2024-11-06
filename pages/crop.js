@@ -51,12 +51,12 @@ const crop = {
 
     
     <v-row justify="center" class="">
-      <v-col  xs="12" sm="10" md="9" lg="8" class="pa-0 ma-0 d-flex flex-wrap justify-center">
+      <v-col  xs="12" sm="10" md="9" lg="8" class="pa-0 ma-0 d-flex flex-wrap">
           <v-col 
-            xs="6"
+            cols="6"
             sm="4"
             md="3"
-            v-if="crop.resistance" 
+            v-if="crop.type" 
             class="d-flex flex-wrap justify-space-evenly"
             >
 
@@ -65,16 +65,13 @@ const crop = {
               width="100%"
               min-width="200px"
             >
-            <v-chip class=" mb-3 font-weight-light text-subtitle-2">odporność:</v-chip>
-            <p             
-            v-for="(item, index) in crop.resistance"
-              key="index"
-              class="">{{ item }}</p>
+            <v-chip class=" mb-3 font-weight-light text-subtitle-2">typ:</v-chip>
+            <p class="">{{ crop.type }}</p>
             </v-sheet>
           </v-col>          
 
           <v-col 
-            xs="6"
+            cols="6"
             sm="4"
             md="3"
             v-if="crop.cultivation" 
@@ -95,7 +92,7 @@ const crop = {
           </v-col>   
 
           <v-col 
-            xs="6"
+            cols="6"
             sm="4"
             md="3"
             v-if="crop.production" 
@@ -116,7 +113,7 @@ const crop = {
           </v-col>  
 
           <v-col 
-            xs="6"
+            cols="6"
             sm="4"
             md="3"
             v-if="crop.shape" 
@@ -135,7 +132,7 @@ const crop = {
           </v-col>   
 
           <v-col 
-            xs="6"
+            cols="6"
             sm="4"
             md="3"
             v-if="crop.intended" 
@@ -156,7 +153,7 @@ const crop = {
           </v-col>  
 
           <v-col 
-            xs="6"
+            cols="6"
             sm="4"
             md="3"
             v-if="crop.early" 
@@ -174,7 +171,7 @@ const crop = {
           </v-col>
 
           <v-col 
-            xs="6"
+            cols="6"
             sm="4"
             md="3"
             v-if="crop.guardian" 
@@ -191,24 +188,28 @@ const crop = {
           </v-col>  
 
           <v-col 
-            xs="6"
+            cols="6"
             sm="4"
             md="3"
-            v-if="crop.type" 
-            class="d-flex flex-wrap justify-space-evenly "
+            v-if="crop.resistance" 
+            class="d-flex flex-wrap justify-space-evenly"
             >
 
             <v-sheet
               class="rounded-xl pa-3"
               width="100%"
+              min-width="200px"
             >
-            <v-chip class=" mb-3 font-weight-light text-subtitle-2">typ:</v-chip>
-            <p class="">{{ crop.type }}</p>
+            <v-chip class=" mb-3 font-weight-light text-subtitle-2">odporność:</v-chip>
+            <p             
+            v-for="(item, index) in crop.resistance"
+              key="index"
+              class="">{{ item }}</p>
             </v-sheet>
           </v-col>  
 
           <v-col 
-            xs="12"
+            cols="12"
             sm="6"
             v-if="crop.plant" 
             class="d-flex flex-wrap justify-space-evenly"
@@ -228,7 +229,7 @@ const crop = {
           </v-col>
 
           <v-col
-            xs="12"
+            cols="12"
             sm="6"
             v-if="crop.frut"
             class="d-flex flex-wrap justify-space-evenly"
@@ -247,7 +248,7 @@ const crop = {
           </v-col>
 
           <v-col
-            xs="12"
+            cols="12"
             sm="6"
             v-if="crop.description"
             class="d-flex flex-wrap justify-space-evenly"
