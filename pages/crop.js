@@ -182,10 +182,28 @@ const crop = {
               class="rounded-xl pa-3"
               width="100%"
             >
-            <v-chip class=" mb-3 font-weight-light text-subtitle-2">opiekun:</v-chip>
-            <p class="">{{ saleForceGuardian(crop.guardian).fullName }}
-              <v-btn v-if="saleForceGuardian(crop.guardian)?.phone" icon="mdi-phone" :color="familyType?.color ? familyType.color : '#9b91f9'" class="ml-3 align-self-center" :href="'tel:'+saleForceGuardian(crop.guardian).phone"></v-btn>
-            </p>
+            <v-chip class=" mb-3 font-weight-light text-subtitle-2">opiekun:</v-chip> 
+            <v-btn 
+              density="compact" 
+              v-if="saleForceGuardian(crop.guardian)?.phone" 
+              icon 
+              :color="familyType?.color ? familyType.color : '#9b91f9'" 
+              class="ml-2 mb-3 align-self-center" 
+              :href="'tel:'+saleForceGuardian(crop.guardian).phone"
+              >
+                <v-icon icon="mdi-phone" size="x-small"></v-icon>
+            </v-btn>            
+            <v-btn 
+              density="compact" 
+              v-if="saleForceGuardian(crop.guardian)?.email" 
+              icon 
+              :color="familyType?.color ? familyType.color : '#9b91f9'" 
+              class="ml-2 mb-3 align-self-center" 
+              :href="'mailto:'+saleForceGuardian(crop.guardian).email"
+              >
+                <v-icon icon="mdi-mail" size="x-small"></v-icon>
+            </v-btn>
+            <p class="">{{ saleForceGuardian(crop.guardian).fullName }}</p>
           </v-sheet>
           </v-col>  
 
@@ -287,7 +305,7 @@ const crop = {
 
 
 
-          <v-col  xs="12" sm="6" md="4" class="d-flex flex-wrap justify-space-evenly"             
+          <!-- <v-col  xs="12" sm="6" md="4" class="d-flex flex-wrap justify-space-evenly"             
           v-for="(item, index) in crop"
             key="index">
             <v-sheet
@@ -299,7 +317,8 @@ const crop = {
             >
             <p>{{ index }} {{ item }}</p>
             </v-sheet>
-          </v-col>
+          </v-col> -->
+          
         </v-col>
     </v-row>
   </v-container>`,
