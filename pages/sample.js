@@ -21,6 +21,7 @@ const stock = {
       <v-row justify="center" class="mb-6">
       <v-col xs="12" sm="11" md="10" lg="8">
       <hero-element
+        v-once
         title="Próby"
         ></hero-element>
       </v-col>
@@ -90,11 +91,15 @@ const stock = {
     </v-row>
     
     <v-row justify="center">
-      <v-col  xs="12" sm="10" md="9" lg="8" class="px-0 px-sm-3">
 
-        <!-- visible on screen  (width < 600)  -->
-        <v-sheet 
-        v-if="!showSampleStock.length"
+      <v-col  xs="12" sm="10" md="9" lg="8"  v-if="!showSampleStock.length" class="px-0 px-sm-3 d-flex justify-center 100w">
+        <v-progress-circular
+          size="36"
+          color="primary"
+          indeterminate
+        ></v-progress-circular>
+
+      <!-- <v-sheet 
         class="pa-12"
         color="secondary"
         rounded="xl"
@@ -103,11 +108,13 @@ const stock = {
           <v-col  xs="12" sm="8" md="6"  class="">
             <p>need to login</p>>
           </v-col>  
-        </v-sheet>
-        <!-- visible on screen  (width > 600)  -->
-        <div
-        v-else
-        >
+        </v-sheet> -->
+
+      </v-col>  
+
+      <v-col v-else xs="12" sm="10" md="9" lg="8" class="px-0 px-sm-3">
+
+        <!-- visible on screen  (width < 600)  -->
         <v-data-table
         fixed-header
         :headers="headersMobile"
@@ -135,6 +142,7 @@ const stock = {
         </template>
         </v-data-table>
 
+        <!-- visible on screen  (width > 600)  -->
         <v-data-table
         fixed-header
         :headers="headers"

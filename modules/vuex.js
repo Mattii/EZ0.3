@@ -166,7 +166,7 @@ export default {
     },
     getStockFromStore(state) {
       const stock = localStorage.getItem("stock");
-      if (stock) {
+      if (stock && !navigator.onLine) {
         state.stock = stock;
         return JSON.parse(stock);
       } else {
@@ -175,7 +175,7 @@ export default {
     },
     getRaportFromStore(state) {
       const raport = localStorage.getItem("raport");
-      if (raport) {
+      if (raport && !navigator.onLine) {
         state.raport = raport;
         return JSON.parse(raport);
       } else {
@@ -184,7 +184,7 @@ export default {
     },
     getSampleFromStore(state) {
       const sample = localStorage.getItem("sample");
-      if (sample) {
+      if (sample && !navigator.onLine) {
         state.sample = sample;
         return JSON.parse(sample);
       } else {

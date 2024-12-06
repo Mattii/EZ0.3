@@ -20,7 +20,7 @@ const crop = {
   <v-container fluid>
     <v-row justify="center">
       <v-col xs="12" sm="10" md="9" lg="8">
-        <catalog-hero></catalog-hero>
+        <catalog-hero v-once></catalog-hero>
       </v-col>
     </v-row>
 

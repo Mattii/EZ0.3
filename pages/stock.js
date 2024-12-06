@@ -21,6 +21,7 @@ const stock = {
       <v-row justify="center" class="mb-6">
       <v-col xs="12" sm="11" md="10" lg="8">
         <hero-element
+        v-once
         title="Komercja"
         mainSrc="https://res.cloudinary.com/ddkef5waq/image/upload/v1724404629/enzapp/komercja-hero1400x400_dyvnu8.png"
         :mainSrcSource="['https://res.cloudinary.com/ddkef5waq/image/upload/v1724406814/enzapp/komercja-hero300x200_jwfogr.png',
@@ -94,21 +95,26 @@ const stock = {
     </v-row>
     
     <v-row justify="center">
-      <v-col  xs="12" sm="10" md="9" lg="8" class="px-0 px-sm-3">
+      <v-col  xs="12" sm="10" md="9" lg="8"  v-if="!showStock.length" class="px-0 px-sm-3 d-flex justify-center 100w">
+      <v-progress-circular
+        size="36"
+        color="primary"
+        indeterminate
+      ></v-progress-circular>
 
-        <!-- visible on screen  (width < 600)  -->
-        <v-sheet v-if="!showStock.length"
+      <!-- <v-sheet v-if="!showStock.length"
         class="pa-12"
         color="secondary"
         rounded="xl"
         >
           <p class="text-h5 my-3 ff-nunito">Niestety nasion komercyjnych nie znaleziono</p>
 
-        </v-sheet>
-        <!-- visible on screen  (width > 600)  -->
-        <div
-        v-else
-        >
+        </v-sheet> -->
+      </v-col>  
+
+      <v-col v-else xs="12" sm="10" md="9" lg="8" class="px-0 px-sm-3">
+
+        <!-- visible on screen  (width < 600)  -->
         <v-data-table
         fixed-header
         :headers="headersMobile"
@@ -139,6 +145,8 @@ const stock = {
           </tr>
         </template>
         </v-data-table>
+
+        <!-- visible on screen  (width > 600)  -->
 
         <v-data-table
         v-model:expanded="expanded"
@@ -179,7 +187,6 @@ const stock = {
               
           </template>
         </v-data-table>
-        </div>
       </v-col>
     </v-row>
 
@@ -536,6 +543,8 @@ const stock = {
       const stock = fref(db, "stock");
       onValue(stock, (snapshot) => {
         store.dispatch("insertStockToStore", snapshot.val());
+        console.log("data dispatched");
+        
       });
     });
 
