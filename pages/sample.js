@@ -92,7 +92,7 @@ const stock = {
     
     <v-row justify="center">
 
-      <v-col  xs="12" sm="10" md="9" lg="8"  v-if="!showSampleStock.length" class="px-0 px-sm-3 d-flex justify-center 100w">
+      <v-col  xs="12" sm="10" md="9" lg="8"  v-if="!showSampleStock.length && !searchValue" class="px-0 px-sm-3 d-flex justify-center 100w">
         <v-progress-circular
           size="36"
           color="primary"
@@ -109,6 +109,12 @@ const stock = {
             <p>need to login</p>>
           </v-col>  
         </v-sheet> -->
+
+      </v-col>  
+
+      <v-col  xs="12" sm="10" md="9" lg="8"  v-else-if="!showSampleStock.length && searchValue" class="px-0 px-sm-3 d-flex justify-center 100w">
+        <p>Brak na stanie sampli!</p>
+
 
       </v-col>  
 

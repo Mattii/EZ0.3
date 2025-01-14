@@ -95,7 +95,7 @@ const stock = {
     </v-row>
     
     <v-row justify="center">
-      <v-col  xs="12" sm="10" md="9" lg="8"  v-if="!showStock.length" class="px-0 px-sm-3 d-flex justify-center 100w">
+      <v-col  xs="12" sm="10" md="9" lg="8"  v-if="!showStock.length && !searchValue" class="px-0 px-sm-3 d-flex justify-center 100w">
       <v-progress-circular
         size="36"
         color="primary"
@@ -110,6 +110,11 @@ const stock = {
           <p class="text-h5 my-3 ff-nunito">Niestety nasion komercyjnych nie znaleziono</p>
 
         </v-sheet> -->
+      </v-col>  
+
+      <v-col  xs="12" sm="10" md="9" lg="8"  v-else-if="!showStock.length && searchValue" class="px-0 px-sm-3 d-flex justify-center 100w">
+        <p>Brak na stanie komercyjnym!</p>
+
       </v-col>  
 
       <v-col v-else xs="12" sm="10" md="9" lg="8" class="px-0 px-sm-3">
