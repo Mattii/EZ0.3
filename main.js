@@ -10,6 +10,7 @@ import priceHero from "./components/price-hero.js";
 import heroElement from "./components/hero-element.js";
 import catalogHero from "./components/catalog-hero.js";
 import router from "./router.js";
+import persona from "./components/loged-in-person.js";
 import stockInput from "./components/stock-input.js";
 import {
   getAuth,
@@ -124,5 +125,6 @@ app.component("main-hero", mainHero);
 app.component("hero-element", heroElement);
 app.component("stock-input", stockInput);
 app.component("price-hero", priceHero);
+app.component("persona", persona);
 app.component("catalog-hero", catalogHero);
 app.mount("#app");
