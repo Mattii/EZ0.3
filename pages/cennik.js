@@ -210,8 +210,10 @@ const priceList = {
             <br/>
             <span class="font-weight-light text-medium-emphasis text-subtitle-2">{{item?.segment}}</span>
           </td>
-          <td class="tabular-nums text-end">
-              
+          <td v-if="item.withdrawn" class="tabular-nums text-end">
+            <span class="rounded-xl px-6 mr-3 mb-3 py-1 bg-pink">Wycofany</span>
+          </td>  
+          <td v-else class="tabular-nums text-end">  
             <br v-if="item.new" />
             <span class="tabular-nums font-weight-regular text-subtitle-2">{{item.packing}}</span>
             <br/>
@@ -247,8 +249,14 @@ const priceList = {
             <span class="font-weight-thin text-medium-emphasis text-subtitle-2">{{item?.segment}}</span>
           </td>
           <td class="text-end">{{ cropCodeToFullCropName(item.family) }}</td>
-          <td class="tabular-nums text-end">{{ fastPaymentDiscount?toPLAccountingStandards((item.price - (item.price*discountAmount/100)) * 0.98):toPLAccountingStandards(item.price - (item.price*discountAmount/100)) }}</td>
-          <td class="tabular-nums font-weight-thin text-medium-emphasis text-subtitle-2">{{ fastPaymentDiscount?toPLAccountingStandards(Number.parseFloat(((item.price - (item.price*discountAmount/100)) * 0.98) * 1.08).toFixed(2)):toPLAccountingStandards(Number.parseFloat((item.price - (item.price*discountAmount/100)) * 1.08).toFixed(2)) }}</td>
+          
+          <td v-if="item.withdrawn" class="tabular-nums text-end">
+            <span class="rounded-xl px-6 mb-3 py-1 bg-pink">Wycofany</span>
+          </td>  
+          <td v-else class="tabular-nums text-end">{{ fastPaymentDiscount?toPLAccountingStandards((item.price - (item.price*discountAmount/100)) * 0.98):toPLAccountingStandards(item.price - (item.price*discountAmount/100)) }}</td>
+          <td v-if="!item.withdrawn" class="tabular-nums font-weight-thin text-medium-emphasis text-subtitle-2">{{ fastPaymentDiscount?toPLAccountingStandards(Number.parseFloat(((item.price - (item.price*discountAmount/100)) * 0.98) * 1.08).toFixed(2)):toPLAccountingStandards(Number.parseFloat((item.price - (item.price*discountAmount/100)) * 1.08).toFixed(2)) }}</td>
+          <td v-else class="tabular-nums text-end">
+          </td>
           <td class="text-end">{{ item.packing }}</td>
         </tr>
       </template>
