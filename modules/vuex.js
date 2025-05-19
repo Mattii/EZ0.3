@@ -150,7 +150,7 @@ export default {
     },
     getPriceListFromStore(state) {
       const price = localStorage.getItem("price");
-      if (price) {
+      if (price && !navigator.onLine) {
         return JSON.parse(price);
       } else {
         return state.priceList;
