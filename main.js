@@ -15,7 +15,7 @@ import stockInput from "./components/stock-input.js";
 import {
   getAuth,
   signOut,
-  onAuthStateChanged,
+  onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
 
 const vuetify = createVuetify({
@@ -93,16 +93,16 @@ const app = createApp({
     onMounted(async () => {
       let katalog = localStorage.getItem("katalog");
 
-      if (!Array.isArray(JSON.parse(katalog))) {
-        localStorage.removeItem("katalog");
-        const db = getDatabase(app);
+      // if (!Array.isArray(JSON.parse(katalog))) {
+      //   localStorage.removeItem("katalog");
+      //   const db = getDatabase(app);
 
-        const katalog = fref(db, "katalog");
-        onValue(katalog, (snapshot) => {
-          store.dispatch("insertKatalogToStore", snapshot.val());
-          crops.value = snapshot.val();
-        });
-      }
+      //   const katalog = fref(db, "katalog");
+      //   onValue(katalog, (snapshot) => {  
+      //     store.dispatch("insertKatalogToStore", snapshot.val());
+      //     crops.value = snapshot.val();
+      //   });
+      // }
     });
 
     return {
