@@ -51,14 +51,14 @@ export default {
           title: "Rzodkiewki",
           subtitle: "najlepszy wybór do hydroponiki i gruntu",
         },
-        {
-          crop: "B_",
-          src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1701854171/enzapp/kap_czthmi.png",
-          lazySrc: "../assets/rzodkiewki.png",
-          color: "#94C2A6",
-          title: "Kapusty",
-          subtitle: "najlepszy wybór do hydroponiki i gruntu",
-        },
+        // {
+        //   crop: "B_",
+        //   src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1701854171/enzapp/kap_czthmi.png",
+        //   lazySrc: "../assets/rzodkiewki.png",
+        //   color: "#94C2A6",
+        //   title: "Kapusty",
+        //   subtitle: "najlepszy wybór do hydroponiki i gruntu",
+        // },
         {
           crop: "B_CF",
           src: "https://res.cloudinary.com/ddkef5waq/image/upload/v1701434098/enzapp/cal_ngymad.png",

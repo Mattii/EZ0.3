@@ -255,6 +255,56 @@
       "value": "40"
     }
   },
+  "april_cross": {
+    "active": true,
+    "color": "#467F31",
+    "compaction": {
+      "unit": "mln nasion/ha",
+      "value": "?"
+    },
+    "crop": "DK",
+    "cultivation": [
+      "grunt",
+      "włóknina"
+    ],
+    "description": "April Cross to wczesna mieszańcowa rzodkiew japońska typu daikon o białym i gładkim korzeniu. Odmiana charakteryzuje się bardzo wysoką tolerancją na wybijanie w pędy kwiatowe. W prawidłowych warunkach glebowych i przy odpowiedniej pielęgnacji korzenie osiągają 40 cm długości i 6 cm średnicy oraz wagę do 800 g. Korzenie mają chrupiącą konsystencję, łagodny smak i subtelny aromat. Odmiana idealna do sałatek, surówek, gotowania i marynowania. April Cross jest doskonałą rzodkwią do przechowywania, zachowuje swój kolor i konsystencję przez kilka miesięcy podczas przechowywania w temperaturze 0-1°C, przy wilgotności względnej powietrza na poziomie 90-95%. April Cross dojrzewa po 60 dniach od siewu, a zbiory można rozpocząć wcześniej, gdy korzenie osiągną już 20 cm długości. Polecana na zbiory późną wiosną do wczesnego lata i późnej jesieni. Zagęszczenie na hektar: 100 000 nasion.",
+    "family": "DK",
+    "guardian": "Aleksandra Krzyżanowska",
+    "harvest": [
+      7,
+      9
+    ],
+    "hybrid": true,
+    "imgs": [
+      "https://res.cloudinary.com/ddkef5waq/image/upload/v1721984849/enzapp/rzodkiew/april_cross_c5zt2a.jpg"
+    ],
+    "intended": [
+      "świeży rynek",
+      "surówki",
+      "przechowywanie"
+    ],
+    "name": "April Cross",
+    "provider": "takii",
+    "root": {
+      "rcolor": "biały",
+      "rfi": "6 cm",
+      "rlength": "40 cm"
+    },
+    "segment": "rzodkiew japońska daikon",
+    "size": {
+      "unit": "g",
+      "value": 800
+    },
+    "tolerance": {
+      "cold": "średnia",
+      "heat": "średnia"
+    },
+    "type": "wysok odporność na wybijanie w pędy",
+    "vegetation": {
+      "unit": "dni",
+      "value": "60"
+    }
+  },
   "ardeor": {
     "action": "actions/eazyleaf.png",
     "active": true,
@@ -473,6 +523,48 @@
     "provider": "eznl",
     "segment": "endywia",
     "type": "frisee liść fryzowany"
+  },
+  "autumn_king": {
+    "active": true,
+    "color": "#648975",
+    "compaction": {
+      "unit": "tys./ha",
+      "value": "40-50"
+    },
+    "crop": "B_WC",
+    "cultivation": [
+      "włóknina",
+      "grunt"
+    ],
+    "description": "Szybko rosnąca odmiana kapusty płaskiej do zbiorów od wiosny do jesieni. Autumn King tworzy płaskie, jasnozielone główki o delikatnych, kruchych liściach i wysokiej tolerancji na pękanie. Dużą zaletą odmiany jest wysoka tolerancja na pieprzową plamistość liści podczas przechowywania. Odmiana do sprzedaży na świeży rynek i do wczesnego kiszenia.",
+    "family": "B_WC",
+    "guardian": "Bernard Zioło",
+    "harvest": [
+      5,
+      11
+    ],
+    "headSize": "1,5-2,5 kg",
+    "hybrid": true,
+    "imgs": [
+      "https://res.cloudinary.com/ddkef5waq/image/upload/v1724750840/enzapp/kapustne/B_WC/autumn_king_sg1kop.jpg"
+    ],
+    "intended": [
+      "świeży rynek",
+      "kiszenie"
+    ],
+    "name": "Autumn King",
+    "new": true,
+    "provider": "takii",
+    "purpose": "przechowywanie",
+    "resistance": [
+      "HR: Fuzarioza kapusty (Foc)"
+    ],
+    "segment": "kapusta płaska",
+    "type": "szybko rosnąca",
+    "vegetation": {
+      "unit": "dni",
+      "value": "60"
+    }
   },
   "avaya": {
     "active": true,
@@ -1048,6 +1140,47 @@
       "value": "7-11"
     }
   },
+  "bonus": {
+    "active": true,
+    "caliber": {
+      "unit": "mm",
+      "value": "50-80"
+    },
+    "color": "#467F31",
+    "compaction": {
+      "unit": "nasion/ha",
+      "value": "750.000-1.000.000"
+    },
+    "crop": "ON",
+    "cultivation": [
+      "grunt"
+    ],
+    "description": "Bonus to odmiana znana i ceniona za rekordowy i stabilny plon oraz doskonałe wyrównanie niemal idealnie okrągłych cebul. Odmianę tę można wysiewać już od połowy marca, co odróżnia ją od mieszańców w typie hiszpańskim, gdyż potrzebuje czasu, by zbudować system korzeniowy. W uprawie należy zwrócić uwagę, aby nie nawozić jej nadmiernie azotem, szczególnie w końcowej fazie uprawy, co umożliwi przechowywanie cebuli nawet do lutego. Wzniesiony szczypior, duży przyrost masy cebul po załamaniu szczypioru oraz równomierne załamywanie szczypioru to cechy charakterystyczne tej odmiany. Do zbioru „na worek” cebulę tę należy kopać po załamaniu szczypioru, wtedy uzyskujemy najlepszą jakość łuski. Odmiana ta może być również zbierana w pęczki.",
+    "family": "ON",
+    "guardian": "Paweł Wechterowicz",
+    "harvest_maturity": "bardzo wczesna",
+    "hybrid": true,
+    "imgs": [
+      "https://res.cloudinary.com/ddkef5waq/image/upload/v1721971473/enzapp/cebule/bonus_utbv7k.jpg"
+    ],
+    "intended": [
+      "świeży rynek",
+      "krótkie przechowywanie"
+    ],
+    "name": "Bonus",
+    "new": false,
+    "planting": [
+      1,
+      12
+    ],
+    "production": [
+      "siew",
+      "rozsada"
+    ],
+    "provider": "takii",
+    "segment": "cebula",
+    "type": "japoński"
+  },
   "brietta": {
     "active": true,
     "color": "#467F31",
@@ -1078,6 +1211,46 @@
     ],
     "segment": "lollo bionda",
     "type": "lollo bionda"
+  },
+  "bruce": {
+    "active": true,
+    "caliber": {
+      "unit": "mm",
+      "value": "50-80"
+    },
+    "color": "#467F31",
+    "compaction": {
+      "unit": "nasion/ha",
+      "value": "700.000-1.000.000"
+    },
+    "crop": "ON",
+    "cultivation": [
+      "grunt"
+    ],
+    "description": "Bruce to nowa odmiana typu Rijnsburger przeznaczona do długiego przechowywania. Wysoka zawartość suchej masy gwarantuje niskie straty oraz niewielkie zagrożenie wystąpieniem chorób. Dobre wyrównanie, silny wczesny wzrost i późne załamywanie szczypioru przekładają się na większy plon handlowy w stosunku do plonu całkowitego (niewiele cebul poniżej 50 mm). Roślina jest ciemnozielona i ma wzniesiony pokrój, który zapewnia dobrą wentylację w uprawie. Cebule są okrągłe, z mocno przylegającą brązową łuską. Siew po największych przymrozkach, zbiór we wrześniu.",
+    "family": "ON",
+    "guardian": "Paweł Wechterowicz",
+    "harvest_maturity": "średnio późna",
+    "hybrid": true,
+    "imgs": [
+      "https://res.cloudinary.com/ddkef5waq/image/upload/v1721971471/enzapp/cebule/bruce_xvh8jp.jpg"
+    ],
+    "intended": [
+      "długie przechowanie"
+    ],
+    "name": "Bruce",
+    "new": true,
+    "planting": [
+      1,
+      12
+    ],
+    "production": [
+      "siew"
+    ],
+    "provider": "takii",
+    "segment": "cebula",
+    "storage": "do maja",
+    "type": "rijnsburger"
   },
   "caipira": {
     "active": true,
@@ -1310,6 +1483,46 @@
     ],
     "segment": "sałata lodowa",
     "type": "sałata lodowa"
+  },
+  "cheeta": {
+    "active": true,
+    "color": "#648975",
+    "compaction": {
+      "unit": "tys./ha",
+      "value": "40-50"
+    },
+    "crop": "B_WC",
+    "cultivation": [
+      "grunt"
+    ],
+    "description": "Odmiana do wiosennej uprawy pod płaskimi okryciami i do pierwszych nasadzeń w gruncie otwartym. Cheeta wyróżnia się mocnym wigorem, dużymi, ciemnozielonymi liśćmi okrywowymi, odpornością na pękanie i dobrą zdrowotnością. Zbiory można rozpocząć przy wielkości główek ok. 1,5 kg. Cheeta zachowuje wysoką jakość i trwałość do wielkości 3-3,5 kg. Jest odmianą niezawodnie plonującą, zarówno przy chłodnej, jak i suchej, upalnej wiośnie.",
+    "family": "B_WC",
+    "guardian": "Bernard Zioło",
+    "harvest": [
+      6,
+      7
+    ],
+    "headSize": "1,5-3 kg",
+    "hybrid": true,
+    "imgs": [
+      "https://res.cloudinary.com/ddkef5waq/image/upload/v1724750840/enzapp/kapustne/B_WC/cheeta_uwmfc1.jpg"
+    ],
+    "intended": [
+      "świeży rynek",
+      "przetwórstwo"
+    ],
+    "name": "Cheeta",
+    "provider": "takii",
+    "purpose": "odmiany wczesne",
+    "resistance": [
+      "HR: Fuzarioza kapusty (Foc)"
+    ],
+    "segment": "kapusta głowiasta biała",
+    "type": "wczesna o dużej główce",
+    "vegetation": {
+      "unit": "dni",
+      "value": "70"
+    }
   },
   "cherokee": {
     "active": true,
@@ -1598,6 +1811,46 @@
     "type": "frisee liść fryzowany",
     "vitalis": true
   },
+  "compass": {
+    "active": true,
+    "color": "#648975",
+    "compaction": {
+      "unit": "tys./ha",
+      "value": "35-40"
+    },
+    "crop": "B_WC",
+    "cultivation": [
+      "grunt"
+    ],
+    "description": "Odmiana kapusty białej do zbioru w okresie lata i jesieni. Compass tworzy duże główki o żywozielonym kolorze liści. Główki są wyrównane, lekko spłaszczone, znakomicie nadające się do wykorzystania w kuchni, np. na gołąbki. Odmiana ta jest łatwa w uprawie i dobrze toleruje letnie zmienne warunki, zarówno wysokie temperatury, jak i niedobory wody. Wysoka odporność na Fusarium, średnia na Xanthomonas i dobra tolerancja na wciornastki bardzo ułatwiają ochronę.",
+    "family": "B_WC",
+    "guardian": "Bernard Zioło",
+    "harvest": [
+      6,
+      11
+    ],
+    "headSize": "3-4 kg",
+    "hybrid": true,
+    "imgs": [
+      "https://res.cloudinary.com/ddkef5waq/image/upload/v1724750839/enzapp/kapustne/B_WC/compass_avdusq.jpg"
+    ],
+    "intended": [
+      "świeży rynek"
+    ],
+    "name": "Compass",
+    "provider": "takii",
+    "purpose": "odmiany wczesne",
+    "resistance": [
+      "HR: Fuzarioza kapusty (Foc)",
+      "IR: Czarna zgnilizna kapusty (Xcc)"
+    ],
+    "segment": "kapusta głowiasta biała",
+    "type": "letnia o dużej główce",
+    "vegetation": {
+      "unit": "dni",
+      "value": "80"
+    }
+  },
   "confiance": {
     "active": true,
     "color": "#467F31",
@@ -1624,6 +1877,43 @@
     "provider": "eznl",
     "segment": "endywia",
     "type": "escarola gładki liść"
+  },
+  "convoy": {
+    "active": true,
+    "color": "#648975",
+    "compaction": {
+      "unit": "tys./ha",
+      "value": "40-50"
+    },
+    "crop": "B_SC",
+    "cultivation": [
+      "włóknina",
+      "grunt"
+    ],
+    "description": "Kapusta włoska do uprawy przez cały okres wegetacji, od wczesnych nasadzeń pod płaskie okrycia do nasadzeń poplonowych w lipcu. Odmiana łatwo adaptująca się do zmiennych warunków uprawowych, gwarantująca wysoki plon. Główki średniej wielkości, ok. 2 kg, liście intensywnie zielone, ze średniej wielkości pęcherzykami.",
+    "family": "B_SC",
+    "guardian": "Bernard Zioło",
+    "harvest": [
+      6,
+      11
+    ],
+    "headSize": "2 kg",
+    "hybrid": true,
+    "imgs": [
+      "https://res.cloudinary.com/ddkef5waq/image/upload/v1724750851/enzapp/kapustne/B_SC/convoy_mh6ots.jpg"
+    ],
+    "intended": [
+      "świeży rynek"
+    ],
+    "name": "Convoy",
+    "provider": "takii",
+    "purpose": "gwarantująca wysoki plon",
+    "segment": "kapusta włoska",
+    "type": "uniwersalna",
+    "vegetation": {
+      "unit": "dni",
+      "value": "80"
+    }
   },
   "crosstrek": {
     "active": true,
@@ -2041,6 +2331,42 @@
     "weight": {
       "unit": "g",
       "value": "360-420"
+    }
+  },
+  "deuce": {
+    "active": true,
+    "color": "#648975",
+    "compaction": {
+      "unit": "tys./ha",
+      "value": "40"
+    },
+    "crop": "B_SC",
+    "cultivation": [
+      "grunt"
+    ],
+    "description": "Odmiana kapusty włoskiej do zbioru późnym latem i jesienią. Główki bardzo wyrównane, zwięzłe, dobrze nadają się do pakowania w skrzynki, jak i do sprzedaży luzem. Średnia masa główek to ok. 2 kg. Liście zewnętrzne ciemnozielone, szerokie. Odmiana wyróżnia się znakomitym smakiem i wysoką zdrowotnością.",
+    "family": "B_SC",
+    "guardian": "Bernard Zioło",
+    "harvest": [
+      9,
+      11
+    ],
+    "headSize": "2 kg",
+    "hybrid": true,
+    "imgs": [
+      "https://res.cloudinary.com/ddkef5waq/image/upload/v1724750850/enzapp/kapustne/B_SC/deuce_uenqfg.jpg"
+    ],
+    "intended": [
+      "świeży rynek"
+    ],
+    "name": "Deuce",
+    "provider": "takii",
+    "purpose": "do zaopatrywania supermarketów i na eksport",
+    "segment": "kapusta włoska",
+    "type": "uniwersalna",
+    "vegetation": {
+      "unit": "dni",
+      "value": "100"
     }
   },
   "devito": {
@@ -2535,6 +2861,48 @@
     "segment": "lubczyk",
     "type": "?"
   },
+  "enduro": {
+    "active": true,
+    "color": "#648975",
+    "compaction": {
+      "unit": "tys./ha",
+      "value": "65"
+    },
+    "crop": "B_CC",
+    "cultivation": [
+      "grunt"
+    ],
+    "description": "Enduro jest odmianą przeznaczoną na sprzedaż bezpośrednio po zbiorze w drugiej połowie lata i jesienią oraz do długiego przechowywania. Cylindryczny kształt, wyrównanie wielkości, brak przerastania główek na wysokość zapewniają wysoką jakość handlową przy letniej uprawie pod siatką nawet najbardziej wymagającym. Z nasadzeń w pierwszej połowie sierpnia uzyskuje się wysokie plony dobrze wypełnionych, cylindrycznych główek, które doskonale nadają się do długiego przechowywania. Główki są łatwe do czyszczenia po okresie przechowywania i po przygotowaniu do sprzedaży zachowują świeży, zielony kolor. Jeśli kapusta ta ma być długo przechowywana, zalecamy, aby nie była zbierana przejrzała. Odmiana cechuje się silnym systemem korzeniowym i dobrym pobieraniem wody z gleby, co przekłada się na stabilne plonowanie i zdrowotność produkcji.",
+    "family": "B_CC",
+    "guardian": "Bernard Zioło",
+    "harvest": [
+      6,
+      11
+    ],
+    "headShape": "cylindryczny",
+    "headSize": "1-1,5 kg",
+    "hybrid": true,
+    "imgs": [
+      "https://res.cloudinary.com/ddkef5waq/image/upload/v1724750838/enzapp/kapustne/B_CC/enduro_etaryc.jpg"
+    ],
+    "intended": [
+      "świeży rynek",
+      "przechowywanie"
+    ],
+    "name": "Enduro",
+    "provider": "takii",
+    "purpose": "wysokie plony z hektara",
+    "resistance": [
+      "HR: kiła kapustnych ",
+      "PB: rasy 0,1,3"
+    ],
+    "segment": "kapusta pekińska",
+    "type": "brak przerastania główek na wysokość",
+    "vegetation": {
+      "unit": "dni",
+      "value": "65"
+    }
+  },
   "enroza": {
     "action": "actions/uprawiaj_ze_smakiem.svg",
     "active": true,
@@ -2715,6 +3083,45 @@
       "value": "?"
     }
   },
+  "estafette": {
+    "active": true,
+    "color": "#467F31",
+    "compaction": {
+      "disclaimer": "(zależy od sposobu i przeznaczenia uprawy)",
+      "unit": "mln nasion/ha",
+      "value": "2-10"
+    },
+    "crop": "ON",
+    "cultivation": [
+      "grunt"
+    ],
+    "description": "Wyrównana, produktywna i bardzo uniwersalna odmiana, którą możemy uprawiać od wiosny do jesieni. Łatwa w zbiorze i czyszczeniu. Długi szczypior o atrakcyjnym zielonym kolorze.",
+    "family": "ON",
+    "guardian": "Paweł Wechterowicz",
+    "harvest_maturity": "wczesna",
+    "hybrid": true,
+    "imgs": [
+      "https://res.cloudinary.com/ddkef5waq/image/upload/v1721971462/enzapp/cebule/estafette_isusor.jpg"
+    ],
+    "intended": [
+      "?"
+    ],
+    "name": "Estafette",
+    "new": false,
+    "planting": [
+      1,
+      12
+    ],
+    "production": [
+      "siew"
+    ],
+    "provider": "takii",
+    "resistance": [
+      "HR: mączniak rzekomy"
+    ],
+    "segment": "cebula",
+    "type": "siedmiolatka (szczypior pęczkowy)"
+  },
   "extenza": {
     "active": true,
     "benefits": [
@@ -2845,6 +3252,45 @@
     "segment": "szałwia",
     "type": "?"
   },
+  "feast": {
+    "active": true,
+    "color": "#467F31",
+    "compaction": {
+      "disclaimer": "(zależy od sposobu i przeznaczenia uprawy)",
+      "unit": "mln nasion/ha",
+      "value": "2,5-10"
+    },
+    "crop": "ON",
+    "cultivation": [
+      "grunt"
+    ],
+    "description": "Odmiana o wzniesionym szczypiorze, osiągającym długość 40-50 cm. Liście charakteryzują się ciemnozielonym kolorem oraz atrakcyjnym połyskiem. Odmiana tworzy wąską i wyrównaną szyjkę, idealnie nadającą się do pęczkowania. Rekomendowana do uprawy wiosną i latem.",
+    "family": "ON",
+    "guardian": "Paweł Wechterowicz",
+    "harvest_maturity": "średnio wczesna",
+    "hybrid": true,
+    "imgs": [
+      "https://res.cloudinary.com/ddkef5waq/image/upload/v1721971470/enzapp/cebule/feast_damxnh.jpg"
+    ],
+    "intended": [
+      "?"
+    ],
+    "name": "Feast",
+    "new": false,
+    "planting": [
+      1,
+      12
+    ],
+    "production": [
+      "siew"
+    ],
+    "provider": "takii",
+    "resistance": [
+      "IR: mączniak rzekomy i grzyby z rodzaju Alternaria"
+    ],
+    "segment": "cebula",
+    "type": "siedmiolatka (szczypior pęczkowy)"
+  },
   "flexi_kuri": {
     "active": true,
     "code": "E30R.00095",
@@ -2876,7 +3322,7 @@
       1,
       12
     ],
-    "provider": "eznl",
+    "provider": "takii",
     "resistance": [
       "IR: ZYMV/WMV/PRSV"
     ],
@@ -3027,6 +3473,45 @@
     ],
     "segment": "szpinak",
     "type": "gładki"
+  },
+  "galatea": {
+    "active": true,
+    "caliber": {
+      "unit": "mm",
+      "value": "60-70"
+    },
+    "color": "#467F31",
+    "compaction": {
+      "unit": "nasion/ha",
+      "value": "625 000-750 000"
+    },
+    "crop": "ON",
+    "cultivation": [
+      "grunt"
+    ],
+    "description": "Cebula Galatea jest odmianą mieszańcową charakteryzującą się bardzo dobrym wyrównaniem i wysokim plonem. Ma kształt kulisty o pokroju nieco wydłużonym i atrakcyjną, brązową, mocną łuskę. Bardzo łatwa i szybka do obierania na „biało” i dobrze prezentująca się w worku. Galatea wyróżnia się wysoką zdrowotnością, silnym, prostym szczypiorem o ciemnozielonym kolorze i cienką szyjką. Jest odmianą nieco późniejszą od odmiany Sonic, również bez tendencji do wybijania w pęd kwiatostanowy. Tworzy średnie i duże cebule. Nasi południowi sąsiedzi cenią ją za niezawodność i wyrównanie.",
+    "family": "ON",
+    "guardian": "Paweł Wechterowicz",
+    "harvest_maturity": "wczesna",
+    "hybrid": true,
+    "imgs": [
+      "https://res.cloudinary.com/ddkef5waq/image/upload/v1721971466/enzapp/cebule/galatea_farmad.jpg"
+    ],
+    "intended": [
+      "świeży rynek"
+    ],
+    "name": "Galatea",
+    "new": true,
+    "planting": [
+      1,
+      12
+    ],
+    "production": [
+      "siew"
+    ],
+    "provider": "takii",
+    "segment": "cebula",
+    "type": "zimująca"
   },
   "gardist": {
     "active": true,
@@ -3395,6 +3880,48 @@
     "segment": "oregano",
     "type": "?"
   },
+  "green_lunar": {
+    "active": true,
+    "color": "#648975",
+    "compaction": {
+      "unit": "tys./ha",
+      "value": "40-50"
+    },
+    "crop": "B_WC",
+    "cultivation": [
+      "grunt"
+    ],
+    "description": "Odmiana łatwa w uprawie, na zbiory letnie i jesienne, o wyrównanych główkach. Wolna od przebarwień antocyjanowych przy niskich temperaturach. Odmiana ta jest odporna na pękanie, dzięki czemu może być zbierana przez długi czas.",
+    "family": "B_WC",
+    "guardian": "Bernard Zioło",
+    "harvest": [
+      6,
+      11
+    ],
+    "headSize": "2-2,5 kg",
+    "hybrid": true,
+    "imgs": [
+      "https://res.cloudinary.com/ddkef5waq/image/upload/v1724750841/enzapp/kapustne/B_WC/green_lunar_cuphxe.jpg"
+    ],
+    "intended": [
+      "świeży rynek",
+      "kiszenie"
+    ],
+    "name": "Green Lunar",
+    "new": true,
+    "provider": "takii",
+    "purpose": "przechowywanie",
+    "resistance": [
+      "HR: Fuzarioza kapusty (Foc)",
+      "IR: Czarna zgnilizna kapusty (Xcc)"
+    ],
+    "segment": "kapusta płaska",
+    "type": "łatwa w uprawie",
+    "vegetation": {
+      "unit": "dni",
+      "value": "80"
+    }
+  },
   "green_sleeves": {
     "active": true,
     "color": "#467F31",
@@ -3432,6 +3959,47 @@
     "provider": "ezdl",
     "segment": "koper",
     "type": "?"
+  },
+  "green_stellar": {
+    "active": true,
+    "color": "#648975",
+    "compaction": {
+      "unit": "tys./ha",
+      "value": "40-50"
+    },
+    "crop": "B_WC",
+    "cultivation": [
+      "grunt"
+    ],
+    "description": "Nowa odmiana płaskiej kapusty, zalecana do uprawy w dużym zagęszczeniu. Główki wyrównane, dobrze wypełnione również przy dużym zagęszczeniu. Odmiana na jesienne zbiory, bardzo przydatna do przechowywania.",
+    "family": "B_WC",
+    "guardian": "Bernard Zioło",
+    "harvest": [
+      6,
+      11
+    ],
+    "headSize": "1-1,5 kg",
+    "hybrid": true,
+    "imgs": [
+      "https://res.cloudinary.com/ddkef5waq/image/upload/v1724750841/enzapp/kapustne/B_WC/green_stellar_xkrjpb.jpg"
+    ],
+    "intended": [
+      "świeży rynek"
+    ],
+    "name": "Green Stellar",
+    "new": true,
+    "provider": "takii",
+    "purpose": "świeży rynek",
+    "resistance": [
+      "HR: Fuzarioza kapusty (Foc)",
+      "IR: Czarna zgnilizna kapusty (Xcc)"
+    ],
+    "segment": "kapusta płaska",
+    "type": "uprawy w dużym zagęszczeniu",
+    "vegetation": {
+      "unit": "dni",
+      "value": "85"
+    }
   },
   "grummel": {
     "active": true,
@@ -3767,7 +4335,7 @@
       1,
       12
     ],
-    "provider": "eznl",
+    "provider": "takii",
     "resistance": [
       "IR: ZYMV/WMV/PRSV"
     ],
@@ -4582,6 +5150,48 @@
       "value": "150-170"
     }
   },
+  "medusa": {
+    "active": true,
+    "caliber": {
+      "unit": "mm",
+      "value": "60-90"
+    },
+    "color": "#467F31",
+    "compaction": {
+      "unit": "nasion/ha",
+      "value": "550.000-800.000"
+    },
+    "crop": "ON",
+    "cultivation": [
+      "grunt"
+    ],
+    "description": "Medusa to cebula dnia długiego, specjalnie opracowana, by zmaksymalizować plon. Idealne wyrównanie, bardzo silny system korzeniowy i mocny pokrój rośliny to cechy, które gwarantują jej większą odporność na czynniki stresowe, takie jak wysoka temperatura czy okresowe niedobory wody. Upalne lata nie są dla niej przeszkodą i nie wpływają negatywnie na uzyskanie wysokiego plonu. Siew w kwietniu, zbiór pod koniec sierpnia lub na początku września. Idealna do obierania mechanicznego dzięki wyrównaniu cebul łatwo ustawić maszyny i zminimalizować odpad.",
+    "family": "ON",
+    "guardian": "Paweł Wechterowicz",
+    "harvest_maturity": "wczesna",
+    "hybrid": true,
+    "imgs": [
+      "https://res.cloudinary.com/ddkef5waq/image/upload/v1721971464/enzapp/cebule/medusa_ixi2w2.jpg"
+    ],
+    "intended": [
+      "świeży rynek",
+      "przemysł",
+      "średnio przechowywanie",
+      "długie przechowywanie"
+    ],
+    "name": "Medusa",
+    "new": false,
+    "planting": [
+      1,
+      12
+    ],
+    "production": [
+      "siew"
+    ],
+    "provider": "takii",
+    "segment": "cebula",
+    "type": "japoński"
+  },
   "melen": {
     "active": true,
     "color": "#467F31",
@@ -4776,6 +5386,58 @@
     "segment": "endywia",
     "type": "frisee liść fryzowany"
   },
+  "minowase_summer_cross": {
+    "active": true,
+    "color": "#467F31",
+    "crop": "DK",
+    "cultivation": [
+      "grunt"
+    ],
+    "description": "Minowase Summer Cross Nr 3 to rzodkiew mieszańcowa bardzo dobrze plonująca latem dzięki odporności na wybijanie w pędy kwiatowe. Charakteryzuje się silnym wigorem i dużym wyrównaniem. Przy zagęszczeniu 100 000 nasion na hektar osiąga długość 45 cm i średnicę do 6,5 cm. Gładki, biały i z zaokrąglonym czubkiem korzeń, dodatkowo okryty cienką i gładką skórą, prezentuje się bardzo atrakcyjnie w sprzedaży. Miąższ charakteryzuje się średnio ostrym smakiem i nie wykazuje tendencji do parcenia i pękania. Minowase Summer Cross Nr 3 doskonale nadaje się na zbiory latem i jesienią i może mieć różnorodne zastosowanie: do bezpośredniego spożycia, na świeży rynek, do surówek i sałatek, do gotowania oraz marynowania.",
+    "family": "DK",
+    "guardian": "Aleksandra Krzyżanowska",
+    "harvest": [
+      8,
+      10
+    ],
+    "hybrid": true,
+    "imgs": [
+      "https://res.cloudinary.com/ddkef5waq/image/upload/v1721984851/enzapp/rzodkiew/minowase_summer_cross_et89bh.jpg"
+    ],
+    "intended": [
+      "świeży rynek",
+      "surówki",
+      "przechowywanie"
+    ],
+    "name": "Minowase Summer Cross",
+    "planting": [
+      7,
+      8
+    ],
+    "provider": "takii",
+    "resistance": [
+      "HR: For"
+    ],
+    "root": {
+      "rcolor": "biały",
+      "rfi": "6,5 cm",
+      "rlength": "40-45 cm"
+    },
+    "segment": "rzodkiew japońska daikon",
+    "size": {
+      "unit": "g",
+      "value": 800
+    },
+    "tolerance": {
+      "cold": "wysoka",
+      "heat": "średnia"
+    },
+    "type": "średnia odporność na wybijanie w pędy",
+    "vegetation": {
+      "unit": "dni",
+      "value": "50"
+    }
+  },
   "mistery": {
     "active": true,
     "code": "E01C.10743",
@@ -4841,7 +5503,7 @@
     "production": [
       "siew"
     ],
-    "provider": "eznl",
+    "provider": "takii",
     "segment": "cebula",
     "storage": "do marca",
     "type": "czerwona Rijnsburger"
@@ -4920,6 +5582,52 @@
     "type": "sałata lodowa",
     "vitalis": true
   },
+  "natsu_komachi": {
+    "active": true,
+    "color": "#467F31",
+    "compaction": {
+      "unit": "kg/ha",
+      "value": "5"
+    },
+    "crop": "DK",
+    "cultivation": [
+      "grunt",
+      "tunel",
+      "włóknina",
+      "szklarnia"
+    ],
+    "description": "Biała, gładka rzepa o krótkim i drobnym liściu do upraw wczesnowiosennych i letnich. Polecana również do produkcji szklarniowej. Odporna na wybijanie w pędy kwiatowe. Doskonała odmiana do produkcji pęczkowej jako baby turnip.",
+    "family": "DK",
+    "guardian": "Aleksandra Krzyżanowska",
+    "harvest": [
+      4,
+      8
+    ],
+    "hybrid": true,
+    "imgs": [
+      "https://res.cloudinary.com/ddkef5waq/image/upload/v1721984834/enzapp/rzepa/natsu_komachi_rqlyka.jpg"
+    ],
+    "intended": [
+      "świeży rynek"
+    ],
+    "name": "Natsu Komachi",
+    "provider": "takii",
+    "root": {
+      "rcolor": "biały",
+      "rfi": "5-10 cm"
+    },
+    "segment": "rzepa",
+    "size": {
+      "unit": "g",
+      "value": 150
+    },
+    "spacing": "8 x 20 cm",
+    "type": "japoński",
+    "vegetation": {
+      "unit": "dni",
+      "value": "40-45"
+    }
+  },
   "nelson": {
     "active": true,
     "color": "#467F31",
@@ -4996,6 +5704,90 @@
     "weight": {
       "unit": "kg",
       "value": "1,2-1,4"
+    }
+  },
+  "orient_express": {
+    "active": true,
+    "color": "#648975",
+    "compaction": {
+      "unit": "tys./ha",
+      "value": "65"
+    },
+    "crop": "B_CC",
+    "cultivation": [
+      "grunt"
+    ],
+    "description": "Orient Express jest odmianą przeznaczoną na zbiory letnie i jesienne. Wyróżnia się dobrą zdrowotnością na polu i bardzo dobrym wyrównaniem wielkości. Dzięki temu oraz ze względu na dużą masę główek zapewnia uzyskiwanie wysokich plonów z hektara. Odmiana o bardzo dobrej tolerancji na zaburzenia fizjologiczne: tipburn i pieprzową plamistość. Orient Express może być wykorzystany do średnio długiego przechowywania.",
+    "family": "B_CC",
+    "guardian": "Bernard Zioło",
+    "harvest": [
+      8,
+      11
+    ],
+    "headShape": "baryłkowaty",
+    "headSize": "1,5-2 kg",
+    "hybrid": true,
+    "imgs": [
+      "https://res.cloudinary.com/ddkef5waq/image/upload/v1724750845/enzapp/kapustne/B_CC/orient_express_sz5u2j.jpg"
+    ],
+    "intended": [
+      "świeży rynek",
+      "krókie przechowywanie"
+    ],
+    "name": "Orient Express",
+    "provider": "takii",
+    "purpose": "wysokie plony z hektara",
+    "resistance": [
+      "HR: kiła kapustnych ",
+      "PB: rasy 0,1,3"
+    ],
+    "segment": "kapusta pekińska",
+    "type": "dobra zdrowotność na polu",
+    "vegetation": {
+      "unit": "dni",
+      "value": "65"
+    }
+  },
+  "orient_surprise": {
+    "active": true,
+    "color": "#648975",
+    "compaction": {
+      "unit": "tys./ha",
+      "value": "65"
+    },
+    "crop": "B_CC",
+    "cultivation": [
+      "grunt"
+    ],
+    "description": "Bardzo wyrównana odmiana z atrakcyjnym żółtozielonym kolorem wnętrza główki. Odporna na wybijanie w pędy kwiatowe, również przy zimnej wiośnie. Orient Surprise bardzo dobrze nadaje się zarówno do wczesnych nasadzeń pod osłonami, jak i do późniejszej produkcji w gruncie otwartym. Odmiana ta szybko się wypełnia, dając łatwe w zbiorze główki o kształcie i wadze idealnych dla potrzeb świeżego rynku. Szczególnie polecana producentom, którym zależy na dużej masie główek. Orient Surprise ma silny system korzeniowy i nie jest podatna na tipburn czyli zamieranie wnętrza główki na skutek problemów z transportem wapnia w roślinie.",
+    "family": "B_CC",
+    "guardian": "Bernard Zioło",
+    "harvest": [
+      5,
+      11
+    ],
+    "headShape": "półcylindryczny",
+    "headSize": "1-2 kg",
+    "hybrid": true,
+    "imgs": [
+      "https://res.cloudinary.com/ddkef5waq/image/upload/v1724750846/enzapp/kapustne/B_CC/orient_surprise_e9tiek.jpg"
+    ],
+    "intended": [
+      "świeży rynek",
+      "przetwórstwo"
+    ],
+    "name": "Orient Surprise",
+    "provider": "takii",
+    "purpose": "duża masa główek",
+    "resistance": [
+      "HR: kiła kapustnych ",
+      "PB: rasy 0,1,3"
+    ],
+    "segment": "kapusta pekińska",
+    "type": "wysok odporność na wybijanie w pędy kwiatostanowe",
+    "vegetation": {
+      "unit": "dni",
+      "value": "60"
     }
   },
   "oslo": {
@@ -5270,6 +6062,68 @@
     "type": "sałata lodowa",
     "vitalis": true
   },
+  "pink_bisou": {
+    "active": true,
+    "benefits": [
+      {
+        "description": "?"
+      }
+    ],
+    "code": "TTM-075",
+    "color": "#467F31",
+    "compaction": {
+      "unit": "na metr bieżący",
+      "value": "?"
+    },
+    "crop": "TO",
+    "cultivation": [
+      "tunel"
+    ],
+    "family": "TO",
+    "frut": [
+      "kolor: malinowy",
+      "owoce wielokomorowe, mięsiste",
+      "atrakcyjna długa szypułka",
+      "zwarte grona z 4-5 okrągłymi i wyrównanymi owocami",
+      "wyjątkowo dobry smak"
+    ],
+    "guardian": "Agnieszka Wiśniewska",
+    "harvest": [
+      1,
+      12
+    ],
+    "hybrid": true,
+    "imgs": [
+      "https://res.cloudinary.com/ddkef5waq/image/upload/v1686726426/enzapp/pomidory/pink_bisou_dhd3og.jpg"
+    ],
+    "intended": [
+      "?"
+    ],
+    "name": "Pink Bisou",
+    "new": false,
+    "plant": [
+      "odmiana wczesna polecana do produkcji wiosennej oraz jesiennej",
+      "roślina silna z mocnym wigorem i małymi liśćmi",
+      "pokrój otwarty, krótkie oraz średniej długości międzywęźla",
+      "dzięki silnemu systemowi korzeniowemu odmiana dobrze radzi sobie w wyższych temperaturach"
+    ],
+    "planting": [
+      1,
+      12
+    ],
+    "production": [
+      "?"
+    ],
+    "provider": "takii",
+    "segment": "pomidor malinowy",
+    "shape": "?",
+    "type": "?",
+    "vitalis": false,
+    "weight": {
+      "unit": "g",
+      "value": "220-290"
+    }
+  },
   "pozzano": {
     "active": true,
     "benefits": [
@@ -5331,6 +6185,85 @@
     "weight": {
       "unit": "g",
       "value": "150-160"
+    }
+  },
+  "predeco": {
+    "active": true,
+    "color": "#648975",
+    "compaction": {
+      "unit": "tys./ha",
+      "value": "60"
+    },
+    "crop": "B_WC",
+    "cultivation": [
+      "grunt"
+    ],
+    "description": "Odmiana odpowiednia do zaopatrywania sieci supermarketów przez cały sezon. Może być sadzona od wczesnej wiosny, pod włókniną, z przeznaczeniem na pierwsze dostawy kapusty o twardych główkach, aż do drugiej połowy lipca na przechowanie. Predeco tworzy wyrównane, twarde główki o atrakcyjnym wyglądzie: jasnozielone, z połyskiem i delikatnym unerwieniem liści, bardzo dobrze prezentujące się w kartonach. Główki są twarde od wczesnej fazy, już przy masie poniżej 1 kg, a w późniejszym okresie wzrostu powiększają swoją średnicę i masę. W lecie odmiana Predeco może być zbierana już po 70 dniach w kartony 30 × 50 cm lub po 80 dniach w standardowe skrzynki 40 × 60 cm. Wielkość główek: od 1,3-1,5 kg i średnicy ok. 15 cm na początku zbiorów do maksymalnie 2,5 kg. Predeco jest odporne na pękanie i wyrośnięte może pozostawać na polu nawet przez kilka tygodni. Głąb krótki, miękki, łatwy do cięcia. Luźne osadzenie dolnych liści zapewnia prawidłową wentylację i dobrą zdrowotność także w lata z dużą ilością opadów. Główki z późnych nasadzeń, w drugiej połowie lipca, można przechowywać do kwietnia. Zalecamy wysokie zagęszczenie, do 60 tys./ha (45-50 cm × 35 cm), zapewniające wysokie plony z hektara i dochodowość produkcji. Ponadto szybkie okrycie gleby przez liście ułatwia walkę z chwastami i utrzymanie wody w glebie w okresie lata.",
+    "family": "B_WC",
+    "guardian": "Bernard Zioło",
+    "harvest": [
+      6,
+      11
+    ],
+    "headSize": "1,5-2,5 kg",
+    "hybrid": true,
+    "imgs": [
+      "https://res.cloudinary.com/ddkef5waq/image/upload/v1724750838/enzapp/kapustne/B_WC/predeco_khnbdf.jpg"
+    ],
+    "intended": [
+      "świeży rynek",
+      "karton",
+      "worek"
+    ],
+    "name": "Predeco",
+    "provider": "takii",
+    "purpose": "odmiany przeznaczone do zaopatrzenia marketów",
+    "segment": "kapusta głowiasta biała",
+    "type": "letnia",
+    "vegetation": {
+      "unit": "dni",
+      "value": "80"
+    }
+  },
+  "preduro": {
+    "active": true,
+    "color": "#648975",
+    "compaction": {
+      "unit": "tys./ha",
+      "value": "65"
+    },
+    "crop": "B_CC",
+    "cultivation": [
+      "grunt"
+    ],
+    "description": "Preduro jest odmianą wyróżniającą się bardzo wysoką odpornością na wybijanie w pędy kwiatostanowe. Dzięki temu niezawodnie plonuje w nasadzeniach wiosennych, również w lata z zimną wiosną. Szczególnie polecamy tę odmianę do nasadzeń pod osłonami. Preduro bardzo dobrze sprawuje się także w uprawie w gruncie otwartym na zbiory w czerwcu i lipcu. Może być zbierana w pełni wyrośnięta dla uzyskania wysokiego plonu. Preduro jest odmianą szybko rosnącą, przez co prędko osiąga handlową wagę. Charakteryzuje się ciemnozielonym kolorem liści i atrakcyjnym, handlowym wyglądem. Cylindryczny kształt główek sprawia, że łatwo i szybko się ją pakuje, ponadto taki kształt jest pożądany przez konsumentów. Odmiana Preduro sprawdza się także w letniej uprawie pod siatką, bez stosowania insektycydów.",
+    "family": "B_CC",
+    "guardian": "Bernard Zioło",
+    "harvest": [
+      4,
+      7
+    ],
+    "headShape": "cylindryczny",
+    "headSize": "1-1,5 kg",
+    "hybrid": true,
+    "imgs": [
+      "https://res.cloudinary.com/ddkef5waq/image/upload/v1724750838/enzapp/kapustne/B_CC/preduro_vdfccp.jpg"
+    ],
+    "intended": [
+      "świeży rynek"
+    ],
+    "name": "Preduro",
+    "provider": "takii",
+    "purpose": "do nasadzeń pod osłonami",
+    "resistance": [
+      "HR: kiła kapustnych ",
+      "PB: rasy 0,1,3"
+    ],
+    "segment": "kapusta pekińska",
+    "type": "bardzo wysoka odporność na wybijanie w pędy kwiatostanowe",
+    "vegetation": {
+      "unit": "dni",
+      "value": "55"
     }
   },
   "preludio": {
@@ -5500,6 +6433,47 @@
     "provider": "eznl",
     "segment": "dębolistna",
     "type": "dębolistna"
+  },
+  "ruby_star": {
+    "active": true,
+    "caliber": {
+      "unit": "mm",
+      "value": "60-70"
+    },
+    "color": "#467F31",
+    "compaction": {
+      "unit": "nasion/ha",
+      "value": "750 000 -875 000"
+    },
+    "crop": "ON",
+    "cultivation": [
+      "grunt"
+    ],
+    "description": "Odmianę Ruby Star cechuje bardzo dobre wyrównanie oraz to, że można ją zebrać z pola trochę wcześniej niż inne odmiany w typie Rijnsburger. Błyszcząca i ciemnoczerwona łuska umożliwia sprzedaż cebuli tuż po zbiorze. Ze względu na dużą zawartość suchej masy odmiana ta przeznaczona jest głównie do przechowywania. Cechuje ją dobre wybarwienie wewnętrzne po zbiorze.",
+    "family": "ON",
+    "guardian": "Paweł Wechterowicz",
+    "harvest_maturity": "średnio późna",
+    "hybrid": true,
+    "imgs": [
+      "https://res.cloudinary.com/ddkef5waq/image/upload/v1721971467/enzapp/cebule/ruby_star_clnidu.jpg"
+    ],
+    "intended": [
+      "przemysł",
+      "przechowanie"
+    ],
+    "name": "Ruby Star",
+    "new": true,
+    "planting": [
+      1,
+      12
+    ],
+    "production": [
+      "siew"
+    ],
+    "provider": "takii",
+    "segment": "cebula",
+    "storage": "do marca",
+    "type": "czerwona Rijnsburger"
   },
   "salvio": {
     "active": true,
@@ -5682,6 +6656,45 @@
     "provider": "eznl",
     "segment": "rukola",
     "type": "stabilna"
+  },
+  "senshyu_yellow": {
+    "active": true,
+    "caliber": {
+      "unit": "mm",
+      "value": "50-60"
+    },
+    "color": "#467F31",
+    "compaction": {
+      "unit": "nasion/ha",
+      "value": "625.000-1.125.000"
+    },
+    "crop": "ON",
+    "cultivation": [
+      "grunt"
+    ],
+    "description": "Senshyu Yellow to znana i ceniona odmiana zimująca, podstawowa na polskim rynku. Charakteryzuje się wysoką tolerancją na niskie temperatury w czasie zimy. Odmiana używana jako pierwsza do zbioru na pęczki bez zaschniętej łuski, a później, już po zaschnięciu łuski, do sprzedaży na worki. Odmiana wyróżnia się wysoką odpornością na mrozy i niezawodnością. W naszych warunkach klimatycznych daje wysoki plon okrągłych cebul o żółtobrązowej łusce.",
+    "family": "ON",
+    "guardian": "Paweł Wechterowicz",
+    "harvest_maturity": "średnio późna",
+    "hybrid": true,
+    "imgs": [
+      "https://res.cloudinary.com/ddkef5waq/image/upload/v1721971463/enzapp/cebule/senshyu_yellow_dma9kq.jpg"
+    ],
+    "intended": [
+      "świeży rynek"
+    ],
+    "name": "Senshyu Yellow",
+    "new": false,
+    "planting": [
+      1,
+      12
+    ],
+    "production": [
+      "siew"
+    ],
+    "provider": "takii",
+    "segment": "cebula",
+    "type": "zimująca"
   },
   "senso": {
     "active": true,
@@ -5988,6 +7001,85 @@
       "value": "60"
     }
   },
+  "sonho": {
+    "active": true,
+    "color": "#648975",
+    "compaction": {
+      "unit": "tys./ha",
+      "value": "40-50"
+    },
+    "crop": "B_SC",
+    "cultivation": [
+      "włóknina",
+      "grunt"
+    ],
+    "description": "Odmiana do nasadzeń przez cały sezon uprawy. Główki kompaktowe, zwięzłe, szczególnie nadające się  do pakowania w skrzynki do zaopatrywania supermarketów i na eksport. Wyrównanie wielkości i ciemny kolor zapewniają bardzo atrakcyjny wygląd w skrzynkach.",
+    "family": "B_SC",
+    "guardian": "Bernard Zioło",
+    "harvest": [
+      6,
+      11
+    ],
+    "headSize": "1,5 kg",
+    "hybrid": true,
+    "imgs": [
+      "https://res.cloudinary.com/ddkef5waq/image/upload/v1724750839/enzapp/kapustne/B_SC/sonho_yopnpc.jpg"
+    ],
+    "intended": [
+      "świeży rynek"
+    ],
+    "name": "Sonho",
+    "provider": "takii",
+    "purpose": "do zaopatrywania supermarketów i na eksport",
+    "resistance": [
+      "HR: Fuzarioza kapusty (Foc)"
+    ],
+    "segment": "kapusta włoska",
+    "type": "kompaktowa",
+    "vegetation": {
+      "unit": "dni",
+      "value": "85"
+    }
+  },
+  "sonic": {
+    "active": true,
+    "caliber": {
+      "unit": "mm",
+      "value": "60-80"
+    },
+    "color": "#467F31",
+    "compaction": {
+      "unit": "nasion/ha",
+      "value": "700 000-1 000 000"
+    },
+    "crop": "ON",
+    "cultivation": [
+      "grunt"
+    ],
+    "description": "Sonic to wczesna mieszańcowa odmiana z segmentu cebul zimujących. Odmiana wytwarza ciemnozielone ulistnienie o średniej długości. Cebule są okrągłe lub lekko płasko-okrągłe, z ładną łuską i cienką szyjką. Przy dobrym wejściu w spoczynek zimowy (tj. trzy liście właściwe i szyjka grubości ołówka) nie ma tendencji do wybijania w pęd kwiatowy.",
+    "family": "ON",
+    "guardian": "Paweł Wechterowicz",
+    "harvest_maturity": "wczesna",
+    "hybrid": true,
+    "imgs": [
+      "https://res.cloudinary.com/ddkef5waq/image/upload/v1721971463/enzapp/cebule/senshyu_yellow_dma9kq.jpg"
+    ],
+    "intended": [
+      "świeży rynek"
+    ],
+    "name": "Sonic",
+    "new": true,
+    "planting": [
+      1,
+      12
+    ],
+    "production": [
+      "siew"
+    ],
+    "provider": "takii",
+    "segment": "cebula",
+    "type": "zimująca"
+  },
   "staro": {
     "active": true,
     "color": "#467F31",
@@ -6026,6 +7118,88 @@
     "segment": "szczypior",
     "type": "?"
   },
+  "status": {
+    "active": true,
+    "color": "#467F31",
+    "compaction": {
+      "unit": "na metr bieżący",
+      "value": "?"
+    },
+    "crop": "CC",
+    "cultivation": [
+      "szklarnia"
+    ],
+    "family": "CC",
+    "guardian": "Tomasz Nowak",
+    "harvest": [
+      1,
+      12
+    ],
+    "hybrid": true,
+    "imgs": [
+      "https://res.cloudinary.com/ddkef5waq/image/upload/v1686907758/enzapp/ogorki/status_j7o0sr.jpg"
+    ],
+    "intended": [
+      "?"
+    ],
+    "name": "Status",
+    "new": false,
+    "planting": [
+      1,
+      12
+    ],
+    "production": [
+      "?"
+    ],
+    "provider": "takii",
+    "remarks": [
+      "podkładka do ogórka zapewniająca generatywny wzrost rośliny",
+      "poprawia jakość owoców, dając dobrą jakość skórki i jej ciemny kolor",
+      "zabezpiecza rośliny przed chorobami odglebowymi",
+      "zapewnia lepszy wigor przy niskiej temperaturze gleby, zarówno wiosną, jak i jesienią"
+    ],
+    "segment": "ogórek podkładka",
+    "shape": "cylindryczne",
+    "type": "?",
+    "vitalis": false
+  },
+  "storka": {
+    "active": true,
+    "color": "#648975",
+    "compaction": {
+      "unit": "tys./ha",
+      "value": "30-50"
+    },
+    "crop": "B_WC",
+    "cultivation": [
+      "grunt"
+    ],
+    "description": "Odmiana o bardzo szerokiej możliwości wykorzystania. Najczęściej stosowana do czerwcowych nasadzeń z przeznaczeniem do przechowywania. Storka daje także bardzo dobre wyniki w letniej uprawie na sprzedaż bezpośrednio po zbiorach na świeży rynek. Odmiana wyróżnia się wysoką zawartością cukrów i jest ceniona przez konsumentów za słodki smak. Jest to również zaleta podczas zimowego kiszenia. Storka ma główki owalne, liście odporne na przebarwienia antocyjanowe. Jest bardzo łatwa do obierania, także przez nadmuch powietrza, co zapewnia wysoką wydajność przy pakowaniu. Może być sadzona przez długi okres, od połowy kwietnia, na zbiory latem, do końca czerwca, także jako poplon po wczesnych warzywach. Zależnie od przeznaczenia Storka może być sadzona w różnym zagęszczeniu. Dla uzyskania główek 3-3,5 kg zalecane jest sadzenie jej w liczbie 35-40 tys./ha. W celu produkcji główek o masie ok. 2 kg, z przeznaczeniem do zaopatrzenia sieci supermarketów, zalecane jest większe zagęszczenie około 50 tys./ha. Odporność odmiany na pękanie i jej zdrowotność zapewnia bardzo długie okno zbiorcze, nawet do dwóch miesięcy bez przerastania na wielkość. Łatwość adaptacji do zmiennych warunków, bardzo dobra zdrowotność, długi okres nasadzeń, możliwość stosowania różnego zagęszczenia, wielokierunkowe wykorzystanie czynią ze Storki bardzo uniwersalną odmianę dla każdego producenta kapusty.",
+    "family": "B_WC",
+    "guardian": "Bernard Zioło",
+    "harvest": [
+      9,
+      11
+    ],
+    "headSize": "2-4(1,5-2 przy gęstym sadzeniu) kg",
+    "hybrid": true,
+    "imgs": [
+      "https://res.cloudinary.com/ddkef5waq/image/upload/v1724750848/enzapp/kapustne/B_WC/storka_ob9ilx.jpg"
+    ],
+    "intended": [
+      "świeży rynek",
+      "przetwórstwo"
+    ],
+    "name": "Storka",
+    "provider": "takii",
+    "purpose": "przechowywanie",
+    "segment": "kapusta głowiasta biała",
+    "type": "długie przechowywanie",
+    "vegetation": {
+      "unit": "dni",
+      "value": "120"
+    }
+  },
   "stretcha": {
     "active": true,
     "color": "#467F31",
@@ -6055,6 +7229,46 @@
     ],
     "segment": "sałata masłowa",
     "type": "sałata masłowa"
+  },
+  "strukta": {
+    "active": true,
+    "color": "#648975",
+    "compaction": {
+      "unit": "tys./ha",
+      "value": "25-40"
+    },
+    "crop": "B_WC",
+    "cultivation": [
+      "grunt"
+    ],
+    "description": "Strukta jest odmianą przeznaczoną do kiszenia i sprzedaży na świeżym rynku, w okresie od sierpnia do późnej jesieni. Dobrze radzi sobie w gorących i suchych warunkach, jak również w lata wilgotne. Strukta ma bardzo długie okno zbiorcze. Już po około 80 dniach główki są twarde i nadają się do sprzedaży na świeżym rynku. Główki mogą bardzo długo pozostawać na polu, nawet powyżej 150 dni, przyrastając na wielkość i nie tracąc jakości. Liście zewnętrzne odsłaniają podstawę główki, co ułatwia ochronę przed szkodnikami, umożliwia przesychanie i zapewnia dobrą zdrowotność spodu główek. Dodatkowo wysoki i miękki głąb ułatwia cięcie i zapewnia dużą wydajność przy zbiorach. Strukta bardzo dobrze nadaje się także do zbioru kombajnem. Mała liczba zielonych liści zapewnia szybkie obieranie do uzyskania białych główek. Krajanka jest delikatna i jednolicie biała. Wysoka zawartość suchej masy i cukrów zapewnia małe ubytki masy podczas kiszenia, a naturalna wysoka zawartość witaminy C chroni zakiszoną kapustę przed ciemnieniem i wydłuża okres przydatności do pakowania. Strukta nadaje się do krótkotrwałego przechowywania i kiszenia w okresie zimy.",
+    "family": "B_WC",
+    "guardian": "Bernard Zioło",
+    "harvest": [
+      6,
+      11
+    ],
+    "headSize": "5-6 kg",
+    "hybrid": true,
+    "imgs": [
+      "https://res.cloudinary.com/ddkef5waq/image/upload/v1724750844/enzapp/kapustne/B_WC/strukta_zhcx7k.jpg"
+    ],
+    "intended": [
+      "świeży rynek",
+      "przetwórstwo"
+    ],
+    "name": "Strukta",
+    "provider": "takii",
+    "purpose": "świeży rynek i kiszenie",
+    "resistance": [
+      "HR: Fuzarioza kapusty (Foc)"
+    ],
+    "segment": "kapusta głowiasta biała",
+    "type": "uniwersalna",
+    "vegetation": {
+      "unit": "dni",
+      "value": "115"
+    }
   },
   "sumapol": {
     "active": true,
@@ -6154,6 +7368,183 @@
     "type": "cykoria sałatowa",
     "vitalis": true
   },
+  "sunta": {
+    "active": true,
+    "color": "#648975",
+    "compaction": {
+      "unit": "tys./ha",
+      "value": "50"
+    },
+    "crop": "B_WC",
+    "cultivation": [
+      "włóknina",
+      "grunt"
+    ],
+    "description": "Wczesna odmiana do wiosennej uprawy w tunelach foliowych i pod płaskimi przykryciami. Cechuje się bardzo dobrym wyrównaniem wielkości i szybkim wypełnianiem główki, co pozwala na wczesne rozpoczęcie zbiorów. Uniwersalna odmiana odpowiednia do pakowania w skrzynki, po sześć lub osiem sztuk, która również może być przytrzymana na duże, 2-kilogramowe główki do sprzedaży luzem. Sunta jest odporna na zagniwanie spodu dzięki osadzeniu na wysokim pędzie. Wykazuje wysoką tolerancję na pękanie w zmiennych warunkach pogodowych. Ze względu na te cechy Sunta ma długie okno zbiorcze. Dodatkową zaletą tej odmiany jest słodki smak, dzięki czemu znakomicie nadaje się na sałatki.",
+    "family": "B_WC",
+    "guardian": "Bernard Zioło",
+    "harvest": [
+      5,
+      6
+    ],
+    "headSize": "1-3 kg",
+    "hybrid": true,
+    "imgs": [
+      "https://res.cloudinary.com/ddkef5waq/image/upload/v1724750842/enzapp/kapustne/B_WC/sunta_ju8lua.jpg"
+    ],
+    "intended": [
+      "świeży rynek"
+    ],
+    "name": "Sunta",
+    "provider": "takii",
+    "purpose": "odmiany wczesne",
+    "segment": "kapusta głowiasta biała",
+    "type": "wczesna kapusta wiosenna",
+    "vegetation": {
+      "unit": "dni",
+      "value": 62
+    }
+  },
+  "superon": {
+    "active": true,
+    "caliber": {
+      "unit": "mm",
+      "value": "50-70"
+    },
+    "color": "#467F31",
+    "compaction": {
+      "unit": "nasion/ha",
+      "value": "750.000-1.000.000"
+    },
+    "crop": "ON",
+    "cultivation": [
+      "grunt"
+    ],
+    "description": "Superon, cebula dnia długiego, bardzo wcześnie osiąga dojrzałość zbiorczą. Wysiew jest możliwy, gdy tylko warunki pozwolą wjechać w pole. Odmiana nie jest wrażliwa na wiosenne przymrozki, szybko tworzy mocny system korzeniowy i rozwija silny pokrój roślin. Dzięki temu można ją dostosować do różnych warunków uprawy. Cebule są duże i ciężkie, możliwy jest plon 70-80 ton z zastosowaniem nawodnienia. Delikatna szyjka umożliwia łatwe i szybkie suszenie, dzięki lśniącej brązowej łusce idealna do pakowania „na worek”. Zbiór cebul możliwy jest już od lipca (zbiór na pęczki). Pierwsza do siewu i do zbioru.",
+    "family": "ON",
+    "guardian": "Paweł Wechterowicz",
+    "harvest_maturity": "najwcześniejsza",
+    "hybrid": true,
+    "imgs": [
+      "https://res.cloudinary.com/ddkef5waq/image/upload/v1721971460/enzapp/cebule/superon_fgovxp.jpg"
+    ],
+    "intended": [
+      "świeży rynek",
+      "przemysł"
+    ],
+    "name": "Superon",
+    "new": true,
+    "planting": [
+      1,
+      12
+    ],
+    "production": [
+      "siew",
+      "rozsada"
+    ],
+    "provider": "takii",
+    "segment": "cebula",
+    "type": "japoński"
+  },
+  "taiyo": {
+    "active": true,
+    "benefits": [
+      {
+        "description": "?"
+      }
+    ],
+    "color": "#467F31",
+    "compaction": {
+      "unit": "na metr bieżący",
+      "value": "?"
+    },
+    "crop": "TO",
+    "cultivation": [
+      "tunel"
+    ],
+    "family": "TO",
+    "frut": [
+      "kolor: żółtopomarańczowy",
+      "owoce o wysokiej zawartości likopenu",
+      "zwięzłe grona z 3-5 owocami"
+    ],
+    "guardian": "Agnieszka Wiśniewska",
+    "harvest": [
+      1,
+      12
+    ],
+    "hybrid": true,
+    "imgs": [
+      "https://res.cloudinary.com/ddkef5waq/image/upload/v1686726420/enzapp/pomidory/taiyo_nnaxdp.jpg"
+    ],
+    "intended": [
+      "?"
+    ],
+    "name": "Taiyo",
+    "new": false,
+    "plant": [
+      "odmiana wczesna polecana do produkcji wiosennej",
+      "pokrój otwarty, krótkie oraz średniej długości międzywęźla",
+      "silny system korzeniowy, dzięki czemu odmiana ta doskonale radzi sobie w niskich temperaturach"
+    ],
+    "planting": [
+      1,
+      12
+    ],
+    "production": [
+      "?"
+    ],
+    "provider": "takii",
+    "segment": "pomidor malinowy",
+    "shape": "lekko spłaszczony",
+    "type": "?",
+    "vitalis": false,
+    "weight": {
+      "unit": "g",
+      "value": "180-250"
+    }
+  },
+  "takmark": {
+    "active": true,
+    "caliber": {
+      "unit": "mm",
+      "value": "50-70"
+    },
+    "color": "#467F31",
+    "compaction": {
+      "unit": "nasion/ha",
+      "value": "750.000-1.000.000"
+    },
+    "crop": "ON",
+    "cultivation": [
+      "grunt"
+    ],
+    "description": "Takmark to druga najwcześniejsza odmiana w naszym asortymencie. Ze względu na silniejszy system korzeniowy polecana jest głównie do wysiewu na glebach słabszych. Jest ona także trochę wolniejsza od Takstara, ale rekompensuje to łatwiejszą produkcją i dobrym plonem, szczególnie na stanowiskach bez możliwości nawadniania. Bardzo jednorodna w dojrzewaniu i doskonale wyrównana, stabilna pod względem plonowania. Dobrze znosi dodatkowe nawożenie azotowe, wtedy cebule osiągają większy rozmiar. Odmiana średnio odporna na Fusarium. Cienka szyjka umożliwia szybkie zasychanie łuski i krótkie przechowywanie cebuli.",
+    "family": "ON",
+    "guardian": "Paweł Wechterowicz",
+    "harvest_maturity": "bardzo wczesna",
+    "hybrid": true,
+    "imgs": [
+      "https://res.cloudinary.com/ddkef5waq/image/upload/v1721971458/enzapp/cebule/takmark_kzngha.jpg"
+    ],
+    "intended": [
+      "świeży rynek",
+      "przemysł"
+    ],
+    "name": "Takmark",
+    "new": false,
+    "planting": [
+      1,
+      12
+    ],
+    "production": [
+      "siew",
+      "rozsada"
+    ],
+    "provider": "takii",
+    "segment": "cebula",
+    "type": "japoński"
+  },
   "takoda": {
     "active": true,
     "color": "#467F31",
@@ -6187,6 +7578,47 @@
     "type": "sałata masłowa",
     "vitalis": true
   },
+  "takstar": {
+    "active": true,
+    "caliber": {
+      "unit": "mm",
+      "value": "50-70"
+    },
+    "color": "#467F31",
+    "compaction": {
+      "unit": "nasion/ha",
+      "value": "750.000-1.000.000"
+    },
+    "crop": "ON",
+    "cultivation": [
+      "grunt"
+    ],
+    "description": "Takstar, cebula dnia długiego, to najszybsza z cebul w naszym asortymencie. Odmiana ta może być wysiewana jako pierwsza, gdy tylko warunki pogodowe pozwalają na rozpoczęcie uprawy. Wykazuje bardzo dużą odporność na wybijanie w pędy kwiatostanowe. Cebula jest okrągła, jednolita, z cienką szyjką. Ładny kolor łuski czyni tę odmianę niezwykle atrakcyjną do sprzedaży w worku, choć także często wykorzystywana jest w przemyśle ze względu na łatwość obierania oraz wysoką zawartość suchej masy. Takstar jest niezwykle uniwersalny, polecany również do obrotu na świeżym rynku i na zbiór pęczkowy. To podstawowa odmiana polecana do produkcji z rozsady.",
+    "family": "ON",
+    "guardian": "Paweł Wechterowicz",
+    "harvest_maturity": "najwcześniejsza",
+    "hybrid": true,
+    "imgs": [
+      "https://res.cloudinary.com/ddkef5waq/image/upload/v1721971457/enzapp/cebule/takstar_gitbxm.jpg"
+    ],
+    "intended": [
+      "świeży rynek",
+      "przemysł"
+    ],
+    "name": "Takstar",
+    "new": false,
+    "planting": [
+      1,
+      12
+    ],
+    "production": [
+      "siew",
+      "rozsada"
+    ],
+    "provider": "takii",
+    "segment": "cebula",
+    "type": "japoński"
+  },
   "tanazia": {
     "active": true,
     "color": "#467F31",
@@ -6213,6 +7645,45 @@
     "provider": "eznl",
     "segment": "rukola",
     "type": "odporna na zimno"
+  },
+  "tca_581": {
+    "active": true,
+    "color": "#648975",
+    "compaction": {
+      "unit": "tys./ha",
+      "value": "30-40"
+    },
+    "crop": "B_WC",
+    "description": "TCA-581 jest odmianą przeznaczoną do jesiennych zbiorów i długiego przechowywania. Silny system korzeniowy zapewnia niezawodność uprawy i dobre plony w warunkach okresowych niedoborów wody i zmienności gleby. Wyrównanie wielkości główek przekłada się na wysokie plony. Odporność na choroby i tolerancja na wciornastki pozwalają zmniejszyć nakłady na ochronę. TCA-581 może być przechowywana do końca maja. Główki zachowują atrakcyjny wygląd, żywozielony kolor i połysk po obraniu z liści zewnętrznych. Zapewnia to wysokiej jakości towar na świeży rynek, ale także bardzo dobry surowiec do wiosennego kiszenia. Optymalny termin sadzenia rozsady to pierwsza połowa czerwca. TCA-581 ma szybkie tempo wzrostu, dzięki czemu dobrze sprawdza się również w przypadku sadzenia po wczesnych ziemniakach (około 20 czerwca). Zalecane zagęszczenie w tym terminie sadzenia to 30-40 tys./ha; główki osiągają wielkość do 5 kg, zachowując przydatność do bardzo długiego przechowywania.",
+    "family": "B_WC",
+    "guardian": "Bernard Zioło",
+    "harvest": [
+      9,
+      11
+    ],
+    "headSize": "3-5 kg",
+    "hybrid": true,
+    "imgs": [
+      "https://res.cloudinary.com/ddkef5waq/image/upload/v1724750841/enzapp/kapustne/B_WC/tca_581_zd9oko.jpg"
+    ],
+    "intended": [
+      "świeży rynek",
+      "przetwórstwo"
+    ],
+    "name": "TCA-581",
+    "new": true,
+    "provider": "takii",
+    "purpose": "przechowywanie",
+    "resistance": [
+      "HR: Fuzarioza kapusty (Foc)",
+      "IR: Czarna zgnilizna kapusty (Xcc)"
+    ],
+    "segment": "kapusta głowiasta biała",
+    "type": "długie przechowywanie",
+    "vegetation": {
+      "unit": "dni",
+      "value": "140"
+    }
   },
   "tenace": {
     "active": true,
@@ -6301,6 +7772,87 @@
       "value": "1"
     }
   },
+  "timpano": {
+    "active": true,
+    "color": "#467F31",
+    "compaction": {
+      "unit": "tys./ha",
+      "value": "150"
+    },
+    "crop": "B_KR",
+    "cultivation": [
+      "grunt"
+    ],
+    "description": "Najwcześniej dojrzewająca odmiana kalarepy do wiosennej uprawy w tunelach foliowych i w gruncie. Bardzo wysoka tolerancja na wybijanie w pędy kwiatostanowe. Wytwarza atrakcyjne, duże, spłaszczone, jasnozielone zgrubienia o gładkiej skórce. Liście żywozielone, wzniesione.",
+    "family": "B_KR",
+    "guardian": "Bernard Zioło",
+    "harvest": [
+      4,
+      6
+    ],
+    "hybrid": true,
+    "imgs": [
+      "https://res.cloudinary.com/ddkef5waq/image/upload/v1724750842/enzapp/kapustne/B_KR/timpano_u4pcxl.jpg"
+    ],
+    "intended": [
+      "świeży rynek"
+    ],
+    "name": "Timpano",
+    "planting": [
+      2,
+      3
+    ],
+    "provider": "takii",
+    "segment": "kalarepa",
+    "spacing": "20 x 30 cm",
+    "vegetation": {
+      "unit": "dni",
+      "value": "55"
+    }
+  },
+  "tokyo_cross": {
+    "active": true,
+    "color": "#467F31",
+    "compaction": {
+      "unit": "kg/ha",
+      "value": "5"
+    },
+    "crop": "DK",
+    "cultivation": [
+      "grunt"
+    ],
+    "description": "Letni typ rzepy o wysokim potencjale plonotwórczym i idealnym kształcie kuli. Biała barwa, dobre wyrównanie, wczesność i szerokie okno zbioru to silne cechy tej odmiany. W okresie letnim osiąga dojrzałość zbiorczą w 30 dni, zaś jesienią ten czas się wydłuża do 50 dni. Można przetrzymać ją dłużej w polu zarówno latem, jak i jesienią (od 35 do 60 dni), zachowując jej właściwości. Rzepa Tokyo Cross to odmiana bardzo elastyczna, może być zbierana wczesną wiosną, wiosną, latem i jesienią. Zgrubienia o średnicy od 6 cm do 15 cm o gładkiej skórce i słodkawym smaku długo zachowują wysoką jakość. Bardzo odporna na wybijanie w pęd kwiatostanowy.",
+    "family": "DK",
+    "guardian": "Aleksandra Krzyżanowska",
+    "harvest": [
+      6,
+      10
+    ],
+    "hybrid": true,
+    "imgs": [
+      "https://res.cloudinary.com/ddkef5waq/image/upload/v1721984835/enzapp/rzepa/tokyo_cross_dej3ui.jpg"
+    ],
+    "intended": [
+      "świeży rynek"
+    ],
+    "name": "Tokyo Cross",
+    "provider": "takii",
+    "root": {
+      "rcolor": "biały",
+      "rfi": "6-15 cm"
+    },
+    "segment": "rzepa",
+    "size": {
+      "unit": "g",
+      "value": "150-450"
+    },
+    "spacing": "8 x 20 cm",
+    "type": "japoński",
+    "vegetation": {
+      "unit": "dni",
+      "value": "35-50"
+    }
+  },
   "tomagino": {
     "action": "actions/uprawiaj_ze_smakiem.svg",
     "active": true,
@@ -6364,6 +7916,45 @@
       "unit": "g",
       "value": "20-22"
     }
+  },
+  "tough_ball": {
+    "active": true,
+    "caliber": {
+      "unit": "mm",
+      "value": "60-80"
+    },
+    "color": "#467F31",
+    "compaction": {
+      "unit": "nasion/ha",
+      "value": "625 000-1 000 000"
+    },
+    "crop": "ON",
+    "cultivation": [
+      "grunt"
+    ],
+    "description": "Tough Ball to szybko rosnąca odmiana mieszańcowa, odporna na wybijanie w pęd kwiatostanowy. Odmiana ma ciemnozielone liście. Cebule są okrągłe, z cienką szyjką. Miąższ jest jędrny, a skórka mocna, o żółtobrązowym zabarwieniu. Tough Ball to odmiana o wysokiej wydajności i może być używana do siewu przy mniejszej gęstości.",
+    "family": "ON",
+    "guardian": "Paweł Wechterowicz",
+    "harvest_maturity": "wczesna",
+    "hybrid": true,
+    "imgs": [
+      "https://res.cloudinary.com/ddkef5waq/image/upload/v1721971478/enzapp/cebule/tough_ball_iexaav.jpg"
+    ],
+    "intended": [
+      "świeży rynek"
+    ],
+    "name": "Tough Ball",
+    "new": true,
+    "planting": [
+      1,
+      12
+    ],
+    "production": [
+      "siew"
+    ],
+    "provider": "takii",
+    "segment": "cebula",
+    "type": "zimująca"
   },
   "trailboss": {
     "active": true,
@@ -6486,6 +8077,124 @@
     ],
     "segment": "lollo rossa",
     "type": "lollo rossa"
+  },
+  "tycoon": {
+    "active": true,
+    "color": "#467F31",
+    "compaction": {
+      "disclaimer": "(zależy od sposobu i przeznaczenia uprawy)",
+      "unit": "mln nasion/ha",
+      "value": "2,5-10"
+    },
+    "crop": "ON",
+    "cultivation": [
+      "grunt"
+    ],
+    "description": "Tycoon jest odmianą o wzniesionym, długim szczypiorze. Zielony kolor liści utrzymuje się przez długi okres, dzięki czemu jest to odmiana bardzo pewna. Dobrze znosi wysokie temperatury.",
+    "family": "ON",
+    "guardian": "Paweł Wechterowicz",
+    "harvest_maturity": "średnio wczesna",
+    "hybrid": true,
+    "imgs": [
+      "https://res.cloudinary.com/ddkef5waq/image/upload/v1721971468/enzapp/cebule/tycoon_kd5tu4.jpg"
+    ],
+    "intended": [
+      "?"
+    ],
+    "name": "Tycoon",
+    "new": false,
+    "planting": [
+      1,
+      12
+    ],
+    "production": [
+      "siew"
+    ],
+    "provider": "takii",
+    "resistance": [
+      "HR: mączniak rzekomy"
+    ],
+    "segment": "cebula",
+    "type": "siedmiolatka (szczypior pęczkowy)"
+  },
+  "uchiki_kuri": {
+    "active": true,
+    "color": "#467F31",
+    "compaction": {
+      "unit": "tys./ha",
+      "value": "7-8"
+    },
+    "crop": "PP",
+    "cultivation": [
+      "grunt"
+    ],
+    "description": "Standardowa odmiana ustalona, popularna ze względu na niskie wymagania co do stanowiska. Owoce o atrakcyjnym kolorze, doskonale nadają się zarówno na świeży rynek, jak i do przetwórstwa. Odmiana dobrze radzi sobie również w trudnych warunkach produkcyjnych wtedy rośliny zawiązują mniejszą liczbę owoców, a dzięki dobremu wigorowi owoce mimo wszystko osiągają optymalną wielkość.",
+    "family": "PP",
+    "guardian": "Piotr Pietrzak",
+    "hybrid": true,
+    "imgs": [
+      "https://res.cloudinary.com/ddkef5waq/image/upload/v1721984179/enzapp/dynie/uchiki_kuri_rjgtih.jpg"
+    ],
+    "intended": [
+      "świeży rynek",
+      "przetwórstwo"
+    ],
+    "name": "Uchiki Kuri",
+    "new": false,
+    "plant_color": "ciemnopomarańczowy",
+    "plant_sort": "płożąca",
+    "planting": [
+      1,
+      12
+    ],
+    "provider": "takii",
+    "resistance": [
+      "IR: ZYMV/WMV/PRSV"
+    ],
+    "segment": "dynia",
+    "type": "hokkaido",
+    "weight": {
+      "unit": "kg",
+      "value": "1-1,5"
+    }
+  },
+  "verdeco": {
+    "active": true,
+    "color": "#648975",
+    "compaction": {
+      "unit": "tys./ha",
+      "value": "40-60"
+    },
+    "crop": "B_WC",
+    "cultivation": [
+      "grunt"
+    ],
+    "description": "Odmiana do letnich i jesiennych zbiorów, przeznaczona do zaopatrzenia supermarketów i na eksport. Charakteryzuje się bardzo dobrym wyrównaniem i atrakcyjnym wyglądem. Tworzy kuliste główki, o zwięzłej strukturze i intensywnym zielonym kolorze. Bardzo odporna na przebarwienia antocyjanowe. Osadzenie główki na wysokim pędzie i miękki głąb ułatwiają zbiór, a woskowane liście powodują, że odmiana ta wykazuje tolerancję na wciornastka. Odmiana Verdeco dobrze dorasta przy niższych temperaturach i może być sadzona w połowie lipca jako poplon z możliwością przechowywania.",
+    "family": "B_WC",
+    "guardian": "Bernard Zioło",
+    "harvest": [
+      6,
+      11
+    ],
+    "headSize": "1,5-2,5 kg",
+    "hybrid": true,
+    "imgs": [
+      "https://res.cloudinary.com/ddkef5waq/image/upload/v1724750842/enzapp/kapustne/B_WC/verdeco_fcmdcl.jpg"
+    ],
+    "intended": [
+      "świeży rynek",
+      "karton",
+      "worek"
+    ],
+    "name": "Verdeco",
+    "provider": "takii",
+    "purpose": "odmiany przeznaczone do zaopatrzenia marketów",
+    "segment": "kapusta głowiasta biała",
+    "type": "letnia",
+    "vegetation": {
+      "unit": "dni",
+      "value": "80-85"
+    }
   },
   "vespero": {
     "active": true,
@@ -6680,6 +8389,46 @@
     "segment": "sałata masłowa",
     "type": "sałata masłowa",
     "vitalis": true
+  },
+  "vuelta": {
+    "active": true,
+    "caliber": {
+      "unit": "mm",
+      "value": "70-90"
+    },
+    "color": "#467F31",
+    "compaction": {
+      "unit": "nasion/ha",
+      "value": "550.000-800.000"
+    },
+    "crop": "ON",
+    "cultivation": [
+      "grunt"
+    ],
+    "description": "Medusa to cebula dnia długiego, specjalnie opracowana, by zmaksymalizować plon. Idealne wyrównanie, bardzo silny system korzeniowy i mocny pokrój rośliny to cechy, które gwarantują jej większą odporność na czynniki stresowe, takie jak wysoka temperatura czy okresowe niedobory wody. Upalne lata nie są dla niej przeszkodą i nie wpływają negatywnie na uzyskanie wysokiego plonu. Siew w kwietniu, zbiór pod koniec sierpnia lub na początku września. Idealna do obierania mechanicznego dzięki wyrównaniu cebul łatwo ustawić maszyny i zminimalizować odpad.",
+    "family": "ON",
+    "guardian": "Paweł Wechterowicz",
+    "harvest_maturity": "późna",
+    "hybrid": true,
+    "imgs": [
+      "https://res.cloudinary.com/ddkef5waq/image/upload/v1721971462/enzapp/cebule/vuelta_o4o9uz.jpg"
+    ],
+    "intended": [
+      "przemysł"
+    ],
+    "name": "Vuelta",
+    "new": false,
+    "planting": [
+      1,
+      12
+    ],
+    "production": [
+      "siew"
+    ],
+    "provider": "takii",
+    "segment": "cebula",
+    "storage": "do końca grudnia",
+    "type": "hiszpański"
   },
   "xalbadora": {
     "active": true,
