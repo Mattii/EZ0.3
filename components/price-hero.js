@@ -22,7 +22,7 @@ const heroElement = {
           <div class="px-9 py-9 px-sm-12 pb-sm-12 h-100 ff-nunito d-flex d-inline-flex flex-column justify-end ">
             <div v-if="true" class="rounded-xl font-weight-light px-3  pt-1 d-inline bg-red mr-auto">NOWY</div>
             <h2 class="text-h4 text-md-h3 mt-1 text-lg-h2 ff-nunito">Cennik</h2>
-            <h4 class="text-subtitle-1 font-weight-thin">Aktualny od 18.05.2025</h4>
+            <h4 class="text-subtitle-1 font-weight-thin">Aktualny od 20.10.2025</h4>
           </div>
           </v-img>
           </v-col>
