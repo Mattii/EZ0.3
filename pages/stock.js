@@ -130,7 +130,7 @@ const stock = {
         <template v-slot:item="{ item }">
         <tr @click="selectBatch(item)">
             <td class="py-2">
-              <span class="font-weight-regular text-medium-emphasis text-subtitle-2">{{ item.Product_full_name }}</span>
+              <span class="font-weight-regular text-medium-emphasis text-subtitle-2">{{ item.Material_full_name }}</span>
               <br />
               <span class="text-uppercase font-weight-medium">{{ item.Article_abbreviated }}</span>
               <br/>
@@ -172,7 +172,7 @@ const stock = {
               <td>
                 <span class="text-uppercase py-2">{{ item.Article_abbreviated }}</span>
                 <br/> 
-                <span class="font-weight-thin text-medium-emphasis text-subtitle-2 py-2">{{item.Product_full_name}}</span>
+                <span class="font-weight-thin text-medium-emphasis text-subtitle-2 py-2">{{item.Material_full_name}}</span>
               </td>
               <td class="text-end">
                 <span class="text-uppercase">{{ item.Number_balance }}</span>
@@ -237,7 +237,7 @@ const stock = {
                       <p
                       :style="familyType?.color ? 'background-color:'+ familyType?.color : 'background-color:' + '#61cb6f'" 
                       class="rounded-e-xl px-4 py-1 font-weight-light d-inline-block"
-                      >{{ sheetData.Product_full_name }}</p>  
+                      >{{ sheetData.Material_full_name }}</p>  
                       </div>
                     </div> 
         </v-img>
@@ -257,7 +257,7 @@ const stock = {
 
             <v-card-title class="text-h5">
               {{sheetData.Article_abbreviated}}
-              <p class="text-subtitle-1">{{sheetData.Product_full_name}}</p>
+              <p class="text-subtitle-1">{{sheetData.Material_full_name}}</p>
             </v-card-title>
             
             <v-card-subtitle>
