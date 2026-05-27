@@ -3641,6 +3641,103 @@
     "segment": "sałata masłowa",
     "type": "sałata masłowa"
   },
+   "iroko": {
+    "active": true,
+        "benefits": [
+      {
+        "description": "Obserwacje polowe z ostatnich 4 lat wskazują że to najbardziej odporny na horoby mieszaniec z hodowli Enza Zaden"
+      },
+      {
+        "description": "Bardzo wysoka tolerancja na fuzaryjną zgniliznę cebuli (Fusarium oxysporum f. sp. cepae) i różową zgniliznę korzenia cebuli (Pytenochaeta terrestris)"
+      },
+      {
+        "description": "Tworzy mocną jasnobrązową łuskę z 3-4 bardzo ciasno przylegającycmi powłokami"
+      },
+      {
+        "description": "kulisty kształt cebuli idealny do sprzedaży \"na worek\""
+      },
+      {
+        "description": "Możliwość przechowywania cabuli do 7-8 miesięcy po zbiorze"
+      }
+    ],
+    "color": "#467F31",
+    "crop": "ON",
+    "compaction": {
+      "unit": "nasion/ha",
+      "value": "600 000 - 850 000"
+    },
+    "caliber": {
+      "unit": "mm",
+      "value": "60-900"
+    },
+    "cultivation": ["grunt"],
+    "description": "Wczesna odmiana cebuli typu hiszpańskiego o wysokim plonie.",
+    "family": "ON",
+    "guardian": "Paweł Wechterowicz",
+    "hybrid": true,
+    "imgs": ["https://res.cloudinary.com/ddkef5waq/image/upload/v1779870823/iroko.png"],
+    "intended": ["świeży rynek", "przemysł", "przechowywanie"],
+    "name": "Iroko",
+    "new": true,
+    "planting": [4,12],
+    "production": [
+      "siew"
+    ],
+    "provider": "eznl",
+    "resistance": [],
+    "segment": "hiszpański-rajsburger",
+    "type": "średnio późna"
+  },
+   "jatoba": {
+    "active": true,
+        "benefits": [
+      {
+        "description": "Siew na początku Kwietnia"
+      },
+      {
+        "description": "Wczesna dojrzałość i wysoki plon handlowy"
+      },
+      {
+        "description": "Atrakcyjna jasnobrązowa łuska z połyskiem"
+      },
+      {
+        "description": "Liczba łusek powłokowych: 2-3"
+      },
+      {
+        "description": "Wyróżnia się tolerancją na choroby odblebowe"
+      },
+      {
+        "description": "Możliwość przechowywania cabuli do 4 miesięcy po zbiorze"
+      }
+    ],
+    "color": "#467F31",
+    "crop": "ON",
+    "compaction": {
+      "unit": "nasion/ha",
+      "value": "750 000 - 1 000 000"
+    },
+    "caliber": {
+      "unit": "mm",
+      "value": "60-100"
+    },
+    "cultivation": ["grunt"],
+    "description": "Wczesna odmiana cebuli typu hiszpańskiego o wysokim plonie.",
+    "family": "ON",
+    "guardian": "Paweł Wechterowicz",
+    "hybrid": true,
+    "imgs": ["https://res.cloudinary.com/ddkef5waq/image/upload/v1779870893/jatoba.png"],
+    "intended": ["świeży rynek", "przemysł"],
+    "name": "Jatoba",
+    "new": true,
+    "planting": [4,12],
+    "production": [
+      "siew"
+    ],
+    "provider": "eznl",
+    "resistance": [],
+    "segment": "hiszpańska",
+    "type": "wczesna"
+  },
   "jokary": {
     "active": true,
     "color": "#467F31",
@@ -4835,7 +4932,7 @@
     "name": "Monastrell",
     "new": true,
     "planting": [
-      1,
+      4,
       12
     ],
     "production": [
