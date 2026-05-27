@@ -116,6 +116,25 @@ const crop = {
             cols="6"
             sm="4"
             md="3"
+            v-if="crop.storage" 
+            class="d-flex flex-wrap justify-space-evenly"
+            >
+
+            <v-sheet
+              class="rounded-xl pa-3"
+              width="100%"
+              min-width="200px"
+            >
+            <v-chip class=" mb-3 font-weight-light text-subtitle-2">przechowywanie:</v-chip>
+            <p             
+            class="">{{ crop.storage }}</p>
+            </v-sheet>
+          </v-col>  
+
+          <v-col 
+            cols="6"
+            sm="4"
+            md="3"
             v-if="crop.shape" 
             class="d-flex flex-wrap justify-space-evenly"
             >
@@ -167,6 +186,42 @@ const crop = {
             >
             <v-chip class=" mb-3 font-weight-light text-subtitle-2">wczesność:</v-chip>
             <p class="">{{ crop.early }}</p>
+            </v-sheet>
+          </v-col>
+
+          <v-col 
+            cols="6"
+            sm="4"
+            md="3"
+            v-if="crop.caliber" 
+            class="d-flex flex-wrap justify-space-evenly"
+            >
+
+            <v-sheet
+              class="rounded-xl pa-3"
+              width="100%"
+              min-width="200px"
+            >
+            <v-chip class=" mb-3 font-weight-light text-subtitle-2">kaliber:</v-chip>
+            <p class="">{{ crop.caliber.value }} {{ crop.caliber.unit }}</p>
+            </v-sheet>
+          </v-col>
+                    
+          <v-col 
+            cols="6"
+            sm="4"
+            md="3"
+            v-if="crop.compaction" 
+            class="d-flex flex-wrap justify-space-evenly"
+            >
+
+            <v-sheet
+              class="rounded-xl pa-3"
+              width="100%"
+              min-width="200px"
+            >
+            <v-chip class=" mb-3 font-weight-light text-subtitle-2">norma wysiewu:</v-chip>
+            <p class="">{{ crop.compaction.value }} {{ crop.compaction.unit }}</p>
             </v-sheet>
           </v-col>
 
@@ -266,6 +321,26 @@ const crop = {
               class="">{{ item }},</p>
             </v-sheet>
           </v-col>
+
+          <v-col 
+            cols="12"
+            sm="6"
+            v-if="crop.benefits" 
+            class="d-flex flex-wrap justify-space-evenly"
+            >
+
+            <v-sheet
+              class="rounded-xl pa-3"
+              width="100%"
+              min-width="200px"
+            >
+            <v-chip class=" mb-3 font-weight-light text-subtitle-2">korzyści:</v-chip>
+            <p             
+            v-for="(item, index) in crop.benefits"
+              key="index"
+              class="">- {{ item.description }}</p>
+            </v-sheet>
+          </v-col>  
 
           <v-col
             cols="12"

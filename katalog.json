@@ -3671,13 +3671,15 @@
       "value": "60-900"
     },
     "cultivation": ["grunt"],
-    "description": "Wczesna odmiana cebuli typu hiszpańskiego o wysokim plonie.",
+    "description": "Odmiana cebuli typu hiszpańskiego z domieszką rajsburgera o bardzo wysokiej odporności na choroby glebowe. Polecana do uprawy w gruncie otwartym na świeży rynek, przemysł i przechowywanie.",
     "family": "ON",
     "guardian": "Paweł Wechterowicz",
+    "early": "średnio późna",
     "hybrid": true,
-    "imgs": ["https://res.cloudinary.com/ddkef5waq/image/upload/v1779870823/iroko.png"],
-    "intended": ["świeży rynek", "przemysł", "przechowywanie"],
+    "imgs": ["https://res.cloudinary.com/ddkef5waq/image/upload/v1779876913/iroko1.png"],
+    "intended": ["świeży rynek", "przemysł", "długie przechowywanie"],
     "name": "Iroko",
+    "shape": "okrągła",
     "new": true,
     "planting": [4,12],
     "production": [
@@ -3686,7 +3688,7 @@
     "provider": "eznl",
     "resistance": [],
     "segment": "hiszpański-rajsburger",
-    "type": "średnio późna"
+    "type": "hiszpański"
   },
    "jatoba": {
     "active": true,
@@ -3721,11 +3723,12 @@
       "value": "60-100"
     },
     "cultivation": ["grunt"],
-    "description": "Wczesna odmiana cebuli typu hiszpańskiego o wysokim plonie.",
+    "description": "Wczesna odmiana cebuli typu hiszpańskiego o bardzo wysokiej odporności na choroby glebowe. Polecana do uprawy w gruncie otwartym na świeży rynek, przemysł.",
     "family": "ON",
     "guardian": "Paweł Wechterowicz",
+    "early": "wczesna",
     "hybrid": true,
-    "imgs": ["https://res.cloudinary.com/ddkef5waq/image/upload/v1779870893/jatoba.png"],
+    "imgs": ["https://res.cloudinary.com/ddkef5waq/image/upload/v1779877020/jatoba1.png"],
     "intended": ["świeży rynek", "przemysł"],
     "name": "Jatoba",
     "new": true,
@@ -3734,9 +3737,10 @@
       "siew"
     ],
     "provider": "eznl",
+    "shape": "okrągła",
     "resistance": [],
     "segment": "hiszpańska",
-    "type": "wczesna"
+    "type": "hiszpańska"
   },
   "jokary": {
     "active": true,
@@ -3808,18 +3812,19 @@
     },
     "crop": "ON",
     "cultivation": [
+      "tunel",
       "grunt"
     ],
     "description": "Kaigaro to bardzo wydajna odmiana ustalona cebuli pęczkowej. Atrakcyjny zielony kolor, długa część biała i wzniesiony pokrój liści sprawiają, że jest to bardzo popularna i chętnie uprawiana cebula na szczypior. Nie tworzy zgrubienia cebulowego i nadaje się do produkcji przez cały rok zarówno w tunelach, jak i w odkrytym gruncie.",
     "family": "ON",
     "guardian": "Paweł Wechterowicz",
-    "harvest_maturity": "średnio wczesna",
+    "early": "średnio wczesna",
     "hybrid": true,
     "imgs": [
       "https://res.cloudinary.com/ddkef5waq/image/upload/v1721971465/enzapp/cebule/kaigaro_wctqoa.jpg"
     ],
     "intended": [
-      "?"
+      "świeży rynek"
     ],
     "name": "Kaigaro",
     "new": false,
@@ -3831,8 +3836,8 @@
       "siew"
     ],
     "provider": "ezpl",
-    "segment": "cebula",
-    "type": "siedmiolatka (szczypior pęczkowy)"
+    "segment": "siedmiolatka",
+    "type": "szczypior pęczkowy"
   },
   "kaori_kuri": {
     "active": true,
@@ -4904,6 +4909,23 @@
   },
   "monastrell": {
     "active": true,
+    "benefits": [
+      {
+        "description": "Obserwacje polowe z ostatnich 4 lat wskazują że to najbardziej odporny na horoby mieszaniec z hodowli Enza Zaden"
+      },
+      {
+        "description": "Bardzo wysoka tolerancja na fuzaryjną zgniliznę cebuli (Fusarium oxysporum f. sp. cepae) i różową zgniliznę korzenia cebuli (Pytenochaeta terrestris)"
+      },
+      {
+        "description": "Tworzy mocną jasnobrązową łuskę z 3-4 bardzo ciasno przylegającycmi powłokami"
+      },
+      {
+        "description": "kulisty kształt cebuli idealny do sprzedaży na worek"
+      },
+      {
+        "description": "Możliwość przechowywania cabuli do 7-8 miesięcy po zbiorze"
+      }
+    ],
     "caliber": {
       "unit": "mm",
       "value": "70-100"
@@ -4920,13 +4942,14 @@
     "description": "Monastrell to cebula dnia średniego, która wyróżnia się wysokiej jakości cebulami jednocentrycznymi. Odmiana o ciemnoczerwonym kolorze łuski i o lekko spłaszczonym kształcie. Dzięki silnej woskowej okrywie cebule są odporne na oparzenia słoneczne. Pokrój szczypioru prosty, luźny i przewiewny, co bardzo ułatwia zabiegi pestycydowe. Cebula o dużym kalibrażu, nawet przekraczającym 10 cm. Odmiana polecana na świeży rynek lub do przechowywania do 6 miesięcy.",
     "family": "ON",
     "guardian": "Paweł Wechterowicz",
-    "harvest_maturity": "średnio późna",
+    "early": "średnio późna",
     "hybrid": true,
     "imgs": [
       "https://res.cloudinary.com/ddkef5waq/image/upload/v1721971461/enzapp/cebule/monastrell_cvczwo.jpg"
     ],
     "intended": [
       "świeży rynek",
+      "przemysł",
       "przechowanie"
     ],
     "name": "Monastrell",
@@ -4939,9 +4962,10 @@
       "siew"
     ],
     "provider": "eznl",
-    "segment": "cebula",
+    "segment": "czerwona Rijnsburger",
+    "shape": "okrągła",
     "storage": "do marca",
-    "type": "czerwona Rijnsburger"
+    "type": "Rijnsburger"
   },
   "musquee_de_provence": {
     "active": true,
@@ -6310,6 +6334,69 @@
     "provider": "eznl",
     "segment": "rukola",
     "type": "odporna na zimno"
+  },
+  "tanat": {
+    "active": true,
+    "benefits": [
+      {
+        "description": "Pokrój szczypioru luźny i przewiewny co ułatwia zabiegi pestycydowe"
+      },
+      {
+        "description": "Tolerancja na fuzaryjną zgniliznę cebuli (Fusarium oxysporum f. sp. cepae)"
+      },
+      {
+        "description": "Tolerancja na różową zgniliznę korzenia cebuli (Pytenochaeta terrestris)"
+      },
+      {
+        "description": "Ciemnoczerwony kolor łuski i mocne szybko tworzące się wewnętrzene wybarwienia"
+      },
+      {
+        "description": "Cebula z wysokim udziałem zgrubień jednocentrycznych"
+      },
+      {
+        "description": "Możliwość przechowywania cabuli od 4 do 8 miesięcy po zbiorze"
+      }
+    ],
+    "caliber": {
+      "unit": "mm",
+      "value": "70-100"
+    },
+    "color": "#467F31",
+    "compaction": {
+      "unit": "nasion/ha",
+      "value": "750 000-1 000 000"
+    },
+    "crop": "ON",
+    "cultivation": [
+      "grunt"
+    ],
+    "description": "Monastrell to cebula dnia średniego, która wyróżnia się wysokiej jakości cebulami jednocentrycznymi. Odmiana o ciemnoczerwonym kolorze łuski i o lekko spłaszczonym kształcie. Dzięki silnej woskowej okrywie cebule są odporne na oparzenia słoneczne. Pokrój szczypioru prosty, luźny i przewiewny, co bardzo ułatwia zabiegi pestycydowe. Cebula o dużym kalibrażu, nawet przekraczającym 10 cm. Odmiana polecana na świeży rynek lub do przechowywania do 6 miesięcy.",
+    "family": "ON",
+    "guardian": "Paweł Wechterowicz",
+    "early": "średnio późna",
+    "hybrid": true,
+    "imgs": [
+      "https://res.cloudinary.com/ddkef5waq/image/upload/v1779876703/tanat.png"
+    ],
+    "intended": [
+      "świeży rynek",
+      "przemysł",
+      "przechowywanie"
+    ],
+    "name": "Tanat",
+    "new": true,
+    "planting": [
+      4,
+      12
+    ],
+    "production": [
+      "siew"
+    ],
+    "provider": "eznl",
+    "segment": "czerwona Rijnsburger",
+    "shape": "okrągła",
+    "storage": "4-8 miesięcy",
+    "type": "Rijnsburger"
   },
   "tenace": {
     "active": true,
